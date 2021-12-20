@@ -1,0 +1,41 @@
+{
+  "name": "andricos-2000",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -b ./tsconfig.packages.json",
+    "cem:analyze": "yarn wsrun --exclude-missing cem:analyze",
+    "create-changeset": "yarn changeset",
+    "commit": "git-cz",
+    "debug": "yarn build && web-test-runner --watch packages/**/*.test.js --node-resolve",
+    "develop": "tsc -b ./tsconfig.packages.json --watch",
+    "docs:build": "yarn workspace docs build",
+    "lint": "yarn eslint .",
+    "test": "yarn build && wtr --coverage",
+    "test:watch": "yarn build && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
+    "prepare": "husky install",
+    "release": "yarn build && changeset publish",
+    "version-changes": "changeset version"
+  },
+  "keywords": [],
+  "workspaces": [
+    "packages/*"
+  ],
+  "author": "Andrico Karoulla",
+  "license": "ISC",
+  "devDependencies": {
+    "@changesets/cli": "^2.18.1",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "@open-wc/create": "^0.38.63",
+    "@web/test-runner-playwright": "^0.8.8",
+    "eslint": "^8.4.1",
+    "eslint-plugin-wc": "^1.3.2",
+    "husky": "^7.0.4",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.4",
+    "wsrun": "^5.2.4"
+  },
+  "description": ""
+}

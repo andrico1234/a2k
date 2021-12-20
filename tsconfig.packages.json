@@ -1,0 +1,8 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/a2k-window/tsconfig.json"
+    }
+  ]
+}
