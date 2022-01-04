@@ -10,5 +10,7 @@
     ".": "./dist/src/index.js",
     "./a2k-window.js": "./dist/src/a2k-window.js"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "lint-staged": "^12.1.5"
+  }
 }
