@@ -1,0 +1,8 @@
+dist/
+
+site/_site
+
+node_modules
+
+packages/**/lib*
+*config.js

@@ -1,15 +1,23 @@
-import { playwrightLauncher } from '@web/test-runner-playwright';
+import { playwrightLauncher } from "@web/test-runner-playwright";
 
 const filteredLogs = ["Running in dev mode", "lit-html is in dev mode"];
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
-  /** Test files to run */
-  files: "packages/**/*.test.ts",
+  files: "packages/**/*.test.js",
   coverage: true,
+  coverageConfig: {
+    report: true,
+    reportDir: "coverage",
+  },
 
   /** Resolve bare module imports */
   nodeResolve: {
     exportConditions: ["browser", "development"],
+  },
+  testFramework: {
+    config: {
+      timeout: "3000",
+    },
   },
 
   /** Filter out lit dev mode logs */
@@ -31,12 +39,9 @@ export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
   /** Amount of test files per browser to test concurrently */
   // concurrency: 1,
 
-  /** Browsers to run tests on */
   browsers: [
     playwrightLauncher({ product: "chromium" }),
     playwrightLauncher({ product: "firefox" }),
     playwrightLauncher({ product: "webkit" }),
   ],
-
-  // See documentation for all available options
 });
