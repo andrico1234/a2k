@@ -1,5 +1,5 @@
 {
-  "name": "andricos-2000",
+  "name": "@a2k/root",
   "private": true,
   "version": "1.0.0",
   "main": "index.js",
@@ -18,12 +18,15 @@
     "release": "yarn build && changeset publish",
     "version-changes": "changeset version"
   },
-  "keywords": [],
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "site"
   ],
   "author": "Andrico Karoulla",
   "license": "ISC",
+  "dependencies": {
+    "lit": "^2.0.2"
+  },
   "devDependencies": {
     "@changesets/cli": "^2.18.1",
     "@commitlint/cli": "^15.0.0",
@@ -31,6 +34,7 @@
     "@commitlint/cz-commitlint": "^15.0.0",
     "@commitlint/prompt": "^15.0.0",
     "@open-wc/create": "^0.38.63",
+    "@web/test-runner": "^0.13.23",
     "@web/test-runner-playwright": "^0.8.8",
     "commitizen": "^4.2.4",
     "eslint": "^8.4.1",
@@ -46,5 +50,13 @@
     "commitizen": {
       "path": "@commitlint/cz-commitlint"
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrico1234/windows-2000-ui-library.git"
+  },
+  "bugs": {
+    "url": "https://github.com/andrico1234/windows-2000-ui-library/issues"
+  },
+  "homepage": "https://github.com/andrico1234/windows-2000-ui-library#readme"
 }
