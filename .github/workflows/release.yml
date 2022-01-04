@@ -1,0 +1,38 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js 14.x
+        uses: actions/setup-node@master
+        with:
+          node-version: 14.x
+
+      - name: Install Dependencies
+        run: yarn --frozen-lockfile
+
+      - run: yarn build
+
+      - uses: microsoft/playwright-github-action@v1
+
+      - name: Publish to npm
+        id: changesets
+        uses: changesets/action@master
+        with:
+          publish: yarn release
+          commit: "ci(core): version packages"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
