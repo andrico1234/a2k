@@ -1,5 +1,5 @@
-import { html, css, LitElement } from 'lit';
-import { property } from 'lit/decorators.js';
+import { html, css, LitElement } from "lit";
+import { property } from "lit/decorators.js";
 
 export class A2kWindow extends LitElement {
   static styles = css`
@@ -10,7 +10,7 @@ export class A2kWindow extends LitElement {
     }
   `;
 
-  @property({ type: String }) title = 'Hey there';
+  @property({ type: String }) title = "Hey there";
 
   @property({ type: Number }) counter = 5;
 

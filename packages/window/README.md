@@ -12,7 +12,7 @@ npm i a2k-window
 
 ```html
 <script type="module">
-  import 'a2k-window/a2k-window.js';
+  import "a2k-window/a2k-window.js";
 </script>
 
 <a2k-window></a2k-window>
@@ -31,7 +31,6 @@ To run the tests in interactive watch mode run:
 ```bash
 npm run test:watch
 ```
-
 
 ## Tooling configs
 

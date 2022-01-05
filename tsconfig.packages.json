@@ -2,7 +2,7 @@
   "files": [],
   "references": [
     {
-      "path": "./packages/a2k-window/tsconfig.json"
+      "path": "./packages/window/tsconfig.json"
     }
   ]
 }
