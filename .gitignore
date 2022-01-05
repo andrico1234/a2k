@@ -18,6 +18,6 @@ packages/**/lib*
 /.tmp/
 
 # build
-/_site/
+/site/_site/
 /dist/
 /out-tsc/
