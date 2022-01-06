@@ -2,18 +2,17 @@
 <html lang="en-GB">
   <head>
     <meta charset="utf-8" />
+    <script type="module">
+      import sheet from "../node_modules/@a2000/styles/a2k-styles.css" assert { type: "css" };
+      document.adoptedStyleSheets = [sheet];
+    </script>
     <style>
-      :root {
-        --a2k-window-text-color: red;
-      }
-
       body {
         background: #fafafa;
       }
     </style>
   </head>
   <body>
-    <div id="demo">Hi</div>
     <a2k-window></a2k-window>
     <script type="module">
       import "../node_modules/@a2000/window/lib/src/a2k-window.js";

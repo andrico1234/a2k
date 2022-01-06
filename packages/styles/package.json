@@ -1,0 +1,16 @@
+{
+  "name": "@a2000/styles",
+  "description": "Default A2K Styles",
+  "license": "MIT",
+  "author": "Andrico Karoulla",
+  "version": "0.0.1",
+  "main": "a2k-styles.css",
+  "style": "a2k-styles.css",
+  "files": [
+    "a2k-styles.css"
+  ],
+  "exports": {
+    ".": "./a2k-styles.css"
+  },
+  "keywords": []
+}

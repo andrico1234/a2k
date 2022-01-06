@@ -7,7 +7,7 @@ function getPackages() {
       const names = paths.map((pkgJsonPath) => {
         const pkgJson = JSON.parse(fs.readFileSync(pkgJsonPath));
         const pkgName = pkgJson.name;
-        const name = pkgName.replace("@oui-ui/", "");
+        const name = pkgName.replace("@a2000/", "");
         return name;
       });
 
