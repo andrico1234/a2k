@@ -1,3 +1,74 @@
+/*
+
+Variable names should follow the format
+
+  - element
+  - category
+  - property
+  - variant
+  - state
+  - scale
+
+  --window-font-color-error-small
+  --button-color-background-error-hover
+*/
+
 :root {
-  --a2k-window-text-color: red;
+  /* Base styles */
+  --font-primary: Tahoma;
+
+  --font-size-100: 1rem;
+  --font-size-200: calc((21px / 16px) * 1rem);
+  --font-size-300: calc((24px / 16px) * 1rem);
+  --font-size-400: calc((36px / 16px) * 1rem);
+  --font-size-500: calc((48px / 16px) * 1rem);
+  --font-size-600: calc((64px / 16px) * 1rem);
+
+  --spacing-50: 4px;
+  --spacing-100: 8px;
+  --spacing-150: 12px;
+  --spacing-200: 16px;
+  --spacing-300: 24px;
+  --spacing-400: 232px;
+
+  --color-black: hsl(0deg, 0%, 0%);
+  --color-gray-300: hsl(0deg, 0%, 46%);
+  --color-gray-400: hsl(0deg, 0%, 64%);
+  --color-gray-500: hsl(0deg, 0%, 73%);
+  --color-gray-550: hsl(0deg, 0%, 78%);
+  --color-gray-600: hsl(42deg, 4%, 82%);
+  --color-gray-700: hsl(45deg, 11%, 86%);
+  --color-gray-800: hsl(36deg, 12%, 92%);
+  --color-white: hsl(0deg, 0%, 96%);
+
+  --color-red-100: hsl(22deg, 95%, 25%);
+  --color-red-300: hsl(22deg, 95%, 34%);
+  --color-red-500: hsl(22deg, 95%, 44%);
+  --color-red-700: hsl(22deg, 95%, 56%);
+  --color-red-900: hsl(22deg, 95%, 71%);
+
+  --border-heavy: 0 0 0 2px var(--color-black), 4px 4px 0 0 var(--color-white),
+    -3px -3px 0 0 var(--color-gray-400);
+  /*
+  --border-medium: 0.5px 0.5px 0 1.5px var(--color-black),
+    0.5px 0.5px 0 1.5px var(--color-white), 0 1px 0 1px var(--color-black),
+    0px 0px 0 2px var(--color-gray-400); */
+
+  --border-medium: 1px solid var(--color-gray-400);
+  --shadow-heavy: 1px 1px var(--color-black);
+  --shadow-inset-light: inset 1px 1px var(--color-white);
+
+  /*
+  --border-medium: 1px 1px 0 1px var(--color-gray-400),
+    2px 2px 0 2px var(--color-black), -1px 3px 0 1px var(--color-gray-400); */
+
+  /* --border-medium: -1px -1px var(--color-black), -2px -2px var(--color-gray-400),
+    1px 1px var(--color-gray-400), 2px 2px var(--color-white),
+    0 0 0 3px var(--color-gray-700); */
+
+  /* Element styles */
+  --window-color-background: var(--color-gray-600);
+  --window-content-spacing-top: var(--spacing-100);
+  --window-border: var(--border-medium);
+  --window-shadow: var(--shadow-inset-light), var(--shadow-heavy);
 }
