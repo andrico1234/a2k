@@ -17,6 +17,11 @@ export class A2kWindow extends LitElement {
       border: var(--window-border);
       box-shadow: var(--window-shadow);
       background-color: var(--window-color-background);
+      padding: 0 var(--window-spacing-horizontal);
+      width: fit-content;
+      position: absolute;
+      top: 200px;
+      left: 100px;
     }
   `;
 
