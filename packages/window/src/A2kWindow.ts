@@ -1,27 +1,28 @@
 import { html, css, LitElement } from "lit";
-import { property } from "lit/decorators.js";
+
+// This should be a stack
 
 export class A2kWindow extends LitElement {
   static styles = css`
-    :host {
-      display: block;
-      padding: 25px;
-      color: var(--a2k-window-text-color, #000);
+    ::slotted(*) {
+      margin: 0;
+      margin-top: var(--window-content-spacing-top);
+    }
+
+    ::slotted(*:first-child) {
+      margin-top: 0;
+    }
+
+    .wrapper {
+      border: var(--window-border);
+      box-shadow: var(--window-shadow);
+      background-color: var(--window-color-background);
     }
   `;
 
-  @property({ type: String }) title = "Hey there";
-
-  @property({ type: Number }) counter = 5;
-
-  __increment() {
-    this.counter += 1;
-  }
-
   render() {
-    return html`
-      <h2>${this.title} Nr. ${this.counter}!</h2>
-      <button @click=${this.__increment}>increment</button>
-    `;
+    return html` <div class="wrapper">
+      <slot></slot>
+    </div>`;
   }
 }
