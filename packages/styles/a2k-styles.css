@@ -47,26 +47,20 @@ Variable names should follow the format
   --color-red-700: hsl(22deg, 95%, 56%);
   --color-red-900: hsl(22deg, 95%, 71%);
 
+  --color-blue-100: hsl(212deg, 50%, 27%);
   --color-blue-300: hsl(212deg, 50%, 40%);
+  --color-blue-700: hsl(212deg, 100%, 64%);
+  --color-blue-900: hsl(212deg, 50%, 79%);
 
-  --border-heavy: 0 0 0 2px var(--color-black), 4px 4px 0 0 var(--color-white),
-    -3px -3px 0 0 var(--color-gray-400);
-  /*
-  --border-medium: 0.5px 0.5px 0 1.5px var(--color-black),
-    0.5px 0.5px 0 1.5px var(--color-white), 0 1px 0 1px var(--color-black),
-    0px 0px 0 2px var(--color-gray-400); */
+  --blue-gradient: linear-gradient(
+    90deg,
+    var(--color-blue-100) 0%,
+    var(--color-blue-700) 100%
+  );
 
   --border-medium: 2px solid var(--color-gray-400);
   --shadow-heavy: 2px 2px var(--color-black);
   --shadow-inset-light: inset 2px 2px var(--color-white);
-
-  /*
-  --border-medium: 1px 1px 0 1px var(--color-gray-400),
-    2px 2px 0 2px var(--color-black), -1px 3px 0 1px var(--color-gray-400); */
-
-  /* --border-medium: -1px -1px var(--color-black), -2px -2px var(--color-gray-400),
-    1px 1px var(--color-gray-400), 2px 2px var(--color-white),
-    0 0 0 3px var(--color-gray-700); */
 
   /* Element styles */
   --desktop-background: var(--color-blue-300);
@@ -76,4 +70,8 @@ Variable names should follow the format
   --window-border: var(--border-medium);
   --window-shadow: var(--shadow-inset-light), var(--shadow-heavy);
   --window-spacing-horizontal: var(--spacing-200);
+
+  --window-topbar-heading-font-size: var(--font-size-100);
+  --window-topbar-heading-color: var(--color-white);
+  --window-topbar-background: var(--blue-gradient);
 }

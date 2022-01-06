@@ -1,7 +1,5 @@
 import { html, css, LitElement } from "lit";
-
-// This should be a stack
-
+import "./a2k-window-topbar";
 export class A2kWindow extends LitElement {
   static styles = css`
     ::slotted(*) {
@@ -17,17 +15,27 @@ export class A2kWindow extends LitElement {
       border: var(--window-border);
       box-shadow: var(--window-shadow);
       background-color: var(--window-color-background);
-      padding: 0 var(--window-spacing-horizontal);
       width: fit-content;
       position: absolute;
       top: 200px;
       left: 100px;
     }
+
+    .content {
+      padding: 0 var(--window-spacing-horizontal);
+    }
   `;
+
+  static properties = {
+    title: { type: String },
+  };
 
   render() {
     return html` <div class="wrapper">
-      <slot></slot>
+      <a2k-window-topbar>${this.title}</a2k-window-topbar>
+      <div class="content">
+        <slot></slot>
+      </div>
     </div>`;
   }
 }
