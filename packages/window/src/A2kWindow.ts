@@ -3,22 +3,27 @@ import "./a2k-window-topbar";
 export class A2kWindow extends LitElement {
   static styles = css`
     ::slotted(*) {
-      margin: 0;
-      margin-top: var(--window-content-spacing-top);
+      margin-top: var(--window-content-spacing-top) !important;
     }
 
     ::slotted(*:first-child) {
-      margin-top: 0;
+      margin-top: 0 !important;
     }
 
     .wrapper {
+      --inset-shadow-padding: 2px;
+
       border: var(--window-border);
       box-shadow: var(--window-shadow);
       background-color: var(--window-color-background);
       width: fit-content;
       position: absolute;
-      top: 200px;
-      left: 100px;
+      padding-top: var(--inset-shadow-padding);
+      padding-left: var(--inset-shadow-padding);
+      top: 0;
+      left: 0;
+
+      width: var(--window-width);
     }
 
     .content {
