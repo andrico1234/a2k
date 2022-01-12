@@ -11,6 +11,7 @@
     "debug": "yarn build && web-test-runner --watch packages/**/*.test.js --node-resolve",
     "develop": "tsc -b ./tsconfig.packages.json --watch",
     "site:build": "yarn workspace site build",
+    "site:develop": "yarn workspace site develop",
     "lint": "yarn eslint .",
     "test": "yarn build && wtr --coverage",
     "test:watch": "yarn build && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",

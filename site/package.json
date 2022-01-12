@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "concurrently \"eleventy --watch\" \"web-dev-server\""
+    "build": "eleventy",
+    "develop": "concurrently \"eleventy --watch\" \"web-dev-server\""
   },
   "keywords": [],
   "author": "Andrico Karoulla",
