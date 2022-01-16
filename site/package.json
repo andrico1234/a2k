@@ -13,7 +13,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^1.0.0-beta.10",
     "@a2000/styles": "0.0.2",
-    "@a2000/window": "0.0.4",
+    "@a2000/window": "0.0.5",
     "concurrently": "^7.0.0"
   }
 }
