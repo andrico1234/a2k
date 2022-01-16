@@ -15,9 +15,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js 14.x
+      - name: Setup Node.js 16.x
         uses: actions/setup-node@master
         with:
+          registry-url: https://registry.npmjs.org
           node-version: 16.x
 
       - name: Install Dependencies
