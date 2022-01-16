@@ -1,5 +1,11 @@
 # @a2000/window
 
+## 0.0.5
+
+### Patch Changes
+
+- 5cde9bb: Make window draggable
+
 ## 0.0.4
 
 ### Patch Changes
