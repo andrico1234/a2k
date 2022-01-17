@@ -30,7 +30,7 @@ jobs:
 
       - name: Publish to npm
         id: changesets
-        uses: changesets/action@master
+        uses: changesets/action@v1
         with:
           publish: yarn release
           commit: "ci(core): version packages"
