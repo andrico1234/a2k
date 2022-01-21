@@ -1,5 +1,13 @@
 # @a2000/window
 
+## 0.0.6
+
+### Patch Changes
+
+- 20c9526: utilise new stack component
+- Updated dependencies [a1fca4d]
+  - @a2000/stack@0.0.2
+
 ## 0.0.5
 
 ### Patch Changes
