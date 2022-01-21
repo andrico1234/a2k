@@ -3,6 +3,9 @@
   "references": [
     {
       "path": "./packages/window/tsconfig.json"
+    },
+    {
+      "path": "./packages/stack/tsconfig.json"
     }
   ]
 }

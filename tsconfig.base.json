@@ -19,7 +19,8 @@
     "allowJs": true,
     "resolveJsonModule": true,
     "paths": {
-      "@a2000/window": ["packages/window/src"]
+      "@a2000/stack": ["packages/stack/src",],
+      "@a2000/window": ["packages/window/src",]
     }
   },
   "exclude": ["node_modules", "packages/**/tests", "./packages/**/lib/**/*"]
