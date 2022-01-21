@@ -3,7 +3,7 @@
   "description": "A2K Stack",
   "license": "MIT",
   "author": "Andrico Karoulla",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "lib/src/index.js",
   "module": "lib/src/index.js",
   "exports": {
