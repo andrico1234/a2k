@@ -65,8 +65,9 @@ Variable names should follow the format
   /* Element styles */
   --desktop-background: var(--color-blue-300);
 
+  --stack-spacing-top: var(--spacing-100);
+
   --window-color-background: var(--color-gray-600);
-  --window-content-spacing-top: var(--spacing-100);
   --window-border: var(--border-medium);
   --window-shadow: var(--shadow-inset-light), var(--shadow-heavy);
   --window-spacing-horizontal: var(--spacing-200);

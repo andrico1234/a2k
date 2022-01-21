@@ -4,10 +4,13 @@
   "license": "MIT",
   "author": "Andrico Karoulla",
   "version": "0.0.5",
-  "main": "dist/src/index.js",
-  "module": "dist/src/index.js",
+  "main": "lib/src/index.js",
+  "module": "lib/src/index.js",
   "exports": {
-    ".": "./dist/src/index.js",
-    "./a2k-window.js": "./dist/src/a2k-window.js"
+    ".": "./lib/src/index.js",
+    "./a2k-window.js": "./lib/src/a2k-window.js"
+  },
+  "dependencies": {
+    "@a2000/stack": "0.0.1"
   }
 }

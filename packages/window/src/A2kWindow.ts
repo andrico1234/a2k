@@ -2,17 +2,12 @@ import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 import { StyleInfo, styleMap } from "lit/directives/style-map.js";
 
+import "@a2000/stack/a2k-stack.js";
+
 import "./a2k-window-topbar";
+
 export class A2kWindow extends LitElement {
   static styles = css`
-    ::slotted(*) {
-      margin-top: var(--window-content-spacing-top) !important;
-    }
-
-    ::slotted(*:first-child) {
-      margin-top: 0 !important;
-    }
-
     .wrapper {
       --inset-shadow-padding: 2px;
 
@@ -154,7 +149,9 @@ export class A2kWindow extends LitElement {
         <a2k-window-topbar>${this.title}</a2k-window-topbar>
       </div>
       <div class="content">
-        <slot></slot>
+        <a2k-stack>
+          <slot></slot>
+        </a2k-stack>
       </div>
     </div>`;
   }
