@@ -1,0 +1,13 @@
+{
+  "name": "@a2000/taskbar",
+  "description": "A2K Taskbar",
+  "license": "MIT",
+  "author": "Andrico Karoulla",
+  "version": "0.0.1",
+  "main": "lib/src/index.js",
+  "module": "lib/src/index.js",
+  "exports": {
+    ".": "./lib/src/index.js",
+    "./a2k-window.js": "./lib/src/a2k-taskbar.js"
+  }
+}
