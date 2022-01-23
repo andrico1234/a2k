@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.4
+
+### Patch Changes
+
+- 57f0dd9: improve spacing variables for styles and add shadow variants
+
 ## 0.0.3
 
 ### Patch Changes

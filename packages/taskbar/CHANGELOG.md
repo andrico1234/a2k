@@ -1,5 +1,11 @@
 # @a2000/taskbar
 
+## 0.0.3
+
+### Patch Changes
+
+- 57f0dd9: create basic styling for taskbar
+
 ## 0.0.2
 
 ### Patch Changes
