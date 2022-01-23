@@ -1,5 +1,11 @@
 # @a2000/taskbar
 
+## 0.0.4
+
+### Patch Changes
+
+- 6cade64: update exports
+
 ## 0.0.3
 
 ### Patch Changes
