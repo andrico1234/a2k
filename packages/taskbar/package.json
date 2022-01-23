@@ -8,6 +8,6 @@
   "module": "lib/src/index.js",
   "exports": {
     ".": "./lib/src/index.js",
-    "./a2k-window.js": "./lib/src/a2k-taskbar.js"
+    "./a2k-taskbar.js": "./lib/src/a2k-taskbar.js"
   }
 }
