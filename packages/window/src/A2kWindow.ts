@@ -14,13 +14,11 @@ export class A2kWindow extends LitElement {
       border: var(--window-border);
       box-shadow: var(--window-shadow);
       background-color: var(--window-color-background);
-      width: fit-content;
       position: absolute;
       padding-top: var(--inset-shadow-padding);
       padding-left: var(--inset-shadow-padding);
       top: 0;
       left: 0;
-
       width: var(--window-width);
     }
 
@@ -51,7 +49,7 @@ export class A2kWindow extends LitElement {
   handleWindowMove(time: number, ev: DragEvent) {
     const { top, left } = this.styles;
     const { innerHeight, innerWidth } = window;
-    const el = this.shadowRoot?.querySelector(".wrapper");
+    const el = this.renderRoot.querySelector(".wrapper");
 
     if (!el) return;
 
