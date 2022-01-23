@@ -19,7 +19,10 @@ packages/**/lib*
 
 # build
 /site/_site/
-/dist/
+**/dist/
 /out-tsc/
 tsconfig.tsbuildinfo
+
+# errors
+yarn-error.log
 

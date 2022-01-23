@@ -1,21 +1,34 @@
 {
   "name": "site",
+  "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "eleventy",
-    "develop": "concurrently \"eleventy --watch\" \"web-dev-server\""
+    "build": "yarn build:rollup",
+    "build:rollup": "rm -rf dist && rollup -c ./rollup.config.js",
+    "develop": "yarn develop:rollup & yarn develop:wds",
+    "develop:rollup": "yarn build:rollup --watch",
+    "develop:wds": "yarn web-dev-server"
   },
   "keywords": [],
+  "workspaces": {
+    "nohoist": [
+      "**/@a2000/**"
+    ]
+  },
   "author": "Andrico Karoulla",
   "license": "ISC",
-  "devDependencies": {
-    "@11ty/eleventy": "^1.0.0-beta.10",
+  "dependencies": {
     "@a2000/styles": "0.0.4",
     "@a2000/taskbar": "0.0.3",
-    "@a2000/window": "0.0.6",
+    "@a2000/window": "0.0.6"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.0-beta.10",
     "@web/dev-server": "^0.1.29",
-    "concurrently": "^7.0.0"
+    "@web/rollup-plugin-html": "^1.10.1",
+    "concurrently": "^7.0.0",
+    "rollup": "^2.66.0"
   }
 }
