@@ -6,6 +6,9 @@
     },
     {
       "path": "./packages/stack/tsconfig.json"
+    },
+    {
+      "path": "./packages/taskbar/tsconfig.json"
     }
   ]
 }

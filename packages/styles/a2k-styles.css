@@ -24,12 +24,20 @@ Variable names should follow the format
   --font-size-500: calc((48px / 16px) * 1rem);
   --font-size-600: calc((64px / 16px) * 1rem);
 
-  --spacing-50: 4px;
-  --spacing-100: 8px;
-  --spacing-150: 12px;
-  --spacing-200: 16px;
-  --spacing-300: 24px;
-  --spacing-400: 232px;
+  --font-weight-heavy: 600;
+
+  --spacing-unit: 8px;
+
+  --spacing-50: calc(var(--spacing-unit) / 2);
+  --spacing-100: var(--spacing-unit);
+  --spacing-150: calc(var(--spacing-unit) * 1.5);
+  --spacing-200: calc(var(--spacing-unit) * 2);
+  --spacing-300: calc(var(--spacing-unit) * 3);
+  --spacing-400: calc(var(--spacing-unit) * 4);
+  --spacing-500: calc(var(--spacing-unit) * 5);
+  --spacing-600: calc(var(--spacing-unit) * 6);
+  --spacing-700: calc(var(--spacing-unit) * 7);
+  --spacing-800: calc(var(--spacing-unit) * 8);
 
   --color-black: hsl(0deg, 0%, 0%);
   --color-gray-300: hsl(0deg, 0%, 46%);
@@ -60,14 +68,32 @@ Variable names should follow the format
 
   --border-medium: 2px solid var(--color-gray-400);
   --shadow-heavy: 2px 2px var(--color-black);
+
   --shadow-inset-light: inset 2px 2px var(--color-white);
+  --shadow-inset-medium: inset -1px -1px var(--color-white),
+    inset 2px 2px var(--color-gray-400);
+  --shadow-inset-heavy: inset 1px 1px var(--color-black);
 
   /* Element styles */
   --desktop-background: var(--color-blue-300);
 
   --stack-spacing-top: var(--spacing-100);
 
-  --window-color-background: var(--color-gray-600);
+  --taskbar-border: var(--border-medium);
+  --taskbar-shadow: var(--shadow-inset-light), var(--shadow-heavy);
+  --taskbar-color-background: var(--color-gray-600);
+  --taskbar-height: var(--spacing-700);
+  --taskbar-padding: var(--spacing-50);
+  --taskbar-start-button-border: var(--border-medium);
+  --taskbar-start-button-shadow: -1px 0 var(--color-white),
+    0px -1px 0 var(--color-white), var(--shadow-heavy);
+
+  --taskbar-start-button-shadow-active: 1px 0 var(--color-white),
+    0px 1px 0 var(--color-white), var(--shadow-inset-heavy);
+
+  --taskbar-utility-bar-shadow: var(--shadow-inset-medium);
+
+  --window-color-background: var(--color-gray-500);
   --window-border: var(--border-medium);
   --window-shadow: var(--shadow-inset-light), var(--shadow-heavy);
   --window-spacing-horizontal: var(--spacing-200);
