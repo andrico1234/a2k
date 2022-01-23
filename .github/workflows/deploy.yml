@@ -1,0 +1,27 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  checkChanges:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+
+      - name: Check changes in site
+        uses: netlify/actions/diff-includes@master
+        with:
+          args: site/dist
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        needs: checkChanges
+        uses: netlify/actions/build@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          BUILD_DIR: site/dist
