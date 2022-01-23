@@ -17,9 +17,9 @@ jobs:
           args: site/dist
   deploy:
     runs-on: ubuntu-latest
+    needs: checkChanges
     steps:
       - name: Deploy
-        needs: checkChanges
         uses: netlify/actions/build@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
