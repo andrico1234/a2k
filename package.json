@@ -20,8 +20,7 @@
     "version-changes": "changeset version"
   },
   "workspaces": [
-    "packages/*",
-    "site"
+    "packages/*"
   ],
   "author": "Andrico Karoulla",
   "license": "ISC",
