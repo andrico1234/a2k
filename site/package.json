@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "develop": "vite",
-    "build": "ls ./node_modules && vite build",
+    "build": "vite build --debug",
     "preview": "vite preview"
   },
   "keywords": [],
