@@ -19,7 +19,6 @@ packages/**/lib*
 
 # build
 /site/_site/
-**/dist/
 /out-tsc/
 tsconfig.tsbuildinfo
 
