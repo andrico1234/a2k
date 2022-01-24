@@ -10,7 +10,8 @@
     "a2k-styles.css"
   ],
   "exports": {
-    ".": "./a2k-styles.css"
+    ".": "./a2k-styles.css",
+    "./a2k-styles.css": "./a2k-styles.css"
   },
   "keywords": []
 }
