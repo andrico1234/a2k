@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.5
+
+### Patch Changes
+
+- 7fec676: add additional export
+
 ## 0.0.4
 
 ### Patch Changes

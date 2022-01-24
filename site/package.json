@@ -1,7 +1,7 @@
 {
   "name": "site",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "author": "Andrico Karoulla",
   "license": "ISC",
   "dependencies": {
-    "@a2000/styles": "0.0.4",
+    "@a2000/styles": "0.0.5",
     "@a2000/taskbar": "0.0.4",
     "@a2000/window": "0.0.6"
   }
