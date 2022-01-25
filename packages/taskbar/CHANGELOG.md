@@ -1,5 +1,13 @@
 # @a2000/taskbar
 
+## 0.0.5
+
+### Patch Changes
+
+- ebb9995: add icon to taskbar
+- Updated dependencies [d71fc75]
+  - @a2000/icons@0.0.2
+
 ## 0.0.4
 
 ### Patch Changes
