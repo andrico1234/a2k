@@ -1,0 +1,1 @@
+export { WindowsLogo } from "./WindowsLogo";

@@ -9,6 +9,9 @@
     },
     {
       "path": "./packages/taskbar/tsconfig.json"
+    },
+    {
+      "path": "./packages/icons/tsconfig.json"
     }
   ]
 }
