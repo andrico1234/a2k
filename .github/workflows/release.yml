@@ -26,7 +26,7 @@ jobs:
 
       - run: yarn build
 
-      - uses: microsoft/playwright-github-action@v1
+      - run: npx playwright install-deps
 
       - name: Publish to npm
         id: changesets
