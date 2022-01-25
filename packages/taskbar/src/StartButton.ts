@@ -1,10 +1,14 @@
 import { css, html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
+import "@a2000/icons/windows-logo";
 
 @customElement("a2k-start-button")
 export class StartButton extends LitElement {
   static styles = css`
     button {
+      display: flex;
+      align-items: center;
+      gap: var(--taskbar-content-gap);
       font-family: var(--font-primary);
       height: 100%;
       font-weight: var(--font-weight-heavy);
@@ -24,9 +28,18 @@ export class StartButton extends LitElement {
       border-top: 1px dotted var(--color-black);
       box-shadow: var(--taskbar-start-button-shadow-active);
     }
+
+    .icon-wrapper {
+      width: 32px;
+    }
   `;
 
   render() {
-    return html`<button>Start</button>`;
+    return html`<button>
+    <div class="icon-wrapper">
+      <a2k-windows-logo>
+    </div>
+    Start
+    </button>`;
   }
 }

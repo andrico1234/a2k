@@ -4,6 +4,11 @@
     "outDir": "./lib",
     "typeRoots": ["../../typings"]
   },
+  "references": [
+    {
+      "path": "../icons"
+    }
+  ],
   "include": ["src/**/*.ts", "index.ts", "typings"],
   "files": []
 }
