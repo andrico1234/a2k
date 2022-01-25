@@ -1,23 +1,15 @@
 import { LitElement, svg } from "lit";
-import { property } from "lit/decorators.js";
 
 // Eventually refactor this so size is computed using 's', 'm', 'l'
 export class WindowsLogo extends LitElement {
-  baseWidth = 16;
-  baseHeight = 14;
-  aspectRatio = this.baseHeight / this.baseWidth;
-
-  @property()
-  size = this.baseWidth;
+  width = 16;
+  height = 14;
 
   render() {
-    const width = this.size;
-    const newHeight = width * this.aspectRatio;
-
     return svg`
     <svg
     width="auto"
-    viewbox="0 0 ${width} ${newHeight}"
+    viewBox="0 0 ${this.width} ${this.height}"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
