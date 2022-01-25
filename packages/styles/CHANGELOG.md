@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.6
+
+### Patch Changes
+
+- ebb9995: add icon to taskbar
+
 ## 0.0.5
 
 ### Patch Changes
