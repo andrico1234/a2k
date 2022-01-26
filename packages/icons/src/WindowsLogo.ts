@@ -8,7 +8,7 @@ export class WindowsLogo extends LitElement {
   render() {
     return svg`
     <svg
-    width="auto"
+    styles="width:auto"
     viewBox="0 0 ${this.width} ${this.height}"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

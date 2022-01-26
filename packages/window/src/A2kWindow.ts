@@ -7,6 +7,8 @@ import "@a2000/stack/a2k-stack.js";
 import "./a2k-window-topbar";
 
 export class A2kWindow extends LitElement {
+  img: HTMLImageElement;
+
   static styles = css`
     .wrapper {
       --inset-shadow-padding: 2px;
@@ -45,6 +47,14 @@ export class A2kWindow extends LitElement {
     top: "0px",
     left: "0px",
   };
+
+  constructor() {
+    super();
+    this.img = new Image(0, 0);
+
+    this.img.src =
+      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+  }
 
   handleWindowMove(time: number, ev: DragEvent) {
     const { top, left } = this.styles;
@@ -119,8 +129,7 @@ export class A2kWindow extends LitElement {
   }
 
   #onDragStart(ev: DragEvent) {
-    const img = new Image();
-    ev.dataTransfer?.setDragImage(img, 0, 0);
+    ev.dataTransfer?.setDragImage(this.img, 0, 0);
 
     this.cursorPositionX = ev.pageX;
     this.cursorPositionY = ev.pageY;

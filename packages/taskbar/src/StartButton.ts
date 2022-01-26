@@ -1,10 +1,16 @@
 import { css, html, LitElement } from "lit";
-import { customElement } from "lit/decorators.js";
+import { customElement, state } from "lit/decorators.js";
 import "@a2000/icons/windows-logo";
+import "./StartMenu";
 
 @customElement("a2k-start-button")
 export class StartButton extends LitElement {
   static styles = css`
+    .wrapper {
+      position: relative;
+      height: 100%;
+    }
+
     button {
       display: flex;
       align-items: center;
@@ -20,6 +26,8 @@ export class StartButton extends LitElement {
       border-left: 1px dotted var(--color-white);
       border-top: 1px dotted var(--color-white);
       box-shadow: var(--taskbar-start-button-shadow);
+      outline-color: var(--outline-color-focus);
+      outline-offset: var(--outline-offset-focus);
     }
 
     button:active {
@@ -34,12 +42,44 @@ export class StartButton extends LitElement {
     }
   `;
 
+  // this could be moved into a mixin or a controller
+
+  // handle a global click. if click is outside this element, hide the thing
+  // it's outside the element if click target is outside of the parent element.
+
+  private _hideOnClickOutside = (event: MouseEvent) => {
+    if (!event.composedPath().includes(this)) {
+      this._isMenuOpen = false;
+      document.removeEventListener("click", this._hideOnClickOutside);
+    }
+  };
+
+  @state()
+  private _isMenuOpen = false;
+
+  private _toggleMenu() {
+    const newOpenState = !this._isMenuOpen;
+
+    if (newOpenState) {
+      document.addEventListener("click", this._hideOnClickOutside);
+    } else {
+      document.removeEventListener("click", this._hideOnClickOutside);
+    }
+
+    this._isMenuOpen = newOpenState;
+  }
+
   render() {
-    return html`<button>
-    <div class="icon-wrapper">
-      <a2k-windows-logo>
-    </div>
-    Start
-    </button>`;
+    return html`
+      <div class="wrapper">
+        <a2k-start-menu open="${this._isMenuOpen}"></a2k-start-menu>
+        <button @click="${this._toggleMenu}">
+          <div class="icon-wrapper">
+            <a2k-windows-logo>
+          </div>
+          Start
+        </button>
+      </div>
+    `;
   }
 }
