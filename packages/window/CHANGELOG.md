@@ -1,5 +1,13 @@
 # @a2000/window
 
+## 0.0.7
+
+### Patch Changes
+
+- 9aed09e: window now uses panel for component styling
+- Updated dependencies [9aed09e]
+  - @a2000/panel@0.0.2
+
 ## 0.0.6
 
 ### Patch Changes
