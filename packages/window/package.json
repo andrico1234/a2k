@@ -11,6 +11,7 @@
     "./a2k-window.js": "./lib/src/a2k-window.js"
   },
   "dependencies": {
-    "@a2000/stack": "0.0.2"
+    "@a2000/stack": "0.0.2",
+    "@a2000/panel": "0.0.1"
   }
 }

@@ -90,6 +90,8 @@ h6 {
   --shadow-inset-medium: inset -1px -1px var(--color-white),
     inset 2px 2px var(--color-gray-400);
   --shadow-inset-heavy: inset 1px 1px var(--color-black);
+  --outline-color-focus: var(--color-blue-300);
+  --outline-offset-focus: var(--spacing-50);
   --desktop-background: var(--color-blue-300);
   --stack-spacing-top: var(--spacing-100);
   --taskbar-border: var(--border-medium);

@@ -3,35 +3,27 @@ import { property } from "lit/decorators.js";
 import { StyleInfo, styleMap } from "lit/directives/style-map.js";
 
 import "@a2000/stack/a2k-stack.js";
+import "@a2000/panel/a2k-panel.js";
 
 import "./a2k-window-topbar";
 
 export class A2kWindow extends LitElement {
-  img: HTMLImageElement;
-
   static styles = css`
-    .wrapper {
-      --inset-shadow-padding: 2px;
-
-      border: var(--window-border);
-      box-shadow: var(--window-shadow);
-      background-color: var(--window-color-background);
+    #window {
       position: absolute;
-      padding-top: var(--inset-shadow-padding);
-      padding-left: var(--inset-shadow-padding);
       top: 0;
       left: 0;
       width: var(--window-width);
     }
-
     .content {
       padding: 0 var(--window-spacing-horizontal);
     }
   `;
 
-  static properties = {
-    title: { type: String },
-  };
+  img: HTMLImageElement;
+
+  @property()
+  title = "";
 
   @property({ type: Boolean })
   draggable = true;
@@ -46,6 +38,7 @@ export class A2kWindow extends LitElement {
   styles: StyleInfo = {
     top: "0px",
     left: "0px",
+    width: "var(--window-width)",
   };
 
   constructor() {
@@ -59,7 +52,7 @@ export class A2kWindow extends LitElement {
   handleWindowMove(time: number, ev: DragEvent) {
     const { top, left } = this.styles;
     const { innerHeight, innerWidth } = window;
-    const el = this.renderRoot.querySelector(".wrapper");
+    const el = this.renderRoot.querySelector("#window");
 
     if (!el) return;
 
@@ -145,22 +138,26 @@ export class A2kWindow extends LitElement {
   }
 
   render() {
-    return html` <div class="wrapper" style=${styleMap(this.styles)}>
-      <div
-        @dragstart="${this.#onDragStart}"
-        @drag="${this.#onDrag}"
-        @dragend="${this.#onDragEnd}"
-        class="topbar-wrapper"
-        draggable="${this.draggable}"
-      >
-        <a2k-window-topbar>${this.title}</a2k-window-topbar>
+    return html`
+      <div id="window" style=${styleMap(this.styles)}>
+        <a2k-panel>
+          <div
+            @dragstart="${this.#onDragStart}"
+            @drag="${this.#onDrag}"
+            @dragend="${this.#onDragEnd}"
+            class="topbar-wrapper"
+            draggable="${this.draggable}"
+          >
+            <a2k-window-topbar>${this.title}</a2k-window-topbar>
+          </div>
+          <div class="content">
+            <a2k-stack>
+              <slot></slot>
+            </a2k-stack>
+          </div>
+        </a2k-panel>
       </div>
-      <div class="content">
-        <a2k-stack>
-          <slot></slot>
-        </a2k-stack>
-      </div>
-    </div>`;
+    `;
   }
 }
 
