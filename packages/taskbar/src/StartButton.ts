@@ -38,7 +38,7 @@ export class StartButton extends LitElement {
     }
 
     .icon-wrapper {
-      width: 32px;
+      width: var(--taskbar-start-button-icon-size);
     }
   `;
 
@@ -75,7 +75,7 @@ export class StartButton extends LitElement {
         <a2k-start-menu open="${this._isMenuOpen}"></a2k-start-menu>
         <button @click="${this._toggleMenu}">
           <div class="icon-wrapper">
-            <a2k-windows-logo>
+            <a2k-windows-logo />
           </div>
           Start
         </button>

@@ -7,6 +7,12 @@
   "references": [
     {
       "path": "../icons"
+    },
+    {
+      "path": "../panel"
+    },
+    {
+      "path": "../stack"
     }
   ],
   "include": ["src/**/*.ts", "index.ts", "typings"],

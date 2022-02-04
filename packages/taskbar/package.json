@@ -11,6 +11,8 @@
     "./a2k-taskbar.js": "./lib/src/a2k-taskbar.js"
   },
   "dependencies": {
-    "@a2000/icons": "0.0.3"
+    "@a2000/icons": "0.0.3",
+    "@a2000/panel": "0.0.2",
+    "@a2000/stack": "0.0.2"
   }
 }
