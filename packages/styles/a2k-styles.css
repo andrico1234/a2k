@@ -89,11 +89,27 @@ Variable names should follow the format
   --taskbar-padding: var(--spacing-50);
   --taskbar-content-gap: var(--spacing-100);
   --taskbar-start-button-border: var(--border-medium);
+  --taskbar-start-button-icon-size: var(--spacing-400);
   --taskbar-start-button-shadow: -1px 0 var(--color-white),
     0px -1px 0 var(--color-white), var(--shadow-heavy);
 
   --taskbar-start-button-shadow-active: 1px 0 var(--color-white),
     0px 1px 0 var(--color-white), var(--shadow-inset-heavy);
+
+  --start-menu-strip-background-gradient: linear-gradient(
+    var(--color-blue-100) 0%,
+    var(--color-blue-700) 100%
+  );
+
+  --start-menu-height: 200px;
+
+  --start-menu-item-height: var(--spacing-500);
+  --start-menu-item-padding: var(--spacing-100);
+  --start-menu-item-gap: var(--spacing-150);
+  --start-menu-background: var(--color-gray-600);
+  --start-menu-background-hover: var(--color-blue-100);
+  --start-menu-icon-size: var(--spacing-400);
+  --start-menu-item-text-color-hover: var(--color-white);
 
   --taskbar-utility-bar-shadow: var(--shadow-inset-medium);
 

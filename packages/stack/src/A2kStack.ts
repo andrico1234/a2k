@@ -2,23 +2,16 @@ import { html, css, LitElement } from "lit";
 
 export class A2kStack extends LitElement {
   static styles = css`
-    .wrapper {
+    #stack {
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-    }
-
-    ::slotted(*) {
-      margin-block-start: var(--stack-spacing-top) !important;
-    }
-
-    ::slotted(*:first-child) {
-      margin-block: 0 !important;
+      gap: var(--stack-spacing-top) !important;
     }
   `;
 
   render() {
-    return html`<div class="wrapper">
+    return html`<div id="stack">
       <slot></slot>
     </div>`;
   }
