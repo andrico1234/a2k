@@ -1,5 +1,12 @@
 # site
 
+## 1.0.3
+
+### Patch Changes
+
+- Updated dependencies [9aed09e]
+  - @a2000/window@0.0.7
+
 ## 1.0.2
 
 ### Patch Changes
