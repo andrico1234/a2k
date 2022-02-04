@@ -1,5 +1,11 @@
 # site
 
+## 1.0.4
+
+### Patch Changes
+
+- @a2000/taskbar@0.0.6
+
 ## 1.0.3
 
 ### Patch Changes
