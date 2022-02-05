@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@a2000/panel@0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@a2000/panel/-/panel-0.0.2.tgz#6c4c33c340a33af97efa0a7ee4d788c1318977e0"
-  integrity sha512-Tgcl8xLd1KHF1b3NDuQge3LSPhMynSvkwuS251BLDicU/resk9KlvbvNlRtxW+KDQFKFLEsrRYmU2b2LrSO+Hw==
-
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.11":
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.16.7.tgz#44416b6bd7624b998f5b1af5d470856c40138789"

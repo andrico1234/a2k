@@ -12,7 +12,7 @@
   "keywords": [],
   "workspaces": {
     "nohoist": [
-      "**/@a2000/**"
+      "**/@a2000/styles"
     ]
   },
   "author": "Andrico Karoulla",

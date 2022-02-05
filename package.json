@@ -12,6 +12,7 @@
     "develop": "tsc -b ./tsconfig.packages.json --watch",
     "site:build": "yarn workspace site build",
     "site:develop": "yarn workspace site develop",
+    "site:preview": "yarn workspace site preview",
     "lint": "yarn eslint .",
     "test": "yarn build && wtr --coverage",
     "test:watch": "yarn build && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
