@@ -1,5 +1,14 @@
 # site
 
+## 1.0.7
+
+### Patch Changes
+
+- Updated dependencies [d32e157]
+- Updated dependencies [d32e157]
+  - @a2000/progress@0.0.2
+  - @a2000/window@0.0.9
+
 ## 1.0.6
 
 ### Patch Changes

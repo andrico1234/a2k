@@ -1,7 +1,7 @@
 {
   "name": "site",
   "private": true,
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -19,8 +19,8 @@
   "license": "ISC",
   "dependencies": {
     "@a2000/styles": "0.0.7",
-    "@a2000/progress": "0.0.1",
+    "@a2000/progress": "0.0.2",
     "@a2000/taskbar": "0.0.7",
-    "@a2000/window": "0.0.8"
+    "@a2000/window": "0.0.9"
   }
 }

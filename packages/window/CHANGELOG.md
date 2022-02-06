@@ -1,5 +1,11 @@
 # @a2000/window
 
+## 0.0.9
+
+### Patch Changes
+
+- d32e157: use correct typeface for window
+
 ## 0.0.8
 
 ### Patch Changes
