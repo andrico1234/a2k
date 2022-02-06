@@ -228,6 +228,7 @@ s.styles = a`
       top: 0;
       left: 0;
       width: var(--window-width);
+      max-width: 100%;
     }
     .content {
       padding: 0 var(--window-spacing-horizontal);
