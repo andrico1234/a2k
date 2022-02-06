@@ -12,6 +12,9 @@
     },
     {
       "path": "./packages/icons/tsconfig.json"
+    },
+    {
+      "path": "./packages/progress/tsconfig.json"
     }
   ]
 }
