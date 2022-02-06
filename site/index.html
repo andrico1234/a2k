@@ -33,5 +33,22 @@
       import "@a2000/taskbar/a2k-taskbar.js";
       import "@a2000/progress/a2k-progress.js";
     </script>
+
+    <script>
+      let progress = 0;
+      const intervalId = setInterval(() => {
+        const el = document.querySelector("a2k-progress");
+
+        if (!el) return;
+
+        progress = progress + 1.2;
+
+        el.setAttribute("progress", progress);
+
+        if (progress > 70) {
+          clearInterval(intervalId);
+        }
+      }, 100);
+    </script>
   </body>
 </html>

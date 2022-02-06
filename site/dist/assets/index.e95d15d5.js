@@ -5,7 +5,7 @@ import {
   e as s,
   i as K,
   y as B,
-  n as g,
+  n as w,
   t as Q,
   o as J,
 } from "./vendor.7a7d12ea.js";
@@ -56,14 +56,14 @@ R.styles = a`
     }
   `;
 window.customElements.define("a2k-stack", R);
-class j extends c {
+class P extends c {
   render() {
     return n` <div id="panel">
       <slot></slot>
     </div>`;
   }
 }
-j.styles = a`
+P.styles = a`
     #panel {
       --inset-shadow-padding: 2px;
       border: var(--window-border);
@@ -73,8 +73,8 @@ j.styles = a`
       padding-left: var(--inset-shadow-padding);
     }
   `;
-window.customElements.define("a2k-panel", j);
-class P extends c {
+window.customElements.define("a2k-panel", P);
+class j extends c {
   render() {
     return n`<div class="topbar-wrapper">
       <h2 class="heading">
@@ -83,7 +83,7 @@ class P extends c {
     </div>`;
   }
 }
-P.styles = a`
+j.styles = a`
     .topbar-wrapper {
       background: var(--window-topbar-background);
     }
@@ -95,8 +95,8 @@ P.styles = a`
       padding: 0 var(--window-spacing-horizontal);
     }
   `;
-window.customElements.define("a2k-window-topbar", P);
-var w =
+window.customElements.define("a2k-window-topbar", j);
+var y =
     (globalThis && globalThis.__decorate) ||
     function (h, t, e, r) {
       var l = arguments.length,
@@ -115,7 +115,7 @@ var w =
             (i = (l < 3 ? d(i) : l > 3 ? d(t, e, i) : d(t, e)) || i);
       return l > 3 && i && Object.defineProperty(t, e, i), i;
     },
-  y =
+  v =
     (globalThis && globalThis.__metadata) ||
     function (h, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
@@ -132,14 +132,14 @@ var w =
         );
       return e === "m" ? r : e === "a" ? r.call(h) : r ? r.value : t.get(h);
     },
-  v,
+  x,
   T,
   $,
   S;
-class f extends c {
+class g extends c {
   constructor() {
     super();
-    v.add(this),
+    x.add(this),
       (this.title = ""),
       (this.draggable = !0),
       (this.cursorPositionX = null),
@@ -154,7 +154,7 @@ class f extends c {
       { innerHeight: i, innerWidth: d } = window,
       o = this.renderRoot.querySelector("#window");
     if (!o) return;
-    const x = Number(r == null ? void 0 : r.replace("px", "")),
+    const f = Number(r == null ? void 0 : r.replace("px", "")),
       p = Number(l == null ? void 0 : l.replace("px", "")),
       { pageX: u, pageY: A } = e;
     if (
@@ -163,26 +163,26 @@ class f extends c {
       (u !== this.cursorPositionX || A !== this.cursorPositionY)
     ) {
       const {
-          bottom: Y,
-          right: U,
-          width: N,
+          bottom: N,
+          right: X,
+          width: Y,
           height: q,
         } = o.getBoundingClientRect(),
         C = u - this.cursorPositionX,
         k = A - this.cursorPositionY,
-        D = x + k < 0,
+        D = f + k < 0,
         H = p + C < 0,
-        _ = Y + k > i,
-        O = U + C > d,
+        _ = N + k > i,
+        O = X + C > d,
         G = _ || H || O || D;
       (this.cursorPositionX = u),
         (this.cursorPositionY = A),
         G
           ? (D && (this.styles = { top: "0px", left: `${p}px` }),
-            H && (this.styles = { top: `${x}px`, left: `${0}px` }),
+            H && (this.styles = { top: `${f}px`, left: `${0}px` }),
             _ && (this.styles = { top: `${i - q}px`, left: `${p}px` }),
-            O && (this.styles = { top: `${x}px`, left: `${d - N}px` }))
-          : (this.styles = { top: `${x + k}px`, left: `${p + C}px` });
+            O && (this.styles = { top: `${f}px`, left: `${d - Y}px` }))
+          : (this.styles = { top: `${f + k}px`, left: `${p + C}px` });
     }
   }
   render() {
@@ -190,9 +190,9 @@ class f extends c {
       <div id="window" style=${K(this.styles)}>
         <a2k-panel>
           <div
-            @dragstart="${V(this, v, "m", T)}"
-            @drag="${V(this, v, "m", $)}"
-            @dragend="${V(this, v, "m", S)}"
+            @dragstart="${V(this, x, "m", T)}"
+            @drag="${V(this, x, "m", $)}"
+            @dragend="${V(this, x, "m", S)}"
             class="topbar-wrapper"
             draggable="${this.draggable}"
           >
@@ -208,7 +208,7 @@ class f extends c {
     `;
   }
 }
-(v = new WeakSet()),
+(x = new WeakSet()),
   (T = function (t) {
     var e;
     (e = t.dataTransfer) === null ||
@@ -223,7 +223,7 @@ class f extends c {
   (S = function () {
     (this.cursorPositionX = null), (this.cursorPositionY = null);
   });
-f.styles = a`
+g.styles = a`
     #window {
       font-family: var(--font-primary);
       position: absolute;
@@ -236,17 +236,17 @@ f.styles = a`
       padding: 0 var(--window-spacing-horizontal);
     }
   `;
-w([s(), y("design:type", Object)], f.prototype, "title", void 0);
-w(
-  [s({ type: Boolean }), y("design:type", Object)],
-  f.prototype,
+y([s(), v("design:type", Object)], g.prototype, "title", void 0);
+y(
+  [s({ type: Boolean }), v("design:type", Object)],
+  g.prototype,
   "draggable",
   void 0
 );
-w([s(), y("design:type", Object)], f.prototype, "cursorPositionX", void 0);
-w([s(), y("design:type", Object)], f.prototype, "cursorPositionY", void 0);
-w([s(), y("design:type", Object)], f.prototype, "styles", void 0);
-window.customElements.define("a2k-window", f);
+y([s(), v("design:type", Object)], g.prototype, "cursorPositionX", void 0);
+y([s(), v("design:type", Object)], g.prototype, "cursorPositionY", void 0);
+y([s(), v("design:type", Object)], g.prototype, "styles", void 0);
+window.customElements.define("a2k-window", g);
 class it extends c {
   constructor() {
     super(...arguments);
@@ -716,7 +716,7 @@ b.styles = a`
     }
   `;
 z([s(), ht("design:type", Object)], b.prototype, "open", void 0);
-b = z([g("a2k-start-menu-item")], b);
+b = z([w("a2k-start-menu-item")], b);
 var W =
     (globalThis && globalThis.__decorate) ||
     function (h, t, e, r) {
@@ -816,7 +816,7 @@ m.styles = a`
     }
   `;
 W([s(), lt("design:type", Object)], m.prototype, "open", void 0);
-m = W([g("a2k-start-menu")], m);
+m = W([w("a2k-start-menu")], m);
 var L =
     (globalThis && globalThis.__decorate) ||
     function (h, t, e, r) {
@@ -910,7 +910,7 @@ M.styles = a`
     }
   `;
 L([Q(), rt("design:type", Object)], M.prototype, "_isMenuOpen", void 0);
-M = L([g("a2k-start-button")], M);
+M = L([w("a2k-start-button")], M);
 class dt {
   constructor(t, e = 1e3) {
     (this.value = new Date()),
@@ -945,7 +945,7 @@ var ot =
         (d = h[o]) && (i = (l < 3 ? d(i) : l > 3 ? d(t, e, i) : d(t, e)) || i);
     return l > 3 && i && Object.defineProperty(t, e, i), i;
   };
-let F = class extends c {
+let E = class extends c {
   constructor() {
     super(...arguments);
     this.clock = new dt(this);
@@ -955,7 +955,7 @@ let F = class extends c {
     return n`<div class="utility-bar">${t}</div>`;
   }
 };
-F.styles = a`
+E.styles = a`
     .utility-bar {
       --inset-shadow-padding: 2px;
 
@@ -968,13 +968,13 @@ F.styles = a`
       box-shadow: var(--taskbar-utility-bar-shadow);
     }
   `;
-F = ot([g("a2k-utility-bar")], F);
+E = ot([w("a2k-utility-bar")], E);
 const ct = new Intl.DateTimeFormat("en-US", {
   hour: "numeric",
   minute: "numeric",
   second: "numeric",
 });
-class I extends c {
+class U extends c {
   render() {
     return n`<div class="taskbar">
       <a2k-start-button></a2k-start-button>
@@ -982,7 +982,7 @@ class I extends c {
     </div>`;
   }
 }
-I.styles = a`
+U.styles = a`
     .taskbar {
       --inset-shadow-padding: 2px;
 
@@ -1003,8 +1003,8 @@ I.styles = a`
       justify-content: space-between;
     }
   `;
-window.customElements.define("a2k-taskbar", I);
-var X =
+window.customElements.define("a2k-taskbar", U);
+var I =
     (globalThis && globalThis.__decorate) ||
     function (h, t, e, r) {
       var l = arguments.length,
@@ -1047,27 +1047,27 @@ let Z = class extends c {
 };
 Z.styles = a`
     #unit {
-      width: 12px;
+      width: var(--progress-unit-width);
       height: 100%;
       display: flex;
       flex-direction: row;
     }
 
     #unit > div {
-      width: 6px;
+      width: calc(var(--progress-unit-width) / 2);
       height: 100%;
     }
 
     .half-filled > div:first-child {
-      background: var(--color-blue-100);
+      background: var(--progress-unit-background);
     }
 
     .filled > :last-child {
-      background: var(--color-blue-100);
+      background: var(--progress-unit-background);
     }
   `;
-X([s(), at("design:type", String)], Z.prototype, "filled", void 0);
-Z = X([g("a2k-progress-unit")], Z);
+I([s(), at("design:type", String)], Z.prototype, "filled", void 0);
+Z = I([w("a2k-progress-unit")], Z);
 var nt =
     (globalThis && globalThis.__decorate) ||
     function (h, t, e, r) {
@@ -1093,53 +1093,75 @@ var nt =
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
         return Reflect.metadata(h, t);
     };
-class E extends c {
+class F extends c {
   constructor() {
     super(...arguments);
     (this.progress = 0), (this.width = 0);
   }
   async firstUpdated() {
+    this.generateProgressUnits();
+  }
+  async updated(t) {
+    t.has("progress") && this.updateProgressUnits();
+  }
+  async generateProgressUnits() {
     var t;
     const e = this.renderRoot.querySelector("#progress");
+    if (!e) return;
     await this.updateComplete;
     const r =
-      (t = e == null ? void 0 : e.getBoundingClientRect().width) !== null &&
-      t !== void 0
-        ? t
-        : 0;
+      (t = e.getBoundingClientRect().width) !== null && t !== void 0 ? t : 0;
     if (this.width === r) return;
     this.width = r;
-    const l = Math.ceil(r / 14);
-    Array(l)
+    const { gap: l } = getComputedStyle(e),
+      d = Number(l.replace("px", "")) + 12,
+      o = Math.ceil(r / d);
+    Array(o)
       .fill(0)
       .forEach(() => {
-        const i = document.createElement("a2k-progress-unit");
-        i.setAttribute("filled", "filled"), e == null || e.appendChild(i);
+        const f = document.createElement("a2k-progress-unit");
+        f.setAttribute("filled", "none"), e == null || e.appendChild(f);
       });
+  }
+  async updateProgressUnits() {
+    await this.updateComplete;
+    const t = this.renderRoot.querySelectorAll("a2k-progress-unit"),
+      e = (this.progress / 100) * t.length,
+      r = ft(e),
+      l = Math.floor(e);
+    t.forEach((i, d) => {
+      d < l
+        ? i.setAttribute("filled", "filled")
+        : d === l && r >= 0.5
+        ? i.setAttribute("filled", "half")
+        : i.setAttribute("filled", "none");
+    });
   }
   render() {
     return n`<div id="progress" role="progress"></div>`;
   }
 }
-E.styles = a`
+F.styles = a`
     #progress {
       width: 100%;
+      box-sizing: border-box;
       display: flex;
-      box-shadow: var(--shadow-inset-medium);
+      box-shadow: var(--progress-shadow);
       padding-left: 3px;
-      padding-right: 2px;
+      padding-right: 1px;
       padding-bottom: 2px;
       padding-top: 3px;
-      height: 24px;
-      border-right: 1px solid white;
-      gap: 2px;
+      height: var(--progress-height);
+      border-right: var(--progress-border-right);
+      gap: var(--progress-contents-gap);
       overflow: hidden;
     }
   `;
 nt(
   [s({ type: Number }), st("design:type", Object)],
-  E.prototype,
+  F.prototype,
   "progress",
   void 0
 );
-window.customElements.define("a2k-progress", E);
+const ft = (h) => Math.floor((h % 1) * 10) / 10;
+window.customElements.define("a2k-progress", F);

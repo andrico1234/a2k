@@ -11,9 +11,9 @@
       name="description"
       content="A demo to recreate the magic of early-2000s era Windows using web technologies"
     />
-    <script type="module" crossorigin src="/assets/index.15f063c6.js"></script>
+    <script type="module" crossorigin src="/assets/index.e95d15d5.js"></script>
     <link rel="modulepreload" href="/assets/vendor.7a7d12ea.js">
-    <link rel="stylesheet" href="/assets/index.48cf2e24.css">
+    <link rel="stylesheet" href="/assets/index.c9b2a4d6.css">
   </head>
   <body>
     <div class="desktop"></div>
@@ -32,5 +32,22 @@
     </a2k-window>
 
     
+
+    <script>
+      let progress = 0;
+      const intervalId = setInterval(() => {
+        const el = document.querySelector("a2k-progress");
+
+        if (!el) return;
+
+        progress = progress + 1.2;
+
+        el.setAttribute("progress", progress);
+
+        if (progress > 70) {
+          clearInterval(intervalId);
+        }
+      }, 100);
+    </script>
   </body>
 </html>

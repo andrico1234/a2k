@@ -3,19 +3,21 @@ import { property } from "lit/decorators.js";
 
 import "./ProgressUnit";
 
+// TODO: update this to have an automatic progress API
 export class A2kProgress extends LitElement {
   static styles = css`
     #progress {
       width: 100%;
+      box-sizing: border-box;
       display: flex;
-      box-shadow: var(--shadow-inset-medium);
+      box-shadow: var(--progress-shadow);
       padding-left: 3px;
-      padding-right: 2px;
+      padding-right: 1px;
       padding-bottom: 2px;
       padding-top: 3px;
-      height: 24px;
-      border-right: 1px solid white;
-      gap: 2px;
+      height: var(--progress-height);
+      border-right: var(--progress-border-right);
+      gap: var(--progress-contents-gap);
       overflow: hidden;
     }
   `;
@@ -26,31 +28,71 @@ export class A2kProgress extends LitElement {
   width = 0;
 
   protected async firstUpdated() {
+    this.generateProgressUnits();
+  }
+
+  protected async updated(
+    _changedProperties: Map<string | number | symbol, unknown>
+  ) {
+    if (_changedProperties.has("progress")) {
+      this.updateProgressUnits();
+    }
+  }
+
+  private async generateProgressUnits() {
     const component = this.renderRoot.querySelector("#progress");
+    if (!component) return;
 
     await this.updateComplete;
 
-    const width = component?.getBoundingClientRect().width ?? 0;
+    const width = component.getBoundingClientRect().width ?? 0;
 
     if (this.width === width) return;
 
     this.width = width;
 
-    const elementCount = Math.ceil(width / 14);
+    const { gap } = getComputedStyle(component);
+    const gapNumber = Number(gap.replace("px", ""));
 
-    // Generate the number elements
+    // TODO: Get this value at run time, since 12 is the width defined in the style file
+    const elWidth = gapNumber + 12;
+    const elementCount = Math.ceil(width / elWidth);
 
     Array(elementCount)
       .fill(0)
       .forEach(() => {
         const progressUnit = document.createElement("a2k-progress-unit");
-        progressUnit.setAttribute("filled", "filled");
+        // change this to none
+        progressUnit.setAttribute("filled", "none");
 
         component?.appendChild(progressUnit);
       });
+  }
+
+  private async updateProgressUnits() {
+    await this.updateComplete;
+
+    const unitEls = this.renderRoot.querySelectorAll("a2k-progress-unit");
+    const unitsToDisplayDecimal = (this.progress / 100) * unitEls.length;
+    const remainder = getRemainder(unitsToDisplayDecimal);
+    const unitsToDisplay = Math.floor(unitsToDisplayDecimal);
+
+    unitEls.forEach((unit, i) => {
+      if (i < unitsToDisplay) {
+        unit.setAttribute("filled", "filled");
+      } else if (i === unitsToDisplay && remainder >= 0.5) {
+        unit.setAttribute("filled", "half");
+      } else {
+        unit.setAttribute("filled", "none");
+      }
+    });
   }
 
   render() {
     return html`<div id="progress" role="progress"></div>`;
   }
 }
+
+const getRemainder = (number: number) => {
+  return Math.floor((number % 1) * 10) / 10;
+};
