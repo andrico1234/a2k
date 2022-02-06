@@ -1,7 +1,7 @@
 {
   "name": "site",
   "private": true,
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,6 @@
   "dependencies": {
     "@a2000/styles": "0.0.7",
     "@a2000/taskbar": "0.0.7",
-    "@a2000/window": "0.0.7"
+    "@a2000/window": "0.0.8"
   }
 }
