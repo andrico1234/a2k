@@ -1,14 +1,15 @@
 import {
   r as a,
-  s as o,
+  s as c,
   p as n,
-  e as f,
-  i as q,
-  y as _,
-  n as A,
-  t as U,
-} from "./vendor.c532821f.js";
-const G = function () {
+  e as s,
+  i as K,
+  y as B,
+  n as g,
+  t as Q,
+  o as J,
+} from "./vendor.7a7d12ea.js";
+const tt = function () {
   const t = document.createElement("link").relList;
   if (t && t.supports && t.supports("modulepreload")) return;
   for (const l of document.querySelectorAll('link[rel="modulepreload"]')) r(l);
@@ -18,7 +19,7 @@ const G = function () {
         for (const d of i.addedNodes)
           d.tagName === "LINK" && d.rel === "modulepreload" && r(d);
   }).observe(document, { childList: !0, subtree: !0 });
-  function h(l) {
+  function e(l) {
     const i = {};
     return (
       l.integrity && (i.integrity = l.integrity),
@@ -34,19 +35,19 @@ const G = function () {
   function r(l) {
     if (l.ep) return;
     l.ep = !0;
-    const i = h(l);
+    const i = e(l);
     fetch(l.href, i);
   }
 };
-G();
-class B extends o {
+tt();
+class R extends c {
   render() {
     return n`<div id="stack">
       <slot></slot>
     </div>`;
   }
 }
-B.styles = a`
+R.styles = a`
     #stack {
       display: flex;
       flex-direction: column;
@@ -54,15 +55,15 @@ B.styles = a`
       gap: var(--stack-spacing-top) !important;
     }
   `;
-window.customElements.define("a2k-stack", B);
-class O extends o {
+window.customElements.define("a2k-stack", R);
+class j extends c {
   render() {
     return n` <div id="panel">
       <slot></slot>
     </div>`;
   }
 }
-O.styles = a`
+j.styles = a`
     #panel {
       --inset-shadow-padding: 2px;
       border: var(--window-border);
@@ -72,8 +73,8 @@ O.styles = a`
       padding-left: var(--inset-shadow-padding);
     }
   `;
-window.customElements.define("a2k-panel", O);
-class P extends o {
+window.customElements.define("a2k-panel", j);
+class P extends c {
   render() {
     return n`<div class="topbar-wrapper">
       <h2 class="heading">
@@ -95,50 +96,50 @@ P.styles = a`
     }
   `;
 window.customElements.define("a2k-window-topbar", P);
-var g =
+var w =
     (globalThis && globalThis.__decorate) ||
-    function (e, t, h, r) {
+    function (h, t, e, r) {
       var l = arguments.length,
         i =
           l < 3
             ? t
             : r === null
-            ? (r = Object.getOwnPropertyDescriptor(t, h))
+            ? (r = Object.getOwnPropertyDescriptor(t, e))
             : r,
         d;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        i = Reflect.decorate(e, t, h, r);
+        i = Reflect.decorate(h, t, e, r);
       else
-        for (var c = e.length - 1; c >= 0; c--)
-          (d = e[c]) &&
-            (i = (l < 3 ? d(i) : l > 3 ? d(t, h, i) : d(t, h)) || i);
-      return l > 3 && i && Object.defineProperty(t, h, i), i;
+        for (var o = h.length - 1; o >= 0; o--)
+          (d = h[o]) &&
+            (i = (l < 3 ? d(i) : l > 3 ? d(t, e, i) : d(t, e)) || i);
+      return l > 3 && i && Object.defineProperty(t, e, i), i;
     },
-  w =
+  y =
     (globalThis && globalThis.__metadata) ||
-    function (e, t) {
+    function (h, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(e, t);
+        return Reflect.metadata(h, t);
     },
-  k =
+  V =
     (globalThis && globalThis.__classPrivateFieldGet) ||
-    function (e, t, h, r) {
-      if (h === "a" && !r)
+    function (h, t, e, r) {
+      if (e === "a" && !r)
         throw new TypeError("Private accessor was defined without a getter");
-      if (typeof t == "function" ? e !== t || !r : !t.has(e))
+      if (typeof t == "function" ? h !== t || !r : !t.has(h))
         throw new TypeError(
           "Cannot read private member from an object whose class did not declare it"
         );
-      return h === "m" ? r : h === "a" ? r.call(e) : r ? r.value : t.get(e);
+      return e === "m" ? r : e === "a" ? r.call(h) : r ? r.value : t.get(h);
     },
-  y,
-  R,
+  v,
+  T,
   $,
-  j;
-class s extends o {
+  S;
+class f extends c {
   constructor() {
     super();
-    y.add(this),
+    v.add(this),
       (this.title = ""),
       (this.draggable = !0),
       (this.cursorPositionX = null),
@@ -148,50 +149,50 @@ class s extends o {
       (this.img.src =
         "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7");
   }
-  handleWindowMove(t, h) {
+  handleWindowMove(t, e) {
     const { top: r, left: l } = this.styles,
       { innerHeight: i, innerWidth: d } = window,
-      c = this.renderRoot.querySelector("#window");
-    if (!c) return;
+      o = this.renderRoot.querySelector("#window");
+    if (!o) return;
     const x = Number(r == null ? void 0 : r.replace("px", "")),
-      v = Number(l == null ? void 0 : l.replace("px", "")),
-      { pageX: p, pageY: u } = h;
+      p = Number(l == null ? void 0 : l.replace("px", "")),
+      { pageX: u, pageY: A } = e;
     if (
-      p !== 0 &&
       u !== 0 &&
-      (p !== this.cursorPositionX || u !== this.cursorPositionY)
+      A !== 0 &&
+      (u !== this.cursorPositionX || A !== this.cursorPositionY)
     ) {
       const {
-          bottom: L,
-          right: I,
-          width: X,
-          height: Y,
-        } = c.getBoundingClientRect(),
-        Z = p - this.cursorPositionX,
-        C = u - this.cursorPositionY,
-        F = x + C < 0,
-        E = v + Z < 0,
-        D = L + C > i,
-        H = I + Z > d,
-        N = D || E || H || F;
-      (this.cursorPositionX = p),
-        (this.cursorPositionY = u),
-        N
-          ? (F && (this.styles = { top: "0px", left: `${v}px` }),
-            E && (this.styles = { top: `${x}px`, left: `${0}px` }),
-            D && (this.styles = { top: `${i - Y}px`, left: `${v}px` }),
-            H && (this.styles = { top: `${x}px`, left: `${d - X}px` }))
-          : (this.styles = { top: `${x + C}px`, left: `${v + Z}px` });
+          bottom: Y,
+          right: U,
+          width: N,
+          height: q,
+        } = o.getBoundingClientRect(),
+        C = u - this.cursorPositionX,
+        k = A - this.cursorPositionY,
+        D = x + k < 0,
+        H = p + C < 0,
+        _ = Y + k > i,
+        O = U + C > d,
+        G = _ || H || O || D;
+      (this.cursorPositionX = u),
+        (this.cursorPositionY = A),
+        G
+          ? (D && (this.styles = { top: "0px", left: `${p}px` }),
+            H && (this.styles = { top: `${x}px`, left: `${0}px` }),
+            _ && (this.styles = { top: `${i - q}px`, left: `${p}px` }),
+            O && (this.styles = { top: `${x}px`, left: `${d - N}px` }))
+          : (this.styles = { top: `${x + k}px`, left: `${p + C}px` });
     }
   }
   render() {
     return n`
-      <div id="window" style=${q(this.styles)}>
+      <div id="window" style=${K(this.styles)}>
         <a2k-panel>
           <div
-            @dragstart="${k(this, y, "m", R)}"
-            @drag="${k(this, y, "m", $)}"
-            @dragend="${k(this, y, "m", j)}"
+            @dragstart="${V(this, v, "m", T)}"
+            @drag="${V(this, v, "m", $)}"
+            @dragend="${V(this, v, "m", S)}"
             class="topbar-wrapper"
             draggable="${this.draggable}"
           >
@@ -207,23 +208,24 @@ class s extends o {
     `;
   }
 }
-(y = new WeakSet()),
-  (R = function (t) {
-    var h;
-    (h = t.dataTransfer) === null ||
-      h === void 0 ||
-      h.setDragImage(this.img, 0, 0),
+(v = new WeakSet()),
+  (T = function (t) {
+    var e;
+    (e = t.dataTransfer) === null ||
+      e === void 0 ||
+      e.setDragImage(this.img, 0, 0),
       (this.cursorPositionX = t.pageX),
       (this.cursorPositionY = t.pageY);
   }),
   ($ = function (t) {
-    window.requestAnimationFrame((h) => this.handleWindowMove(h, t));
+    window.requestAnimationFrame((e) => this.handleWindowMove(e, t));
   }),
-  (j = function () {
+  (S = function () {
     (this.cursorPositionX = null), (this.cursorPositionY = null);
   });
-s.styles = a`
+f.styles = a`
     #window {
+      font-family: var(--font-primary);
       position: absolute;
       top: 0;
       left: 0;
@@ -234,24 +236,24 @@ s.styles = a`
       padding: 0 var(--window-spacing-horizontal);
     }
   `;
-g([f(), w("design:type", Object)], s.prototype, "title", void 0);
-g(
-  [f({ type: Boolean }), w("design:type", Object)],
-  s.prototype,
+w([s(), y("design:type", Object)], f.prototype, "title", void 0);
+w(
+  [s({ type: Boolean }), y("design:type", Object)],
+  f.prototype,
   "draggable",
   void 0
 );
-g([f(), w("design:type", Object)], s.prototype, "cursorPositionX", void 0);
-g([f(), w("design:type", Object)], s.prototype, "cursorPositionY", void 0);
-g([f(), w("design:type", Object)], s.prototype, "styles", void 0);
-window.customElements.define("a2k-window", s);
-class K extends o {
+w([s(), y("design:type", Object)], f.prototype, "cursorPositionX", void 0);
+w([s(), y("design:type", Object)], f.prototype, "cursorPositionY", void 0);
+w([s(), y("design:type", Object)], f.prototype, "styles", void 0);
+window.customElements.define("a2k-window", f);
+class it extends c {
   constructor() {
     super(...arguments);
     (this.width = 16), (this.height = 14);
   }
   render() {
-    return _`
+    return B`
     <svg
     styles="width:auto"
     viewBox="0 0 ${this.width} ${this.height}"
@@ -295,14 +297,14 @@ class K extends o {
     `;
   }
 }
-window.customElements.define("a2k-windows-logo", K);
-class Q extends o {
+window.customElements.define("a2k-windows-logo", it);
+class et extends c {
   constructor() {
     super(...arguments);
     (this.width = 24), (this.height = 24);
   }
   render() {
-    return _`
+    return B`
     <svg
     styles="width:auto"
     viewBox="0 0 ${this.width} ${this.height}"
@@ -630,33 +632,33 @@ class Q extends o {
     `;
   }
 }
-window.customElements.define("a2k-help-logo", Q);
-var T =
+window.customElements.define("a2k-help-logo", et);
+var z =
     (globalThis && globalThis.__decorate) ||
-    function (e, t, h, r) {
+    function (h, t, e, r) {
       var l = arguments.length,
         i =
           l < 3
             ? t
             : r === null
-            ? (r = Object.getOwnPropertyDescriptor(t, h))
+            ? (r = Object.getOwnPropertyDescriptor(t, e))
             : r,
         d;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        i = Reflect.decorate(e, t, h, r);
+        i = Reflect.decorate(h, t, e, r);
       else
-        for (var c = e.length - 1; c >= 0; c--)
-          (d = e[c]) &&
-            (i = (l < 3 ? d(i) : l > 3 ? d(t, h, i) : d(t, h)) || i);
-      return l > 3 && i && Object.defineProperty(t, h, i), i;
+        for (var o = h.length - 1; o >= 0; o--)
+          (d = h[o]) &&
+            (i = (l < 3 ? d(i) : l > 3 ? d(t, e, i) : d(t, e)) || i);
+      return l > 3 && i && Object.defineProperty(t, e, i), i;
     },
-  J =
+  ht =
     (globalThis && globalThis.__metadata) ||
-    function (e, t) {
+    function (h, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(e, t);
+        return Reflect.metadata(h, t);
     };
-let b = class extends o {
+let b = class extends c {
   constructor() {
     super(...arguments);
     this.open = !1;
@@ -713,34 +715,34 @@ b.styles = a`
       margin: 0;
     }
   `;
-T([f(), J("design:type", Object)], b.prototype, "open", void 0);
-b = T([A("a2k-start-menu-item")], b);
-var z =
+z([s(), ht("design:type", Object)], b.prototype, "open", void 0);
+b = z([g("a2k-start-menu-item")], b);
+var W =
     (globalThis && globalThis.__decorate) ||
-    function (e, t, h, r) {
+    function (h, t, e, r) {
       var l = arguments.length,
         i =
           l < 3
             ? t
             : r === null
-            ? (r = Object.getOwnPropertyDescriptor(t, h))
+            ? (r = Object.getOwnPropertyDescriptor(t, e))
             : r,
         d;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        i = Reflect.decorate(e, t, h, r);
+        i = Reflect.decorate(h, t, e, r);
       else
-        for (var c = e.length - 1; c >= 0; c--)
-          (d = e[c]) &&
-            (i = (l < 3 ? d(i) : l > 3 ? d(t, h, i) : d(t, h)) || i);
-      return l > 3 && i && Object.defineProperty(t, h, i), i;
+        for (var o = h.length - 1; o >= 0; o--)
+          (d = h[o]) &&
+            (i = (l < 3 ? d(i) : l > 3 ? d(t, e, i) : d(t, e)) || i);
+      return l > 3 && i && Object.defineProperty(t, e, i), i;
     },
-  tt =
+  lt =
     (globalThis && globalThis.__metadata) ||
-    function (e, t) {
+    function (h, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(e, t);
+        return Reflect.metadata(h, t);
     };
-let M = class extends o {
+let m = class extends c {
   constructor() {
     super(...arguments);
     this.open = !1;
@@ -778,7 +780,7 @@ let M = class extends o {
     `;
   }
 };
-M.styles = a`
+m.styles = a`
     #start-menu {
       width: var(--start-menu-height);
       position: absolute;
@@ -813,34 +815,34 @@ M.styles = a`
       padding-inline-start: var(--spacing-50);
     }
   `;
-z([f(), tt("design:type", Object)], M.prototype, "open", void 0);
-M = z([A("a2k-start-menu")], M);
-var S =
+W([s(), lt("design:type", Object)], m.prototype, "open", void 0);
+m = W([g("a2k-start-menu")], m);
+var L =
     (globalThis && globalThis.__decorate) ||
-    function (e, t, h, r) {
+    function (h, t, e, r) {
       var l = arguments.length,
         i =
           l < 3
             ? t
             : r === null
-            ? (r = Object.getOwnPropertyDescriptor(t, h))
+            ? (r = Object.getOwnPropertyDescriptor(t, e))
             : r,
         d;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        i = Reflect.decorate(e, t, h, r);
+        i = Reflect.decorate(h, t, e, r);
       else
-        for (var c = e.length - 1; c >= 0; c--)
-          (d = e[c]) &&
-            (i = (l < 3 ? d(i) : l > 3 ? d(t, h, i) : d(t, h)) || i);
-      return l > 3 && i && Object.defineProperty(t, h, i), i;
+        for (var o = h.length - 1; o >= 0; o--)
+          (d = h[o]) &&
+            (i = (l < 3 ? d(i) : l > 3 ? d(t, e, i) : d(t, e)) || i);
+      return l > 3 && i && Object.defineProperty(t, e, i), i;
     },
-  it =
+  rt =
     (globalThis && globalThis.__metadata) ||
-    function (e, t) {
+    function (h, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(e, t);
+        return Reflect.metadata(h, t);
     };
-let m = class extends o {
+let M = class extends c {
   constructor() {
     super(...arguments);
     (this._hideOnClickOutside = (t) => {
@@ -871,7 +873,7 @@ let m = class extends o {
     `;
   }
 };
-m.styles = a`
+M.styles = a`
     .wrapper {
       position: relative;
       height: 100%;
@@ -907,14 +909,14 @@ m.styles = a`
       width: var(--taskbar-start-button-icon-size);
     }
   `;
-S([U(), it("design:type", Object)], m.prototype, "_isMenuOpen", void 0);
-m = S([A("a2k-start-button")], m);
-class et {
-  constructor(t, h = 1e3) {
+L([Q(), rt("design:type", Object)], M.prototype, "_isMenuOpen", void 0);
+M = L([g("a2k-start-button")], M);
+class dt {
+  constructor(t, e = 1e3) {
     (this.value = new Date()),
       (this.host = t),
       this.host.addController(this),
-      (this.timeout = h);
+      (this.timeout = e);
   }
   hostConnected() {
     this.intervalId = setInterval(() => {
@@ -925,35 +927,35 @@ class et {
     clearInterval(this.intervalId), (this.intervalId = void 0);
   }
 }
-var ht =
+var ot =
   (globalThis && globalThis.__decorate) ||
-  function (e, t, h, r) {
+  function (h, t, e, r) {
     var l = arguments.length,
       i =
         l < 3
           ? t
           : r === null
-          ? (r = Object.getOwnPropertyDescriptor(t, h))
+          ? (r = Object.getOwnPropertyDescriptor(t, e))
           : r,
       d;
     if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-      i = Reflect.decorate(e, t, h, r);
+      i = Reflect.decorate(h, t, e, r);
     else
-      for (var c = e.length - 1; c >= 0; c--)
-        (d = e[c]) && (i = (l < 3 ? d(i) : l > 3 ? d(t, h, i) : d(t, h)) || i);
-    return l > 3 && i && Object.defineProperty(t, h, i), i;
+      for (var o = h.length - 1; o >= 0; o--)
+        (d = h[o]) && (i = (l < 3 ? d(i) : l > 3 ? d(t, e, i) : d(t, e)) || i);
+    return l > 3 && i && Object.defineProperty(t, e, i), i;
   };
-let V = class extends o {
+let F = class extends c {
   constructor() {
     super(...arguments);
-    this.clock = new et(this);
+    this.clock = new dt(this);
   }
   render() {
-    const t = lt.format(this.clock.value);
+    const t = ct.format(this.clock.value);
     return n`<div class="utility-bar">${t}</div>`;
   }
 };
-V.styles = a`
+F.styles = a`
     .utility-bar {
       --inset-shadow-padding: 2px;
 
@@ -966,13 +968,13 @@ V.styles = a`
       box-shadow: var(--taskbar-utility-bar-shadow);
     }
   `;
-V = ht([A("a2k-utility-bar")], V);
-const lt = new Intl.DateTimeFormat("en-US", {
+F = ot([g("a2k-utility-bar")], F);
+const ct = new Intl.DateTimeFormat("en-US", {
   hour: "numeric",
   minute: "numeric",
   second: "numeric",
 });
-class W extends o {
+class I extends c {
   render() {
     return n`<div class="taskbar">
       <a2k-start-button></a2k-start-button>
@@ -980,7 +982,7 @@ class W extends o {
     </div>`;
   }
 }
-W.styles = a`
+I.styles = a`
     .taskbar {
       --inset-shadow-padding: 2px;
 
@@ -1001,4 +1003,143 @@ W.styles = a`
       justify-content: space-between;
     }
   `;
-window.customElements.define("a2k-taskbar", W);
+window.customElements.define("a2k-taskbar", I);
+var X =
+    (globalThis && globalThis.__decorate) ||
+    function (h, t, e, r) {
+      var l = arguments.length,
+        i =
+          l < 3
+            ? t
+            : r === null
+            ? (r = Object.getOwnPropertyDescriptor(t, e))
+            : r,
+        d;
+      if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
+        i = Reflect.decorate(h, t, e, r);
+      else
+        for (var o = h.length - 1; o >= 0; o--)
+          (d = h[o]) &&
+            (i = (l < 3 ? d(i) : l > 3 ? d(t, e, i) : d(t, e)) || i);
+      return l > 3 && i && Object.defineProperty(t, e, i), i;
+    },
+  at =
+    (globalThis && globalThis.__metadata) ||
+    function (h, t) {
+      if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
+        return Reflect.metadata(h, t);
+    };
+let Z = class extends c {
+  constructor() {
+    super(...arguments);
+    this.filled = "none";
+  }
+  render() {
+    const t = {
+      "half-filled": this.filled !== "none",
+      filled: this.filled === "filled",
+    };
+    return n`<div class=${J(t)} id="unit">
+      <div></div>
+      <div></div>
+    </div>`;
+  }
+};
+Z.styles = a`
+    #unit {
+      width: 12px;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+    }
+
+    #unit > div {
+      width: 6px;
+      height: 100%;
+    }
+
+    .half-filled > div:first-child {
+      background: var(--color-blue-100);
+    }
+
+    .filled > :last-child {
+      background: var(--color-blue-100);
+    }
+  `;
+X([s(), at("design:type", String)], Z.prototype, "filled", void 0);
+Z = X([g("a2k-progress-unit")], Z);
+var nt =
+    (globalThis && globalThis.__decorate) ||
+    function (h, t, e, r) {
+      var l = arguments.length,
+        i =
+          l < 3
+            ? t
+            : r === null
+            ? (r = Object.getOwnPropertyDescriptor(t, e))
+            : r,
+        d;
+      if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
+        i = Reflect.decorate(h, t, e, r);
+      else
+        for (var o = h.length - 1; o >= 0; o--)
+          (d = h[o]) &&
+            (i = (l < 3 ? d(i) : l > 3 ? d(t, e, i) : d(t, e)) || i);
+      return l > 3 && i && Object.defineProperty(t, e, i), i;
+    },
+  st =
+    (globalThis && globalThis.__metadata) ||
+    function (h, t) {
+      if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
+        return Reflect.metadata(h, t);
+    };
+class E extends c {
+  constructor() {
+    super(...arguments);
+    (this.progress = 0), (this.width = 0);
+  }
+  async firstUpdated() {
+    var t;
+    const e = this.renderRoot.querySelector("#progress");
+    await this.updateComplete;
+    const r =
+      (t = e == null ? void 0 : e.getBoundingClientRect().width) !== null &&
+      t !== void 0
+        ? t
+        : 0;
+    if (this.width === r) return;
+    this.width = r;
+    const l = Math.ceil(r / 14);
+    Array(l)
+      .fill(0)
+      .forEach(() => {
+        const i = document.createElement("a2k-progress-unit");
+        i.setAttribute("filled", "filled"), e == null || e.appendChild(i);
+      });
+  }
+  render() {
+    return n`<div id="progress" role="progress"></div>`;
+  }
+}
+E.styles = a`
+    #progress {
+      width: 100%;
+      display: flex;
+      box-shadow: var(--shadow-inset-medium);
+      padding-left: 3px;
+      padding-right: 2px;
+      padding-bottom: 2px;
+      padding-top: 3px;
+      height: 24px;
+      border-right: 1px solid white;
+      gap: 2px;
+      overflow: hidden;
+    }
+  `;
+nt(
+  [s({ type: Number }), st("design:type", Object)],
+  E.prototype,
+  "progress",
+  void 0
+);
+window.customElements.define("a2k-progress", E);

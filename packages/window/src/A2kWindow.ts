@@ -10,6 +10,7 @@ import "./a2k-window-topbar";
 export class A2kWindow extends LitElement {
   static styles = css`
     #window {
+      font-family: var(--font-primary);
       position: absolute;
       top: 0;
       left: 0;
