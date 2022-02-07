@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.8
+
+### Patch Changes
+
+- 96f9c3e: improve styles for progress component
+
 ## 0.0.7
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # site
 
+## 1.0.8
+
+### Patch Changes
+
+- Updated dependencies [96f9c3e]
+  - @a2000/progress@0.0.3
+  - @a2000/styles@0.0.8
+
 ## 1.0.7
 
 ### Patch Changes
