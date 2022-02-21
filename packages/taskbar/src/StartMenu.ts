@@ -4,6 +4,9 @@ import { customElement, property } from "lit/decorators.js";
 import "@a2000/stack/a2k-stack.js";
 import "@a2000/panel/a2k-panel.js";
 import "@a2000/icons/help-logo";
+import "@a2000/icons/twitter-logo";
+import "@a2000/icons/network-icon";
+import "@a2000/icons/documents-icon";
 
 import "./StartMenuItem";
 
@@ -19,6 +22,11 @@ export class StartMenu extends LitElement {
 
     #start-menu.open {
       display: block;
+    }
+
+    #start-menu a {
+      text-decoration: none;
+      color: var(--font-color);
     }
 
     #content {
@@ -63,16 +71,22 @@ export class StartMenu extends LitElement {
             <div id="stack-wrapper">
               <a2k-stack>
                 <a2k-start-menu-item>
-                  <div slot="icon"><a2k-help-logo /></div>
-                  Help
+                  <div slot="icon"><a2k-documents-icon /></div>
+                  Portfolio
+                </a2k-start-menu-item>
+                <a target="_blank" href="https://twitter.com/andricokaroulla" rel="noreferrer noopener">
+                  <a2k-start-menu-item>
+                    <div slot="icon"><a2k-twitter-logo /></div>
+                    Twitter
+                  </a2k-start-menu-item>
+                </a>
+                <a2k-start-menu-item>
+                  <div slot="icon"><a2k-network-icon /></div>
+                  Contact
                 </a2k-start-menu-item>
                 <a2k-start-menu-item>
                   <div slot="icon"><a2k-help-logo /></div>
-                  Help
-                </a2k-start-menu-item>
-                <a2k-start-menu-item>
-                  <div slot="icon"><a2k-help-logo /></div>
-                  Help
+                  About
                 </a2k-start-menu-item>
               </a2k-stack>
             </div>
