@@ -48,14 +48,14 @@ export class StartMenu extends LitElement {
 
   render() {
     return html`
-      <button id="start-menu-item">
+      <div id="start-menu-item">
         <div id="icon-wrapper">
           <slot name="icon"></slot>
         </div>
         <p id="text-wrapper">
           <slot> </slot>
         </p>
-      </button>
+      </div>
     `;
   }
 }

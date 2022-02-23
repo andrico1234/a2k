@@ -13,6 +13,9 @@
     },
     {
       "path": "../stack"
+    },
+    {
+      "path": "../window"
     }
   ],
   "include": ["src/**/*.ts", "index.ts", "typings"],

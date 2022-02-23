@@ -7,13 +7,13 @@ import "@a2000/panel/a2k-panel.js";
 
 import "./a2k-window-topbar";
 
+// TODO: add a window context that tracks the active states of the windows and adjust their position in the stacks accordingly
+// When adding a new one, increate the initial left and top position by a few pixels
 export class A2kWindow extends LitElement {
   static styles = css`
     #window {
       font-family: var(--font-primary);
       position: absolute;
-      top: 0;
-      left: 0;
       width: var(--window-width);
       max-width: 100%;
     }
@@ -36,10 +36,14 @@ export class A2kWindow extends LitElement {
   @property()
   cursorPositionY: number | null = null;
 
+  @property({ type: Boolean })
+  closable = false;
+
   @property()
+  // Edit this so it's horizontally center on load
   styles: StyleInfo = {
-    top: "0px",
-    left: "0px",
+    top: "16px",
+    left: "16px",
     width: "var(--window-width)",
   };
 
@@ -49,6 +53,10 @@ export class A2kWindow extends LitElement {
 
     this.img.src =
       "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
+    this.addEventListener("close", (e) => {
+      return this.remove();
+    });
   }
 
   handleWindowMove(time: number, ev: DragEvent) {
@@ -150,7 +158,9 @@ export class A2kWindow extends LitElement {
             class="topbar-wrapper"
             draggable="${this.draggable}"
           >
-            <a2k-window-topbar>${this.title}</a2k-window-topbar>
+            <a2k-window-topbar ?closable="${this.closable}"
+              >${this.title}</a2k-window-topbar
+            >
           </div>
           <div class="content">
             <a2k-stack>

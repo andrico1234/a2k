@@ -1,4 +1,4 @@
-import { css, html, LitElement } from "lit";
+import { css, html, LitElement, render } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
 import "@a2000/stack/a2k-stack.js";
@@ -7,6 +7,7 @@ import "@a2000/icons/help-logo";
 import "@a2000/icons/twitter-logo";
 import "@a2000/icons/network-icon";
 import "@a2000/icons/documents-icon";
+import "@a2000/window/a2k-window.js";
 
 import "./StartMenuItem";
 
@@ -45,6 +46,15 @@ export class StartMenu extends LitElement {
       padding-block-top: var(--spacing-100);
     }
 
+    button {
+      background: none;
+      border: 0;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-primary);
+      font-size: var(--font-size-100);
+    }
+
     #side-strip p {
       color: white;
       font-weight: var(--font-weight-600);
@@ -55,6 +65,14 @@ export class StartMenu extends LitElement {
 
   @property()
   open = false;
+
+  handleAboutClick() {
+    const window = html` <a2k-window closable title="About Andricos2000">
+      <p>Shut up, baby I know it...</p>
+    </a2k-window>`;
+
+    render(window, document.body);
+  }
 
   render() {
     const isOpen = String(this.open) === "true";
@@ -70,24 +88,32 @@ export class StartMenu extends LitElement {
             </div>
             <div id="stack-wrapper">
               <a2k-stack>
-                <a2k-start-menu-item>
-                  <div slot="icon"><a2k-documents-icon /></div>
-                  Portfolio
-                </a2k-start-menu-item>
+                <!-- This start menu should be managed by user land.  -->
+                <a target="_blank" href="https://andri.co" rel="noreferrer noopener">
+                  <a2k-start-menu-item>
+                    <div slot="icon"><a2k-documents-icon /></div>
+                    Portfolio
+                  </a2k-start-menu-item>
+                </a>
                 <a target="_blank" href="https://twitter.com/andricokaroulla" rel="noreferrer noopener">
                   <a2k-start-menu-item>
                     <div slot="icon"><a2k-twitter-logo /></div>
                     Twitter
                   </a2k-start-menu-item>
                 </a>
-                <a2k-start-menu-item>
-                  <div slot="icon"><a2k-network-icon /></div>
-                  Contact
-                </a2k-start-menu-item>
-                <a2k-start-menu-item>
-                  <div slot="icon"><a2k-help-logo /></div>
-                  About
-                </a2k-start-menu-item>
+
+                <a target="_blank" href="mailto:karoulla.andrico@gmail.com" rel="noreferrer noopener">
+                  <a2k-start-menu-item>
+                    <div slot="icon"><a2k-network-icon /></div>
+                    Contact
+                  </a2k-start-menu-item>
+                </a>
+                <button @click="${this.handleAboutClick}">
+                  <a2k-start-menu-item >
+                    <div slot="icon"><a2k-help-logo /></div>
+                    About
+                  </a2k-start-menu-item>
+                </button>
               </a2k-stack>
             </div>
           </a2k-panel>
