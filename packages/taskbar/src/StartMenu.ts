@@ -68,7 +68,7 @@ export class StartMenu extends LitElement {
 
   handleAboutClick() {
     const window = html` <a2k-window closable title="About Andricos2000">
-      <p>Shut up, baby I know it...</p>
+      <p>Deets coming soon...</p>
     </a2k-window>`;
 
     render(window, document.body);
