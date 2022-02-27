@@ -180,7 +180,7 @@ var V =
   C,
   P,
   T,
-  S;
+  z;
 class w extends F {
   constructor() {
     super();
@@ -243,7 +243,7 @@ class w extends F {
           <div
             @dragstart="${A(this, C, "m", P)}"
             @drag="${A(this, C, "m", T)}"
-            @dragend="${A(this, C, "m", S)}"
+            @dragend="${A(this, C, "m", z)}"
             class="topbar-wrapper"
             draggable="${this.draggable}"
           >
@@ -273,7 +273,7 @@ class w extends F {
   (T = function (i) {
     window.requestAnimationFrame((l) => this.handleWindowMove(l, i));
   }),
-  (S = function () {
+  (z = function () {
     (this.cursorPositionX = null), (this.cursorPositionY = null);
   });
 w.styles = r`
@@ -3348,7 +3348,7 @@ class F1 extends F {
   }
 }
 window.customElements.define("a2k-documents-icon", F1);
-var z =
+var S =
     (globalThis && globalThis.__decorate) ||
     function (h, i, l, f) {
       var e = arguments.length,
@@ -3430,8 +3430,8 @@ n.styles = r`
       margin: 0;
     }
   `;
-z([y(), a1("design:type", Object)], n.prototype, "open", void 0);
-n = z([p("a2k-start-menu-item")], n);
+S([y(), a1("design:type", Object)], n.prototype, "open", void 0);
+n = S([p("a2k-start-menu-item")], n);
 var L =
     (globalThis && globalThis.__decorate) ||
     function (h, i, l, f) {
@@ -3464,7 +3464,7 @@ let s = class extends F {
   }
   handleAboutClick() {
     const i = a` <a2k-window closable title="About Andricos2000">
-      <p>Shut up, baby I know it...</p>
+      <p>Deets coming soon...</p>
     </a2k-window>`;
     Q(i, document.body);
   }
