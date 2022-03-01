@@ -1,5 +1,13 @@
 # @a2000/taskbar
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies [22f8b25]
+- Updated dependencies [3fbe123]
+  - @a2000/icons@0.0.4
+
 ## 0.0.7
 
 ### Patch Changes

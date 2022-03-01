@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.9
+
+### Patch Changes
+
+- 99a0dcb: update button styles
+
 ## 0.0.8
 
 ### Patch Changes
