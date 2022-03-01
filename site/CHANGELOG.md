@@ -1,5 +1,15 @@
 # site
 
+## 1.0.9
+
+### Patch Changes
+
+- Updated dependencies [99a0dcb]
+- Updated dependencies [59650a4]
+  - @a2000/button@0.0.2
+  - @a2000/styles@0.0.9
+  - @a2000/taskbar@0.0.8
+
 ## 1.0.8
 
 ### Patch Changes
