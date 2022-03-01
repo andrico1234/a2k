@@ -24,6 +24,7 @@ Variable names should follow the format
   --font-size-500: calc((48px / 16px) * 1rem);
   --font-size-600: calc((64px / 16px) * 1rem);
 
+  --font-weight-regular: 400;
   --font-weight-heavy: 600;
 
   --spacing-unit: 8px;
@@ -83,6 +84,14 @@ Variable names should follow the format
   --desktop-background: var(--color-blue-300);
 
   --stack-spacing-top: var(--spacing-100);
+
+  --button-color-background: var(--color-gray-550);
+  --button-padding: var(--spacing-100) var(--spacing-150);
+  --button-font-weight: var(--font-weight-regular);
+  --button-shadow: var(--shadow-inset-light), var(--shadow-heavy);
+  --button-border-width: 1px 1px 0 0;
+  --button-border-style: dotted;
+  --button-border-color: var(--color-white);
 
   --taskbar-border: var(--border-medium);
   --taskbar-shadow: var(--shadow-inset-light), var(--shadow-heavy);

@@ -8,6 +8,6 @@
   "module": "lib/src/index.js",
   "exports": {
     ".": "./lib/src/index.js",
-    "./*": "./lib/src/*.js"
+    "./a2k-button.js": "./lib/src/a2k-button.js"
   }
 }
