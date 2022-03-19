@@ -10,17 +10,12 @@
     "preview": "yarn build && vite preview"
   },
   "keywords": [],
-  "workspaces": {
-    "nohoist": [
-      "**/@a2000/styles"
-    ]
-  },
   "author": "Andrico Karoulla",
   "license": "ISC",
   "dependencies": {
     "@a2000/button": "0.0.1",
-    "@a2000/styles": "0.0.8",
     "@a2000/progress": "0.0.3",
+    "@a2000/styles": "0.0.8",
     "@a2000/taskbar": "0.0.7",
     "@a2000/window": "0.0.9"
   }

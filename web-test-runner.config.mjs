@@ -3,7 +3,7 @@ import { playwrightLauncher } from "@web/test-runner-playwright";
 const filteredLogs = ["Running in dev mode", "lit-html is in dev mode"];
 
 export default /** @type {import("@web/test-runner").TestRunnerConfig} */ ({
-  files: "packages/**/*.test.js",
+  files: ["packages/**/*.test.js", "!**/node_modules/**/*"],
   coverage: true,
   coverageConfig: {
     report: true,

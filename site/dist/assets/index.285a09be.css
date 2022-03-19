@@ -49,6 +49,7 @@ h6 {
   --font-size-400: calc(36px / 16px * 1rem);
   --font-size-500: calc(48px / 16px * 1rem);
   --font-size-600: calc(64px / 16px * 1rem);
+  --font-weight-regular: 400;
   --font-weight-heavy: 600;
   --spacing-unit: 8px;
   --spacing-50: calc(var(--spacing-unit) / 2);
@@ -84,8 +85,10 @@ h6 {
     var(--color-blue-100) 0%,
     var(--color-blue-700) 100%
   );
+  --border-light: 2px solid var(--color-white);
   --border-medium: 2px solid var(--color-gray-400);
   --shadow-heavy: 2px 2px var(--color-black);
+  --shadow-light: -1px -1px var(--color-white);
   --shadow-inset-light: inset 2px 2px var(--color-white);
   --shadow-inset-medium: inset -1px -1px var(--color-white),
     inset 2px 2px var(--color-gray-400);
@@ -95,6 +98,15 @@ h6 {
   --font-color: var(--color-black);
   --desktop-background: var(--color-blue-300);
   --stack-spacing-top: var(--spacing-100);
+  --button-color-background: var(--color-gray-550);
+  --button-padding: var(--spacing-100) var(--spacing-150);
+  --button-font-weight: var(--font-weight-regular);
+  --button-shadow-light: -0.5px -0.5px 0 0.5px var(--color-white);
+  --button-shadow-heavy: 0px 0px 0 1px var(--color-black);
+  --button-shadow: var(--button-shadow-light), var(--button-shadow-heavy);
+  --button-border-width: 1px 1px 0 0;
+  --button-border-style: dotted;
+  --button-border-color: var(--color-white);
   --taskbar-border: var(--border-medium);
   --taskbar-shadow: var(--shadow-inset-light), var(--shadow-heavy);
   --taskbar-color-background: var(--color-gray-600);

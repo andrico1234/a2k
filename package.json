@@ -70,5 +70,6 @@
   "bugs": {
     "url": "https://github.com/andrico1234/windows-2000-ui-library/issues"
   },
-  "homepage": "https://github.com/andrico1234/windows-2000-ui-library#readme"
+  "homepage": "https://github.com/andrico1234/windows-2000-ui-library#readme",
+  "packageManager": "yarn@3.2.0"
 }
