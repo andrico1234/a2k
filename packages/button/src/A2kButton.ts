@@ -13,6 +13,10 @@ export class A2kButton extends LitElement {
       border-color: var(--button-border-color);
       border-style: var(--button-border-style);
     }
+
+    #button:hover {
+      cursor: pointer;
+    }
   `;
 
   render() {
