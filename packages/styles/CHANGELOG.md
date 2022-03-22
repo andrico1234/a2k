@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.10
+
+### Patch Changes
+
+- 738b758: finish basic styles for button
+
 ## 0.0.9
 
 ### Patch Changes
