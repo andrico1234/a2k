@@ -22,19 +22,21 @@ export class StartButton extends LitElement {
       line-height: var(--font-size-100);
       background-color: var(--color-gray-600);
       cursor: pointer;
-      border: var(--taskbar-start-button-border);
+      border: var(--button-border);
       border-left: 1px dotted var(--color-white);
       border-top: 1px dotted var(--color-white);
-      box-shadow: var(--taskbar-start-button-shadow);
+      box-shadow: var(--button-shadow);
       outline-color: var(--outline-color-focus);
       outline-offset: var(--outline-offset-focus);
     }
 
     button:active {
-      border: 0;
+      border-bottom: 2px solid transparent;
+      border-right: 0;
       border-left: 1px dotted var(--color-black);
       border-top: 1px dotted var(--color-black);
-      box-shadow: var(--taskbar-start-button-shadow-active);
+      box-shadow: var(--button-shadow-active);
+      transform: translate(2px, 2px);
     }
 
     .icon-wrapper {
@@ -46,6 +48,8 @@ export class StartButton extends LitElement {
 
   // handle a global click. if click is outside this element, hide the thing
   // it's outside the element if click target is outside of the parent element.
+
+  // refactor this button into an IconButton, which extends the A2kButton component
 
   private _hideOnClickOutside = (event: MouseEvent) => {
     if (!event.composedPath().includes(this)) {

@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -b ./tsconfig.packages.json",
-    "cem:analyze": "yarn wsrun --exclude-missing cem:analyze",
     "create-changeset": "yarn changeset",
     "commit": "git-cz",
     "debug": "yarn build && web-test-runner --watch packages/**/*.test.js --node-resolve",

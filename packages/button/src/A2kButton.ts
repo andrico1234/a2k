@@ -1,10 +1,11 @@
 import { html, css, LitElement } from "lit";
+import { property } from "lit/decorators.js";
 
 export class A2kButton extends LitElement {
   static styles = css`
-    #button {
+    button {
       background-color: var(--button-color-background);
-      font-family: var(--font-primary);
+      font-family: var(--button-font-family);
       padding: var(--button-padding);
       font-weight: var(--button-font-weight);
       box-sizing: border-box;
@@ -12,15 +13,35 @@ export class A2kButton extends LitElement {
       border-width: var(--button-border-width);
       border-color: var(--button-border-color);
       border-style: var(--button-border-style);
+      outline-color: var(--outline-color-focus);
+      outline-offset: var(--outline-offset-focus);
+      cursor: pointer;
+
+      border: var(--button-border);
+      border-left: 1px dotted var(--color-white);
+      border-top: 1px dotted var(--color-white);
+      box-shadow: var(--button-shadow);
     }
 
-    #button:hover {
-      cursor: pointer;
+    button[disabled] {
+      border: 1px solid red;
+    }
+
+    button:active {
+      border-bottom: 2px solid transparent;
+      border-right: 0;
+      border-left: 1px dotted var(--color-black);
+      border-top: 1px dotted var(--color-black);
+      box-shadow: var(--button-shadow-active);
+      transform: translate(2px, 2px);
     }
   `;
 
+  @property({ type: Boolean })
+  disabled = false;
+
   render() {
-    return html` <button id="button">
+    return html` <button .disabled=${this.disabled}>
       <slot></slot>
     </button>`;
   }
