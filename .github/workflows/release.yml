@@ -22,7 +22,7 @@ jobs:
           node-version: 16.x
 
       - name: Install Dependencies
-        run: yarn --frozen-lockfile
+        run: yarn --immutable
 
       - run: yarn build
 

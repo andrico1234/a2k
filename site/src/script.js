@@ -16,14 +16,14 @@ const intervalId = setInterval(() => {
 
   el.setAttribute("progress", progress);
   if (progress > 70) {
-    while (loadingWindow.firstChild) {
-      loadingWindow.removeChild(loadingWindow.lastChild);
-    }
+    // while (loadingWindow.firstChild) {
+    //   loadingWindow.removeChild(loadingWindow.lastChild);
+    // }
 
-    loadingWindow.innerHTML = `
-      <p>There was an error loading Andricos2000</p>
-      <p>Andricos2000 is still a work in progress, keeping checking back for updates or follow progress on Twitter</p>
-    `;
+    // loadingWindow.innerHTML = `
+    //   <p>There was an error loading Andricos2000</p>
+    //   <p>Andricos2000 is still a work in progress, keeping checking back for updates or follow progress on Twitter</p>
+    // `;
 
     // change the content to say that there was an error loading the page
     // make the windows noise
