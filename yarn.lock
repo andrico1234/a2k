@@ -5,7 +5,7 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@a2000/button@0.0.2, @a2000/button@workspace:packages/button":
+"@a2000/button@0.0.3, @a2000/button@workspace:packages/button":
   version: 0.0.0-use.local
   resolution: "@a2000/button@workspace:packages/button"
   languageName: unknown
@@ -65,7 +65,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@a2000/styles@0.0.9, @a2000/styles@workspace:packages/styles":
+"@a2000/styles@0.0.10, @a2000/styles@workspace:packages/styles":
   version: 0.0.0-use.local
   resolution: "@a2000/styles@workspace:packages/styles"
   languageName: unknown
@@ -6575,9 +6575,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "site@workspace:site"
   dependencies:
-    "@a2000/button": 0.0.2
+    "@a2000/button": 0.0.3
     "@a2000/progress": 0.0.3
-    "@a2000/styles": 0.0.9
+    "@a2000/styles": 0.0.10
     "@a2000/taskbar": 0.0.8
     "@a2000/window": 0.0.9
   languageName: unknown
