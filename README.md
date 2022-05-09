@@ -7,14 +7,14 @@ Note: This is a heavy work in progress, you should probably not use it in produc
 Here's a work-in-progress [demo](https://a2000.netlify.app), for the curious
 
 # Components
-[a2k-button](https://github.com/andrico1234/a2k/tree/main/packages/button)
-[a2k-icons](https://github.com/andrico1234/a2k/tree/main/packages/icons)
-[a2k-panel](https://github.com/andrico1234/a2k/tree/main/packages/panel)
-[a2k-progress](https://github.com/andrico1234/a2k/tree/main/packages/progress)
-[a2k-stack](https://github.com/andrico1234/a2k/tree/main/packages/stack)
-[a2k-styles](https://github.com/andrico1234/a2k/tree/main/packages/styles)
-[a2k-taskbar](https://github.com/andrico1234/a2k/tree/main/packages/taskbar)
-[a2k-window](https://github.com/andrico1234/a2k/tree/main/packages/window)
+- [a2k-button](https://github.com/andrico1234/a2k/tree/main/packages/button)
+- [a2k-icons](https://github.com/andrico1234/a2k/tree/main/packages/icons)
+- [a2k-panel](https://github.com/andrico1234/a2k/tree/main/packages/panel)
+- [a2k-progress](https://github.com/andrico1234/a2k/tree/main/packages/progress)
+- [a2k-stack](https://github.com/andrico1234/a2k/tree/main/packages/stack)
+- [a2k-styles](https://github.com/andrico1234/a2k/tree/main/packages/styles)
+- [a2k-taskbar](https://github.com/andrico1234/a2k/tree/main/packages/taskbar)
+- [a2k-window](https://github.com/andrico1234/a2k/tree/main/packages/window)
 
 
 # Development
