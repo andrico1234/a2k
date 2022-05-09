@@ -33,10 +33,10 @@ run nvm use, or ensure you're the node version specified in the .nvmrc file.
 # Tech stack
 a2k uses:
 
-💪🏾 TypeScript as the primary language to keep things strong(ly typed).
-🔥 Lit for crafting quick and easy web components
-📝 Changesets to manage changelogs, versioning, and publishing.
-🛠 Web Test Runner for testing
-🧼 ESLint + Prettier for keeping code clean like a money machine.
-🤖 Commitizen + Commitlint for consistent commits.
-🙋🏽‍♂️ Andrico for keeping things ticking along.
+- 💪🏾 TypeScript as the primary language to keep things strong(ly typed).
+- 🔥 Lit for crafting quick and easy web components
+- 📝 Changesets to manage changelogs, versioning, and publishing.
+- 🛠 Web Test Runner for testing
+- 🧼 ESLint + Prettier for keeping code clean like a money machine.
+- 🤖 Commitizen + Commitlint for consistent commits.
+- 🙋🏽‍♂️ Andrico for keeping things ticking along.
