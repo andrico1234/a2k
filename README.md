@@ -1,3 +1,5 @@
+# A2K (a2000)
+
 Welcome to a2000 (or a2k for short).
 
 This is UI library designed to capture the feel of the early web, while employing modern UX and web practices. Think Shovel Knight, but for UI components instead of video games.
@@ -6,7 +8,7 @@ Note: This is a heavy work in progress, you should probably not use it in produc
 
 Here's a work-in-progress [demo](https://a2000.netlify.app), for the curious
 
-# Components
+## Components
 - [a2k-button](https://github.com/andrico1234/a2k/tree/main/packages/button)
 - [a2k-icons](https://github.com/andrico1234/a2k/tree/main/packages/icons)
 - [a2k-panel](https://github.com/andrico1234/a2k/tree/main/packages/panel)
@@ -17,8 +19,8 @@ Here's a work-in-progress [demo](https://a2000.netlify.app), for the curious
 - [a2k-window](https://github.com/andrico1234/a2k/tree/main/packages/window)
 
 
-# Development
-## Running a2k ui locally
+## Development
+### Running a2k ui locally
 Being by forking the repo. Whilst in the root directory:
 
 run nvm use, or ensure you're the node version specified in the .nvmrc file.
@@ -30,7 +32,7 @@ run nvm use, or ensure you're the node version specified in the .nvmrc file.
 - view your changes in your locally running docs
 
 
-# Tech stack
+## Tech stack
 a2k uses:
 
 - 💪🏾 TypeScript as the primary language to keep things strong(ly typed).
