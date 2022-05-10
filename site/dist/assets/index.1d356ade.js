@@ -1,24 +1,24 @@
 import {
-  r,
-  s as F,
-  p as a,
-  e as y,
+  r as H,
+  s as c,
+  p as V,
+  e as r,
   i as J,
-  y as x,
-  n as p,
-  w as t1,
+  y as g,
+  n as w,
+  w as l1,
   t as i1,
-  o as l1,
+  o as t1,
 } from "./vendor.7a89da44.js";
 const h1 = function () {
-  const t = document.createElement("link").relList;
-  if (t && t.supports && t.supports("modulepreload")) return;
+  const l = document.createElement("link").relList;
+  if (l && l.supports && l.supports("modulepreload")) return;
   for (const e of document.querySelectorAll('link[rel="modulepreload"]')) f(e);
   new MutationObserver((e) => {
     for (const i of e)
       if (i.type === "childList")
-        for (const d of i.addedNodes)
-          d.tagName === "LINK" && d.rel === "modulepreload" && f(d);
+        for (const a of i.addedNodes)
+          a.tagName === "LINK" && a.rel === "modulepreload" && f(a);
   }).observe(document, { childList: !0, subtree: !0 });
   function h(e) {
     const i = {};
@@ -41,14 +41,14 @@ const h1 = function () {
   }
 };
 h1();
-class j extends F {
+class $ extends c {
   render() {
-    return a`<div id="stack">
+    return V`<div id="stack">
       <slot></slot>
     </div>`;
   }
 }
-j.styles = r`
+$.styles = H`
     #stack {
       display: flex;
       flex-direction: column;
@@ -56,15 +56,15 @@ j.styles = r`
       gap: var(--stack-spacing-top) !important;
     }
   `;
-window.customElements.define("a2k-stack", j);
-class P extends F {
+window.customElements.define("a2k-stack", $);
+class P extends c {
   render() {
-    return a` <div id="panel">
+    return V` <div id="panel">
       <slot></slot>
     </div>`;
   }
 }
-P.styles = r`
+P.styles = H`
     #panel {
       --inset-shadow-padding: 2px;
       border: var(--window-border);
@@ -77,41 +77,41 @@ P.styles = r`
 window.customElements.define("a2k-panel", P);
 var e1 =
     (globalThis && globalThis.__decorate) ||
-    function (l, t, h, f) {
+    function (t, l, h, f) {
       var e = arguments.length,
         i =
           e < 3
-            ? t
+            ? l
             : f === null
-            ? (f = Object.getOwnPropertyDescriptor(t, h))
+            ? (f = Object.getOwnPropertyDescriptor(l, h))
             : f,
-        d;
+        a;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        i = Reflect.decorate(l, t, h, f);
+        i = Reflect.decorate(t, l, h, f);
       else
-        for (var c = l.length - 1; c >= 0; c--)
-          (d = l[c]) &&
-            (i = (e < 3 ? d(i) : e > 3 ? d(t, h, i) : d(t, h)) || i);
-      return e > 3 && i && Object.defineProperty(t, h, i), i;
+        for (var d = t.length - 1; d >= 0; d--)
+          (a = t[d]) &&
+            (i = (e < 3 ? a(i) : e > 3 ? a(l, h, i) : a(l, h)) || i);
+      return e > 3 && i && Object.defineProperty(l, h, i), i;
     },
   f1 =
     (globalThis && globalThis.__metadata) ||
-    function (l, t) {
+    function (t, l) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(l, t);
+        return Reflect.metadata(t, l);
     };
-class A extends F {
+class A extends c {
   constructor() {
     super(...arguments);
-    (this.closeButton = a`<button @click="${this.handleClose}">Close</button>`),
+    (this.closeButton = V`<button @click="${this.handleClose}">Close</button>`),
       (this.closable = !1);
   }
-  handleClose(t) {
+  handleClose(l) {
     const h = new Event("close", { bubbles: !0, composed: !0 });
-    t.target.dispatchEvent(h);
+    l.target.dispatchEvent(h);
   }
   render() {
-    return a`<div class="topbar-wrapper">
+    return V`<div class="topbar-wrapper">
       <h2 class="heading">
         <slot></slot>
       </h2>
@@ -119,7 +119,7 @@ class A extends F {
     </div>`;
   }
 }
-A.styles = r`
+A.styles = H`
     .topbar-wrapper {
       background: var(--window-topbar-background);
       display: flex;
@@ -135,56 +135,56 @@ A.styles = r`
     }
   `;
 e1(
-  [y({ type: Boolean }), f1("design:type", Object)],
+  [r({ type: Boolean }), f1("design:type", Object)],
   A.prototype,
   "closable",
   void 0
 );
 window.customElements.define("a2k-window-topbar", A);
-var V =
+var y =
     (globalThis && globalThis.__decorate) ||
-    function (l, t, h, f) {
+    function (t, l, h, f) {
       var e = arguments.length,
         i =
           e < 3
-            ? t
+            ? l
             : f === null
-            ? (f = Object.getOwnPropertyDescriptor(t, h))
+            ? (f = Object.getOwnPropertyDescriptor(l, h))
             : f,
-        d;
+        a;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        i = Reflect.decorate(l, t, h, f);
+        i = Reflect.decorate(t, l, h, f);
       else
-        for (var c = l.length - 1; c >= 0; c--)
-          (d = l[c]) &&
-            (i = (e < 3 ? d(i) : e > 3 ? d(t, h, i) : d(t, h)) || i);
-      return e > 3 && i && Object.defineProperty(t, h, i), i;
+        for (var d = t.length - 1; d >= 0; d--)
+          (a = t[d]) &&
+            (i = (e < 3 ? a(i) : e > 3 ? a(l, h, i) : a(l, h)) || i);
+      return e > 3 && i && Object.defineProperty(l, h, i), i;
     },
-  H =
+  o =
     (globalThis && globalThis.__metadata) ||
-    function (l, t) {
+    function (t, l) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(l, t);
+        return Reflect.metadata(t, l);
     },
   m =
     (globalThis && globalThis.__classPrivateFieldGet) ||
-    function (l, t, h, f) {
+    function (t, l, h, f) {
       if (h === "a" && !f)
         throw new TypeError("Private accessor was defined without a getter");
-      if (typeof t == "function" ? l !== t || !f : !t.has(l))
+      if (typeof l == "function" ? t !== l || !f : !l.has(t))
         throw new TypeError(
           "Cannot read private member from an object whose class did not declare it"
         );
-      return h === "m" ? f : h === "a" ? f.call(l) : f ? f.value : t.get(l);
+      return h === "m" ? f : h === "a" ? f.call(t) : f ? f.value : l.get(t);
     },
-  C,
-  T,
+  x,
   S,
-  z;
-class w extends F {
+  z,
+  L;
+class p extends c {
   constructor() {
     super();
-    C.add(this),
+    x.add(this),
       (this.title = ""),
       (this.draggable = !0),
       (this.cursorPositionX = null),
@@ -198,52 +198,52 @@ class w extends F {
       (this.img = new Image(0, 0)),
       (this.img.src =
         "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"),
-      this.addEventListener("close", (t) => this.remove());
+      this.addEventListener("close", (l) => this.remove());
   }
-  handleWindowMove(t, h) {
+  handleWindowMove(l, h) {
     const { top: f, left: e } = this.styles,
-      { innerHeight: i, innerWidth: d } = window,
-      c = this.renderRoot.querySelector("#window");
-    if (!c) return;
-    const g = Number(f == null ? void 0 : f.replace("px", "")),
-      o = Number(e == null ? void 0 : e.replace("px", "")),
-      { pageX: M, pageY: Z } = h;
+      { innerHeight: i, innerWidth: a } = window,
+      d = this.renderRoot.querySelector("#window");
+    if (!d) return;
+    const F = Number(f == null ? void 0 : f.replace("px", "")),
+      M = Number(e == null ? void 0 : e.replace("px", "")),
+      { pageX: Z, pageY: C } = h;
     if (
-      M !== 0 &&
       Z !== 0 &&
-      (M !== this.cursorPositionX || Z !== this.cursorPositionY)
+      C !== 0 &&
+      (Z !== this.cursorPositionX || C !== this.cursorPositionY)
     ) {
       const {
           bottom: Y,
           right: q,
           width: G,
           height: K,
-        } = c.getBoundingClientRect(),
-        v = M - this.cursorPositionX,
-        u = Z - this.cursorPositionY,
-        _ = g + u < 0,
-        O = o + v < 0,
-        R = Y + u > i,
-        $ = q + v > d,
-        Q = R || O || $ || _;
-      (this.cursorPositionX = M),
-        (this.cursorPositionY = Z),
+        } = d.getBoundingClientRect(),
+        v = Z - this.cursorPositionX,
+        u = C - this.cursorPositionY,
+        O = F + u < 0,
+        R = M + v < 0,
+        j = Y + u > i,
+        T = q + v > a,
+        Q = j || R || T || O;
+      (this.cursorPositionX = Z),
+        (this.cursorPositionY = C),
         Q
-          ? (_ && (this.styles = { top: "0px", left: `${o}px` }),
-            O && (this.styles = { top: `${g}px`, left: `${0}px` }),
-            R && (this.styles = { top: `${i - K}px`, left: `${o}px` }),
-            $ && (this.styles = { top: `${g}px`, left: `${d - G}px` }))
-          : (this.styles = { top: `${g + u}px`, left: `${o + v}px` });
+          ? (O && (this.styles = { top: "0px", left: `${M}px` }),
+            R && (this.styles = { top: `${F}px`, left: `${0}px` }),
+            j && (this.styles = { top: `${i - K}px`, left: `${M}px` }),
+            T && (this.styles = { top: `${F}px`, left: `${a - G}px` }))
+          : (this.styles = { top: `${F + u}px`, left: `${M + v}px` });
     }
   }
   render() {
-    return a`
+    return V`
       <div id="window" style=${J(this.styles)}>
         <a2k-panel>
           <div
-            @dragstart="${m(this, C, "m", T)}"
-            @drag="${m(this, C, "m", S)}"
-            @dragend="${m(this, C, "m", z)}"
+            @dragstart="${m(this, x, "m", S)}"
+            @drag="${m(this, x, "m", z)}"
+            @dragend="${m(this, x, "m", L)}"
             class="topbar-wrapper"
             draggable="${this.draggable}"
           >
@@ -261,22 +261,22 @@ class w extends F {
     `;
   }
 }
-(C = new WeakSet()),
-  (T = function (t) {
+(x = new WeakSet()),
+  (S = function (l) {
     var h;
-    (h = t.dataTransfer) === null ||
+    (h = l.dataTransfer) === null ||
       h === void 0 ||
       h.setDragImage(this.img, 0, 0),
-      (this.cursorPositionX = t.pageX),
-      (this.cursorPositionY = t.pageY);
+      (this.cursorPositionX = l.pageX),
+      (this.cursorPositionY = l.pageY);
   }),
-  (S = function (t) {
-    window.requestAnimationFrame((h) => this.handleWindowMove(h, t));
+  (z = function (l) {
+    window.requestAnimationFrame((h) => this.handleWindowMove(h, l));
   }),
-  (z = function () {
+  (L = function () {
     (this.cursorPositionX = null), (this.cursorPositionY = null);
   });
-w.styles = r`
+p.styles = H`
     #window {
       font-family: var(--font-primary);
       position: absolute;
@@ -287,30 +287,30 @@ w.styles = r`
       padding: 0 var(--window-spacing-horizontal);
     }
   `;
-V([y(), H("design:type", Object)], w.prototype, "title", void 0);
-V(
-  [y({ type: Boolean }), H("design:type", Object)],
-  w.prototype,
+y([r(), o("design:type", Object)], p.prototype, "title", void 0);
+y(
+  [r({ type: Boolean }), o("design:type", Object)],
+  p.prototype,
   "draggable",
   void 0
 );
-V([y(), H("design:type", Object)], w.prototype, "cursorPositionX", void 0);
-V([y(), H("design:type", Object)], w.prototype, "cursorPositionY", void 0);
-V(
-  [y({ type: Boolean }), H("design:type", Object)],
-  w.prototype,
+y([r(), o("design:type", Object)], p.prototype, "cursorPositionX", void 0);
+y([r(), o("design:type", Object)], p.prototype, "cursorPositionY", void 0);
+y(
+  [r({ type: Boolean }), o("design:type", Object)],
+  p.prototype,
   "closable",
   void 0
 );
-V([y(), H("design:type", Object)], w.prototype, "styles", void 0);
-window.customElements.define("a2k-window", w);
-class d1 extends F {
+y([r(), o("design:type", Object)], p.prototype, "styles", void 0);
+window.customElements.define("a2k-window", p);
+class a1 extends c {
   constructor() {
     super(...arguments);
     (this.width = 16), (this.height = 14);
   }
   render() {
-    return x`
+    return g`
     <svg
     styles="width:auto"
     viewBox="0 0 ${this.width} ${this.height}"
@@ -354,14 +354,14 @@ class d1 extends F {
     `;
   }
 }
-window.customElements.define("a2k-windows-logo", d1);
-class c1 extends F {
+window.customElements.define("a2k-windows-logo", a1);
+class d1 extends c {
   constructor() {
     super(...arguments);
     (this.width = 24), (this.height = 24);
   }
   render() {
-    return x`
+    return g`
     <svg
     styles="width:auto"
     viewBox="0 0 ${this.width} ${this.height}"
@@ -689,14 +689,14 @@ class c1 extends F {
     `;
   }
 }
-window.customElements.define("a2k-help-logo", c1);
-class F1 extends F {
+window.customElements.define("a2k-help-logo", d1);
+class c1 extends c {
   constructor() {
     super(...arguments);
     (this.width = 31), (this.height = 27);
   }
   render() {
-    return x`
+    return g`
   <svg styles="width:auto" viewBox="0 0 ${this.width} ${this.height}" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M3 1H4V2H3V1Z" fill="#479DFF"/>
 <path d="M3 1H4V2H3V1Z" fill="black" fill-opacity="0.2"/>
@@ -1738,14 +1738,14 @@ class F1 extends F {
     `;
   }
 }
-window.customElements.define("a2k-twitter-logo", F1);
-class a1 extends F {
+window.customElements.define("a2k-twitter-logo", c1);
+class V1 extends c {
   constructor() {
     super(...arguments);
     (this.width = 32), (this.height = 32);
   }
   render() {
-    return x`
+    return g`
   <svg styles="width:auto" viewBox="0 0 ${this.width} ${this.height}" fill="none" xmlns="http://www.w3.org/2000/svg">
 
 <rect x="8" width="1" height="1" fill="#33CC33"/>
@@ -2561,825 +2561,53 @@ class a1 extends F {
     `;
   }
 }
-window.customElements.define("a2k-network-icon", a1);
-class r1 extends F {
+window.customElements.define("a2k-network-icon", V1);
+class H1 extends c {
   constructor() {
     super(...arguments);
     (this.width = 32), (this.height = 32);
   }
   render() {
-    return x`
-  <svg styles="width:auto" viewBox="0 0 ${this.width} ${this.height}" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="4" y="30" width="1" height="1" fill="#333300"/>
-<rect x="5" y="30" width="1" height="1" fill="#333300"/>
-<rect x="6" y="30" width="1" height="1" fill="#333300"/>
-<rect x="7" y="30" width="1" height="1" fill="#333300"/>
-<rect x="8" y="30" width="1" height="1" fill="#333300"/>
-<rect x="9" y="30" width="1" height="1" fill="#333300"/>
-<rect x="10" y="30" width="1" height="1" fill="#333300"/>
-<rect x="11" y="30" width="1" height="1" fill="#333300"/>
-<rect x="12" y="30" width="1" height="1" fill="#333300"/>
-<rect x="13" y="30" width="1" height="1" fill="#333300"/>
-<rect x="14" y="30" width="1" height="1" fill="#333300"/>
-<rect x="15" y="30" width="1" height="1" fill="#333300"/>
-<rect x="16" y="30" width="1" height="1" fill="#333300"/>
-<rect x="17" y="30" width="1" height="1" fill="#333300"/>
-<rect x="18" y="30" width="1" height="1" fill="#333300"/>
-<rect x="19" y="30" width="1" height="1" fill="#333300"/>
-<rect x="20" y="30" width="1" height="1" fill="#333300"/>
-<rect x="21" y="30" width="1" height="1" fill="#333300"/>
-<rect x="22" y="30" width="1" height="1" fill="#333300"/>
-<rect x="23" y="30" width="1" height="1" fill="#333300"/>
-<rect x="24" y="30" width="1" height="1" fill="#333300"/>
-<rect x="25" y="30" width="1" height="1" fill="#333300"/>
-<rect x="26" y="30" width="1" height="1" fill="#333300"/>
-<rect x="27" y="30" width="1" height="1" fill="#333300"/>
-<rect x="28" y="30" width="1" height="1" fill="#333300"/>
-<rect x="4" y="29" width="1" height="1" fill="#999900"/>
-<rect x="3" y="29" width="1" height="1" fill="#999900"/>
-<rect x="3" y="28" width="1" height="1" fill="#999900"/>
-<rect x="3" y="27" width="1" height="1" fill="#999900"/>
-<rect x="2" y="26" width="1" height="1" fill="#999900"/>
-<rect x="2" y="25" width="1" height="1" fill="#999900"/>
-<rect x="2" y="24" width="1" height="1" fill="#999900"/>
-<rect x="2" y="23" width="1" height="1" fill="#999900"/>
-<rect x="1" y="22" width="1" height="1" fill="#999900"/>
-<rect x="1" y="21" width="1" height="1" fill="#999900"/>
-<rect x="1" y="20" width="1" height="1" fill="#999900"/>
-<rect x="1" y="19" width="1" height="1" fill="#999900"/>
-<rect y="18" width="1" height="1" fill="#999900"/>
-<rect y="17" width="1" height="1" fill="#999900"/>
-<rect y="16" width="1" height="1" fill="#999900"/>
-<rect y="15" width="1" height="1" fill="#999900"/>
-<rect y="14" width="1" height="1" fill="#999900"/>
-<rect x="1" y="14" width="1" height="1" fill="white"/>
-<rect x="1" y="15" width="1" height="1" fill="white"/>
-<rect x="1" y="16" width="1" height="1" fill="white"/>
-<rect x="1" y="17" width="1" height="1" fill="white"/>
-<rect x="1" y="18" width="1" height="1" fill="white"/>
-<rect x="2" y="19" width="1" height="1" fill="white"/>
-<rect x="2" y="20" width="1" height="1" fill="white"/>
-<rect x="2" y="21" width="1" height="1" fill="white"/>
-<rect x="2" y="22" width="1" height="1" fill="white"/>
-<rect x="3" y="23" width="1" height="1" fill="white"/>
-<rect x="3" y="24" width="1" height="1" fill="white"/>
-<rect x="3" y="25" width="1" height="1" fill="white"/>
-<rect x="3" y="26" width="1" height="1" fill="white"/>
-<rect x="4" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="5" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="6" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="7" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="8" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="9" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="10" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="11" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="12" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="13" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="14" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="15" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="15" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="16" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="17" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="18" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="19" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="20" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="21" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="21" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="22" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="23" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="24" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="25" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="25" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="26" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="27" y="28" width="1" height="1" fill="#FFCC99"/>
-<rect x="27" y="27" width="1" height="1" fill="#FFCC99"/>
-<rect x="26" y="27" width="1" height="1" fill="#FFCC99"/>
-<rect x="25" y="27" width="1" height="1" fill="#FFCC99"/>
-<rect x="26" y="26" width="1" height="1" fill="#FFCC99"/>
-<rect x="25" y="25" width="1" height="1" fill="#FFCC99"/>
-<rect x="24" y="26" width="1" height="1" fill="#FFCC99"/>
-<rect x="23" y="26" width="1" height="1" fill="#FFCC99"/>
-<rect x="23" y="27" width="1" height="1" fill="#FFCC99"/>
-<rect x="22" y="26" width="1" height="1" fill="#FFCC99"/>
-<rect x="20" y="26" width="1" height="1" fill="#FFCC99"/>
-<rect x="20" y="25" width="1" height="1" fill="#FFCC99"/>
-<rect x="21" y="25" width="1" height="1" fill="#FFCC99"/>
-<rect x="23" y="25" width="1" height="1" fill="#FFCC99"/>
-<rect x="24" y="24" width="1" height="1" fill="#FFCC99"/>
-<rect x="25" y="24" width="1" height="1" fill="#FFCC99"/>
-<rect x="26" y="24" width="1" height="1" fill="#FFCC99"/>
-<rect x="25" y="23" width="1" height="1" fill="#FFCC99"/>
-<rect x="23" y="23" width="1" height="1" fill="#FFCC99"/>
-<rect x="22" y="24" width="1" height="1" fill="#FFCC99"/>
-<rect x="21" y="23" width="1" height="1" fill="#FFCC99"/>
-<rect x="20" y="23" width="1" height="1" fill="#FFCC99"/>
-<rect x="19" y="22" width="1" height="1" fill="#FFCC99"/>
-<rect x="18" y="23" width="1" height="1" fill="#FFCC99"/>
-<rect x="17" y="22" width="1" height="1" fill="#FFCC99"/>
-<rect x="16" y="22" width="1" height="1" fill="#FFCC99"/>
-<rect x="17" y="21" width="1" height="1" fill="#FFCC99"/>
-<rect x="18" y="20" width="1" height="1" fill="#FFCC99"/>
-<rect x="19" y="19" width="1" height="1" fill="#FFCC99"/>
-<rect x="19" y="17" width="1" height="1" fill="#FFCC99"/>
-<rect x="17" y="17" width="1" height="1" fill="#FFCC99"/>
-<rect x="15" y="18" width="1" height="1" fill="#FFCC99"/>
-<rect x="13" y="18" width="1" height="1" fill="#FFCC99"/>
-<rect x="12" y="17" width="1" height="1" fill="#FFCC99"/>
-<rect x="9" y="17" width="1" height="1" fill="#FFCC99"/>
-<rect x="10" y="17" width="1" height="2" fill="#FFCC99"/>
-<rect x="19" y="20" width="1" height="1" fill="#FFCC99"/>
-<rect x="16" y="20" width="1" height="1" fill="#FFCC99"/>
-<rect x="15" y="21" width="1" height="1" fill="#FFCC99"/>
-<rect x="13" y="20" width="1" height="1" fill="#FFCC99"/>
-<rect x="19" y="24" width="1" height="1" fill="#FFCC99"/>
-<rect x="27" y="26" width="1" height="1" fill="#FFCC99"/>
-<rect x="27" y="25" width="1" height="1" fill="#FFCC99"/>
-<rect x="27" y="24" width="1" height="1" fill="#FFCC99"/>
-<rect x="27" y="23" width="1" height="1" fill="#FFCC99"/>
-<rect x="27" y="22" width="1" height="1" fill="#FFCC99"/>
-<rect x="26" y="22" width="1" height="1" fill="#FFCC99"/>
-<rect x="26" y="21" width="1" height="1" fill="#FFCC99"/>
-<rect x="26" y="20" width="1" height="1" fill="#FFCC99"/>
-<rect x="26" y="19" width="1" height="1" fill="#FFCC99"/>
-<rect x="24" y="18" width="1" height="1" fill="#FFCC99"/>
-<rect x="23" y="17" width="1" height="1" fill="#FFCC99"/>
-<rect x="24" y="16" width="1" height="1" fill="#FFCC99"/>
-<rect x="22" y="15" width="1" height="1" fill="#FFCC99"/>
-<rect x="21" y="16" width="1" height="1" fill="#FFCC99"/>
-<rect x="11" y="15" width="1" height="1" fill="#FFCC99"/>
-<rect x="25" y="20" width="1" height="1" fill="#FFCC99"/>
-<rect x="24" y="21" width="1" height="1" fill="#FFCC99"/>
-<rect x="24" y="22" width="1" height="1" fill="#FFCC99"/>
-<rect x="23" y="20" width="1" height="1" fill="#FFCC99"/>
-<rect x="22" y="21" width="1" height="1" fill="#FFCC99"/>
-<rect x="21" y="20" width="1" height="1" fill="#FFCC99"/>
-<rect x="20" y="21" width="1" height="1" fill="#FFCC99"/>
-<rect x="21" y="19" width="1" height="1" fill="#FFCC99"/>
-<rect x="22" y="22" width="1" height="1" fill="#FFCC99"/>
-<rect x="2" y="15" width="1" height="1" transform="rotate(-90 2 15)" fill="white"/>
-<rect x="3" y="15" width="1" height="1" transform="rotate(-90 3 15)" fill="white"/>
-<rect x="4" y="15" width="1" height="1" transform="rotate(-90 4 15)" fill="white"/>
-<rect x="3" y="15" width="1" height="1" transform="rotate(-90 3 15)" fill="white"/>
-<rect x="5" y="15" width="1" height="1" transform="rotate(-90 5 15)" fill="white"/>
-<rect x="6" y="15" width="1" height="1" transform="rotate(-90 6 15)" fill="white"/>
-<rect x="7" y="15" width="1" height="1" transform="rotate(-90 7 15)" fill="white"/>
-<rect x="8" y="15" width="1" height="1" transform="rotate(-90 8 15)" fill="white"/>
-<rect x="9" y="15" width="1" height="1" transform="rotate(-90 9 15)" fill="white"/>
-<rect x="10" y="15" width="1" height="1" transform="rotate(-90 10 15)" fill="white"/>
-<rect x="11" y="15" width="1" height="1" transform="rotate(-90 11 15)" fill="white"/>
-<rect x="12" y="15" width="1" height="1" transform="rotate(-90 12 15)" fill="white"/>
-<rect x="13" y="15" width="1" height="1" transform="rotate(-90 13 15)" fill="white"/>
-<rect x="14" y="15" width="1" height="1" transform="rotate(-90 14 15)" fill="white"/>
-<rect x="15" y="15" width="1" height="1" transform="rotate(-90 15 15)" fill="white"/>
-<rect x="16" y="15" width="1" height="1" transform="rotate(-90 16 15)" fill="white"/>
-<rect x="17" y="15" width="1" height="1" transform="rotate(-90 17 15)" fill="white"/>
-<rect x="18" y="15" width="1" height="1" transform="rotate(-90 18 15)" fill="white"/>
-<rect x="19" y="15" width="1" height="1" transform="rotate(-90 19 15)" fill="white"/>
-<rect x="20" y="15" width="1" height="1" transform="rotate(-90 20 15)" fill="white"/>
-<rect x="21" y="15" width="1" height="1" transform="rotate(-90 21 15)" fill="white"/>
-<rect x="22" y="15" width="1" height="1" transform="rotate(-90 22 15)" fill="white"/>
-<rect x="23" y="15" width="1" height="1" transform="rotate(-90 23 15)" fill="white"/>
-<rect x="24" y="15" width="1" height="1" transform="rotate(-90 24 15)" fill="white"/>
-<rect x="1" y="13" width="1" height="1" fill="#999900"/>
-<rect x="2" y="13" width="1" height="1" fill="#999900"/>
-<rect x="3" y="13" width="1" height="1" fill="#999900"/>
-<rect x="3" y="12" width="1" height="1" fill="#808000"/>
-<rect x="4" y="12" width="1" height="1" fill="#CCCC66"/>
-<rect x="5" y="10" width="1" height="1" fill="#CCCC66"/>
-<rect x="5" y="9" width="1" height="1" fill="#CCCC66"/>
-<rect x="6" y="9" width="1" height="1" fill="#CCCC66"/>
-<rect x="5" y="8" width="1" height="1" fill="#CCCC66"/>
-<rect x="6" y="8" width="1" height="1" fill="#CCCC66"/>
-<rect x="7" y="8" width="1" height="1" fill="#CCCC66"/>
-<rect x="10" y="6" width="1" height="1" fill="#CCCC66"/>
-<rect x="26" y="10" width="1" height="1" fill="#CCCC66"/>
-<rect x="26" y="18" width="1" height="1" fill="#CCCC66"/>
-<rect x="27" y="21" width="1" height="1" fill="#CCCC66"/>
-<rect x="27" y="10" width="1" height="1" fill="#CCCC66"/>
-<rect x="27" y="11" width="1" height="1" fill="#CCCC66"/>
-<rect x="28" y="11" width="1" height="1" fill="#CCCC66"/>
-<rect x="28" y="12" width="1" height="1" fill="#CCCC66"/>
-<rect x="6" y="7" width="1" height="1" fill="#CCCC66"/>
-<rect x="7" y="7" width="1" height="1" fill="#CCCC66"/>
-<rect x="8" y="7" width="1" height="1" fill="#CCCC66"/>
-<rect x="4" y="11" width="1" height="1" fill="#FFFF99"/>
-<rect x="4" y="10" width="1" height="1" fill="#FFFF99"/>
-<rect x="4" y="9" width="1" height="1" fill="#FFFF99"/>
-<rect x="4" y="8" width="1" height="1" fill="#FFFF99"/>
-<rect x="4" y="7" width="1" height="1" fill="#FFFF99"/>
-<rect x="5" y="7" width="1" height="1" fill="#FFFF99"/>
-<rect x="5" y="6" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="6" width="1" height="1" fill="#FFFF99"/>
-<rect x="7" y="6" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="6" width="1" height="1" fill="#FFFF99"/>
-<rect x="9" y="6" width="1" height="1" fill="#FFFF99"/>
-<rect x="3" y="11" width="1" height="1" fill="#808000"/>
-<rect x="3" y="10" width="1" height="1" fill="#808000"/>
-<rect x="3" y="9" width="1" height="1" fill="#808000"/>
-<rect x="3" y="8" width="1" height="1" fill="#808000"/>
-<rect x="3" y="7" width="1" height="1" fill="#808000"/>
-<rect x="4" y="6" width="1" height="1" fill="#808000"/>
-<rect x="7" y="5" width="1" height="1" fill="#808000"/>
-<rect x="7" y="5" width="1" height="1" fill="#808000"/>
-<rect x="6" y="5" width="1" height="1" fill="#808000"/>
-<rect x="5" y="5" width="1" height="1" fill="#808000"/>
-<rect x="10" y="5" width="1" height="1" fill="#808000"/>
-<rect x="10" y="5" width="1" height="1" fill="#808000"/>
-<rect x="29" y="11" width="1" height="1" fill="#808000"/>
-<rect x="29" y="12" width="1" height="1" fill="#808000"/>
-<rect x="29" y="13" width="1" height="1" fill="#808000"/>
-<rect x="28" y="10" width="1" height="1" fill="#808000"/>
-<rect x="28" y="9" width="1" height="1" fill="#808000"/>
-<rect x="27" y="9" width="1" height="1" fill="#808000"/>
-<rect x="26" y="9" width="1" height="1" fill="#808000"/>
-<rect x="25" y="9" width="1" height="1" fill="#808000"/>
-<rect x="11" y="5" width="1" height="1" fill="#808000"/>
-<rect x="12" y="5" width="1" height="1" fill="#9999CC"/>
-<rect x="13" y="4" width="1" height="1" fill="#9999CC"/>
-<rect x="14" y="3" width="1" height="1" fill="#9999CC"/>
-<rect x="15" y="2" width="1" height="1" fill="#9999CC"/>
-<rect x="16" y="2" width="1" height="1" fill="#CCCCFF"/>
-<rect x="17" y="3" width="1" height="1" fill="#CCCCFF"/>
-<rect x="18" y="4" width="1" height="1" fill="#CCCCFF"/>
-<rect x="19" y="5" width="1" height="1" fill="#CCCCFF"/>
-<rect x="20" y="6" width="1" height="1" fill="#CCCCFF"/>
-<rect x="21" y="7" width="1" height="1" fill="#CCCCFF"/>
-<rect x="22" y="8" width="1" height="1" fill="#CCCCFF"/>
-<rect x="23" y="9" width="1" height="1" fill="#CCCCFF"/>
-<rect x="24" y="10" width="1" height="1" fill="#CCCCFF"/>
-<rect x="25" y="11" width="1" height="1" fill="#CCCCFF"/>
-<rect x="26" y="12" width="1" height="1" fill="#CCCCFF"/>
-<rect x="27" y="13" width="1" height="1" fill="#CCCCFF"/>
-<rect x="28" y="14" width="1" height="1" fill="#CCCCFF"/>
-<rect x="29" y="15" width="1" height="1" fill="#CCCCFF"/>
-<rect x="30" y="16" width="1" height="1" fill="#CCCCFF"/>
-<rect x="29" y="17" width="1" height="1" fill="#CCCCFF"/>
-<rect x="28" y="18" width="1" height="1" fill="#CCCCFF"/>
-<rect x="28" y="17" width="1" height="1" fill="#CCCCFF"/>
-<rect x="27" y="17" width="1" height="1" fill="#9999FF"/>
-<rect x="28" y="16" width="1" height="1" fill="#CCCCFF"/>
-<rect x="27" y="16" width="1" height="1" fill="#CCCCFF"/>
-<rect x="27" y="15" width="1" height="1" fill="#CCCCFF"/>
-<rect x="26" y="14" width="1" height="1" fill="#CCCCFF"/>
-<rect x="25" y="13" width="1" height="1" fill="#CCCCFF"/>
-<rect x="24" y="12" width="1" height="1" fill="#CCCCFF"/>
-<rect x="23" y="12" width="1" height="1" fill="#9999FF"/>
-<rect x="21" y="11" width="1" height="1" fill="#9999FF"/>
-<rect x="20" y="12" width="1" height="1" fill="#9999FF"/>
-<rect x="10" y="12" width="1" height="1" fill="#9999FF"/>
-<rect x="9" y="12" width="1" height="1" fill="#330099"/>
-<rect x="14" y="12" width="1" height="1" fill="#330099"/>
-<rect x="16" y="12" width="1" height="1" fill="#330099"/>
-<rect x="15" y="12" width="1" height="1" fill="#3399FF"/>
-<rect x="14" y="11" width="1" height="1" fill="#33CCFF"/>
-<rect x="12" y="10" width="1" height="1" fill="#3399FF"/>
-<rect x="12" y="9" width="1" height="1" fill="#3399FF"/>
-<rect x="13" y="8" width="1" height="1" fill="#3399FF"/>
-<rect x="14" y="7" width="1" height="1" fill="#3399FF"/>
-<rect x="15" y="6" width="1" height="1" fill="#3399FF"/>
-<rect x="16" y="6" width="1" height="1" fill="#3399FF"/>
-<rect x="16" y="11" width="1" height="1" fill="#33CCFF"/>
-<rect x="17" y="10" width="1" height="1" fill="#33CCFF"/>
-<rect x="18" y="10" width="1" height="1" fill="#0066FF"/>
-<rect x="17" y="11" width="1" height="1" fill="#3333CC"/>
-<rect x="19" y="12" width="1" height="1" fill="#330099"/>
-<rect x="20" y="11" width="1" height="1" fill="#3333CC"/>
-<rect x="21" y="10" width="1" height="1" fill="#3333CC"/>
-<rect x="22" y="12" width="1" height="1" fill="#330099"/>
-<rect x="16" y="1" width="1" height="1" fill="#666699"/>
-<rect x="17" y="2" width="1" height="1" fill="#666699"/>
-<rect x="18" y="3" width="1" height="1" fill="#666699"/>
-<rect x="19" y="4" width="1" height="1" fill="#666699"/>
-<rect x="20" y="5" width="1" height="1" fill="#666699"/>
-<rect x="21" y="6" width="1" height="1" fill="#666699"/>
-<rect x="22" y="7" width="1" height="1" fill="#666699"/>
-<rect x="23" y="8" width="1" height="1" fill="#666699"/>
-<rect x="24" y="9" width="1" height="1" fill="#666699"/>
-<rect x="25" y="10" width="1" height="1" fill="#666699"/>
-<rect x="26" y="11" width="1" height="1" fill="#666699"/>
-<rect x="27" y="12" width="1" height="1" fill="#666699"/>
-<rect x="28" y="13" width="1" height="1" fill="#666699"/>
-<rect x="11" y="6" width="1" height="1" fill="#9999CC"/>
-<rect x="10" y="7" width="1" height="1" fill="#9999CC"/>
-<rect x="9" y="8" width="1" height="1" fill="#9999CC"/>
-<rect x="8" y="9" width="1" height="1" fill="#9999CC"/>
-<rect x="7" y="10" width="1" height="1" fill="#9999CC"/>
-<rect x="6" y="11" width="1" height="1" fill="#9999CC"/>
-<rect x="5" y="12" width="1" height="1" fill="#9999CC"/>
-<rect x="6" y="12" width="1" height="1" fill="#CCFFFF"/>
-<rect x="7" y="12" width="1" height="1" fill="#CCCCFF"/>
-<rect x="8" y="12" width="1" height="1" fill="#CCCCFF"/>
-<rect x="11" y="12" width="1" height="1" fill="#CCCCFF"/>
-<rect x="12" y="12" width="1" height="1" fill="#CCCCFF"/>
-<rect x="13" y="12" width="1" height="1" fill="#CCCCFF"/>
-<rect x="17" y="12" width="1" height="1" fill="#CCCCFF"/>
-<rect x="18" y="12" width="1" height="1" fill="#CCCCFF"/>
-<rect x="21" y="12" width="1" height="1" fill="#CCCCFF"/>
-<rect x="7" y="11" width="1" height="1" fill="#CCFFFF"/>
-<rect x="9" y="11" width="1" height="1" fill="#CCFFFF"/>
-<rect x="8" y="11" width="1" height="1" fill="white"/>
-<rect x="3" y="26" width="1" height="1" fill="white"/>
-<rect x="3" y="25" width="1" height="1" fill="white"/>
-<rect x="3" y="24" width="1" height="1" fill="white"/>
-<rect x="3" y="23" width="1" height="1" fill="white"/>
-<rect x="2" y="22" width="1" height="1" fill="white"/>
-<rect x="2" y="21" width="1" height="1" fill="white"/>
-<rect x="2" y="20" width="1" height="1" fill="white"/>
-<rect x="2" y="19" width="1" height="1" fill="white"/>
-<rect x="1" y="18" width="1" height="1" fill="white"/>
-<rect x="1" y="17" width="1" height="1" fill="white"/>
-<rect x="1" y="16" width="1" height="1" fill="white"/>
-<rect x="1" y="15" width="1" height="1" fill="white"/>
-<rect x="1" y="14" width="1" height="1" fill="white"/>
-<rect x="2" y="14" width="1" height="1" fill="white"/>
-<rect x="2" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="2" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="2" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="3" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="3" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="3" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="4" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="4" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="5" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="5" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="7" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="7" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="9" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="9" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="10" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="10" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="13" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="11" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="12" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="12" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="11" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="11" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="12" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="13" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="13" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="14" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="14" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="15" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="14" y="15" width="1" height="1" fill="#FFCC99"/>
-<rect x="15" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="16" y="15" width="1" height="1" fill="#FFCC99"/>
-<rect x="16" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="17" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="17" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="18" y="15" width="1" height="1" fill="#FFCC99"/>
-<rect x="18" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="19" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="19" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="20" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="21" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="22" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="23" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="23" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="24" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="25" y="15" width="1" height="1" fill="#FFFF99"/>
-<rect x="25" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="25" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="24" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="25" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="25" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="24" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="23" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="23" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="22" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="22" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="20" y="16" width="1" height="1" fill="#FFFF99"/>
-<rect x="21" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="21" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="22" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="22" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="19" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="20" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="20" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="17" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="18" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="18" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="15" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="16" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="16" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="15" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="16" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="17" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="18" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="20" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="19" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="20" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="17" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="18" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="15" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="16" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="15" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="18" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="20" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="19" y="23" width="1" height="1" fill="#FFFF99"/>
-<rect x="20" y="24" width="1" height="1" fill="#FFFF99"/>
-<rect x="17" y="23" width="1" height="1" fill="#FFFF99"/>
-<rect x="18" y="24" width="1" height="1" fill="#FFFF99"/>
-<rect x="15" y="23" width="1" height="1" fill="#FFFF99"/>
-<rect x="15" y="24" width="1" height="1" fill="#FFFF99"/>
-<rect x="16" y="23" width="1" height="1" fill="#FFFF99"/>
-<rect x="15" y="25" width="1" height="1" fill="#FFCC99"/>
-<rect x="16" y="25" width="1" height="1" fill="#FFFF99"/>
-<rect x="17" y="25" width="1" height="1" fill="#FFFF99"/>
-<rect x="19" y="25" width="1" height="1" fill="#FFFF99"/>
-<rect x="19" y="27" width="1" height="1" fill="#FFCC99"/>
-<rect x="17" y="26" width="1" height="1" fill="#FFCC99"/>
-<rect x="18" y="26" width="1" height="1" fill="#FFCC99"/>
-<rect x="18" y="25" width="1" height="1" fill="#FFCC99"/>
-<rect x="20" y="27" width="1" height="1" fill="#FFFF99"/>
-<rect x="21" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="21" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="22" y="23" width="1" height="1" fill="#FFFF99"/>
-<rect x="21" y="24" width="1" height="1" fill="#FFFF99"/>
-<rect x="21" y="26" width="1" height="1" fill="#FFFF99"/>
-<rect x="22" y="25" width="1" height="1" fill="#FFFF99"/>
-<rect x="22" y="27" width="1" height="1" fill="#FFFF99"/>
-<rect x="24" y="27" width="1" height="1" fill="#FFFF99"/>
-<rect x="25" y="26" width="1" height="1" fill="#FFFF99"/>
-<rect x="24" y="25" width="1" height="1" fill="#FFFF99"/>
-<rect x="26" y="25" width="1" height="1" fill="#FFFF99"/>
-<rect x="26" y="23" width="1" height="1" fill="#FFFF99"/>
-<rect x="24" y="23" width="1" height="1" fill="#FFFF99"/>
-<rect x="23" y="24" width="1" height="1" fill="#FFFF99"/>
-<rect x="23" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="23" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="25" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="25" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="24" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="21" y="27" width="1" height="1" fill="#FFCC99"/>
-<rect x="19" y="26" width="1" height="1" fill="#FFFF99"/>
-<rect x="17" y="27" width="1" height="1" fill="#FFFF99"/>
-<rect x="18" y="27" width="1" height="1" fill="#FFFF99"/>
-<rect x="15" y="26" width="1" height="1" fill="#FFFF99"/>
-<rect x="15" y="27" width="1" height="1" fill="#FFCC99"/>
-<rect x="16" y="26" width="1" height="1" fill="#FFFF99"/>
-<rect x="16" y="27" width="1" height="1" fill="#FFCC99"/>
-<rect x="9" y="25" width="1" height="1" fill="#FFFF99"/>
-<rect x="10" y="25" width="1" height="1" fill="#FFFF99"/>
-<rect x="11" y="25" width="1" height="1" fill="#FFFF99"/>
-<rect x="12" y="25" width="1" height="1" fill="#FFCC99"/>
-<rect x="13" y="25" width="1" height="1" fill="#FFFF99"/>
-<rect x="14" y="25" width="1" height="1" fill="#FFCC99"/>
-<rect x="13" y="26" width="1" height="1" fill="#FFFF99"/>
-<rect x="13" y="27" width="1" height="1" fill="#FFCC99"/>
-<rect x="14" y="26" width="1" height="1" fill="#FFCC99"/>
-<rect x="14" y="27" width="1" height="1" fill="#FFFF99"/>
-<rect x="11" y="26" width="1" height="1" fill="#FFCC99"/>
-<rect x="11" y="27" width="1" height="1" fill="#FFFF99"/>
-<rect x="12" y="26" width="1" height="1" fill="#FFFF99"/>
-<rect x="12" y="27" width="1" height="1" fill="#FFCC99"/>
-<rect x="9" y="26" width="1" height="1" fill="#FFFF99"/>
-<rect x="9" y="27" width="1" height="1" fill="#FFCC99"/>
-<rect x="10" y="26" width="1" height="1" fill="#FFCC99"/>
-<rect x="10" y="27" width="1" height="1" fill="#FFFF99"/>
-<rect x="9" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="10" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="11" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="12" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="14" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="14" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="13" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="14" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="12" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="13" y="23" width="1" height="1" fill="#FFFF99"/>
-<rect x="14" y="24" width="1" height="1" fill="#FFFF99"/>
-<rect x="11" y="24" width="1" height="1" fill="#FFFF99"/>
-<rect x="12" y="24" width="1" height="1" fill="#FFFF99"/>
-<rect x="9" y="23" width="1" height="1" fill="#FFCC99"/>
-<rect x="11" y="22" width="1" height="1" fill="#FFCC99"/>
-<rect x="12" y="23" width="1" height="1" fill="#FFCC99"/>
-<rect x="14" y="23" width="1" height="1" fill="#FFCC99"/>
-<rect x="13" y="24" width="1" height="1" fill="#FFCC99"/>
-<rect x="13" y="22" width="1" height="1" fill="#FFCC99"/>
-<rect x="9" y="24" width="1" height="1" fill="#FFFF99"/>
-<rect x="10" y="23" width="1" height="1" fill="#FFFF99"/>
-<rect x="10" y="24" width="1" height="1" fill="#FFCC99"/>
-<rect x="13" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="14" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="14" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="11" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="12" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="12" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="9" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="10" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="11" y="23" width="1" height="1" fill="#FFFF99"/>
-<rect x="12" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="12" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="11" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="11" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="12" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="12" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="9" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="10" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="9" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="9" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="10" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="10" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="9" y="21" width="1" height="1" fill="#FFCC99"/>
-<rect x="11" y="20" width="1" height="1" fill="#FFCC99"/>
-<rect x="10" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="9" y="19" width="1" height="1" fill="#FFCC99"/>
-<rect x="9" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="10" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="10" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="9" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="10" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="7" y="25" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="25" width="1" height="1" fill="#FFCC99"/>
-<rect x="7" y="26" width="1" height="1" fill="#FFCC99"/>
-<rect x="7" y="27" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="26" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="27" width="1" height="1" fill="#FFFF99"/>
-<rect x="7" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="7" y="23" width="1" height="1" fill="#FFCC99"/>
-<rect x="7" y="24" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="23" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="24" width="1" height="1" fill="#FFFF99"/>
-<rect x="7" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="7" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="7" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="7" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="7" y="21" width="1" height="1" fill="#FFCC99"/>
-<rect x="8" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="7" y="19" width="1" height="1" fill="#FFCC99"/>
-<rect x="7" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="7" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="7" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="8" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="5" y="25" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="25" width="1" height="1" fill="#FFFF99"/>
-<rect x="5" y="26" width="1" height="1" fill="#FFCC99"/>
-<rect x="5" y="27" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="26" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="27" width="1" height="1" fill="#FFCC99"/>
-<rect x="5" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="5" y="23" width="1" height="1" fill="#FFCC99"/>
-<rect x="5" y="24" width="1" height="1" fill="#FFFF99"/>
-<rect x="4" y="25" width="1" height="1" fill="#FFCC99"/>
-<rect x="4" y="26" width="1" height="1" fill="#FFFF99"/>
-<rect x="4" y="27" width="1" height="1" fill="#FFFF99"/>
-<rect x="4" y="24" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="23" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="24" width="1" height="1" fill="#FFFF99"/>
-<rect x="5" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="22" width="1" height="1" fill="#FFCC99"/>
-<rect x="5" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="5" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="5" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="5" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="5" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="5" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="5" y="17" width="1" height="1" fill="#FFCC99"/>
-<rect x="5" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="6" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="4" y="17" width="1" height="1" fill="#FFFF99"/>
-<rect x="2" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="3" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="3" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="3" y="20" width="1" height="1" fill="#FFFF99"/>
-<rect x="3" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="4" y="18" width="1" height="1" fill="#FFFF99"/>
-<rect x="4" y="19" width="1" height="1" fill="#FFFF99"/>
-<rect x="4" y="20" width="1" height="1" fill="#FFCC99"/>
-<rect x="4" y="21" width="1" height="1" fill="#FFFF99"/>
-<rect x="3" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="4" y="22" width="1" height="1" fill="#FFFF99"/>
-<rect x="4" y="23" width="1" height="1" fill="#FFFF99"/>
-<rect x="9" y="10" width="1" height="1" fill="white"/>
-<rect x="10" y="10" width="1" height="1" fill="white"/>
-<rect x="12" y="11" width="1" height="1" fill="white"/>
-<rect x="11" y="10" width="1" height="1" fill="white"/>
-<rect x="11" y="9" width="1" height="1" fill="white"/>
-<rect x="10" y="9" width="1" height="1" fill="white"/>
-<rect x="11" y="8" width="1" height="1" fill="white"/>
-<rect x="12" y="8" width="1" height="1" fill="white"/>
-<rect x="12" y="7" width="1" height="1" fill="white"/>
-<rect x="13" y="7" width="1" height="1" fill="white"/>
-<rect x="13" y="6" width="1" height="1" fill="white"/>
-<rect x="14" y="6" width="1" height="1" fill="white"/>
-<rect x="14" y="5" width="1" height="1" fill="white"/>
-<rect x="15" y="5" width="1" height="1" fill="white"/>
-<rect x="15" y="4" width="1" height="1" fill="white"/>
-<rect x="16" y="4" width="1" height="1" fill="white"/>
-<rect x="16" y="5" width="1" height="1" fill="white"/>
-<rect x="17" y="5" width="1" height="1" fill="white"/>
-<rect x="18" y="6" width="1" height="1" fill="white"/>
-<rect x="18" y="7" width="1" height="1" fill="white"/>
-<rect x="19" y="7" width="1" height="1" fill="white"/>
-<rect x="20" y="8" width="1" height="1" fill="white"/>
-<rect x="19" y="8" width="1" height="1" fill="#CCFFFF"/>
-<rect x="20" y="9" width="1" height="1" fill="white"/>
-<rect x="21" y="9" width="1" height="1" fill="white"/>
-<rect x="22" y="10" width="1" height="1" fill="white"/>
-<rect x="19" y="10" width="1" height="1" fill="white"/>
-<rect x="18" y="11" width="1" height="1" fill="white"/>
-<rect x="23" y="11" width="1" height="1" fill="white"/>
-<rect x="11" y="11" width="1" height="1" fill="#CCFFFF"/>
-<rect x="10" y="11" width="1" height="1" fill="#3333CC"/>
-<rect x="13" y="11" width="1" height="1" fill="#666699"/>
-<rect x="15" y="11" width="1" height="1" fill="#66CCFF"/>
-<rect x="16" y="10" width="1" height="1" fill="#66CCFF"/>
-<rect x="15" y="10" width="1" height="1" fill="#66CCFF"/>
-<rect x="14" y="10" width="1" height="1" fill="#66CCFF"/>
-<rect x="13" y="10" width="1" height="1" fill="#66CCFF"/>
-<rect x="8" y="10" width="1" height="1" fill="#CCFFFF"/>
-<rect x="9" y="9" width="1" height="1" fill="#CCFFFF"/>
-<rect x="13" y="9" width="1" height="1" fill="#CCFFFF"/>
-<rect x="14" y="9" width="1" height="1" fill="#66FFFF"/>
-<rect x="15" y="9" width="1" height="1" fill="#66FFFF"/>
-<rect x="16" y="8" width="1" height="1" fill="#66FFFF"/>
-<rect x="17" y="8" width="1" height="1" fill="#66FFFF"/>
-<rect x="17" y="7" width="1" height="1" fill="#666699"/>
-<rect x="18" y="8" width="1" height="1" fill="#666699"/>
-<rect x="19" y="9" width="1" height="1" fill="#666699"/>
-<rect x="18" y="9" width="1" height="1" fill="#99CCFF"/>
-<rect x="17" y="9" width="1" height="1" fill="#99CCFF"/>
-<rect x="16" y="9" width="1" height="1" fill="#99CCFF"/>
-<rect x="14" y="8" width="1" height="1" fill="#CCFFFF"/>
-<rect x="15" y="7" width="1" height="1" fill="#CCFFFF"/>
-<rect x="17" y="6" width="1" height="1" fill="#CCFFFF"/>
-<rect x="16" y="7" width="1" height="1" fill="#CCECFF"/>
-<rect x="15" y="8" width="1" height="1" fill="#CCECFF"/>
-<rect x="10" y="8" width="1" height="1" fill="#CCFFFF"/>
-<rect x="11" y="7" width="1" height="1" fill="#CCFFFF"/>
-<rect x="12" y="6" width="1" height="1" fill="#CCFFFF"/>
-<rect x="13" y="5" width="1" height="1" fill="#CCFFFF"/>
-<rect x="14" y="4" width="1" height="1" fill="#CCFFFF"/>
-<rect x="15" y="3" width="1" height="1" fill="#CCFFFF"/>
-<rect x="16" y="3" width="1" height="1" fill="#CCFFFF"/>
-<rect x="17" y="4" width="1" height="1" fill="#CCFFFF"/>
-<rect x="18" y="5" width="1" height="1" fill="#CCFFFF"/>
-<rect x="19" y="6" width="1" height="1" fill="#CCFFFF"/>
-<rect x="20" y="7" width="1" height="1" fill="#CCFFFF"/>
-<rect x="21" y="8" width="1" height="1" fill="#CCFFFF"/>
-<rect x="22" y="9" width="1" height="1" fill="#CCFFFF"/>
-<rect x="23" y="10" width="1" height="1" fill="#CCFFFF"/>
-<rect x="20" y="10" width="1" height="1" fill="#CCFFFF"/>
-<rect x="19" y="11" width="1" height="1" fill="#CCFFFF"/>
-<rect x="22" y="11" width="1" height="1" fill="#CCFFFF"/>
-<rect x="24" y="11" width="1" height="1" fill="#CCFFFF"/>
-<rect x="25" y="12" width="1" height="1" fill="#CCFFFF"/>
-<rect x="26" y="13" width="1" height="1" fill="#CCFFFF"/>
-<rect x="27" y="14" width="1" height="1" fill="#CCFFFF"/>
-<rect x="28" y="15" width="1" height="1" fill="#CCFFFF"/>
-<rect x="29" y="16" width="1" height="1" fill="#CCFFFF"/>
-<rect x="9" y="5" width="1" height="1" fill="#808000"/>
-<rect x="8" y="5" width="1" height="1" fill="#808000"/>
-<rect x="4" y="13" width="1" height="1" fill="#999900"/>
-<rect x="5" y="13" width="1" height="1" fill="#999900"/>
-<rect x="5" y="11" width="1" height="1" fill="#999900"/>
-<rect x="6" y="10" width="1" height="1" fill="#999900"/>
-<rect x="7" y="9" width="1" height="1" fill="#999900"/>
-<rect x="8" y="8" width="1" height="1" fill="#999900"/>
-<rect x="9" y="7" width="1" height="1" fill="#999900"/>
-<rect x="9" y="7" width="1" height="1" fill="#999900"/>
-<rect x="6" y="13" width="1" height="1" fill="#999900"/>
-<rect x="7" y="13" width="1" height="1" fill="#999900"/>
-<rect x="8" y="13" width="1" height="1" fill="#999900"/>
-<rect x="9" y="13" width="1" height="1" fill="#999900"/>
-<rect x="10" y="13" width="1" height="1" fill="#999900"/>
-<rect x="11" y="13" width="1" height="1" fill="#999900"/>
-<rect x="12" y="13" width="1" height="1" fill="#999900"/>
-<rect x="13" y="13" width="1" height="1" fill="#999900"/>
-<rect x="14" y="13" width="1" height="1" fill="#999900"/>
-<rect x="15" y="13" width="1" height="1" fill="#999900"/>
-<rect x="16" y="13" width="1" height="1" fill="#999900"/>
-<rect x="17" y="13" width="1" height="1" fill="#999900"/>
-<rect x="18" y="13" width="1" height="1" fill="#999900"/>
-<rect x="19" y="13" width="1" height="1" fill="#999900"/>
-<rect x="20" y="13" width="1" height="1" fill="#999900"/>
-<rect x="5" y="29" width="1" height="1" fill="#999900"/>
-<rect x="6" y="29" width="1" height="1" fill="#999900"/>
-<rect x="7" y="29" width="1" height="1" fill="#999900"/>
-<rect x="8" y="29" width="1" height="1" fill="#999900"/>
-<rect x="9" y="29" width="1" height="1" fill="#999900"/>
-<rect x="10" y="29" width="1" height="1" fill="#999900"/>
-<rect x="11" y="29" width="1" height="1" fill="#999900"/>
-<rect x="12" y="29" width="1" height="1" fill="#999900"/>
-<rect x="13" y="29" width="1" height="1" fill="#999900"/>
-<rect x="14" y="29" width="1" height="1" fill="#999900"/>
-<rect x="15" y="29" width="1" height="1" fill="#999900"/>
-<rect x="16" y="29" width="1" height="1" fill="#999900"/>
-<rect x="17" y="29" width="1" height="1" fill="#999900"/>
-<rect x="18" y="29" width="1" height="1" fill="#999900"/>
-<rect x="19" y="29" width="1" height="1" fill="#999900"/>
-<rect x="20" y="29" width="1" height="1" fill="#999900"/>
-<rect x="21" y="29" width="1" height="1" fill="#999900"/>
-<rect x="22" y="29" width="1" height="1" fill="#999900"/>
-<rect x="23" y="29" width="1" height="1" fill="#999900"/>
-<rect x="24" y="29" width="1" height="1" fill="#999900"/>
-<rect x="25" y="29" width="1" height="1" fill="#999900"/>
-<rect x="26" y="29" width="1" height="1" fill="#999900"/>
-<rect x="27" y="29" width="1" height="1" fill="#999900"/>
-<rect x="28" y="29" width="1" height="1" fill="#999900"/>
-<rect x="28" y="28" width="1" height="1" fill="#999900"/>
-<rect x="28" y="27" width="1" height="1" fill="#999900"/>
-<rect x="28" y="26" width="1" height="1" fill="#999900"/>
-<rect x="28" y="25" width="1" height="1" fill="#999900"/>
-<rect x="28" y="24" width="1" height="1" fill="#999900"/>
-<rect x="27" y="20" width="1" height="1" fill="#999900"/>
-<rect x="27" y="19" width="1" height="1" fill="#999900"/>
-<rect x="27" y="18" width="1" height="1" fill="#999900"/>
-<rect x="26" y="17" width="1" height="1" fill="#999900"/>
-<rect x="26" y="16" width="1" height="1" fill="#999900"/>
-<rect x="26" y="15" width="1" height="1" fill="#999900"/>
-<rect x="25" y="14" width="1" height="1" fill="#999900"/>
-<rect x="24" y="13" width="1" height="1" fill="#999900"/>
-<rect x="23" y="13" width="1" height="1" fill="#999900"/>
-<rect x="22" y="13" width="1" height="1" fill="#999900"/>
-<rect x="21" y="13" width="1" height="1" fill="#999900"/>
-<rect x="29" y="29" width="1" height="1" fill="#333300"/>
-<rect x="29" y="28" width="1" height="1" fill="#333300"/>
-<rect x="29" y="27" width="1" height="1" fill="#333300"/>
-<rect x="29" y="26" width="1" height="1" fill="#333300"/>
-<rect x="29" y="25" width="1" height="1" fill="#333300"/>
-<rect x="29" y="25" width="1" height="1" fill="#333300"/>
-<rect x="29" y="24" width="1" height="1" fill="#333300"/>
-<rect x="29" y="23" width="1" height="1" fill="#333300"/>
-<rect x="29" y="22" width="1" height="1" fill="#333300"/>
-<rect x="29" y="21" width="1" height="1" fill="#333300"/>
-<rect x="29" y="20" width="1" height="1" fill="#333300"/>
-<rect x="29" y="20" width="1" height="1" fill="#333300"/>
-<rect x="28" y="23" width="1" height="1" fill="#333300"/>
-<rect x="28" y="22" width="1" height="1" fill="#333300"/>
-<rect x="28" y="21" width="1" height="1" fill="#333300"/>
-<rect x="28" y="20" width="1" height="1" fill="#333300"/>
-<rect x="28" y="20" width="1" height="1" fill="#333300"/>
-<rect x="29" y="19" width="1" height="1" fill="#333300"/>
-<rect x="28" y="19" width="1" height="1" fill="black"/>
-<rect x="29" y="18" width="1" height="1" fill="black"/>
-<rect x="30" y="17" width="1" height="1" fill="black"/>
-<rect x="31" y="16" width="1" height="1" fill="black"/>
-<rect x="30" y="15" width="1" height="1" fill="black"/>
-<rect x="30" y="14" width="1" height="1" fill="#003333"/>
-<rect x="30" y="13" width="1" height="1" fill="#003333"/>
-<rect x="30" y="12" width="1" height="1" fill="#003333"/>
-<rect x="30" y="11" width="1" height="1" fill="#003333"/>
-<rect x="29" y="10" width="1" height="1" fill="#003333"/>
-<rect x="29" y="14" width="1" height="1" fill="black"/>
-<rect x="16" y="24" width="1" height="1" fill="#FFCC99"/>
-<rect x="17" y="24" width="1" height="1" fill="#FFCC99"/>
-</svg>
+    return g`
+      <svg class="icon">
+        <use href="icons/a2k-icons.svg#documents-icon"></use>
+      </svg>
     `;
   }
 }
-window.customElements.define("a2k-documents-icon", r1);
-var L =
+window.customElements.define("a2k-documents-icon", H1);
+var I =
     (globalThis && globalThis.__decorate) ||
-    function (l, t, h, f) {
+    function (t, l, h, f) {
       var e = arguments.length,
         i =
           e < 3
-            ? t
+            ? l
             : f === null
-            ? (f = Object.getOwnPropertyDescriptor(t, h))
+            ? (f = Object.getOwnPropertyDescriptor(l, h))
             : f,
-        d;
+        a;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        i = Reflect.decorate(l, t, h, f);
+        i = Reflect.decorate(t, l, h, f);
       else
-        for (var c = l.length - 1; c >= 0; c--)
-          (d = l[c]) &&
-            (i = (e < 3 ? d(i) : e > 3 ? d(t, h, i) : d(t, h)) || i);
-      return e > 3 && i && Object.defineProperty(t, h, i), i;
+        for (var d = t.length - 1; d >= 0; d--)
+          (a = t[d]) &&
+            (i = (e < 3 ? a(i) : e > 3 ? a(l, h, i) : a(l, h)) || i);
+      return e > 3 && i && Object.defineProperty(l, h, i), i;
     },
-  y1 =
+  r1 =
     (globalThis && globalThis.__metadata) ||
-    function (l, t) {
+    function (t, l) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(l, t);
+        return Reflect.metadata(t, l);
     };
-let n = class extends F {
+let n = class extends c {
   constructor() {
     super(...arguments);
     this.open = !1;
   }
   render() {
-    return a`
+    return V`
       <div id="start-menu-item">
         <div id="icon-wrapper">
           <slot name="icon"></slot>
@@ -3391,7 +2619,7 @@ let n = class extends F {
     `;
   }
 };
-n.styles = r`
+n.styles = H`
     #start-menu-item {
       height: var(--start-menu-item-height);
       box-sizing: border-box;
@@ -3430,48 +2658,48 @@ n.styles = r`
       margin: 0;
     }
   `;
-L([y(), y1("design:type", Object)], n.prototype, "open", void 0);
-n = L([p("a2k-start-menu-item")], n);
-var I =
+I([r(), r1("design:type", Object)], n.prototype, "open", void 0);
+n = I([w("a2k-start-menu-item")], n);
+var W =
     (globalThis && globalThis.__decorate) ||
-    function (l, t, h, f) {
+    function (t, l, h, f) {
       var e = arguments.length,
         i =
           e < 3
-            ? t
+            ? l
             : f === null
-            ? (f = Object.getOwnPropertyDescriptor(t, h))
+            ? (f = Object.getOwnPropertyDescriptor(l, h))
             : f,
-        d;
+        a;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        i = Reflect.decorate(l, t, h, f);
+        i = Reflect.decorate(t, l, h, f);
       else
-        for (var c = l.length - 1; c >= 0; c--)
-          (d = l[c]) &&
-            (i = (e < 3 ? d(i) : e > 3 ? d(t, h, i) : d(t, h)) || i);
-      return e > 3 && i && Object.defineProperty(t, h, i), i;
+        for (var d = t.length - 1; d >= 0; d--)
+          (a = t[d]) &&
+            (i = (e < 3 ? a(i) : e > 3 ? a(l, h, i) : a(l, h)) || i);
+      return e > 3 && i && Object.defineProperty(l, h, i), i;
     },
-  w1 =
+  p1 =
     (globalThis && globalThis.__metadata) ||
-    function (l, t) {
+    function (t, l) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(l, t);
+        return Reflect.metadata(t, l);
     };
-let s = class extends F {
+let b = class extends c {
   constructor() {
     super(...arguments);
     this.open = !1;
   }
   handleAboutClick() {
-    const t = a` <a2k-window closable title="About Andricos2000">
+    const l = V` <a2k-window closable title="About Andricos2000">
       <p>Deets coming soon...</p>
     </a2k-window>`;
-    t1(t, document.body);
+    l1(l, document.body);
   }
   render() {
-    const t = String(this.open) === "true";
-    return a`
-      <div id="start-menu" class="${t ? "open" : ""}">
+    const l = String(this.open) === "true";
+    return V`
+      <div id="start-menu" class="${l ? "open" : ""}">
         <a2k-panel>
           <div id="content">
             <div id="side-strip">
@@ -3515,7 +2743,7 @@ let s = class extends F {
     `;
   }
 };
-s.styles = r`
+b.styles = H`
     #start-menu {
       width: var(--start-menu-height);
       position: absolute;
@@ -3564,52 +2792,52 @@ s.styles = r`
       padding-inline-start: var(--spacing-50);
     }
   `;
-I([y(), w1("design:type", Object)], s.prototype, "open", void 0);
-s = I([p("a2k-start-menu")], s);
-var W =
+W([r(), p1("design:type", Object)], b.prototype, "open", void 0);
+b = W([w("a2k-start-menu")], b);
+var U =
     (globalThis && globalThis.__decorate) ||
-    function (l, t, h, f) {
+    function (t, l, h, f) {
       var e = arguments.length,
         i =
           e < 3
-            ? t
+            ? l
             : f === null
-            ? (f = Object.getOwnPropertyDescriptor(t, h))
+            ? (f = Object.getOwnPropertyDescriptor(l, h))
             : f,
-        d;
+        a;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        i = Reflect.decorate(l, t, h, f);
+        i = Reflect.decorate(t, l, h, f);
       else
-        for (var c = l.length - 1; c >= 0; c--)
-          (d = l[c]) &&
-            (i = (e < 3 ? d(i) : e > 3 ? d(t, h, i) : d(t, h)) || i);
-      return e > 3 && i && Object.defineProperty(t, h, i), i;
+        for (var d = t.length - 1; d >= 0; d--)
+          (a = t[d]) &&
+            (i = (e < 3 ? a(i) : e > 3 ? a(l, h, i) : a(l, h)) || i);
+      return e > 3 && i && Object.defineProperty(l, h, i), i;
     },
-  g1 =
+  F1 =
     (globalThis && globalThis.__metadata) ||
-    function (l, t) {
+    function (t, l) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(l, t);
+        return Reflect.metadata(t, l);
     };
-let b = class extends F {
+let s = class extends c {
   constructor() {
     super(...arguments);
-    (this._hideOnClickOutside = (t) => {
-      t.composedPath().includes(this) ||
+    (this._hideOnClickOutside = (l) => {
+      l.composedPath().includes(this) ||
         ((this._isMenuOpen = !1),
         document.removeEventListener("click", this._hideOnClickOutside));
     }),
       (this._isMenuOpen = !1);
   }
   _toggleMenu() {
-    const t = !this._isMenuOpen;
-    t
+    const l = !this._isMenuOpen;
+    l
       ? document.addEventListener("click", this._hideOnClickOutside)
       : document.removeEventListener("click", this._hideOnClickOutside),
-      (this._isMenuOpen = t);
+      (this._isMenuOpen = l);
   }
   render() {
-    return a`
+    return V`
       <div class="wrapper">
         <a2k-start-menu open="${this._isMenuOpen}"></a2k-start-menu>
         <button @click="${this._toggleMenu}">
@@ -3622,7 +2850,7 @@ let b = class extends F {
     `;
   }
 };
-b.styles = r`
+s.styles = H`
     .wrapper {
       position: relative;
       height: 100%;
@@ -3639,31 +2867,33 @@ b.styles = r`
       line-height: var(--font-size-100);
       background-color: var(--color-gray-600);
       cursor: pointer;
-      border: var(--taskbar-start-button-border);
+      border: var(--button-border);
       border-left: 1px dotted var(--color-white);
       border-top: 1px dotted var(--color-white);
-      box-shadow: var(--taskbar-start-button-shadow);
+      box-shadow: var(--button-shadow);
       outline-color: var(--outline-color-focus);
       outline-offset: var(--outline-offset-focus);
     }
 
     button:active {
-      border: 0;
+      border-bottom: 2px solid transparent;
+      border-right: 0;
       border-left: 1px dotted var(--color-black);
       border-top: 1px dotted var(--color-black);
-      box-shadow: var(--taskbar-start-button-shadow-active);
+      box-shadow: var(--button-shadow-active);
+      transform: translate(2px, 2px);
     }
 
     .icon-wrapper {
       width: var(--taskbar-start-button-icon-size);
     }
   `;
-W([i1(), g1("design:type", Object)], b.prototype, "_isMenuOpen", void 0);
-b = W([p("a2k-start-button")], b);
-class V1 {
-  constructor(t, h = 1e3) {
+U([i1(), F1("design:type", Object)], s.prototype, "_isMenuOpen", void 0);
+s = U([w("a2k-start-button")], s);
+class y1 {
+  constructor(l, h = 1e3) {
     (this.value = new Date()),
-      (this.host = t),
+      (this.host = l),
       this.host.addController(this),
       (this.timeout = h);
   }
@@ -3676,35 +2906,35 @@ class V1 {
     clearInterval(this.intervalId), (this.intervalId = void 0);
   }
 }
-var H1 =
+var o1 =
   (globalThis && globalThis.__decorate) ||
-  function (l, t, h, f) {
+  function (t, l, h, f) {
     var e = arguments.length,
       i =
         e < 3
-          ? t
+          ? l
           : f === null
-          ? (f = Object.getOwnPropertyDescriptor(t, h))
+          ? (f = Object.getOwnPropertyDescriptor(l, h))
           : f,
-      d;
+      a;
     if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-      i = Reflect.decorate(l, t, h, f);
+      i = Reflect.decorate(t, l, h, f);
     else
-      for (var c = l.length - 1; c >= 0; c--)
-        (d = l[c]) && (i = (e < 3 ? d(i) : e > 3 ? d(t, h, i) : d(t, h)) || i);
-    return e > 3 && i && Object.defineProperty(t, h, i), i;
+      for (var d = t.length - 1; d >= 0; d--)
+        (a = t[d]) && (i = (e < 3 ? a(i) : e > 3 ? a(l, h, i) : a(l, h)) || i);
+    return e > 3 && i && Object.defineProperty(l, h, i), i;
   };
-let E = class extends F {
+let E = class extends c {
   constructor() {
     super(...arguments);
-    this.clock = new V1(this);
+    this.clock = new y1(this);
   }
   render() {
-    const t = x1.format(this.clock.value);
-    return a`<div class="utility-bar">${t}</div>`;
+    const l = g1.format(this.clock.value);
+    return V`<div class="utility-bar">${l}</div>`;
   }
 };
-E.styles = r`
+E.styles = H`
     .utility-bar {
       --inset-shadow-padding: 2px;
 
@@ -3717,21 +2947,21 @@ E.styles = r`
       box-shadow: var(--taskbar-utility-bar-shadow);
     }
   `;
-E = H1([p("a2k-utility-bar")], E);
-const x1 = new Intl.DateTimeFormat("en-US", {
+E = o1([w("a2k-utility-bar")], E);
+const g1 = new Intl.DateTimeFormat("en-US", {
   hour: "numeric",
   minute: "numeric",
   second: "numeric",
 });
-class U extends F {
+class N extends c {
   render() {
-    return a`<div class="taskbar">
+    return V`<div class="taskbar">
       <a2k-start-button></a2k-start-button>
       <a2k-utility-bar></a2k-utility-bar>
     </div>`;
   }
 }
-U.styles = r`
+N.styles = H`
     .taskbar {
       --inset-shadow-padding: 2px;
 
@@ -3752,49 +2982,49 @@ U.styles = r`
       justify-content: space-between;
     }
   `;
-window.customElements.define("a2k-taskbar", U);
-var N =
+window.customElements.define("a2k-taskbar", N);
+var X =
     (globalThis && globalThis.__decorate) ||
-    function (l, t, h, f) {
+    function (t, l, h, f) {
       var e = arguments.length,
         i =
           e < 3
-            ? t
+            ? l
             : f === null
-            ? (f = Object.getOwnPropertyDescriptor(t, h))
+            ? (f = Object.getOwnPropertyDescriptor(l, h))
             : f,
-        d;
+        a;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        i = Reflect.decorate(l, t, h, f);
+        i = Reflect.decorate(t, l, h, f);
       else
-        for (var c = l.length - 1; c >= 0; c--)
-          (d = l[c]) &&
-            (i = (e < 3 ? d(i) : e > 3 ? d(t, h, i) : d(t, h)) || i);
-      return e > 3 && i && Object.defineProperty(t, h, i), i;
+        for (var d = t.length - 1; d >= 0; d--)
+          (a = t[d]) &&
+            (i = (e < 3 ? a(i) : e > 3 ? a(l, h, i) : a(l, h)) || i);
+      return e > 3 && i && Object.defineProperty(l, h, i), i;
     },
-  p1 =
+  w1 =
     (globalThis && globalThis.__metadata) ||
-    function (l, t) {
+    function (t, l) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(l, t);
+        return Reflect.metadata(t, l);
     };
-let k = class extends F {
+let D = class extends c {
   constructor() {
     super(...arguments);
     this.filled = "none";
   }
   render() {
-    const t = {
+    const l = {
       "half-filled": this.filled !== "none",
       filled: this.filled === "filled",
     };
-    return a`<div class=${l1(t)} id="unit">
+    return V`<div class=${t1(l)} id="unit">
       <div></div>
       <div></div>
     </div>`;
   }
 };
-k.styles = r`
+D.styles = H`
     #unit {
       width: var(--progress-unit-width);
       height: 100%;
@@ -3815,34 +3045,34 @@ k.styles = r`
       background: var(--progress-unit-background);
     }
   `;
-N([y(), p1("design:type", String)], k.prototype, "filled", void 0);
-k = N([p("a2k-progress-unit")], k);
-var C1 =
+X([r(), w1("design:type", String)], D.prototype, "filled", void 0);
+D = X([w("a2k-progress-unit")], D);
+var x1 =
     (globalThis && globalThis.__decorate) ||
-    function (l, t, h, f) {
+    function (t, l, h, f) {
       var e = arguments.length,
         i =
           e < 3
-            ? t
+            ? l
             : f === null
-            ? (f = Object.getOwnPropertyDescriptor(t, h))
+            ? (f = Object.getOwnPropertyDescriptor(l, h))
             : f,
-        d;
+        a;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        i = Reflect.decorate(l, t, h, f);
+        i = Reflect.decorate(t, l, h, f);
       else
-        for (var c = l.length - 1; c >= 0; c--)
-          (d = l[c]) &&
-            (i = (e < 3 ? d(i) : e > 3 ? d(t, h, i) : d(t, h)) || i);
-      return e > 3 && i && Object.defineProperty(t, h, i), i;
+        for (var d = t.length - 1; d >= 0; d--)
+          (a = t[d]) &&
+            (i = (e < 3 ? a(i) : e > 3 ? a(l, h, i) : a(l, h)) || i);
+      return e > 3 && i && Object.defineProperty(l, h, i), i;
     },
-  o1 =
+  M1 =
     (globalThis && globalThis.__metadata) ||
-    function (l, t) {
+    function (t, l) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(l, t);
+        return Reflect.metadata(t, l);
     };
-class B extends F {
+class B extends c {
   constructor() {
     super(...arguments);
     (this.progress = 0), (this.width = 0);
@@ -3850,47 +3080,47 @@ class B extends F {
   async firstUpdated() {
     this.generateProgressUnits();
   }
-  async updated(t) {
-    t.has("progress") && this.updateProgressUnits();
+  async updated(l) {
+    l.has("progress") && this.updateProgressUnits();
   }
   async generateProgressUnits() {
-    var t;
+    var l;
     const h = this.renderRoot.querySelector("#progress");
     if (!h) return;
     await this.updateComplete;
     const f =
-      (t = h.getBoundingClientRect().width) !== null && t !== void 0 ? t : 0;
+      (l = h.getBoundingClientRect().width) !== null && l !== void 0 ? l : 0;
     if (this.width === f) return;
     this.width = f;
     const { gap: e } = getComputedStyle(h),
-      d = Number(e.replace("px", "")) + 12,
-      c = Math.ceil(f / d);
-    Array(c)
+      a = Number(e.replace("px", "")) + 12,
+      d = Math.ceil(f / a);
+    Array(d)
       .fill(0)
       .forEach(() => {
-        const g = document.createElement("a2k-progress-unit");
-        g.setAttribute("filled", "none"), h == null || h.appendChild(g);
+        const F = document.createElement("a2k-progress-unit");
+        F.setAttribute("filled", "none"), h == null || h.appendChild(F);
       });
   }
   async updateProgressUnits() {
     await this.updateComplete;
-    const t = this.renderRoot.querySelectorAll("a2k-progress-unit"),
-      h = (this.progress / 100) * t.length,
-      f = M1(h),
+    const l = this.renderRoot.querySelectorAll("a2k-progress-unit"),
+      h = (this.progress / 100) * l.length,
+      f = Z1(h),
       e = Math.floor(h);
-    t.forEach((i, d) => {
-      d < e
+    l.forEach((i, a) => {
+      a < e
         ? i.setAttribute("filled", "filled")
-        : d === e && f >= 0.5
+        : a === e && f >= 0.5
         ? i.setAttribute("filled", "half")
         : i.setAttribute("filled", "none");
     });
   }
   render() {
-    return a`<div id="progress" role="progress"></div>`;
+    return V`<div id="progress" role="progress"></div>`;
   }
 }
-B.styles = r`
+B.styles = H`
     #progress {
       width: 100%;
       box-sizing: border-box;
@@ -3906,25 +3136,54 @@ B.styles = r`
       overflow: hidden;
     }
   `;
-C1(
-  [y({ type: Number }), o1("design:type", Object)],
+x1(
+  [r({ type: Number }), M1("design:type", Object)],
   B.prototype,
   "progress",
   void 0
 );
-const M1 = (l) => Math.floor((l % 1) * 10) / 10;
+const Z1 = (t) => Math.floor((t % 1) * 10) / 10;
 window.customElements.define("a2k-progress", B);
-class X extends F {
+var C1 =
+    (globalThis && globalThis.__decorate) ||
+    function (t, l, h, f) {
+      var e = arguments.length,
+        i =
+          e < 3
+            ? l
+            : f === null
+            ? (f = Object.getOwnPropertyDescriptor(l, h))
+            : f,
+        a;
+      if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
+        i = Reflect.decorate(t, l, h, f);
+      else
+        for (var d = t.length - 1; d >= 0; d--)
+          (a = t[d]) &&
+            (i = (e < 3 ? a(i) : e > 3 ? a(l, h, i) : a(l, h)) || i);
+      return e > 3 && i && Object.defineProperty(l, h, i), i;
+    },
+  n1 =
+    (globalThis && globalThis.__metadata) ||
+    function (t, l) {
+      if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
+        return Reflect.metadata(t, l);
+    };
+class _ extends c {
+  constructor() {
+    super(...arguments);
+    this.disabled = !1;
+  }
   render() {
-    return a` <button id="button">
+    return V` <button .disabled=${this.disabled}>
       <slot></slot>
     </button>`;
   }
 }
-X.styles = r`
-    #button {
+_.styles = H`
+    button {
       background-color: var(--button-color-background);
-      font-family: var(--font-primary);
+      font-family: var(--button-font-family);
       padding: var(--button-padding);
       font-weight: var(--button-font-weight);
       box-sizing: border-box;
@@ -3932,17 +3191,44 @@ X.styles = r`
       border-width: var(--button-border-width);
       border-color: var(--button-border-color);
       border-style: var(--button-border-style);
+      outline-color: var(--outline-color-focus);
+      outline-offset: var(--outline-offset-focus);
+      cursor: pointer;
+
+      border: var(--button-border);
+      border-left: 1px dotted var(--color-white);
+      border-top: 1px dotted var(--color-white);
+      box-shadow: var(--button-shadow);
+    }
+
+    button[disabled] {
+      border: 1px solid red;
+    }
+
+    button:active {
+      border-bottom: 2px solid transparent;
+      border-right: 0;
+      border-left: 1px dotted var(--color-black);
+      border-top: 1px dotted var(--color-black);
+      box-shadow: var(--button-shadow-active);
+      transform: translate(2px, 2px);
     }
   `;
-window.customElements.define("a2k-button", X);
-let D = 0;
-const Z1 = document.querySelector("a2k-window[title='Please wait...']");
-Z1.children;
-const n1 = setInterval(() => {
-  const l = document.querySelector("a2k-progress");
-  console.log(l),
-    !!l &&
-      ((D = D + 1.2),
-      l.setAttribute("progress", D),
-      D > 70 && clearInterval(n1));
+C1(
+  [r({ type: Boolean }), n1("design:type", Object)],
+  _.prototype,
+  "disabled",
+  void 0
+);
+window.customElements.define("a2k-button", _);
+let k = 0;
+const b1 = document.querySelector("a2k-window[title='Please wait...']");
+b1.children;
+const s1 = setInterval(() => {
+  const t = document.querySelector("a2k-progress");
+  console.log(t),
+    !!t &&
+      ((k = k + 1.2),
+      t.setAttribute("progress", k),
+      k > 70 && clearInterval(s1));
 }, 100);
