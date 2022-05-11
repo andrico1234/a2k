@@ -6576,6 +6576,7 @@ __metadata:
   resolution: "site@workspace:site"
   dependencies:
     "@a2000/button": 0.0.3
+    "@a2000/icons": 0.0.4
     "@a2000/progress": 0.0.3
     "@a2000/styles": 0.0.10
     "@a2000/taskbar": 0.0.8
