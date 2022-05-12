@@ -8,7 +8,7 @@ const children = loadingWindow.children;
 const intervalId = setInterval(() => {
   const el = document.querySelector("a2k-progress");
 
-  console.log(el);
+  // console.log(el);
 
   if (!el) return;
 

@@ -3,10 +3,9 @@ import { customElement, property } from "lit/decorators.js";
 
 import "@a2000/stack/a2k-stack.js";
 import "@a2000/panel/a2k-panel.js";
-import "@a2000/icons/help-logo";
 import "@a2000/icons/twitter-logo";
 import "@a2000/icons/network-icon";
-import "@a2000/icons/documents-icon";
+import "@a2000/icons/a2k-icon";
 import "@a2000/window/a2k-window.js";
 
 import "./StartMenuItem";
@@ -91,7 +90,7 @@ export class StartMenu extends LitElement {
                 <!-- This start menu should be managed by user land.  -->
                 <a target="_blank" href="https://andri.co" rel="noreferrer noopener">
                   <a2k-start-menu-item>
-                    <div slot="icon"><a2k-documents-icon /></div>
+                    <div slot="icon"><a2k-icon icon="documents-icon" /></div>
                     Portfolio
                   </a2k-start-menu-item>
                 </a>
@@ -110,7 +109,7 @@ export class StartMenu extends LitElement {
                 </a>
                 <button @click="${this.handleAboutClick}">
                   <a2k-start-menu-item >
-                    <div slot="icon"><a2k-help-logo /></div>
+                    <div slot="icon"><a2k-icon icon="help-icon" /></div>
                     About
                   </a2k-start-menu-item>
                 </button>

@@ -1,9 +1,7 @@
-export { HelpLogo } from "./HelpLogo";
 export { NetworkIcon } from "./NetworkIcon";
-export { DocumentsIcon } from "./DocumentsIcon";
-export { GithubIcon } from "./GithubIcon";
 export { TwitterLogo } from "./TwitterLogo";
 export { WindowsLogo } from "./WindowsLogo";
+export { A2kIcon } from "./A2kIcon";
 
 // what would be a good API for a logo?
 // ensure that they're all the same width and heights?
