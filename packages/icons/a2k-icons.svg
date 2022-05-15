@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg">
-  <symbol id="github-icon" stroke="currentColor" viewBox="0 0 1em 1em" fill="none">
+  <symbol id="github-icon" stroke="currentColor" width="1em" height="1em" viewBox="0 0 32 32" fill="none">
     <rect x="0" y="0" width="1" height="1" fill="rgba(0, 0, 0, 0)" />
     <rect x="1" y="0" width="1" height="1" fill="rgba(0, 0, 0, 0)" />
     <rect x="2" y="0" width="1" height="1" fill="rgba(0, 0, 0, 0)" />
@@ -1026,7 +1026,7 @@
     <rect x="31" y="31" width="1" height="1" fill="rgba(0, 0, 0, 0)" />
   </symbol>
 
-  <symbol id="documents-icon" viewBox="0 0 1em 1em" fill="none">
+  <symbol id="documents-icon" width="1em" height="1em" viewBox="0 0 32 32" fill="none">
     <rect x="4" y="30" width="1" height="1" fill="#333300" />
     <rect x="5" y="30" width="1" height="1" fill="#333300" />
     <rect x="6" y="30" width="1" height="1" fill="#333300" />
@@ -1802,7 +1802,7 @@
     <rect x="17" y="24" width="1" height="1" fill="#FFCC99" />
   </symbol>
 
-  <symbol id="help-icon" viewBox="0 0 1em 1em" fill="none">
+  <symbol id="help-icon" width="1em" height="1em" viewBox="0 0 24 24" fill="none">
     <rect y="12" width="1" height="1" fill="#791A80" />
     <rect y="13" width="1" height="1" fill="#791A80" />
     <rect y="14" width="1" height="1" fill="#791A80" />
@@ -2121,7 +2121,7 @@
     <rect x="20" y="5" width="1" height="1" fill="black" />
   </symbol>
 
-  <symbol id="network-icon" viewBox="0 0 1em 1em" fill="none">
+  <symbol id="network-icon" width="1em" height="1em" viewBox="0 0 32 32" fill="none">
     <rect x="8" width="1" height="1" fill="#33CC33" />
     <rect x="7" y="1" width="1" height="1" fill="#33CC33" />
     <rect x="6" y="1" width="1" height="1" fill="#33CC33" />
@@ -2933,7 +2933,7 @@
     <rect x="14" y="29" width="1" height="1" fill="#4D4D4D" />
   </symbol>
 
-  <symbol id="twitter-icon" viewBox="0 0 1em 1em" fill="none">
+  <symbol id="twitter-icon" width="1em" height="1em" viewBox="0 0 31 27" fill="none">
     <path d="M3 1H4V2H3V1Z" fill="#479DFF" />
     <path d="M3 1H4V2H3V1Z" fill="black" fill-opacity="0.2" />
     <path d="M25 1H26V2H25V1Z" fill="#479DFF" />
@@ -3970,7 +3970,7 @@
     <path d="M25 9H26V10H25V9Z" fill="black" fill-opacity="0.2" />
   </symbol>
 
-  <symbol id="windows-icon" fill="none">
+  <symbol id="windows-icon" width="1em" height="1em" viewBox="0 0 16 14" fill="none">
     <path fill="#000" d="M0 2h1v2H0z" />
     <path fill="#DA2F20" d="M0 5h1v2H0z" />
     <path fill="#0022F4" d="M0 8h1v2H0z" />
