@@ -11,7 +11,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@a2000/icons@0.0.4, @a2000/icons@workspace:packages/icons":
+"@a2000/icons@0.0.5, @a2000/icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@a2000/icons@workspace:packages/icons"
   languageName: unknown
@@ -71,11 +71,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@a2000/taskbar@0.0.8, @a2000/taskbar@workspace:packages/taskbar":
+"@a2000/taskbar@0.0.9, @a2000/taskbar@workspace:packages/taskbar":
   version: 0.0.0-use.local
   resolution: "@a2000/taskbar@workspace:packages/taskbar"
   dependencies:
-    "@a2000/icons": 0.0.4
+    "@a2000/icons": 0.0.5
     "@a2000/panel": 0.0.2
     "@a2000/stack": 0.0.2
     "@a2000/window": 0.0.9
@@ -6576,10 +6576,10 @@ __metadata:
   resolution: "site@workspace:site"
   dependencies:
     "@a2000/button": 0.0.3
-    "@a2000/icons": 0.0.4
+    "@a2000/icons": 0.0.5
     "@a2000/progress": 0.0.3
     "@a2000/styles": 0.0.10
-    "@a2000/taskbar": 0.0.8
+    "@a2000/taskbar": 0.0.9
     "@a2000/window": 0.0.9
   languageName: unknown
   linkType: soft
