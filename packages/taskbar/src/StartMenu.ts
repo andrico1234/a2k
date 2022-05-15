@@ -3,8 +3,6 @@ import { customElement, property } from "lit/decorators.js";
 
 import "@a2000/stack/a2k-stack.js";
 import "@a2000/panel/a2k-panel.js";
-import "@a2000/icons/twitter-logo";
-import "@a2000/icons/network-icon";
 import "@a2000/icons/a2k-icon";
 import "@a2000/window/a2k-window.js";
 
@@ -96,14 +94,14 @@ export class StartMenu extends LitElement {
                 </a>
                 <a target="_blank" href="https://twitter.com/andricokaroulla" rel="noreferrer noopener">
                   <a2k-start-menu-item>
-                    <div slot="icon"><a2k-twitter-logo /></div>
+                    <div slot="icon"><a2k-icon icon="twitter-icon" /></div>
                     Twitter
                   </a2k-start-menu-item>
                 </a>
 
                 <a target="_blank" href="mailto:karoulla.andrico@gmail.com" rel="noreferrer noopener">
                   <a2k-start-menu-item>
-                    <div slot="icon"><a2k-network-icon /></div>
+                    <div slot="icon"><a2k-icon icon="network-icon"/></div>
                     Contact
                   </a2k-start-menu-item>
                 </a>

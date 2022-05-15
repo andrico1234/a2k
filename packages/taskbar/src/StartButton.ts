@@ -1,6 +1,6 @@
 import { css, html, LitElement } from "lit";
 import { customElement, state } from "lit/decorators.js";
-import "@a2000/icons/windows-logo";
+import "@a2000/icons/a2k-icon";
 import "./StartMenu";
 
 @customElement("a2k-start-button")
@@ -79,7 +79,7 @@ export class StartButton extends LitElement {
         <a2k-start-menu open="${this._isMenuOpen}"></a2k-start-menu>
         <button @click="${this._toggleMenu}">
           <div class="icon-wrapper">
-            <a2k-windows-logo />
+            <a2k-icon icon="windows-icon" />
           </div>
           Start
         </button>

@@ -7,8 +7,6 @@ export class A2kIcon extends LitElement {
   static styles = css`
     /* Change this to somehow be the same as the icon it's referencing? */
     #icon {
-      height: 32px;
-      width: 32px;
       font-size: 32px;
     }
   `;
@@ -24,7 +22,7 @@ export class A2kIcon extends LitElement {
     }
 
     return svg`
-      <svg id="icon">
+      <svg id="icon" height="1em" width="1em">
         <use href="${url}#${this.icon}"></use>
       </svg>
     `;
