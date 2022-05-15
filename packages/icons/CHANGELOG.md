@@ -1,5 +1,11 @@
 # @a2000/icons
 
+## 0.0.5
+
+### Patch Changes
+
+- c784778: consolidate icons into a single import
+
 ## 0.0.4
 
 ### Patch Changes

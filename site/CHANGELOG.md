@@ -1,5 +1,13 @@
 # site
 
+## 1.0.11
+
+### Patch Changes
+
+- Updated dependencies [c784778]
+  - @a2000/icons@0.0.5
+  - @a2000/taskbar@0.0.9
+
 ## 1.0.10
 
 ### Patch Changes
