@@ -88,26 +88,28 @@ export class StartMenu extends LitElement {
                 <!-- This start menu should be managed by user land.  -->
                 <a target="_blank" href="https://andri.co" rel="noreferrer noopener">
                   <a2k-start-menu-item>
-                    <div slot="icon"><a2k-icon icon="documents-icon" /></div>
+                    <span slot="icon"><a2k-icon icon="documents-icon" /></span>
                     Portfolio
                   </a2k-start-menu-item>
                 </a>
                 <a target="_blank" href="https://twitter.com/andricokaroulla" rel="noreferrer noopener">
                   <a2k-start-menu-item>
-                    <div slot="icon"><a2k-icon icon="twitter-icon" /></div>
+                    <span slot="icon"><a2k-icon icon="twitter-icon" /></span>
                     Twitter
                   </a2k-start-menu-item>
                 </a>
 
                 <a target="_blank" href="mailto:karoulla.andrico@gmail.com" rel="noreferrer noopener">
                   <a2k-start-menu-item>
-                    <div slot="icon"><a2k-icon icon="network-icon"/></div>
+                    <span slot="icon"><a2k-icon icon="network-icon"/></span>
                     Contact
                   </a2k-start-menu-item>
                 </a>
                 <button @click="${this.handleAboutClick}">
-                  <a2k-start-menu-item >
-                    <div slot="icon"><a2k-icon icon="help-icon" /></div>
+                  <a2k-start-menu-item>
+                    <span slot="icon">
+                      <a2k-icon slot="icon" icon="help-icon" />
+                    </span>
                     About
                   </a2k-start-menu-item>
                 </button>
