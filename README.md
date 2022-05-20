@@ -23,7 +23,7 @@ To view the components in action, why not check out the [demo](https://a2000.net
 
 ### Running a2k ui locally
 
-Being by forking the repo. Whilst in the root directory:
+Begin by forking the repo. Whilst in the root directory:
 
 run nvm use, or ensure you're the node version specified in the .nvmrc file.
 
@@ -54,7 +54,7 @@ To utilise the default CSS stylesheets for a2k, you'll need to install and downl
 
 View the [@a2000/styles](https://github.com/andrico1234/a2k/tree/main/packages/styles) for installation instructions.
 
-Every a2k web component inherits styles from the CSS variables defined in the a2k-styles.css file. These styles can be overridden by applying styles to the same variables at a later point in the cascade.
+Every a2k web component inherits styles from the CSS variables defined in the `a2k-styles.css` file. These styles can be overridden by applying styles to the same variables at a later point in the cascade.
 
 E.g. Overriding the default font-family from `Tahoma` to `Verdana` can be done in the following way:
 
@@ -71,8 +71,10 @@ E.g. Overriding the default font-family from `Tahoma` to `Verdana` can be done i
 </html>
 ```
 
+`./custom-styles.css `
+
 ```css
-# ./custom-styles.css ::root {
+:root {
   --font-primary: Verdana;
 }
 ```
