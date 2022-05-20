@@ -1,5 +1,12 @@
 # site
 
+## 1.0.12
+
+### Patch Changes
+
+- Updated dependencies [a5e359a]
+  - @a2000/button@0.0.4
+
 ## 1.0.11
 
 ### Patch Changes

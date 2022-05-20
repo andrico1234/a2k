@@ -1,7 +1,7 @@
 {
   "name": "site",
   "private": true,
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "author": "Andrico Karoulla",
   "license": "ISC",
   "dependencies": {
-    "@a2000/button": "0.0.3",
+    "@a2000/button": "0.0.4",
     "@a2000/icons": "0.0.5",
     "@a2000/progress": "0.0.3",
     "@a2000/styles": "0.0.10",
