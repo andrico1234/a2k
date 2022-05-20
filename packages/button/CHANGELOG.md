@@ -1,5 +1,11 @@
 # @a2000/button
 
+## 0.0.4
+
+### Patch Changes
+
+- a5e359a: add disabled state to button
+
 ## 0.0.3
 
 ### Patch Changes
