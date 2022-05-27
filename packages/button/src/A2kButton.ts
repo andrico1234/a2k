@@ -3,6 +3,15 @@ import { property } from "lit/decorators.js";
 
 export class A2kButton extends LitElement {
   static styles = css`
+    :host {
+      width: fit-content;
+    }
+
+    :host([disabled]) {
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
     button {
       background-color: var(--button-color-background);
       font-family: var(--button-font-family);
@@ -16,18 +25,14 @@ export class A2kButton extends LitElement {
       outline-color: var(--outline-color-focus);
       outline-offset: var(--outline-offset-focus);
       cursor: pointer;
-
+      display: inline-block;
       border: var(--button-border);
       border-left: 1px dotted var(--color-white);
       border-top: 1px dotted var(--color-white);
       box-shadow: var(--button-shadow);
     }
 
-    button[disabled] {
-      border: 1px solid red;
-    }
-
-    button:active {
+    button:not([disabled]):active {
       border-bottom: 2px solid transparent;
       border-right: 0;
       border-left: 1px dotted var(--color-black);
@@ -41,7 +46,7 @@ export class A2kButton extends LitElement {
   disabled = false;
 
   render() {
-    return html` <button .disabled=${this.disabled}>
+    return html` <button ?disabled=${this.disabled}>
       <slot></slot>
     </button>`;
   }
