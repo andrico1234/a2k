@@ -18,10 +18,7 @@
 
   <body>
     <!-- Use web components in your HTML like regular built-in elements. -->
-    <a2k-button>
-      <p slot="label">Hey there</p>
-      <div slot="indicator" class="indicator"></div>
-    </a2k-button>
+    <a2k-button>Hey there</a2k-button>
 
     <!-- a2k web components use standard JavaScript modules. -->
     <script type="module">
