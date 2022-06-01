@@ -54,7 +54,7 @@ export class A2kWindow extends LitElement {
     this.img.src =
       "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
-    this.addEventListener("close", (e) => {
+    this.addEventListener("close", () => {
       return this.remove();
     });
   }
