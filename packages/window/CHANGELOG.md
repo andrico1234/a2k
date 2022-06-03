@@ -1,5 +1,15 @@
 # @a2000/window
 
+## 0.0.10
+
+### Patch Changes
+
+- 12273d7: change name of closable attribute to closeable
+- 12273d7: create documentation for all sites
+- Updated dependencies [12273d7]
+  - @a2000/panel@0.0.3
+  - @a2000/stack@0.0.3
+
 ## 0.0.9
 
 ### Patch Changes

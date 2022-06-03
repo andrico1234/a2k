@@ -1,5 +1,11 @@
 # @a2000/icons
 
+## 0.0.6
+
+### Patch Changes
+
+- 12273d7: create documentation for all sites
+
 ## 0.0.5
 
 ### Patch Changes
