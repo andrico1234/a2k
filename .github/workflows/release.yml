@@ -41,8 +41,8 @@ jobs:
 
       - name: Update yarn.lock
         run: |
-          yarn
-          git st
+          yarn --no-immutable
+          git status
           git add yarn.lock
           git commit -m "chore: update dependencies"
           git push origin
