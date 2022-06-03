@@ -1,6 +1,6 @@
-# \<a2k-window>
+# Window
 
-This webcomponent follows the [open-wc](https://github.com/open-wc/open-wc) recommendation.
+A draggable and closeable window that can be used to display content
 
 ## Installation
 
@@ -15,33 +15,16 @@ npm i a2k-window
   import "a2k-window/a2k-window.js";
 </script>
 
-<a2k-window></a2k-window>
+<a2k-window draggable closeable>
+  <h1>Window content</h1>
+  <p>You can place anything in here</p>
+</a2k-window>
 ```
 
-## Testing with Web Test Runner
+## API
 
-To execute a single test run:
-
-```bash
-npm run test
-```
-
-To run the tests in interactive watch mode run:
-
-```bash
-npm run test:watch
-```
-
-## Tooling configs
-
-For most of the tools, the configuration is in the `package.json` to reduce the amount of files in your project.
-
-If you customize the configuration a lot, you can consider moving them to individual files.
-
-## Local Demo with `web-dev-server`
-
-```bash
-npm start
-```
-
-To run a local development server that serves the basic demo located in `demo/index.html`
+| Name      | Type    | Default Value |
+| --------- | ------- | ------------- |
+| title     | string  | ""            |
+| draggable | boolean | false         |
+| closeable | boolean | false         |

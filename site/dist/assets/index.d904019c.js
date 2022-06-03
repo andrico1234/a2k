@@ -3,14 +3,14 @@ import {
   s as c,
   p as l,
   e as p,
-  i as Z,
-  y as tt,
-  n as g,
-  w as et,
-  t as ot,
-  o as rt,
+  i as tt,
+  y as et,
+  n as h,
+  w as ot,
+  t as rt,
+  o as nt,
 } from "./vendor.7a89da44.js";
-const nt = function () {
+const it = function () {
   const t = document.createElement("link").relList;
   if (t && t.supports && t.supports("modulepreload")) return;
   for (const n of document.querySelectorAll('link[rel="modulepreload"]')) i(n);
@@ -40,15 +40,15 @@ const nt = function () {
     fetch(n.href, e);
   }
 };
-nt();
-class I extends c {
+it();
+class W extends c {
   render() {
     return l`<div id="stack">
       <slot></slot>
     </div>`;
   }
 }
-I.styles = d`
+W.styles = d`
     #stack {
       display: flex;
       flex-direction: column;
@@ -56,15 +56,15 @@ I.styles = d`
       gap: var(--stack-spacing-top) !important;
     }
   `;
-window.customElements.define("a2k-stack", I);
-class W extends c {
+window.customElements.define("a2k-stack", W);
+class L extends c {
   render() {
     return l` <div id="panel">
       <slot></slot>
     </div>`;
   }
 }
-W.styles = d`
+L.styles = d`
     #panel {
       --inset-shadow-padding: 2px;
       border: var(--window-border);
@@ -74,8 +74,8 @@ W.styles = d`
       padding-left: var(--inset-shadow-padding);
     }
   `;
-window.customElements.define("a2k-panel", W);
-var it =
+window.customElements.define("a2k-panel", L);
+var at =
     (globalThis && globalThis.__decorate) ||
     function (o, t, r, i) {
       var n = arguments.length,
@@ -94,17 +94,17 @@ var it =
             (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
       return n > 3 && e && Object.defineProperty(t, r, e), e;
     },
-  at =
+  st =
     (globalThis && globalThis.__metadata) ||
     function (o, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
         return Reflect.metadata(o, t);
     };
-class T extends c {
+class P extends c {
   constructor() {
     super(...arguments);
     (this.closeButton = l`<button @click="${this.handleClose}">Close</button>`),
-      (this.closable = !1);
+      (this.closeable = !1);
   }
   handleClose(t) {
     const r = new Event("close", { bubbles: !0, composed: !0 });
@@ -115,11 +115,11 @@ class T extends c {
       <h2 class="heading">
         <slot></slot>
       </h2>
-      ${this.closable ? this.closeButton : ""}
+      ${this.closeable ? this.closeButton : ""}
     </div>`;
   }
 }
-T.styles = d`
+P.styles = d`
     .topbar-wrapper {
       background: var(--window-topbar-background);
       display: flex;
@@ -134,14 +134,14 @@ T.styles = d`
       padding: 0 var(--window-spacing-horizontal);
     }
   `;
-it(
-  [p({ type: Boolean }), at("design:type", Object)],
-  T.prototype,
-  "closable",
+at(
+  [p({ type: Boolean }), st("design:type", Object)],
+  P.prototype,
+  "closeable",
   void 0
 );
-window.customElements.define("a2k-window-topbar", T);
-var h =
+window.customElements.define("a2k-window-topbar", P);
+var w =
     (globalThis && globalThis.__decorate) ||
     function (o, t, r, i) {
       var n = arguments.length,
@@ -160,13 +160,13 @@ var h =
             (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
       return n > 3 && e && Object.defineProperty(t, r, e), e;
     },
-  b =
+  y =
     (globalThis && globalThis.__metadata) ||
     function (o, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
         return Reflect.metadata(o, t);
     },
-  P =
+  $ =
     (globalThis && globalThis.__classPrivateFieldGet) ||
     function (o, t, r, i) {
       if (r === "a" && !i)
@@ -177,19 +177,19 @@ var h =
         );
       return r === "m" ? i : r === "a" ? i.call(o) : i ? i.value : t.get(o);
     },
-  m,
-  L,
+  b,
   U,
-  N;
-class u extends c {
+  N,
+  q;
+class f extends c {
   constructor() {
     super();
-    m.add(this),
+    b.add(this),
       (this.title = ""),
-      (this.draggable = !0),
+      (this.draggable = !1),
+      (this.closeable = !1),
       (this.cursorPositionX = null),
       (this.cursorPositionY = null),
-      (this.closable = !1),
       (this.styles = {
         top: "16px",
         left: "16px",
@@ -198,56 +198,56 @@ class u extends c {
       (this.img = new Image(0, 0)),
       (this.img.src =
         "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"),
-      this.addEventListener("close", (t) => this.remove());
+      this.addEventListener("close", () => this.remove());
   }
   handleWindowMove(t, r) {
     const { top: i, left: n } = this.styles,
       { innerHeight: e, innerWidth: a } = window,
       s = this.renderRoot.querySelector("#window");
     if (!s) return;
-    const f = Number(i == null ? void 0 : i.replace("px", "")),
-      v = Number(n == null ? void 0 : n.replace("px", "")),
-      { pageX: w, pageY: y } = r;
+    const u = Number(i == null ? void 0 : i.replace("px", "")),
+      g = Number(n == null ? void 0 : n.replace("px", "")),
+      { pageX: m, pageY: v } = r;
     if (
-      w !== 0 &&
-      y !== 0 &&
-      (w !== this.cursorPositionX || y !== this.cursorPositionY)
+      m !== 0 &&
+      v !== 0 &&
+      (m !== this.cursorPositionX || v !== this.cursorPositionY)
     ) {
       const {
-          bottom: H,
-          right: K,
-          width: Q,
-          height: J,
+          bottom: K,
+          right: Q,
+          width: J,
+          height: V,
         } = s.getBoundingClientRect(),
-        A = w - this.cursorPositionX,
-        j = y - this.cursorPositionY,
-        B = f + j < 0,
-        C = v + A < 0,
-        z = H + j > e,
-        M = K + A > a,
-        V = z || C || M || B;
-      (this.cursorPositionX = w),
-        (this.cursorPositionY = y),
-        V
-          ? (B && (this.styles = { top: "0px", left: `${v}px` }),
-            C && (this.styles = { top: `${f}px`, left: `${0}px` }),
-            z && (this.styles = { top: `${e - J}px`, left: `${v}px` }),
-            M && (this.styles = { top: `${f}px`, left: `${a - Q}px` }))
-          : (this.styles = { top: `${f + j}px`, left: `${v + A}px` });
+        T = m - this.cursorPositionX,
+        j = v - this.cursorPositionY,
+        B = u + j < 0,
+        z = g + T < 0,
+        M = K + j > e,
+        I = Q + T > a,
+        Z = M || z || I || B;
+      (this.cursorPositionX = m),
+        (this.cursorPositionY = v),
+        Z
+          ? (B && (this.styles = { top: "0px", left: `${g}px` }),
+            z && (this.styles = { top: `${u}px`, left: `${0}px` }),
+            M && (this.styles = { top: `${e - V}px`, left: `${g}px` }),
+            I && (this.styles = { top: `${u}px`, left: `${a - J}px` }))
+          : (this.styles = { top: `${u + j}px`, left: `${g + T}px` });
     }
   }
   render() {
     return l`
-      <div id="window" style=${Z(this.styles)}>
+      <div id="window" style=${tt(this.styles)}>
         <a2k-panel>
           <div
-            @dragstart="${P(this, m, "m", L)}"
-            @drag="${P(this, m, "m", U)}"
-            @dragend="${P(this, m, "m", N)}"
+            @dragstart="${$(this, b, "m", U)}"
+            @drag="${$(this, b, "m", N)}"
+            @dragend="${$(this, b, "m", q)}"
             class="topbar-wrapper"
             draggable="${this.draggable}"
           >
-            <a2k-window-topbar ?closable="${this.closable}"
+            <a2k-window-topbar ?closeable="${this.closeable}"
               >${this.title}</a2k-window-topbar
             >
           </div>
@@ -261,20 +261,20 @@ class u extends c {
     `;
   }
 }
-(m = new WeakSet()),
-  (L = function (t) {
+(b = new WeakSet()),
+  (U = function (t) {
     var r;
     (r = t.dataTransfer) == null || r.setDragImage(this.img, 0, 0),
       (this.cursorPositionX = t.pageX),
       (this.cursorPositionY = t.pageY);
   }),
-  (U = function (t) {
+  (N = function (t) {
     window.requestAnimationFrame((r) => this.handleWindowMove(r, t));
   }),
-  (N = function () {
+  (q = function () {
     (this.cursorPositionX = null), (this.cursorPositionY = null);
   });
-u.styles = d`
+f.styles = d`
     #window {
       font-family: var(--font-primary);
       position: absolute;
@@ -285,24 +285,27 @@ u.styles = d`
       padding: 0 var(--window-spacing-horizontal);
     }
   `;
-h([p(), b("design:type", Object)], u.prototype, "title", void 0);
-h(
-  [p({ type: Boolean }), b("design:type", Object)],
-  u.prototype,
+w(
+  [p({ type: String }), y("design:type", Object)],
+  f.prototype,
+  "title",
+  void 0
+);
+w(
+  [p({ type: Boolean }), y("design:type", Object)],
+  f.prototype,
   "draggable",
   void 0
 );
-h([p(), b("design:type", Object)], u.prototype, "cursorPositionX", void 0);
-h([p(), b("design:type", Object)], u.prototype, "cursorPositionY", void 0);
-h(
-  [p({ type: Boolean }), b("design:type", Object)],
-  u.prototype,
-  "closable",
+w(
+  [p({ type: Boolean }), y("design:type", Object)],
+  f.prototype,
+  "closeable",
   void 0
 );
-h([p(), b("design:type", Object)], u.prototype, "styles", void 0);
-window.customElements.define("a2k-window", u);
-var st =
+w([p(), y("design:type", Object)], f.prototype, "styles", void 0);
+window.customElements.define("a2k-window", f);
+var lt =
     (globalThis && globalThis.__decorate) ||
     function (o, t, r, i) {
       var n = arguments.length,
@@ -321,14 +324,14 @@ var st =
             (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
       return n > 3 && e && Object.defineProperty(t, r, e), e;
     },
-  lt =
+  dt =
     (globalThis && globalThis.__metadata) ||
     function (o, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
         return Reflect.metadata(o, t);
     };
-const dt = new URL("/assets/a2k-icons.b9ba7649.svg", self.location).href;
-class $ extends c {
+const ct = new URL("/assets/a2k-icons.b9ba7649.svg", self.location).href;
+class D extends c {
   constructor() {
     super(...arguments);
     this.icon = "";
@@ -339,27 +342,32 @@ class $ extends c {
         console.warn(
           "This icon is a missing a 'name', please specify the 'name' of the icon you want to display"
         ),
-      tt`
+      et`
       <svg id="icon" height="1em" width="1em">
-        <use href="${dt}#${this.icon}"></use>
+        <use href="${ct}#${this.icon}"></use>
       </svg>
     `
     );
   }
 }
-$.styles = d`
+D.styles = d`
     /* Change this to somehow be the same as the icon it's referencing? */
-    #icon {
-      font-size: 32px;
+    :host {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
     }
   `;
-st(
-  [p({ type: String }), lt("design:type", Object)],
-  $.prototype,
+lt(
+  [p({ type: String }), dt("design:type", Object)],
+  D.prototype,
   "icon",
   void 0
 );
-window.customElements.define("a2k-icon", $);
+window.customElements.define("a2k-icon", D);
 var X =
     (globalThis && globalThis.__decorate) ||
     function (o, t, r, i) {
@@ -379,7 +387,7 @@ var X =
             (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
       return n > 3 && e && Object.defineProperty(t, r, e), e;
     },
-  ct =
+  pt =
     (globalThis && globalThis.__metadata) ||
     function (o, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
@@ -442,8 +450,8 @@ _.styles = d`
       margin: 0;
     }
   `;
-X([p(), ct("design:type", Object)], _.prototype, "open", void 0);
-_ = X([g("a2k-start-menu-item")], _);
+X([p(), pt("design:type", Object)], _.prototype, "open", void 0);
+_ = X([h("a2k-start-menu-item")], _);
 var Y =
     (globalThis && globalThis.__decorate) ||
     function (o, t, r, i) {
@@ -463,7 +471,7 @@ var Y =
             (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
       return n > 3 && e && Object.defineProperty(t, r, e), e;
     },
-  pt =
+  ut =
     (globalThis && globalThis.__metadata) ||
     function (o, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
@@ -475,10 +483,10 @@ let k = class extends c {
     this.open = !1;
   }
   handleAboutClick() {
-    const t = l` <a2k-window closable title="About Andricos2000">
+    const t = l` <a2k-window closeable title="About Andricos2000">
       <p>Deets coming soon...</p>
     </a2k-window>`;
-    et(t, document.body);
+    ot(t, document.body);
   }
   render() {
     const t = String(this.open) === "true";
@@ -496,26 +504,28 @@ let k = class extends c {
                 <!-- This start menu should be managed by user land.  -->
                 <a target="_blank" href="https://andri.co" rel="noreferrer noopener">
                   <a2k-start-menu-item>
-                    <div slot="icon"><a2k-icon icon="documents-icon" /></div>
+                    <span slot="icon"><a2k-icon icon="documents-icon" /></span>
                     Portfolio
                   </a2k-start-menu-item>
                 </a>
                 <a target="_blank" href="https://twitter.com/andricokaroulla" rel="noreferrer noopener">
                   <a2k-start-menu-item>
-                    <div slot="icon"><a2k-icon icon="twitter-icon" /></div>
+                    <span slot="icon"><a2k-icon icon="twitter-icon" /></span>
                     Twitter
                   </a2k-start-menu-item>
                 </a>
 
                 <a target="_blank" href="mailto:karoulla.andrico@gmail.com" rel="noreferrer noopener">
                   <a2k-start-menu-item>
-                    <div slot="icon"><a2k-icon icon="network-icon"/></div>
+                    <span slot="icon"><a2k-icon icon="network-icon"/></span>
                     Contact
                   </a2k-start-menu-item>
                 </a>
                 <button @click="${this.handleAboutClick}">
-                  <a2k-start-menu-item >
-                    <div slot="icon"><a2k-icon icon="help-icon" /></div>
+                  <a2k-start-menu-item>
+                    <span slot="icon">
+                      <a2k-icon slot="icon" icon="help-icon" />
+                    </span>
                     About
                   </a2k-start-menu-item>
                 </button>
@@ -576,9 +586,9 @@ k.styles = d`
       padding-inline-start: var(--spacing-50);
     }
   `;
-Y([p(), pt("design:type", Object)], k.prototype, "open", void 0);
-k = Y([g("a2k-start-menu")], k);
-var q =
+Y([p(), ut("design:type", Object)], k.prototype, "open", void 0);
+k = Y([h("a2k-start-menu")], k);
+var F =
     (globalThis && globalThis.__decorate) ||
     function (o, t, r, i) {
       var n = arguments.length,
@@ -597,7 +607,7 @@ var q =
             (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
       return n > 3 && e && Object.defineProperty(t, r, e), e;
     },
-  ut =
+  ft =
     (globalThis && globalThis.__metadata) ||
     function (o, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
@@ -672,9 +682,9 @@ x.styles = d`
       width: var(--taskbar-start-button-icon-size);
     }
   `;
-q([ot(), ut("design:type", Object)], x.prototype, "_isMenuOpen", void 0);
-x = q([g("a2k-start-button")], x);
-class ft {
+F([rt(), ft("design:type", Object)], x.prototype, "_isMenuOpen", void 0);
+x = F([h("a2k-start-button")], x);
+class ht {
   constructor(t, r = 1e3) {
     (this.value = new Date()),
       (this.host = t),
@@ -690,7 +700,7 @@ class ft {
     clearInterval(this.intervalId), (this.intervalId = void 0);
   }
 }
-var ht =
+var bt =
   (globalThis && globalThis.__decorate) ||
   function (o, t, r, i) {
     var n = arguments.length,
@@ -708,17 +718,17 @@ var ht =
         (a = o[s]) && (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
     return n > 3 && e && Object.defineProperty(t, r, e), e;
   };
-let D = class extends c {
+let C = class extends c {
   constructor() {
     super(...arguments);
-    this.clock = new ft(this);
+    this.clock = new ht(this);
   }
   render() {
-    const t = bt.format(this.clock.value);
+    const t = gt.format(this.clock.value);
     return l`<div class="utility-bar">${t}</div>`;
   }
 };
-D.styles = d`
+C.styles = d`
     .utility-bar {
       --inset-shadow-padding: 2px;
 
@@ -731,13 +741,13 @@ D.styles = d`
       box-shadow: var(--taskbar-utility-bar-shadow);
     }
   `;
-D = ht([g("a2k-utility-bar")], D);
-const bt = new Intl.DateTimeFormat("en-US", {
+C = bt([h("a2k-utility-bar")], C);
+const gt = new Intl.DateTimeFormat("en-US", {
   hour: "numeric",
   minute: "numeric",
   second: "numeric",
 });
-class F extends c {
+class G extends c {
   render() {
     return l`<div class="taskbar">
       <a2k-start-button></a2k-start-button>
@@ -745,7 +755,7 @@ class F extends c {
     </div>`;
   }
 }
-F.styles = d`
+G.styles = d`
     .taskbar {
       --inset-shadow-padding: 2px;
 
@@ -766,8 +776,8 @@ F.styles = d`
       justify-content: space-between;
     }
   `;
-window.customElements.define("a2k-taskbar", F);
-var G =
+window.customElements.define("a2k-taskbar", G);
+var H =
     (globalThis && globalThis.__decorate) ||
     function (o, t, r, i) {
       var n = arguments.length,
@@ -786,7 +796,7 @@ var G =
             (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
       return n > 3 && e && Object.defineProperty(t, r, e), e;
     },
-  gt =
+  mt =
     (globalThis && globalThis.__metadata) ||
     function (o, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
@@ -802,7 +812,7 @@ let O = class extends c {
       "half-filled": this.filled !== "none",
       filled: this.filled === "filled",
     };
-    return l`<div class=${rt(t)} id="unit">
+    return l`<div class=${nt(t)} id="unit">
       <div></div>
       <div></div>
     </div>`;
@@ -829,9 +839,9 @@ O.styles = d`
       background: var(--progress-unit-background);
     }
   `;
-G([p(), gt("design:type", String)], O.prototype, "filled", void 0);
-O = G([g("a2k-progress-unit")], O);
-var mt =
+H([p(), mt("design:type", String)], O.prototype, "filled", void 0);
+O = H([h("a2k-progress-unit")], O);
+var vt =
     (globalThis && globalThis.__decorate) ||
     function (o, t, r, i) {
       var n = arguments.length,
@@ -850,7 +860,7 @@ var mt =
             (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
       return n > 3 && e && Object.defineProperty(t, r, e), e;
     },
-  vt =
+  wt =
     (globalThis && globalThis.__metadata) ||
     function (o, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
@@ -881,15 +891,15 @@ class E extends c {
     Array(a)
       .fill(0)
       .forEach(() => {
-        const f = document.createElement("a2k-progress-unit");
-        f.setAttribute("filled", "none"), t == null || t.appendChild(f);
+        const u = document.createElement("a2k-progress-unit");
+        u.setAttribute("filled", "none"), t == null || t.appendChild(u);
       });
   }
   async updateProgressUnits() {
     await this.updateComplete;
     const t = this.renderRoot.querySelectorAll("a2k-progress-unit"),
       r = (this.progress / 100) * t.length,
-      i = wt(r),
+      i = yt(r),
       n = Math.floor(r);
     t.forEach((e, a) => {
       a < n
@@ -919,15 +929,15 @@ E.styles = d`
       overflow: hidden;
     }
   `;
-mt(
-  [p({ type: Number }), vt("design:type", Object)],
+vt(
+  [p({ type: Number }), wt("design:type", Object)],
   E.prototype,
   "progress",
   void 0
 );
-const wt = (o) => Math.floor((o % 1) * 10) / 10;
+const yt = (o) => Math.floor((o % 1) * 10) / 10;
 window.customElements.define("a2k-progress", E);
-var yt =
+var _t =
     (globalThis && globalThis.__decorate) ||
     function (o, t, r, i) {
       var n = arguments.length,
@@ -946,7 +956,7 @@ var yt =
             (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
       return n > 3 && e && Object.defineProperty(t, r, e), e;
     },
-  _t =
+  kt =
     (globalThis && globalThis.__metadata) ||
     function (o, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
@@ -958,12 +968,21 @@ class S extends c {
     this.disabled = !1;
   }
   render() {
-    return l` <button .disabled=${this.disabled}>
+    return l` <button ?disabled=${this.disabled}>
       <slot></slot>
     </button>`;
   }
 }
 S.styles = d`
+    :host {
+      width: fit-content;
+    }
+
+    :host([disabled]) {
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
     button {
       background-color: var(--button-color-background);
       font-family: var(--button-font-family);
@@ -977,18 +996,14 @@ S.styles = d`
       outline-color: var(--outline-color-focus);
       outline-offset: var(--outline-offset-focus);
       cursor: pointer;
-
+      display: inline-block;
       border: var(--button-border);
       border-left: 1px dotted var(--color-white);
       border-top: 1px dotted var(--color-white);
       box-shadow: var(--button-shadow);
     }
 
-    button[disabled] {
-      border: 1px solid red;
-    }
-
-    button:active {
+    button:not([disabled]):active {
       border-bottom: 2px solid transparent;
       border-right: 0;
       border-left: 1px dotted var(--color-black);
@@ -997,18 +1012,23 @@ S.styles = d`
       transform: translate(2px, 2px);
     }
   `;
-yt(
-  [p({ type: Boolean }), _t("design:type", Object)],
+_t(
+  [p({ type: Boolean }), kt("design:type", Object)],
   S.prototype,
   "disabled",
   void 0
 );
 window.customElements.define("a2k-button", S);
 let R = 0;
-const kt = document.querySelector("a2k-window[title='Please wait...']");
-kt.children;
-const xt = setInterval(() => {
-  const o = document.querySelector("a2k-progress");
-  !o ||
-    ((R = R + 1.2), o.setAttribute("progress", R), R > 70 && clearInterval(xt));
-}, 100);
+const A = document.querySelector("a2k-window[title='Please wait...']"),
+  xt = setInterval(() => {
+    const o = document.querySelector("a2k-progress");
+    if (!!o && ((R = R + 1.2), o.setAttribute("progress", R), R > 70)) {
+      for (; A.firstChild; ) A.removeChild(A.lastChild);
+      (A.innerHTML = `
+      <p>There was an error loading Andricos2000</p>
+      <p>Andricos2000 is still a work in progress, keeping checking back for updates or follow progress on Twitter</p>
+    `),
+        clearInterval(xt);
+    }
+  }, 100);
