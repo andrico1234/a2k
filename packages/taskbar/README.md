@@ -1,12 +1,12 @@
-# Stack
+# Taskbar
 
-Renders immediate child components as a vertical stack
+Renders a fully functoining windows-inspired taskbar
 
-## Quick Start
+## Usage
 
 1. Begin by installing with your favourite package manager:
 
-`npm install @a2000/stack`
+`npm install @a2000/taskbar`
 
 2. Use within your HTML templates as follows:
 
@@ -20,15 +20,16 @@ Renders immediate child components as a vertical stack
 
   <body>
     <!-- Use web components in your HTML like regular built-in elements. -->
-    <a2k-stack>
-      <p>The stack component</p>
-      <p>The stack component</p>
-    </a2k-stack>
+    <a2k-taskbar />
 
     <!-- a2k web components use standard JavaScript modules. -->
     <script type="module">
-      import "@a2000/progress/a2k-stack.js";
+      import "@a2000/progress/a2k-taskbar.js";
     </script>
   </body>
 </html>
 ```
+
+## Notes
+
+Currently the api doesn't allow for any customisation, though this will likely change

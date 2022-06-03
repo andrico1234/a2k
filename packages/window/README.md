@@ -2,13 +2,13 @@
 
 A draggable and closeable window that can be used to display content
 
-## Installation
-
-```bash
-npm i a2k-window
-```
-
 ## Usage
+
+1. Begin by installing with your favourite package manager:
+
+`npm install @a2000/window`
+
+2. Use within your HTML templates as follows:
 
 ```html
 <script type="module">
