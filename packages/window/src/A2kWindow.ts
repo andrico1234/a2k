@@ -24,20 +24,17 @@ export class A2kWindow extends LitElement {
 
   img: HTMLImageElement;
 
-  @property()
+  @property({ type: String })
   title = "";
 
   @property({ type: Boolean })
-  draggable = true;
-
-  @property()
-  cursorPositionX: number | null = null;
-
-  @property()
-  cursorPositionY: number | null = null;
+  draggable = false;
 
   @property({ type: Boolean })
-  closable = false;
+  closeable = false;
+
+  cursorPositionX: number | null = null;
+  cursorPositionY: number | null = null;
 
   @property()
   // Edit this so it's horizontally center on load
@@ -54,7 +51,7 @@ export class A2kWindow extends LitElement {
     this.img.src =
       "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
-    this.addEventListener("close", (e) => {
+    this.addEventListener("close", () => {
       return this.remove();
     });
   }
@@ -158,7 +155,7 @@ export class A2kWindow extends LitElement {
             class="topbar-wrapper"
             draggable="${this.draggable}"
           >
-            <a2k-window-topbar ?closable="${this.closable}"
+            <a2k-window-topbar ?closeable="${this.closeable}"
               >${this.title}</a2k-window-topbar
             >
           </div>

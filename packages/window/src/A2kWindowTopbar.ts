@@ -27,14 +27,14 @@ export class A2kWindowTopbar extends LitElement {
   closeButton = html`<button @click="${this.handleClose}">Close</button>`;
 
   @property({ type: Boolean })
-  closable = false;
+  closeable = false;
 
   render() {
     return html`<div class="topbar-wrapper">
       <h2 class="heading">
         <slot></slot>
       </h2>
-      ${this.closable ? this.closeButton : ""}
+      ${this.closeable ? this.closeButton : ""}
     </div>`;
   }
 }

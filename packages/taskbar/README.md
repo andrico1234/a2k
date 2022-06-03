@@ -1,10 +1,12 @@
-# Button
+# Taskbar
 
-## Quick Start
+Renders a fully functoining windows-inspired taskbar
+
+## Usage
 
 1. Begin by installing with your favourite package manager:
 
-`npm install @a2000/button`
+`npm install @a2000/taskbar`
 
 2. Use within your HTML templates as follows:
 
@@ -18,16 +20,16 @@
 
   <body>
     <!-- Use web components in your HTML like regular built-in elements. -->
-    <a2k-button>Hey there</a2k-button>
+    <a2k-taskbar />
 
     <!-- a2k web components use standard JavaScript modules. -->
     <script type="module">
-      import "@a2000/button/a2k-button.js";
+      import "@a2000/progress/a2k-taskbar.js";
     </script>
   </body>
 </html>
 ```
 
-## API
+## Notes
 
-<!-- TODO -->
+Currently the api doesn't allow for any customisation, though this will likely change
