@@ -1,5 +1,19 @@
 # site
 
+## 1.0.13
+
+### Patch Changes
+
+- 12273d7: create documentation for all sites
+- Updated dependencies [12273d7]
+- Updated dependencies [12273d7]
+  - @a2000/window@0.0.10
+  - @a2000/button@0.0.5
+  - @a2000/icons@0.0.6
+  - @a2000/progress@0.0.4
+  - @a2000/styles@0.0.11
+  - @a2000/taskbar@0.0.10
+
 ## 1.0.12
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @a2000/progress
 
+## 0.0.4
+
+### Patch Changes
+
+- 12273d7: create documentation for all sites
+
 ## 0.0.3
 
 ### Patch Changes

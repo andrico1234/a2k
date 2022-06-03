@@ -1,5 +1,17 @@
 # @a2000/taskbar
 
+## 0.0.10
+
+### Patch Changes
+
+- 12273d7: create documentation for all sites
+- Updated dependencies [12273d7]
+- Updated dependencies [12273d7]
+  - @a2000/window@0.0.10
+  - @a2000/icons@0.0.6
+  - @a2000/panel@0.0.3
+  - @a2000/stack@0.0.3
+
 ## 0.0.9
 
 ### Patch Changes
