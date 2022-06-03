@@ -41,7 +41,7 @@ jobs:
 
       - name: Update yarn.lock
         run: |
-          yarn
+          yarn --no-immutable
           git st
           git add yarn.lock
           git commit -m "chore: update dependencies"
