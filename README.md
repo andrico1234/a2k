@@ -2,7 +2,7 @@
 
 Welcome to a2000 (or a2k for short).
 
-This is UI library designed to capture the feel of the early web, while employing modern UX and web practices. Think Shovel Knight, but for UI components and not video games.
+This UI library is designed to capture the feel of the early web, while employing modern UX and web practices. Think Shovel Knight, but for UI components and not video games.
 
 Note: This is a work in progress, you should not use it in production. But if you decide to try it out, any and all feedback is welcome!
 
