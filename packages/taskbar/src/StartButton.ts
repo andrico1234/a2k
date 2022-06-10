@@ -38,10 +38,6 @@ export class StartButton extends LitElement {
       box-shadow: var(--button-shadow-active);
       transform: translate(2px, 2px);
     }
-
-    .icon-wrapper {
-      width: var(--taskbar-start-button-icon-size);
-    }
   `;
 
   // this could be moved into a mixin or a controller
@@ -78,9 +74,7 @@ export class StartButton extends LitElement {
       <div class="wrapper">
         <a2k-start-menu open="${this._isMenuOpen}"></a2k-start-menu>
         <button @click="${this._toggleMenu}">
-          <div class="icon-wrapper">
-            <a2k-icon icon="windows-icon" />
-          </div>
+          <a2k-icon icon="windows-icon"></a2k-icon>
           Start
         </button>
       </div>

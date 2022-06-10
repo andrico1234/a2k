@@ -123,7 +123,6 @@ h6 {
   --taskbar-height: var(--spacing-700);
   --taskbar-padding: var(--spacing-50);
   --taskbar-content-gap: var(--spacing-100);
-  --taskbar-start-button-icon-size: var(--spacing-400);
   --start-menu-strip-background-gradient: linear-gradient(
     var(--color-blue-100) 0%,
     var(--color-blue-700) 100%

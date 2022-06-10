@@ -12,7 +12,7 @@ export class A2kIcon extends LitElement {
       width: 100%;
       align-items: center;
       justify-content: center;
-      font-size: 1.5em;
+      font-size: 2em;
     }
   `;
 
