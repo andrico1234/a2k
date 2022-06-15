@@ -9,8 +9,22 @@ import "./a2k-window-topbar";
 
 // TODO: add a window context that tracks the active states of the windows and adjust their position in the stacks accordingly
 // When adding a new one, increate the initial left and top position by a few pixels
+
+// How can I ensure that the grabbing cursors display consistently.
+// it appears that when I change the cursor for the element, it changes but only in the place that the element is it on the start of dragging.
+// it doesn't move along with the element
+// I can set the state when starting/ending dragging too but there seems to be a delay, so what are the most appropriate event handlers to manage this in?
+// I get something that kinda works if I also apply state to the root to override the current cursor when dragging, but this comes with its own host of problems.
 export class A2kWindow extends LitElement {
   static styles = css`
+    *[draggable="true"] {
+      cursor: grab;
+    }
+
+    *[draggable="true"][data-state="dragging"] {
+      cursor: grabbing;
+    }
+
     #window {
       font-family: var(--font-primary);
       position: absolute;
@@ -144,6 +158,20 @@ export class A2kWindow extends LitElement {
     this.cursorPositionY = null;
   }
 
+  #onPointerDown(ev: MouseEvent) {
+    const el = ev.target! as HTMLDivElement;
+    el.setAttribute("data-state", "dragging");
+
+    document.documentElement.setAttribute("data-state", "dragging");
+  }
+
+  #onPointerUp(ev: MouseEvent) {
+    const el = ev.target! as HTMLDivElement;
+    el.removeAttribute("data-state");
+
+    document.documentElement.removeAttribute("data-state");
+  }
+
   render() {
     return html`
       <div id="window" style=${styleMap(this.styles)}>
@@ -152,8 +180,9 @@ export class A2kWindow extends LitElement {
             @dragstart="${this.#onDragStart}"
             @drag="${this.#onDrag}"
             @dragend="${this.#onDragEnd}"
-            class="topbar-wrapper"
             draggable="${this.draggable}"
+            @mousedown="${this.#onPointerDown}"
+            @mouseup="${this.#onPointerUp}"
           >
             <a2k-window-topbar ?closeable="${this.closeable}"
               >${this.title}</a2k-window-topbar
