@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@a2000/panel": "0.0.3",
-    "@a2000/stack": "0.0.3"
+    "@a2000/stack": "0.0.3",
+    "pointer-tracker": "^2.5.3"
   }
 }

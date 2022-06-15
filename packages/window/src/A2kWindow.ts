@@ -1,6 +1,10 @@
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 import { StyleInfo, styleMap } from "lit/directives/style-map.js";
+import PointerTracker, {
+  Pointer,
+  InputEvent as PtInputEvent,
+} from "pointer-tracker";
 
 import "@a2000/stack/a2k-stack.js";
 import "@a2000/panel/a2k-panel.js";
@@ -17,26 +21,23 @@ import "./a2k-window-topbar";
 // I get something that kinda works if I also apply state to the root to override the current cursor when dragging, but this comes with its own host of problems.
 export class A2kWindow extends LitElement {
   static styles = css`
-    *[draggable="true"] {
-      cursor: grab;
-    }
-
-    *[draggable="true"][data-state="dragging"] {
-      cursor: grabbing;
-    }
-
     #window {
       font-family: var(--font-primary);
       position: absolute;
       width: var(--window-width);
       max-width: 100%;
     }
+
+    #draggable {
+      cursor: grab;
+    }
+
     .content {
       padding: 0 var(--window-spacing-horizontal);
     }
   `;
 
-  img: HTMLImageElement;
+  pointerTracker: PointerTracker | null = null;
 
   @property({ type: String })
   title = "";
@@ -58,19 +59,44 @@ export class A2kWindow extends LitElement {
     width: "var(--window-width)",
   };
 
+  protected firstUpdated(): void {
+    const draggableElement = this.renderRoot.querySelector(
+      "#draggable"
+    )! as HTMLDivElement;
+
+    this.pointerTracker = new PointerTracker(draggableElement, {
+      start: (pointer, event) => {
+        this.#onDragStart(pointer, event);
+        return true;
+      },
+      move: (prevPointers, changedPointers) => {
+        this.#onDrag(changedPointers[0]);
+      },
+      end: (pointer, event) => {
+        console.log(pointer);
+        this.#onDrag(pointer);
+        this.#onDragEnd(event);
+      },
+    });
+  }
+
+  disconnectedCallback(): void {
+    super.disconnectedCallback();
+
+    if (this.pointerTracker) {
+      this.pointerTracker.stop();
+    }
+  }
+
   constructor() {
     super();
-    this.img = new Image(0, 0);
-
-    this.img.src =
-      "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
     this.addEventListener("close", () => {
       return this.remove();
     });
   }
 
-  handleWindowMove(time: number, ev: DragEvent) {
+  handleWindowMove(pointer: Pointer) {
     const { top, left } = this.styles;
     const { innerHeight, innerWidth } = window;
     const el = this.renderRoot.querySelector("#window");
@@ -80,7 +106,8 @@ export class A2kWindow extends LitElement {
     const parsedTop = Number(top?.replace("px", ""));
     const parsedLeft = Number(left?.replace("px", ""));
 
-    const { pageX, pageY } = ev;
+    const pageX = Math.floor(pointer.pageX);
+    const pageY = Math.floor(pointer.pageY);
 
     // This is because 'onDrag' fires onmouseup and sets the cursor position to 0 0. if this happens it causes bad things
     if (pageX !== 0 && pageY !== 0) {
@@ -142,30 +169,21 @@ export class A2kWindow extends LitElement {
     }
   }
 
-  #onDragStart(ev: DragEvent) {
-    ev.dataTransfer?.setDragImage(this.img, 0, 0);
+  #onDragStart(pointer: Pointer, ev: PtInputEvent) {
+    this.cursorPositionX = Math.floor(pointer.pageX);
+    this.cursorPositionY = Math.floor(pointer.pageY);
 
-    this.cursorPositionX = ev.pageX;
-    this.cursorPositionY = ev.pageY;
-  }
-
-  #onDrag(ev: DragEvent) {
-    window.requestAnimationFrame((time) => this.handleWindowMove(time, ev));
-  }
-
-  #onDragEnd() {
-    this.cursorPositionX = null;
-    this.cursorPositionY = null;
-  }
-
-  #onPointerDown(ev: MouseEvent) {
     const el = ev.target! as HTMLDivElement;
     el.setAttribute("data-state", "dragging");
 
     document.documentElement.setAttribute("data-state", "dragging");
   }
 
-  #onPointerUp(ev: MouseEvent) {
+  #onDrag(pointer: Pointer) {
+    window.requestAnimationFrame(() => this.handleWindowMove(pointer));
+  }
+
+  #onDragEnd(ev: PtInputEvent) {
     const el = ev.target! as HTMLDivElement;
     el.removeAttribute("data-state");
 
@@ -176,14 +194,7 @@ export class A2kWindow extends LitElement {
     return html`
       <div id="window" style=${styleMap(this.styles)}>
         <a2k-panel>
-          <div
-            @dragstart="${this.#onDragStart}"
-            @drag="${this.#onDrag}"
-            @dragend="${this.#onDragEnd}"
-            draggable="${this.draggable}"
-            @mousedown="${this.#onPointerDown}"
-            @mouseup="${this.#onPointerUp}"
-          >
+          <div id="draggable">
             <a2k-window-topbar ?closeable="${this.closeable}"
               >${this.title}</a2k-window-topbar
             >
