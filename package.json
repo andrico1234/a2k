@@ -13,7 +13,7 @@
     "site:develop": "yarn workspace site develop",
     "site:preview": "yarn workspace site preview",
     "lint": "yarn eslint .",
-    "test": "yarn build",
+    "test": "yarn build && wtr",
     "test:watch": "yarn build && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
     "prepare": "husky install",
     "release": "yarn build && changeset publish",
