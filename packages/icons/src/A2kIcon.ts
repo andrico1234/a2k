@@ -5,11 +5,8 @@ const url = new URL("../../a2k-icons.svg", import.meta.url).href;
 
 export class A2kIcon extends LitElement {
   static styles = css`
-    /* Change this to somehow be the same as the icon it's referencing? */
     :host {
       display: flex;
-      height: 100%;
-      width: 100%;
       align-items: center;
       justify-content: center;
       font-size: 2em;

@@ -28,8 +28,12 @@ export class A2kWindow extends LitElement {
       max-width: 100%;
     }
 
-    #draggable {
+    #draggable[data-dragging="idle"] {
       cursor: grab;
+    }
+
+    #draggable[data-dragging="dragging"] {
+      cursor: grabbing;
     }
 
     .content {
@@ -64,18 +68,21 @@ export class A2kWindow extends LitElement {
       "#draggable"
     )! as HTMLDivElement;
 
+    draggableElement.setAttribute("data-dragging", "idle");
+
     this.pointerTracker = new PointerTracker(draggableElement, {
       start: (pointer, event) => {
         this.#onDragStart(pointer, event);
+        draggableElement.setAttribute("data-dragging", "dragging");
         return true;
       },
       move: (prevPointers, changedPointers) => {
         this.#onDrag(changedPointers[0]);
       },
       end: (pointer, event) => {
-        console.log(pointer);
         this.#onDrag(pointer);
         this.#onDragEnd(event);
+        draggableElement.setAttribute("data-dragging", "idle");
       },
     });
   }

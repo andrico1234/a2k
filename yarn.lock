@@ -78,7 +78,14 @@ __metadata:
     "@a2000/icons": 0.0.6
     "@a2000/panel": 0.0.3
     "@a2000/stack": 0.0.3
+    "@a2000/utilities": 0.0.1
     "@a2000/window": 0.0.10
+  languageName: unknown
+  linkType: soft
+
+"@a2000/utilities@0.0.1, @a2000/utilities@workspace:packages/utilities":
+  version: 0.0.0-use.local
+  resolution: "@a2000/utilities@workspace:packages/utilities"
   languageName: unknown
   linkType: soft
 
