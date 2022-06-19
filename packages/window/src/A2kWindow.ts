@@ -20,11 +20,11 @@ export class A2kWindow extends LitElement {
     }
 
     #draggable[data-dragging="idle"] {
-      cursor: grab;
+      cursor: var(--cursor-grab);
     }
 
     #draggable[data-dragging="dragging"] {
-      cursor: grabbing;
+      cursor: var(--cursor-grabbing);
     }
 
     .content {
