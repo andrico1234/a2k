@@ -3,7 +3,7 @@
   "description": "Default A2K Styles",
   "license": "MIT",
   "author": "Andrico Karoulla",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "main": "a2k-styles.css",
   "style": "a2k-styles.css",
   "files": [
