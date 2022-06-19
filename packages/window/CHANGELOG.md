@@ -1,5 +1,13 @@
 # @a2000/window
 
+## 0.0.11
+
+### Patch Changes
+
+- a50a69c: Split out draggable controller into utility package
+- Updated dependencies [a50a69c]
+  - @a2000/utilities@0.0.2
+
 ## 0.0.10
 
 ### Patch Changes

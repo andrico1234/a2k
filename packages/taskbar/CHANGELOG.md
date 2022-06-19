@@ -1,5 +1,16 @@
 # @a2000/taskbar
 
+## 0.0.11
+
+### Patch Changes
+
+- 8c33ea6: Adjust size of icon base component
+- Updated dependencies [8c33ea6]
+- Updated dependencies [a50a69c]
+  - @a2000/icons@0.0.7
+  - @a2000/utilities@0.0.2
+  - @a2000/window@0.0.11
+
 ## 0.0.10
 
 ### Patch Changes
