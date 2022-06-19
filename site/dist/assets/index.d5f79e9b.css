@@ -49,6 +49,7 @@ h6 {
   --font-size-400: calc(36px / 16px * 1rem);
   --font-size-500: calc(48px / 16px * 1rem);
   --font-size-600: calc(64px / 16px * 1rem);
+  --cursor-pointer: url(/assets/pointer.b3a48f23.svg), pointer;
   --font-weight-regular: 400;
   --font-weight-heavy: 600;
   --spacing-unit: 8px;
@@ -154,6 +155,7 @@ h6 {
 }
 html {
   height: 100%;
+  cursor: var(--cursor-pointer);
 }
 body {
   min-height: 100%;

@@ -1,0 +1,16 @@
+{
+  "name": "@a2000/utilities",
+  "description": "A2K Utilities",
+  "license": "MIT",
+  "author": "Andrico Karoulla",
+  "version": "0.0.1",
+  "main": "lib/src/index.js",
+  "module": "lib/src/index.js",
+  "exports": {
+    ".": "./lib/src/index.js",
+    "./index.js": "./lib/src/index.js"
+  },
+  "dependencies": {
+    "pointer-tracker": "^2.5.3"
+  }
+}

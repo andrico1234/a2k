@@ -1,6 +1,6 @@
 import { css, html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
-import { ClockController } from "./ClockController";
+import { ClockController } from "@a2000/utilities";
 
 @customElement("a2k-utility-bar")
 export class UtilityBar extends LitElement {

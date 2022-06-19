@@ -1,54 +1,195 @@
 import {
+  e as V,
+  i as Z,
+  t as tt,
+  P as et,
+  b as ot,
   r as d,
   s as c,
   p as l,
-  e as p,
-  i as tt,
-  y as et,
-  n as h,
-  w as ot,
-  t as rt,
-  o as nt,
-} from "./vendor.7a89da44.js";
-const it = function () {
+  a as p,
+  c as rt,
+  y as nt,
+  n as f,
+  w as at,
+  d as it,
+  o as st,
+} from "./vendor.14a1b6b4.js";
+const lt = function () {
   const t = document.createElement("link").relList;
   if (t && t.supports && t.supports("modulepreload")) return;
-  for (const n of document.querySelectorAll('link[rel="modulepreload"]')) i(n);
-  new MutationObserver((n) => {
-    for (const e of n)
+  for (const a of document.querySelectorAll('link[rel="modulepreload"]')) n(a);
+  new MutationObserver((a) => {
+    for (const e of a)
       if (e.type === "childList")
-        for (const a of e.addedNodes)
-          a.tagName === "LINK" && a.rel === "modulepreload" && i(a);
+        for (const i of e.addedNodes)
+          i.tagName === "LINK" && i.rel === "modulepreload" && n(i);
   }).observe(document, { childList: !0, subtree: !0 });
-  function r(n) {
+  function o(a) {
     const e = {};
     return (
-      n.integrity && (e.integrity = n.integrity),
-      n.referrerpolicy && (e.referrerPolicy = n.referrerpolicy),
-      n.crossorigin === "use-credentials"
+      a.integrity && (e.integrity = a.integrity),
+      a.referrerpolicy && (e.referrerPolicy = a.referrerpolicy),
+      a.crossorigin === "use-credentials"
         ? (e.credentials = "include")
-        : n.crossorigin === "anonymous"
+        : a.crossorigin === "anonymous"
         ? (e.credentials = "omit")
         : (e.credentials = "same-origin"),
       e
     );
   }
-  function i(n) {
-    if (n.ep) return;
-    n.ep = !0;
-    const e = r(n);
-    fetch(n.href, e);
+  function n(a) {
+    if (a.ep) return;
+    a.ep = !0;
+    const e = o(a);
+    fetch(a.href, e);
   }
 };
-it();
-class W extends c {
+lt();
+class dt {
+  constructor(t, o = 1e3) {
+    (this.value = new Date()),
+      (this.host = t),
+      this.host.addController(this),
+      (this.timeout = o);
+  }
+  hostConnected() {
+    this.intervalId = setInterval(() => {
+      (this.value = new Date()), this.host.requestUpdate();
+    }, this.timeout);
+  }
+  hostDisconnected() {
+    clearInterval(this.intervalId), (this.intervalId = void 0);
+  }
+}
+var T =
+    (globalThis && globalThis.__classPrivateFieldGet) ||
+    function (r, t, o, n) {
+      if (o === "a" && !n)
+        throw new TypeError("Private accessor was defined without a getter");
+      if (typeof t == "function" ? r !== t || !n : !t.has(r))
+        throw new TypeError(
+          "Cannot read private member from an object whose class did not declare it"
+        );
+      return o === "m" ? n : o === "a" ? n.call(r) : n ? n.value : t.get(r);
+    },
+  R,
+  j,
+  P;
+class ct extends Z {
+  constructor(t) {
+    super(t);
+    if (((this.hasInitialised = !1), t.type !== tt.ELEMENT))
+      throw new Error("The `drag` directive must be used on an element");
+  }
+  update(t, o) {
+    if (this.hasInitialised) return;
+    const n = t.element,
+      [a, e] = o;
+    n.setAttribute("data-dragging", "idle"),
+      (a.draggableElement = n),
+      (a.pointerTracker = new et(n, {
+        start(...i) {
+          return e.start(...i), n.setAttribute("data-dragging", "dragging"), !0;
+        },
+        move(...i) {
+          e.move(...i);
+        },
+        end(...i) {
+          e.end(...i), n.setAttribute("data-dragging", "idle");
+        },
+      })),
+      (this.hasInitialised = !0);
+  }
+  render(t, o) {
+    return ot;
+  }
+}
+const pt = V(ct);
+class ut {
+  constructor(t) {
+    (this.cursorPositionX = null),
+      (this.cursorPositionY = null),
+      (this.pointerTracker = null),
+      (this.draggableElement = null),
+      (this.styles = { top: "16px", left: "16px" }),
+      R.set(
+        this,
+        (o, n) => (
+          (this.cursorPositionX = Math.floor(o.pageX)),
+          (this.cursorPositionY = Math.floor(o.pageY)),
+          n.target.setAttribute("data-state", "dragging"),
+          !0
+        )
+      ),
+      j.set(this, (o, n) => {
+        const [a] = n;
+        window.requestAnimationFrame(() => this.handleWindowMove(a));
+      }),
+      P.set(this, (o, n) => {
+        n.target.removeAttribute("data-state");
+      }),
+      (this.host = t),
+      this.host.addController(this);
+  }
+  hostDisconnected() {
+    this.pointerTracker && this.pointerTracker.stop();
+  }
+  draggable() {
+    return pt(this, {
+      start: T(this, R, "f"),
+      move: T(this, j, "f"),
+      end: T(this, P, "f"),
+    });
+  }
+  handleWindowMove(t) {
+    const { top: o, left: n } = this.styles,
+      { innerHeight: a, innerWidth: e } = window,
+      i = this.draggableElement;
+    if (!i) return;
+    const s = Number(o == null ? void 0 : o.replace("px", "")),
+      u = Number(n == null ? void 0 : n.replace("px", "")),
+      g = Math.floor(t.pageX),
+      b = Math.floor(t.pageY);
+    if (
+      g !== 0 &&
+      b !== 0 &&
+      (g !== this.cursorPositionX || b !== this.cursorPositionY)
+    ) {
+      const {
+          bottom: G,
+          right: H,
+          width: K,
+          height: J,
+        } = i.getBoundingClientRect(),
+        x = g - this.cursorPositionX,
+        O = b - this.cursorPositionY,
+        B = s + O < 0,
+        z = u + x < 0,
+        L = G + O > a,
+        U = H + x > e,
+        Q = L || z || U || B;
+      (this.cursorPositionX = g),
+        (this.cursorPositionY = b),
+        Q
+          ? (B && (this.styles = { top: "0px", left: `${u}px` }),
+            z && (this.styles = { top: `${s}px`, left: `${0}px` }),
+            L && (this.styles = { top: `${a - J}px`, left: `${u}px` }),
+            U && (this.styles = { top: `${s}px`, left: `${e - K}px` }))
+          : (this.styles = { top: `${s + O}px`, left: `${u + x}px` }),
+        this.host.requestUpdate();
+    }
+  }
+}
+(R = new WeakMap()), (j = new WeakMap()), (P = new WeakMap());
+class I extends c {
   render() {
     return l`<div id="stack">
       <slot></slot>
     </div>`;
   }
 }
-W.styles = d`
+I.styles = d`
     #stack {
       display: flex;
       flex-direction: column;
@@ -56,15 +197,15 @@ W.styles = d`
       gap: var(--stack-spacing-top) !important;
     }
   `;
-window.customElements.define("a2k-stack", W);
-class L extends c {
+window.customElements.define("a2k-stack", I);
+class N extends c {
   render() {
     return l` <div id="panel">
       <slot></slot>
     </div>`;
   }
 }
-L.styles = d`
+N.styles = d`
     #panel {
       --inset-shadow-padding: 2px;
       border: var(--window-border);
@@ -74,41 +215,41 @@ L.styles = d`
       padding-left: var(--inset-shadow-padding);
     }
   `;
-window.customElements.define("a2k-panel", L);
-var at =
+window.customElements.define("a2k-panel", N);
+var ft =
     (globalThis && globalThis.__decorate) ||
-    function (o, t, r, i) {
-      var n = arguments.length,
+    function (r, t, o, n) {
+      var a = arguments.length,
         e =
-          n < 3
+          a < 3
             ? t
-            : i === null
-            ? (i = Object.getOwnPropertyDescriptor(t, r))
-            : i,
-        a;
+            : n === null
+            ? (n = Object.getOwnPropertyDescriptor(t, o))
+            : n,
+        i;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        e = Reflect.decorate(o, t, r, i);
+        e = Reflect.decorate(r, t, o, n);
       else
-        for (var s = o.length - 1; s >= 0; s--)
-          (a = o[s]) &&
-            (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
-      return n > 3 && e && Object.defineProperty(t, r, e), e;
+        for (var s = r.length - 1; s >= 0; s--)
+          (i = r[s]) &&
+            (e = (a < 3 ? i(e) : a > 3 ? i(t, o, e) : i(t, o)) || e);
+      return a > 3 && e && Object.defineProperty(t, o, e), e;
     },
-  st =
+  ht =
     (globalThis && globalThis.__metadata) ||
-    function (o, t) {
+    function (r, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(o, t);
+        return Reflect.metadata(r, t);
     };
-class P extends c {
+class $ extends c {
   constructor() {
     super(...arguments);
     (this.closeButton = l`<button @click="${this.handleClose}">Close</button>`),
       (this.closeable = !1);
   }
   handleClose(t) {
-    const r = new Event("close", { bubbles: !0, composed: !0 });
-    t.target.dispatchEvent(r);
+    const o = new Event("close", { bubbles: !0, composed: !0 });
+    t.target.dispatchEvent(o);
   }
   render() {
     return l`<div class="topbar-wrapper">
@@ -119,7 +260,7 @@ class P extends c {
     </div>`;
   }
 }
-P.styles = d`
+$.styles = d`
     .topbar-wrapper {
       background: var(--window-topbar-background);
       display: flex;
@@ -134,119 +275,52 @@ P.styles = d`
       padding: 0 var(--window-spacing-horizontal);
     }
   `;
-at(
-  [p({ type: Boolean }), st("design:type", Object)],
-  P.prototype,
+ft(
+  [p({ type: Boolean }), ht("design:type", Object)],
+  $.prototype,
   "closeable",
   void 0
 );
-window.customElements.define("a2k-window-topbar", P);
-var w =
+window.customElements.define("a2k-window-topbar", $);
+var C =
     (globalThis && globalThis.__decorate) ||
-    function (o, t, r, i) {
-      var n = arguments.length,
+    function (r, t, o, n) {
+      var a = arguments.length,
         e =
-          n < 3
+          a < 3
             ? t
-            : i === null
-            ? (i = Object.getOwnPropertyDescriptor(t, r))
-            : i,
-        a;
+            : n === null
+            ? (n = Object.getOwnPropertyDescriptor(t, o))
+            : n,
+        i;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        e = Reflect.decorate(o, t, r, i);
+        e = Reflect.decorate(r, t, o, n);
       else
-        for (var s = o.length - 1; s >= 0; s--)
-          (a = o[s]) &&
-            (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
-      return n > 3 && e && Object.defineProperty(t, r, e), e;
+        for (var s = r.length - 1; s >= 0; s--)
+          (i = r[s]) &&
+            (e = (a < 3 ? i(e) : a > 3 ? i(t, o, e) : i(t, o)) || e);
+      return a > 3 && e && Object.defineProperty(t, o, e), e;
     },
-  y =
+  D =
     (globalThis && globalThis.__metadata) ||
-    function (o, t) {
+    function (r, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(o, t);
-    },
-  $ =
-    (globalThis && globalThis.__classPrivateFieldGet) ||
-    function (o, t, r, i) {
-      if (r === "a" && !i)
-        throw new TypeError("Private accessor was defined without a getter");
-      if (typeof t == "function" ? o !== t || !i : !t.has(o))
-        throw new TypeError(
-          "Cannot read private member from an object whose class did not declare it"
-        );
-      return r === "m" ? i : r === "a" ? i.call(o) : i ? i.value : t.get(o);
-    },
-  b,
-  U,
-  N,
-  q;
-class f extends c {
+        return Reflect.metadata(r, t);
+    };
+class h extends c {
   constructor() {
     super();
-    b.add(this),
-      (this.title = ""),
+    (this.title = ""),
       (this.draggable = !1),
       (this.closeable = !1),
-      (this.cursorPositionX = null),
-      (this.cursorPositionY = null),
-      (this.styles = {
-        top: "16px",
-        left: "16px",
-        width: "var(--window-width)",
-      }),
-      (this.img = new Image(0, 0)),
-      (this.img.src =
-        "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"),
+      (this.drag = new ut(this)),
       this.addEventListener("close", () => this.remove());
-  }
-  handleWindowMove(t, r) {
-    const { top: i, left: n } = this.styles,
-      { innerHeight: e, innerWidth: a } = window,
-      s = this.renderRoot.querySelector("#window");
-    if (!s) return;
-    const u = Number(i == null ? void 0 : i.replace("px", "")),
-      g = Number(n == null ? void 0 : n.replace("px", "")),
-      { pageX: m, pageY: v } = r;
-    if (
-      m !== 0 &&
-      v !== 0 &&
-      (m !== this.cursorPositionX || v !== this.cursorPositionY)
-    ) {
-      const {
-          bottom: K,
-          right: Q,
-          width: J,
-          height: V,
-        } = s.getBoundingClientRect(),
-        T = m - this.cursorPositionX,
-        j = v - this.cursorPositionY,
-        B = u + j < 0,
-        z = g + T < 0,
-        M = K + j > e,
-        I = Q + T > a,
-        Z = M || z || I || B;
-      (this.cursorPositionX = m),
-        (this.cursorPositionY = v),
-        Z
-          ? (B && (this.styles = { top: "0px", left: `${g}px` }),
-            z && (this.styles = { top: `${u}px`, left: `${0}px` }),
-            M && (this.styles = { top: `${e - V}px`, left: `${g}px` }),
-            I && (this.styles = { top: `${u}px`, left: `${a - J}px` }))
-          : (this.styles = { top: `${u + j}px`, left: `${g + T}px` });
-    }
   }
   render() {
     return l`
-      <div id="window" style=${tt(this.styles)}>
+      <div id="window" style=${rt(this.drag.styles)}>
         <a2k-panel>
-          <div
-            @dragstart="${$(this, b, "m", U)}"
-            @drag="${$(this, b, "m", N)}"
-            @dragend="${$(this, b, "m", q)}"
-            class="topbar-wrapper"
-            draggable="${this.draggable}"
-          >
+          <div id="draggable" ${this.drag.draggable()}>
             <a2k-window-topbar ?closeable="${this.closeable}"
               >${this.title}</a2k-window-topbar
             >
@@ -261,77 +335,72 @@ class f extends c {
     `;
   }
 }
-(b = new WeakSet()),
-  (U = function (t) {
-    var r;
-    (r = t.dataTransfer) == null || r.setDragImage(this.img, 0, 0),
-      (this.cursorPositionX = t.pageX),
-      (this.cursorPositionY = t.pageY);
-  }),
-  (N = function (t) {
-    window.requestAnimationFrame((r) => this.handleWindowMove(r, t));
-  }),
-  (q = function () {
-    (this.cursorPositionX = null), (this.cursorPositionY = null);
-  });
-f.styles = d`
+h.styles = d`
     #window {
       font-family: var(--font-primary);
       position: absolute;
       width: var(--window-width);
       max-width: 100%;
     }
+
+    #draggable[data-dragging="idle"] {
+      cursor: grab;
+    }
+
+    #draggable[data-dragging="dragging"] {
+      cursor: grabbing;
+    }
+
     .content {
       padding: 0 var(--window-spacing-horizontal);
     }
   `;
-w(
-  [p({ type: String }), y("design:type", Object)],
-  f.prototype,
+C(
+  [p({ type: String }), D("design:type", Object)],
+  h.prototype,
   "title",
   void 0
 );
-w(
-  [p({ type: Boolean }), y("design:type", Object)],
-  f.prototype,
+C(
+  [p({ type: Boolean }), D("design:type", Object)],
+  h.prototype,
   "draggable",
   void 0
 );
-w(
-  [p({ type: Boolean }), y("design:type", Object)],
-  f.prototype,
+C(
+  [p({ type: Boolean }), D("design:type", Object)],
+  h.prototype,
   "closeable",
   void 0
 );
-w([p(), y("design:type", Object)], f.prototype, "styles", void 0);
-window.customElements.define("a2k-window", f);
-var lt =
+window.customElements.define("a2k-window", h);
+var gt =
     (globalThis && globalThis.__decorate) ||
-    function (o, t, r, i) {
-      var n = arguments.length,
+    function (r, t, o, n) {
+      var a = arguments.length,
         e =
-          n < 3
+          a < 3
             ? t
-            : i === null
-            ? (i = Object.getOwnPropertyDescriptor(t, r))
-            : i,
-        a;
+            : n === null
+            ? (n = Object.getOwnPropertyDescriptor(t, o))
+            : n,
+        i;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        e = Reflect.decorate(o, t, r, i);
+        e = Reflect.decorate(r, t, o, n);
       else
-        for (var s = o.length - 1; s >= 0; s--)
-          (a = o[s]) &&
-            (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
-      return n > 3 && e && Object.defineProperty(t, r, e), e;
+        for (var s = r.length - 1; s >= 0; s--)
+          (i = r[s]) &&
+            (e = (a < 3 ? i(e) : a > 3 ? i(t, o, e) : i(t, o)) || e);
+      return a > 3 && e && Object.defineProperty(t, o, e), e;
     },
-  dt =
+  bt =
     (globalThis && globalThis.__metadata) ||
-    function (o, t) {
+    function (r, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(o, t);
+        return Reflect.metadata(r, t);
     };
-const ct = new URL("/assets/a2k-icons.b9ba7649.svg", self.location).href;
-class D extends c {
+const mt = new URL("/assets/a2k-icons.b9ba7649.svg", self.location).href;
+class A extends c {
   constructor() {
     super(...arguments);
     this.icon = "";
@@ -342,58 +411,55 @@ class D extends c {
         console.warn(
           "This icon is a missing a 'name', please specify the 'name' of the icon you want to display"
         ),
-      et`
+      nt`
       <svg id="icon" height="1em" width="1em">
-        <use href="${ct}#${this.icon}"></use>
+        <use href="${mt}#${this.icon}"></use>
       </svg>
     `
     );
   }
 }
-D.styles = d`
-    /* Change this to somehow be the same as the icon it's referencing? */
+A.styles = d`
     :host {
       display: flex;
-      height: 100%;
-      width: 100%;
       align-items: center;
       justify-content: center;
-      font-size: 1.5em;
+      font-size: 2em;
     }
   `;
-lt(
-  [p({ type: String }), dt("design:type", Object)],
-  D.prototype,
+gt(
+  [p({ type: String }), bt("design:type", Object)],
+  A.prototype,
   "icon",
   void 0
 );
-window.customElements.define("a2k-icon", D);
-var X =
+window.customElements.define("a2k-icon", A);
+var W =
     (globalThis && globalThis.__decorate) ||
-    function (o, t, r, i) {
-      var n = arguments.length,
+    function (r, t, o, n) {
+      var a = arguments.length,
         e =
-          n < 3
+          a < 3
             ? t
-            : i === null
-            ? (i = Object.getOwnPropertyDescriptor(t, r))
-            : i,
-        a;
+            : n === null
+            ? (n = Object.getOwnPropertyDescriptor(t, o))
+            : n,
+        i;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        e = Reflect.decorate(o, t, r, i);
+        e = Reflect.decorate(r, t, o, n);
       else
-        for (var s = o.length - 1; s >= 0; s--)
-          (a = o[s]) &&
-            (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
-      return n > 3 && e && Object.defineProperty(t, r, e), e;
+        for (var s = r.length - 1; s >= 0; s--)
+          (i = r[s]) &&
+            (e = (a < 3 ? i(e) : a > 3 ? i(t, o, e) : i(t, o)) || e);
+      return a > 3 && e && Object.defineProperty(t, o, e), e;
     },
-  pt =
+  vt =
     (globalThis && globalThis.__metadata) ||
-    function (o, t) {
+    function (r, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(o, t);
+        return Reflect.metadata(r, t);
     };
-let _ = class extends c {
+let m = class extends c {
   constructor() {
     super(...arguments);
     this.open = !1;
@@ -411,7 +477,7 @@ let _ = class extends c {
     `;
   }
 };
-_.styles = d`
+m.styles = d`
     #start-menu-item {
       height: var(--start-menu-item-height);
       box-sizing: border-box;
@@ -450,34 +516,34 @@ _.styles = d`
       margin: 0;
     }
   `;
-X([p(), pt("design:type", Object)], _.prototype, "open", void 0);
-_ = X([h("a2k-start-menu-item")], _);
-var Y =
+W([p(), vt("design:type", Object)], m.prototype, "open", void 0);
+m = W([f("a2k-start-menu-item")], m);
+var q =
     (globalThis && globalThis.__decorate) ||
-    function (o, t, r, i) {
-      var n = arguments.length,
+    function (r, t, o, n) {
+      var a = arguments.length,
         e =
-          n < 3
+          a < 3
             ? t
-            : i === null
-            ? (i = Object.getOwnPropertyDescriptor(t, r))
-            : i,
-        a;
+            : n === null
+            ? (n = Object.getOwnPropertyDescriptor(t, o))
+            : n,
+        i;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        e = Reflect.decorate(o, t, r, i);
+        e = Reflect.decorate(r, t, o, n);
       else
-        for (var s = o.length - 1; s >= 0; s--)
-          (a = o[s]) &&
-            (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
-      return n > 3 && e && Object.defineProperty(t, r, e), e;
+        for (var s = r.length - 1; s >= 0; s--)
+          (i = r[s]) &&
+            (e = (a < 3 ? i(e) : a > 3 ? i(t, o, e) : i(t, o)) || e);
+      return a > 3 && e && Object.defineProperty(t, o, e), e;
     },
-  ut =
+  wt =
     (globalThis && globalThis.__metadata) ||
-    function (o, t) {
+    function (r, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(o, t);
+        return Reflect.metadata(r, t);
     };
-let k = class extends c {
+let v = class extends c {
   constructor() {
     super(...arguments);
     this.open = !1;
@@ -486,7 +552,7 @@ let k = class extends c {
     const t = l` <a2k-window closeable title="About Andricos2000">
       <p>Deets coming soon...</p>
     </a2k-window>`;
-    ot(t, document.body);
+    at(t, document.body);
   }
   render() {
     const t = String(this.open) === "true";
@@ -537,7 +603,7 @@ let k = class extends c {
     `;
   }
 };
-k.styles = d`
+v.styles = d`
     #start-menu {
       width: var(--start-menu-height);
       position: absolute;
@@ -586,34 +652,34 @@ k.styles = d`
       padding-inline-start: var(--spacing-50);
     }
   `;
-Y([p(), ut("design:type", Object)], k.prototype, "open", void 0);
-k = Y([h("a2k-start-menu")], k);
-var F =
+q([p(), wt("design:type", Object)], v.prototype, "open", void 0);
+v = q([f("a2k-start-menu")], v);
+var X =
     (globalThis && globalThis.__decorate) ||
-    function (o, t, r, i) {
-      var n = arguments.length,
+    function (r, t, o, n) {
+      var a = arguments.length,
         e =
-          n < 3
+          a < 3
             ? t
-            : i === null
-            ? (i = Object.getOwnPropertyDescriptor(t, r))
-            : i,
-        a;
+            : n === null
+            ? (n = Object.getOwnPropertyDescriptor(t, o))
+            : n,
+        i;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        e = Reflect.decorate(o, t, r, i);
+        e = Reflect.decorate(r, t, o, n);
       else
-        for (var s = o.length - 1; s >= 0; s--)
-          (a = o[s]) &&
-            (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
-      return n > 3 && e && Object.defineProperty(t, r, e), e;
+        for (var s = r.length - 1; s >= 0; s--)
+          (i = r[s]) &&
+            (e = (a < 3 ? i(e) : a > 3 ? i(t, o, e) : i(t, o)) || e);
+      return a > 3 && e && Object.defineProperty(t, o, e), e;
     },
-  ft =
+  yt =
     (globalThis && globalThis.__metadata) ||
-    function (o, t) {
+    function (r, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(o, t);
+        return Reflect.metadata(r, t);
     };
-let x = class extends c {
+let w = class extends c {
   constructor() {
     super(...arguments);
     (this._hideOnClickOutside = (t) => {
@@ -635,16 +701,14 @@ let x = class extends c {
       <div class="wrapper">
         <a2k-start-menu open="${this._isMenuOpen}"></a2k-start-menu>
         <button @click="${this._toggleMenu}">
-          <div class="icon-wrapper">
-            <a2k-icon icon="windows-icon" />
-          </div>
+          <a2k-icon icon="windows-icon"></a2k-icon>
           Start
         </button>
       </div>
     `;
   }
 };
-x.styles = d`
+w.styles = d`
     .wrapper {
       position: relative;
       height: 100%;
@@ -677,58 +741,38 @@ x.styles = d`
       box-shadow: var(--button-shadow-active);
       transform: translate(2px, 2px);
     }
-
-    .icon-wrapper {
-      width: var(--taskbar-start-button-icon-size);
-    }
   `;
-F([rt(), ft("design:type", Object)], x.prototype, "_isMenuOpen", void 0);
-x = F([h("a2k-start-button")], x);
-class ht {
-  constructor(t, r = 1e3) {
-    (this.value = new Date()),
-      (this.host = t),
-      this.host.addController(this),
-      (this.timeout = r);
-  }
-  hostConnected() {
-    this.intervalId = setInterval(() => {
-      (this.value = new Date()), this.host.requestUpdate();
-    }, this.timeout);
-  }
-  hostDisconnected() {
-    clearInterval(this.intervalId), (this.intervalId = void 0);
-  }
-}
-var bt =
+X([it(), yt("design:type", Object)], w.prototype, "_isMenuOpen", void 0);
+w = X([f("a2k-start-button")], w);
+var kt =
   (globalThis && globalThis.__decorate) ||
-  function (o, t, r, i) {
-    var n = arguments.length,
+  function (r, t, o, n) {
+    var a = arguments.length,
       e =
-        n < 3
+        a < 3
           ? t
-          : i === null
-          ? (i = Object.getOwnPropertyDescriptor(t, r))
-          : i,
-      a;
+          : n === null
+          ? (n = Object.getOwnPropertyDescriptor(t, o))
+          : n,
+      i;
     if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-      e = Reflect.decorate(o, t, r, i);
+      e = Reflect.decorate(r, t, o, n);
     else
-      for (var s = o.length - 1; s >= 0; s--)
-        (a = o[s]) && (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
-    return n > 3 && e && Object.defineProperty(t, r, e), e;
+      for (var s = r.length - 1; s >= 0; s--)
+        (i = r[s]) && (e = (a < 3 ? i(e) : a > 3 ? i(t, o, e) : i(t, o)) || e);
+    return a > 3 && e && Object.defineProperty(t, o, e), e;
   };
-let C = class extends c {
+let E = class extends c {
   constructor() {
     super(...arguments);
-    this.clock = new ht(this);
+    this.clock = new dt(this);
   }
   render() {
-    const t = gt.format(this.clock.value);
+    const t = _t.format(this.clock.value);
     return l`<div class="utility-bar">${t}</div>`;
   }
 };
-C.styles = d`
+E.styles = d`
     .utility-bar {
       --inset-shadow-padding: 2px;
 
@@ -741,13 +785,13 @@ C.styles = d`
       box-shadow: var(--taskbar-utility-bar-shadow);
     }
   `;
-C = bt([h("a2k-utility-bar")], C);
-const gt = new Intl.DateTimeFormat("en-US", {
+E = kt([f("a2k-utility-bar")], E);
+const _t = new Intl.DateTimeFormat("en-US", {
   hour: "numeric",
   minute: "numeric",
   second: "numeric",
 });
-class G extends c {
+class Y extends c {
   render() {
     return l`<div class="taskbar">
       <a2k-start-button></a2k-start-button>
@@ -755,7 +799,7 @@ class G extends c {
     </div>`;
   }
 }
-G.styles = d`
+Y.styles = d`
     .taskbar {
       --inset-shadow-padding: 2px;
 
@@ -776,33 +820,33 @@ G.styles = d`
       justify-content: space-between;
     }
   `;
-window.customElements.define("a2k-taskbar", G);
-var H =
+window.customElements.define("a2k-taskbar", Y);
+var F =
     (globalThis && globalThis.__decorate) ||
-    function (o, t, r, i) {
-      var n = arguments.length,
+    function (r, t, o, n) {
+      var a = arguments.length,
         e =
-          n < 3
+          a < 3
             ? t
-            : i === null
-            ? (i = Object.getOwnPropertyDescriptor(t, r))
-            : i,
-        a;
+            : n === null
+            ? (n = Object.getOwnPropertyDescriptor(t, o))
+            : n,
+        i;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        e = Reflect.decorate(o, t, r, i);
+        e = Reflect.decorate(r, t, o, n);
       else
-        for (var s = o.length - 1; s >= 0; s--)
-          (a = o[s]) &&
-            (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
-      return n > 3 && e && Object.defineProperty(t, r, e), e;
+        for (var s = r.length - 1; s >= 0; s--)
+          (i = r[s]) &&
+            (e = (a < 3 ? i(e) : a > 3 ? i(t, o, e) : i(t, o)) || e);
+      return a > 3 && e && Object.defineProperty(t, o, e), e;
     },
-  mt =
+  xt =
     (globalThis && globalThis.__metadata) ||
-    function (o, t) {
+    function (r, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(o, t);
+        return Reflect.metadata(r, t);
     };
-let O = class extends c {
+let y = class extends c {
   constructor() {
     super(...arguments);
     this.filled = "none";
@@ -812,13 +856,13 @@ let O = class extends c {
       "half-filled": this.filled !== "none",
       filled: this.filled === "filled",
     };
-    return l`<div class=${nt(t)} id="unit">
+    return l`<div class=${st(t)} id="unit">
       <div></div>
       <div></div>
     </div>`;
   }
 };
-O.styles = d`
+y.styles = d`
     #unit {
       width: var(--progress-unit-width);
       height: 100%;
@@ -839,34 +883,34 @@ O.styles = d`
       background: var(--progress-unit-background);
     }
   `;
-H([p(), mt("design:type", String)], O.prototype, "filled", void 0);
-O = H([h("a2k-progress-unit")], O);
-var vt =
+F([p(), xt("design:type", String)], y.prototype, "filled", void 0);
+y = F([f("a2k-progress-unit")], y);
+var Ot =
     (globalThis && globalThis.__decorate) ||
-    function (o, t, r, i) {
-      var n = arguments.length,
+    function (r, t, o, n) {
+      var a = arguments.length,
         e =
-          n < 3
+          a < 3
             ? t
-            : i === null
-            ? (i = Object.getOwnPropertyDescriptor(t, r))
-            : i,
-        a;
+            : n === null
+            ? (n = Object.getOwnPropertyDescriptor(t, o))
+            : n,
+        i;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        e = Reflect.decorate(o, t, r, i);
+        e = Reflect.decorate(r, t, o, n);
       else
-        for (var s = o.length - 1; s >= 0; s--)
-          (a = o[s]) &&
-            (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
-      return n > 3 && e && Object.defineProperty(t, r, e), e;
+        for (var s = r.length - 1; s >= 0; s--)
+          (i = r[s]) &&
+            (e = (a < 3 ? i(e) : a > 3 ? i(t, o, e) : i(t, o)) || e);
+      return a > 3 && e && Object.defineProperty(t, o, e), e;
     },
-  wt =
+  Tt =
     (globalThis && globalThis.__metadata) ||
-    function (o, t) {
+    function (r, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(o, t);
+        return Reflect.metadata(r, t);
     };
-class E extends c {
+class M extends c {
   constructor() {
     super(...arguments);
     (this.progress = 0), (this.width = 0);
@@ -882,13 +926,13 @@ class E extends c {
     const t = this.renderRoot.querySelector("#progress");
     if (!t) return;
     await this.updateComplete;
-    const r = (s = t.getBoundingClientRect().width) != null ? s : 0;
-    if (this.width === r) return;
-    this.width = r;
-    const { gap: i } = getComputedStyle(t),
-      e = Number(i.replace("px", "")) + 12,
-      a = Math.ceil(r / e);
-    Array(a)
+    const o = (s = t.getBoundingClientRect().width) != null ? s : 0;
+    if (this.width === o) return;
+    this.width = o;
+    const { gap: n } = getComputedStyle(t),
+      e = Number(n.replace("px", "")) + 12,
+      i = Math.ceil(o / e);
+    Array(i)
       .fill(0)
       .forEach(() => {
         const u = document.createElement("a2k-progress-unit");
@@ -898,13 +942,13 @@ class E extends c {
   async updateProgressUnits() {
     await this.updateComplete;
     const t = this.renderRoot.querySelectorAll("a2k-progress-unit"),
-      r = (this.progress / 100) * t.length,
-      i = yt(r),
-      n = Math.floor(r);
-    t.forEach((e, a) => {
-      a < n
+      o = (this.progress / 100) * t.length,
+      n = Rt(o),
+      a = Math.floor(o);
+    t.forEach((e, i) => {
+      i < a
         ? e.setAttribute("filled", "filled")
-        : a === n && i >= 0.5
+        : i === a && n >= 0.5
         ? e.setAttribute("filled", "half")
         : e.setAttribute("filled", "none");
     });
@@ -913,7 +957,7 @@ class E extends c {
     return l`<div id="progress" role="progress"></div>`;
   }
 }
-E.styles = d`
+M.styles = d`
     #progress {
       width: 100%;
       box-sizing: border-box;
@@ -929,38 +973,38 @@ E.styles = d`
       overflow: hidden;
     }
   `;
-vt(
-  [p({ type: Number }), wt("design:type", Object)],
-  E.prototype,
+Ot(
+  [p({ type: Number }), Tt("design:type", Object)],
+  M.prototype,
   "progress",
   void 0
 );
-const yt = (o) => Math.floor((o % 1) * 10) / 10;
-window.customElements.define("a2k-progress", E);
-var _t =
+const Rt = (r) => Math.floor((r % 1) * 10) / 10;
+window.customElements.define("a2k-progress", M);
+var jt =
     (globalThis && globalThis.__decorate) ||
-    function (o, t, r, i) {
-      var n = arguments.length,
+    function (r, t, o, n) {
+      var a = arguments.length,
         e =
-          n < 3
+          a < 3
             ? t
-            : i === null
-            ? (i = Object.getOwnPropertyDescriptor(t, r))
-            : i,
-        a;
+            : n === null
+            ? (n = Object.getOwnPropertyDescriptor(t, o))
+            : n,
+        i;
       if (typeof Reflect == "object" && typeof Reflect.decorate == "function")
-        e = Reflect.decorate(o, t, r, i);
+        e = Reflect.decorate(r, t, o, n);
       else
-        for (var s = o.length - 1; s >= 0; s--)
-          (a = o[s]) &&
-            (e = (n < 3 ? a(e) : n > 3 ? a(t, r, e) : a(t, r)) || e);
-      return n > 3 && e && Object.defineProperty(t, r, e), e;
+        for (var s = r.length - 1; s >= 0; s--)
+          (i = r[s]) &&
+            (e = (a < 3 ? i(e) : a > 3 ? i(t, o, e) : i(t, o)) || e);
+      return a > 3 && e && Object.defineProperty(t, o, e), e;
     },
-  kt =
+  Pt =
     (globalThis && globalThis.__metadata) ||
-    function (o, t) {
+    function (r, t) {
       if (typeof Reflect == "object" && typeof Reflect.metadata == "function")
-        return Reflect.metadata(o, t);
+        return Reflect.metadata(r, t);
     };
 class S extends c {
   constructor() {
@@ -1012,23 +1056,23 @@ S.styles = d`
       transform: translate(2px, 2px);
     }
   `;
-_t(
-  [p({ type: Boolean }), kt("design:type", Object)],
+jt(
+  [p({ type: Boolean }), Pt("design:type", Object)],
   S.prototype,
   "disabled",
   void 0
 );
 window.customElements.define("a2k-button", S);
-let R = 0;
-const A = document.querySelector("a2k-window[title='Please wait...']"),
-  xt = setInterval(() => {
-    const o = document.querySelector("a2k-progress");
-    if (!!o && ((R = R + 1.2), o.setAttribute("progress", R), R > 70)) {
-      for (; A.firstChild; ) A.removeChild(A.lastChild);
-      (A.innerHTML = `
+let k = 0;
+const _ = document.querySelector("a2k-window[title='Please wait...']"),
+  $t = setInterval(() => {
+    const r = document.querySelector("a2k-progress");
+    if (!!r && ((k = k + 1.2), r.setAttribute("progress", k), k > 70)) {
+      for (; _.firstChild; ) _.removeChild(_.lastChild);
+      (_.innerHTML = `
       <p>There was an error loading Andricos2000</p>
       <p>Andricos2000 is still a work in progress, keeping checking back for updates or follow progress on Twitter</p>
     `),
-        clearInterval(xt);
+        clearInterval($t);
     }
   }, 100);

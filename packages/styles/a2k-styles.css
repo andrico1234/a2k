@@ -24,6 +24,8 @@ Variable names should follow the format
   --font-size-500: calc((48px / 16px) * 1rem);
   --font-size-600: calc((64px / 16px) * 1rem);
 
+  --cursor-pointer: url("./cursors/pointer.svg"), pointer;
+
   --font-weight-regular: 400;
   --font-weight-heavy: 600;
 

@@ -4,17 +4,6 @@
     "outDir": "./lib",
     "typeRoots": ["../../typings"]
   },
-  "references": [
-    {
-      "path": "../stack"
-    },
-    {
-      "path": "../panel"
-    },
-    {
-      "path": "../utilities"
-    }
-  ],
   "include": ["src/**/*.ts", "index.ts", "typings"],
   "files": []
 }

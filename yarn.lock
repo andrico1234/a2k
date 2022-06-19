@@ -78,7 +78,16 @@ __metadata:
     "@a2000/icons": 0.0.6
     "@a2000/panel": 0.0.3
     "@a2000/stack": 0.0.3
+    "@a2000/utilities": 0.0.1
     "@a2000/window": 0.0.10
+  languageName: unknown
+  linkType: soft
+
+"@a2000/utilities@0.0.1, @a2000/utilities@workspace:packages/utilities":
+  version: 0.0.0-use.local
+  resolution: "@a2000/utilities@workspace:packages/utilities"
+  dependencies:
+    pointer-tracker: ^2.5.3
   languageName: unknown
   linkType: soft
 
@@ -88,6 +97,7 @@ __metadata:
   dependencies:
     "@a2000/panel": 0.0.3
     "@a2000/stack": 0.0.3
+    "@a2000/utilities": 0.0.1
   languageName: unknown
   linkType: soft
 
@@ -5927,6 +5937,13 @@ __metadata:
   version: 5.0.0
   resolution: "pngjs@npm:5.0.0"
   checksum: 04e912cc45fb9601564e2284efaf0c5d20d131d9b596244f8a6789fc6cdb6b18d2975a6bbf7a001858d7e159d5c5c5dd7b11592e97629b7137f7f5cef05904c8
+  languageName: node
+  linkType: hard
+
+"pointer-tracker@npm:^2.5.3":
+  version: 2.5.3
+  resolution: "pointer-tracker@npm:2.5.3"
+  checksum: 7230765c647d76536b821d072c130cc5d136a2e84c31f9d13244e1e7c8b371c6f0aaa61dc23a0e1ee31c191ab762a9d0c71a02aed92928faf3e713299ea0521f
   languageName: node
   linkType: hard
 
