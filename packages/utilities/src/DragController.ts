@@ -64,7 +64,6 @@ class DragDirective extends Directive {
       },
       move(...args) {
         pointerTrackerOptions.move(...args);
-        console.log("sopsospo");
       },
       end(...args) {
         pointerTrackerOptions.end(...args);
@@ -191,8 +190,6 @@ export class DragController implements ReactiveController {
     const el = ev.target! as HTMLDivElement;
     el.setAttribute("data-state", "dragging");
 
-    document.documentElement.setAttribute("data-state", "dragging");
-
     return true;
   };
 
@@ -205,7 +202,5 @@ export class DragController implements ReactiveController {
   #onDragEnd = (_pointer: Pointer, ev: PtInputEvent) => {
     const el = ev.target! as HTMLDivElement;
     el.removeAttribute("data-state");
-
-    document.documentElement.removeAttribute("data-state");
   };
 }

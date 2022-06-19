@@ -3,10 +3,6 @@ html {
   cursor: var(--cursor-pointer);
 }
 
-html[data-state="dragging"] {
-  cursor: grabbing;
-}
-
 body {
   min-height: 100%;
   background: var(--desktop-background);
