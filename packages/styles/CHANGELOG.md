@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.12
+
+### Patch Changes
+
+- 8c33ea6: Adjust size of icon base component
+
 ## 0.0.11
 
 ### Patch Changes
