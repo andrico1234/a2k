@@ -10,6 +10,9 @@
     },
     {
       "path": "../panel"
+    },
+    {
+      "path": "../utilities"
     }
   ],
   "include": ["src/**/*.ts", "index.ts", "typings"],

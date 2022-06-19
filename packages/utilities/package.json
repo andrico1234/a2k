@@ -7,6 +7,10 @@
   "main": "lib/src/index.js",
   "module": "lib/src/index.js",
   "exports": {
-    ".": "./lib/src/index.js"
+    ".": "./lib/src/index.js",
+    "./index.js": "./lib/src/index.js"
+  },
+  "dependencies": {
+    "pointer-tracker": "^2.5.3"
   }
 }

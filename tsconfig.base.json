@@ -23,6 +23,7 @@
       "@a2000/taskbar": ["packages/taskbar/src"],
       "@a2000/progress": ["packages/progress/src"],
       "@a2000/icons": ["packages/icons/src"],
+      "@a2000/utilities": ["packages/utilities/src"],
       "@a2000/window": ["packages/window/src"]
     }
   },
