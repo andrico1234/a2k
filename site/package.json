@@ -1,7 +1,7 @@
 {
   "name": "site",
   "private": true,
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,10 +14,10 @@
   "license": "ISC",
   "dependencies": {
     "@a2000/button": "0.0.5",
-    "@a2000/icons": "0.0.6",
+    "@a2000/icons": "0.0.7",
     "@a2000/progress": "0.0.4",
-    "@a2000/styles": "0.0.11",
-    "@a2000/taskbar": "0.0.10",
-    "@a2000/window": "0.0.10"
+    "@a2000/styles": "0.0.12",
+    "@a2000/taskbar": "0.0.11",
+    "@a2000/window": "0.0.11"
   }
 }

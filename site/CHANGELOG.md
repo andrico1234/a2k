@@ -1,5 +1,16 @@
 # site
 
+## 1.0.14
+
+### Patch Changes
+
+- Updated dependencies [8c33ea6]
+- Updated dependencies [a50a69c]
+  - @a2000/icons@0.0.7
+  - @a2000/styles@0.0.12
+  - @a2000/taskbar@0.0.11
+  - @a2000/window@0.0.11
+
 ## 1.0.13
 
 ### Patch Changes
