@@ -11,6 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
+      - name: Build site
+        run: yarn site:build
+
       - name: Check changes in site
         uses: netlify/actions/diff-includes@master
         with:
