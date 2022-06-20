@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.14
+
+### Patch Changes
+
+- e8b5a58: add pointer cursor, and rename previous pointer to default
+
 ## 0.0.13
 
 ### Patch Changes
