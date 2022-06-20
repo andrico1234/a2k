@@ -1,6 +1,6 @@
 let progress = 0;
 const loadingWindow = document.querySelector(
-  "a2k-window[title='Please wait...']"
+  "a2k-window[heading='Please wait...']"
 );
 
 const intervalId = setInterval(() => {
