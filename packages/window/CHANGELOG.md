@@ -1,5 +1,11 @@
 # @a2000/window
 
+## 0.0.12
+
+### Patch Changes
+
+- e8b5a58: change title attribute to heading, as title is an existing property
+
 ## 0.0.11
 
 ### Patch Changes
