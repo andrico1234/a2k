@@ -11,6 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
+      - name: Install Dependencies
+        run: yarn --immutable
+
       - name: Build site
         run: yarn site:build
 
