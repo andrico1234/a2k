@@ -24,7 +24,7 @@ export class A2kButton extends LitElement {
       border-style: var(--button-border-style);
       outline-color: var(--outline-color-focus);
       outline-offset: var(--outline-offset-focus);
-      cursor: pointer;
+      cursor: var(--cursor-pointer);
       display: inline-block;
       border: var(--button-border);
       border-left: 1px dotted var(--color-white);

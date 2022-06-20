@@ -33,7 +33,7 @@ export class A2kWindow extends LitElement {
   `;
 
   @property({ type: String })
-  title = "";
+  heading = "";
 
   @property({ type: Boolean })
   draggable = false;
@@ -57,7 +57,7 @@ export class A2kWindow extends LitElement {
         <a2k-panel>
           <div id="draggable" ${this.drag.draggable()}>
             <a2k-window-topbar ?closeable="${this.closeable}"
-              >${this.title}</a2k-window-topbar
+              >${this.heading}</a2k-window-topbar
             >
           </div>
           <div class="content">

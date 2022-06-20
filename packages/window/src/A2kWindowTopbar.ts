@@ -8,6 +8,7 @@ export class A2kWindowTopbar extends LitElement {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      user-select: none;
     }
 
     h2 {

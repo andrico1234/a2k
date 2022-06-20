@@ -1,6 +1,6 @@
 html {
   height: 100%;
-  cursor: var(--cursor-pointer);
+  cursor: var(--cursor-default);
 }
 
 body {

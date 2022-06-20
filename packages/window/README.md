@@ -15,8 +15,7 @@ A draggable and closeable window that can be used to display content
   import "a2k-window/a2k-window.js";
 </script>
 
-<a2k-window draggable closeable>
-  <h1>Window content</h1>
+<a2k-window draggable closeable heading="Window Content">
   <p>You can place anything in here</p>
 </a2k-window>
 ```
@@ -25,6 +24,6 @@ A draggable and closeable window that can be used to display content
 
 | Name      | Type    | Default Value |
 | --------- | ------- | ------------- |
-| title     | string  | ""            |
+| heading   | string  | ""            |
 | draggable | boolean | false         |
 | closeable | boolean | false         |

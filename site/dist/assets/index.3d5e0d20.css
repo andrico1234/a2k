@@ -49,7 +49,10 @@ h6 {
   --font-size-400: calc(36px / 16px * 1rem);
   --font-size-500: calc(48px / 16px * 1rem);
   --font-size-600: calc(64px / 16px * 1rem);
-  --cursor-pointer: url(/assets/pointer.b3a48f23.svg), pointer;
+  --cursor-default: url(/assets/default.41bfb9c5.svg) 0 0, default;
+  --cursor-grab: url(/assets/grab.57028ab4.svg) 0 0, grab;
+  --cursor-grabbing: url(/assets/grabbing.332f7701.svg) 0 0, grabbing;
+  --cursor-pointer: url(/assets/pointer.ec255217.svg) 0 0, pointer;
   --font-weight-regular: 400;
   --font-weight-heavy: 600;
   --spacing-unit: 8px;
@@ -155,7 +158,7 @@ h6 {
 }
 html {
   height: 100%;
-  cursor: var(--cursor-pointer);
+  cursor: var(--cursor-default);
 }
 body {
   min-height: 100%;

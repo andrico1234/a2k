@@ -266,6 +266,7 @@ $.styles = d`
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      user-select: none;
     }
 
     h2 {
@@ -310,7 +311,7 @@ var C =
 class h extends c {
   constructor() {
     super();
-    (this.title = ""),
+    (this.heading = ""),
       (this.draggable = !1),
       (this.closeable = !1),
       (this.drag = new ut(this)),
@@ -322,7 +323,7 @@ class h extends c {
         <a2k-panel>
           <div id="draggable" ${this.drag.draggable()}>
             <a2k-window-topbar ?closeable="${this.closeable}"
-              >${this.title}</a2k-window-topbar
+              >${this.heading}</a2k-window-topbar
             >
           </div>
           <div class="content">
@@ -344,11 +345,11 @@ h.styles = d`
     }
 
     #draggable[data-dragging="idle"] {
-      cursor: grab;
+      cursor: var(--cursor-grab);
     }
 
     #draggable[data-dragging="dragging"] {
-      cursor: grabbing;
+      cursor: var(--cursor-grabbing);
     }
 
     .content {
@@ -358,7 +359,7 @@ h.styles = d`
 C(
   [p({ type: String }), D("design:type", Object)],
   h.prototype,
-  "title",
+  "heading",
   void 0
 );
 C(
@@ -549,7 +550,7 @@ let v = class extends c {
     this.open = !1;
   }
   handleAboutClick() {
-    const t = l` <a2k-window closeable title="About Andricos2000">
+    const t = l` <a2k-window closeable heading="About Andricos2000">
       <p>Deets coming soon...</p>
     </a2k-window>`;
     at(t, document.body);
@@ -1039,7 +1040,7 @@ S.styles = d`
       border-style: var(--button-border-style);
       outline-color: var(--outline-color-focus);
       outline-offset: var(--outline-offset-focus);
-      cursor: pointer;
+      cursor: var(--cursor-pointer);
       display: inline-block;
       border: var(--button-border);
       border-left: 1px dotted var(--color-white);
