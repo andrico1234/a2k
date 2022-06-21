@@ -10,6 +10,7 @@ export class A2kButton extends LitElement {
     :host([disabled]) {
       pointer-events: none;
       cursor: not-allowed;
+      opacity: 0.7;
     }
 
     button {

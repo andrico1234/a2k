@@ -1,9 +1,16 @@
-import { html, LitElement } from "lit";
+import { css, html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 
 import "@a2000/button/a2k-button.js";
+import "@a2000/icons/a2k-icon";
 
 export class A2kWindowActions extends LitElement {
+  static styles = css`
+    #icon-wrapper {
+      font-size: 8px;
+    }
+  `;
+
   handleClose(e: PointerEvent) {
     const event = new Event("close", { bubbles: true, composed: true });
 
@@ -19,7 +26,9 @@ export class A2kWindowActions extends LitElement {
       @click="${this.handleClose}"
       size="small"
     >
-      Close
+      <div id="icon-wrapper">
+        <a2k-icon icon="cross-icon"></a2k-icon>
+      </div>
     </a2k-button> `;
   }
 }

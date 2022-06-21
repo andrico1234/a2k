@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@a2000/button": "0.0.5",
+    "@a2000/icons": "0.0.7",
     "@a2000/panel": "0.0.3",
     "@a2000/stack": "0.0.3",
     "@a2000/utilities": "0.0.2"
