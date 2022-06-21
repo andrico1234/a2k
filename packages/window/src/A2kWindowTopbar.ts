@@ -3,12 +3,12 @@ import { property } from "lit/decorators.js";
 
 export class A2kWindowTopbar extends LitElement {
   static styles = css`
-    .topbar-wrapper {
+    #wrapper {
       background: var(--window-topbar-background);
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
       user-select: none;
+      height: var(--window-topbar-height);
+      display: flex;
+      align-items: center;
     }
 
     h2 {
@@ -19,23 +19,16 @@ export class A2kWindowTopbar extends LitElement {
     }
   `;
 
-  handleClose(e: PointerEvent) {
-    const event = new Event("close", { bubbles: true, composed: true });
-
-    (e.target as HTMLButtonElement).dispatchEvent(event);
-  }
-
-  closeButton = html`<button @click="${this.handleClose}">Close</button>`;
-
   @property({ type: Boolean })
   closeable = false;
 
   render() {
-    return html`<div class="topbar-wrapper">
-      <h2 class="heading">
-        <slot></slot>
-      </h2>
-      ${this.closeable ? this.closeButton : ""}
-    </div>`;
+    return html`
+      <div id="wrapper">
+        <h2 class="heading">
+          <slot></slot>
+        </h2>
+      </div>
+    `;
   }
 }

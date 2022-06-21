@@ -12,7 +12,7 @@ export class StartMenu extends LitElement {
       padding-inline: var(--start-menu-item-padding);
       gap: var(--start-menu-item-gap);
       background: var(--start-menu-item-background);
-      cursor: pointer;
+      cursor: var(--cursor-pointer);
       width: 100%;
       border: 0;
       font-size: inherit;

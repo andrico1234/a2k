@@ -7,6 +7,7 @@ import "@a2000/stack/a2k-stack.js";
 import "@a2000/panel/a2k-panel.js";
 
 import "./a2k-window-topbar";
+import "./a2k-window-actions";
 
 // TODO: add a window context that tracks the active states of the windows and adjust their position in the stacks accordingly
 
@@ -19,12 +20,21 @@ export class A2kWindow extends LitElement {
       max-width: 100%;
     }
 
+    #draggable {
+      width: 100%;
+    }
+
     #draggable[data-dragging="idle"] {
       cursor: var(--cursor-grab);
     }
 
     #draggable[data-dragging="dragging"] {
       cursor: var(--cursor-grabbing);
+    }
+
+    #topbar-wrapper {
+      display: flex;
+      justify-content: space-between;
     }
 
     .content {
@@ -55,10 +65,13 @@ export class A2kWindow extends LitElement {
     return html`
       <div id="window" style=${styleMap(this.drag.styles)}>
         <a2k-panel>
-          <div id="draggable" ${this.drag.draggable()}>
-            <a2k-window-topbar ?closeable="${this.closeable}"
-              >${this.heading}</a2k-window-topbar
-            >
+          <div id="topbar-wrapper">
+            <div id="draggable" ${this.drag.applyDrag()}>
+              <a2k-window-topbar>${this.heading}</a2k-window-topbar>
+            </div>
+            <a2k-window-actions
+              ?closeable="${this.closeable}"
+            ></a2k-window-actions>
           </div>
           <div class="content">
             <a2k-stack>

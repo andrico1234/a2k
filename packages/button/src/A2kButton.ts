@@ -32,6 +32,10 @@ export class A2kButton extends LitElement {
       box-shadow: var(--button-shadow);
     }
 
+    button[data-size="small"] {
+      padding: var(--button-padding-small);
+    }
+
     button:not([disabled]):active {
       border-bottom: 2px solid transparent;
       border-right: 0;
@@ -45,8 +49,11 @@ export class A2kButton extends LitElement {
   @property({ type: Boolean })
   disabled = false;
 
+  @property({ type: String })
+  size: "small" | "medium" = "medium";
+
   render() {
-    return html` <button ?disabled=${this.disabled}>
+    return html` <button data-size="${this.size}" ?disabled=${this.disabled}>
       <slot></slot>
     </button>`;
   }

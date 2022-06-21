@@ -106,7 +106,9 @@ export class DragController implements ReactiveController {
     }
   }
 
-  draggable() {
+  applyDrag() {
+    if (!this.host.draggable) return null;
+
     return dragDirective(this, {
       start: this.#onDragStart,
       move: this.#onDrag,

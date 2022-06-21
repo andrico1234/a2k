@@ -94,6 +94,7 @@ Variable names should follow the format
 
   --button-color-background: var(--color-gray-550);
   --button-padding: var(--spacing-100) var(--spacing-150);
+  --button-padding-small: var(--spacing-50);
   --button-font-weight: var(--font-weight-heavy);
   --button-shadow-light: -0.5px -0.5px 0 0.5px var(--color-white);
   --button-shadow-heavy: 0px 0px 0 1px var(--color-black);
@@ -155,4 +156,5 @@ Variable names should follow the format
   --window-topbar-heading-font-size: var(--font-size-100);
   --window-topbar-heading-color: var(--color-white);
   --window-topbar-background: var(--blue-gradient);
+  --window-topbar-height: 28px;
 }

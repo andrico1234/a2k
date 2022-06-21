@@ -21,7 +21,7 @@ export class StartButton extends LitElement {
       font-size: var(--font-size-100);
       line-height: var(--font-size-100);
       background-color: var(--color-gray-600);
-      cursor: pointer;
+      cursor: var(--cursor-pointer);
       border: var(--button-border);
       border-left: 1px dotted var(--color-white);
       border-top: 1px dotted var(--color-white);
