@@ -1,5 +1,17 @@
 # site
 
+## 1.0.17
+
+### Patch Changes
+
+- Updated dependencies [3862af7]
+- Updated dependencies [76e6205]
+  - @a2000/icons@0.0.8
+  - @a2000/button@0.0.6
+  - @a2000/styles@0.0.15
+  - @a2000/taskbar@0.0.13
+  - @a2000/window@0.0.13
+
 ## 1.0.16
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.15
+
+### Patch Changes
+
+- 76e6205: add size attribute to button
+
 ## 0.0.14
 
 ### Patch Changes
