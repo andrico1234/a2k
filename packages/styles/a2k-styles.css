@@ -98,9 +98,10 @@ Variable names should follow the format
   --button-font-weight: var(--font-weight-heavy);
   --button-shadow-light: -0.5px -0.5px 0 0.5px var(--color-white);
   --button-shadow-heavy: 0px 0px 0 1px var(--color-black);
-  --button-shadow: var(--button-shadow-light), var(--button-shadow-heavy);
-  --button-shadow-active: inset 1px 1px 0 var(--color-black),
-    inset -1px -1px 0 var(--color-white), 0px 0px 0 1px var(--color-gray-550);
+  --button-small-shadow: var(--button-shadow-light), var(--button-shadow-heavy);
+  --button-small-shadow-active: inset 0.5px 0.5px 0 var(--color-black),
+    inset -0.5px -0.5px 0 var(--color-white),
+    0px 0px 0 0.5px var(--color-gray-550);
   --button-outline-offset: 2px;
   --button-font-family: var(--font-primary);
 

@@ -10,7 +10,6 @@ export class A2kButton extends LitElement {
     :host([disabled]) {
       pointer-events: none;
       cursor: not-allowed;
-      opacity: 0.7;
     }
 
     button {
@@ -35,6 +34,7 @@ export class A2kButton extends LitElement {
 
     button[data-size="small"] {
       padding: var(--button-padding-small);
+      box-shadow: var(--button-small-shadow);
     }
 
     button:not([disabled]):active {
@@ -44,6 +44,11 @@ export class A2kButton extends LitElement {
       border-top: 1px dotted var(--color-black);
       box-shadow: var(--button-shadow-active);
       transform: translate(2px, 2px);
+    }
+
+    button[data-size="small"]:not([disabled]):active {
+      box-shadow: var(--button-small-shadow-active);
+      transform: translate(0px, 1px);
     }
   `;
 
