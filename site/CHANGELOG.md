@@ -1,5 +1,13 @@
 # site
 
+## 1.0.18
+
+### Patch Changes
+
+- ce1f4f6: create desktop package
+- Updated dependencies [ce1f4f6]
+  - @a2000/desktop@0.0.2
+
 ## 1.0.17
 
 ### Patch Changes
