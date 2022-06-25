@@ -23,11 +23,6 @@ jobs:
 
       - name: Build site
         run: yarn site:build
-
-      - name: Check changes in site
-        uses: netlify/actions/diff-includes@master
-        with:
-          args: site/dist
   deploy:
     runs-on: ubuntu-latest
     needs: checkChanges
