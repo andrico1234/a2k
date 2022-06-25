@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Work around permission issue
-        run: git config --global --add safe.directory /__w//github/workspace
+        run: git config --global --add safe.directory /github/workspace
 
       - uses: actions/checkout@master
 
