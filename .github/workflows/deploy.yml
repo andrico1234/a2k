@@ -8,7 +8,11 @@ on:
 jobs:
   checkChanges:
     runs-on: ubuntu-latest
+
     steps:
+      - name: Work around permission issue
+        run: git config --global --add safe.directory /__w/quick-lint-js/quick-lint-js
+
       - uses: actions/checkout@master
 
       - name: Install Dependencies
