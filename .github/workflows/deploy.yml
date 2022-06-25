@@ -6,15 +6,10 @@ on:
       - main
 
 jobs:
-  checkChanges:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Work around permission issue
-        run: git config --global --add safe.directory /github/workspace
-
-      - uses: actions/checkout@master
-
       - name: Install Dependencies
         run: yarn --immutable
 
@@ -23,10 +18,6 @@ jobs:
 
       - name: Build site
         run: yarn site:build
-  deploy:
-    runs-on: ubuntu-latest
-    needs: checkChanges
-    steps:
       - name: Deploy
         uses: netlify/actions/build@master
         env:
