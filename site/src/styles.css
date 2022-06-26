@@ -1,6 +1,7 @@
 html {
   height: 100%;
   cursor: var(--cursor-default);
+  overflow: hidden;
 }
 
 /* eventually move this into the reusable component */
@@ -9,4 +10,5 @@ body {
   background: var(--desktop-background);
   display: grid;
   grid-template: 1fr auto / 1fr;
+  image-rendering: pixelated;
 }

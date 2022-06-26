@@ -10,6 +10,7 @@ import PointerTracker, {
   InputEvent as PtInputEvent,
 } from "pointer-tracker";
 import { StyleInfo } from "lit/directives/style-map.js";
+import getSmallestValue from "./getSmallestValue";
 
 type StartCallback = (pointer: Pointer, event: PtInputEvent) => boolean;
 
@@ -31,7 +32,20 @@ interface PointerTrackerOptions {
   end: EndCallback;
 }
 
+interface InitialPosition {
+  top?: StyleInfo["top"];
+  left?: StyleInfo["left"];
+}
+
 type DragControllerHost = HTMLElement & ReactiveControllerHost;
+
+interface DragControllerOptions {
+  initialPosition: InitialPosition;
+}
+
+const defaultOptions = {
+  initialPosition: {},
+};
 
 class DragDirective extends Directive {
   hasInitialised = false;
@@ -91,13 +105,24 @@ export class DragController implements ReactiveController {
   draggableElement: HTMLElement | null = null;
 
   styles: StyleInfo = {
-    top: "16px",
-    left: "16px",
+    touchAction: "none",
+    top: "0px",
+    left: "0px",
   };
 
-  constructor(host: DragControllerHost) {
+  constructor(
+    host: DragControllerHost,
+    options: DragControllerOptions = defaultOptions
+  ) {
     this.host = host;
     this.host.addController(this);
+
+    const { initialPosition = {} } = options;
+
+    this.styles = {
+      ...this.styles,
+      ...initialPosition,
+    };
   }
 
   hostDisconnected(): void {
@@ -116,12 +141,19 @@ export class DragController implements ReactiveController {
     });
   }
 
+  updateElPosition(x: string, y: string) {
+    this.styles = {
+      ...this.styles,
+      left: x,
+      top: y,
+    };
+  }
+
   handleWindowMove(pointer: Pointer) {
-    const { top, left } = this.styles;
-    const { innerHeight, innerWidth } = window;
     const el = this.draggableElement;
 
     if (!el) return;
+    const { top, left } = this.styles;
     const parsedTop = Number(top?.replace("px", ""));
     const parsedLeft = Number(left?.replace("px", ""));
     const pageX = Math.floor(pointer.pageX);
@@ -133,12 +165,20 @@ export class DragController implements ReactiveController {
       if (pageX !== this.cursorPositionX || pageY !== this.cursorPositionY) {
         const { bottom, right, width, height } = el.getBoundingClientRect();
 
+        // window.inner* and screen.avail* had problems depending on where they're used
+        // doing this check ensures that the draggable box never extends beyond the screen
+        const availableWidth = getSmallestValue(screen.availWidth, innerWidth);
+        const availableHeight = getSmallestValue(
+          screen.availHeight,
+          innerHeight
+        );
+
         const xDelta = pageX - this.cursorPositionX!;
         const yDelta = pageY - this.cursorPositionY!;
         const outOfBoundsTop = parsedTop + yDelta < 0;
         const outOfBoundsLeft = parsedLeft + xDelta < 0;
-        const outOfBoundsBottom = bottom + yDelta > innerHeight;
-        const outOfBoundsRight = right + xDelta > innerWidth;
+        const outOfBoundsBottom = bottom + yDelta > availableHeight;
+        const outOfBoundsRight = right + xDelta > availableWidth;
         const isOutOfBounds =
           outOfBoundsBottom ||
           outOfBoundsLeft ||
@@ -149,34 +189,32 @@ export class DragController implements ReactiveController {
         this.cursorPositionY = pageY;
 
         if (!isOutOfBounds) {
-          this.styles = {
-            top: `${parsedTop + yDelta}px`,
-            left: `${parsedLeft + xDelta}px`,
-          };
+          const top = `${parsedTop + yDelta}px`;
+          const left = `${parsedLeft + xDelta}px`;
+
+          this.updateElPosition(left, top);
         } else {
           if (outOfBoundsTop) {
-            this.styles = {
-              top: `0px`,
-              left: `${parsedLeft}px`,
-            };
+            const left = `${parsedLeft}px`;
+
+            this.updateElPosition(left, "0px");
           }
           if (outOfBoundsLeft) {
-            this.styles = {
-              top: `${parsedTop}px`,
-              left: `${0}px`,
-            };
+            const top = `${parsedTop}px`;
+
+            this.updateElPosition("0px", top);
           }
           if (outOfBoundsBottom) {
-            this.styles = {
-              top: `${innerHeight - height}px`,
-              left: `${parsedLeft}px`,
-            };
+            const top = `${availableHeight - height}px`;
+            const left = `${parsedLeft}px`;
+
+            this.updateElPosition(left, top);
           }
           if (outOfBoundsRight) {
-            this.styles = {
-              top: `${parsedTop}px`,
-              left: `${innerWidth - width}px`,
-            };
+            const top = `${parsedTop}px`;
+            const left = `${availableWidth - width}px`;
+
+            this.updateElPosition(left, top);
           }
         }
 
