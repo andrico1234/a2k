@@ -33,5 +33,5 @@ const twitterIcon = document.querySelector(
 );
 
 twitterIcon.onOpen = () => {
-  window.location.href = "https://twitter.com/andrico1234";
+  window.location.href = "https://twitter.com/andricokaroulla";
 };
