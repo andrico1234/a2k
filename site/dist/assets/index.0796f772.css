@@ -41,8 +41,21 @@ h6 {
 #__next {
   isolation: isolate;
 }
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url(/assets/ms-sans-serif.2c7b11d2.otf) format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url(/assets/ms-sans-serif-bold.5da57e1f.otf) format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
 :root {
-  --font-primary: Tahoma;
+  --font-primary: "Pixelated MS Sans Serif", Verdana;
+  --font-primary-letter-spacing: 0.05em;
   --font-size-100: 1rem;
   --font-size-200: calc(21px / 16px * 1rem);
   --font-size-300: calc(24px / 16px * 1rem);
@@ -101,6 +114,12 @@ h6 {
   --outline-offset-focus: var(--spacing-50);
   --font-color: var(--color-black);
   --desktop-background: var(--color-blue-300);
+  --desktop-icon-padding: var(--spacing-200);
+  --desktop-icon-flex-gap: var(--spacing-100);
+  --desktop-icon-text-color: var(--color-white);
+  --desktop-icon-text-padding: var(--spacing-50);
+  --desktop-icon-text-outline-focus: 1px dotted var(--color-white);
+  --desktop-icon-text-background-color-focus: var(--color-blue-100);
   --stack-spacing-top: var(--spacing-100);
   --button-color-background: var(--color-gray-550);
   --button-padding: var(--spacing-100) var(--spacing-150);
@@ -162,10 +181,12 @@ h6 {
 html {
   height: 100%;
   cursor: var(--cursor-default);
+  overflow: hidden;
 }
 body {
   min-height: 100%;
   background: var(--desktop-background);
   display: grid;
   grid-template: 1fr auto / 1fr;
+  image-rendering: pixelated;
 }

@@ -8,6 +8,8 @@ export class A2kDesktop extends LitElement {
   `;
 
   render() {
-    return html`<div id="desktop"></div>`;
+    return html`<div id="desktop">
+      <slot />
+    </div>`;
   }
 }

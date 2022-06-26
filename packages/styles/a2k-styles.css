@@ -105,6 +105,12 @@ Variable names should follow the format
 
   /* Element styles */
   --desktop-background: var(--color-blue-300);
+  --desktop-icon-padding: var(--spacing-200);
+  --desktop-icon-flex-gap: var(--spacing-100);
+  --desktop-icon-text-color: var(--color-white);
+  --desktop-icon-text-padding: var(--spacing-50);
+  --desktop-icon-text-outline-focus: 1px dotted var(--color-white);
+  --desktop-icon-text-background-color-focus: var(--color-blue-100);
 
   --stack-spacing-top: var(--spacing-100);
 

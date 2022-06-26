@@ -14,6 +14,8 @@ __metadata:
 "@a2000/desktop@0.0.2, @a2000/desktop@workspace:packages/desktop":
   version: 0.0.0-use.local
   resolution: "@a2000/desktop@workspace:packages/desktop"
+  dependencies:
+    "@a2000/icons": 0.0.8
   languageName: unknown
   linkType: soft
 

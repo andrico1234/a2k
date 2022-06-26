@@ -27,3 +27,11 @@ const intervalId = setInterval(() => {
     clearInterval(intervalId);
   }
 }, 100);
+
+const twitterIcon = document.querySelector(
+  'a2k-desktop-icon[icon="twitter-icon"]'
+);
+
+twitterIcon.onOpen = () => {
+  window.location.href = "https://twitter.com/andrico1234";
+};

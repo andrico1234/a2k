@@ -11,6 +11,7 @@ To view the components in action, why not check out the [demo](https://a2000.net
 ## Components
 
 - [a2k-button](https://github.com/andrico1234/a2k/tree/main/packages/button)
+- [a2k-desktop](https://github.com/andrico1234/a2k/tree/main/packages/desktop)
 - [a2k-icons](https://github.com/andrico1234/a2k/tree/main/packages/icons)
 - [a2k-panel](https://github.com/andrico1234/a2k/tree/main/packages/panel)
 - [a2k-progress](https://github.com/andrico1234/a2k/tree/main/packages/progress)

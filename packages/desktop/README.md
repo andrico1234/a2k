@@ -12,10 +12,25 @@ Where the main content of the page is displayed
 
 ```html
 <script type="module">
-  import "a2k-window/a2k-desktop.js";
+  import "a2k-desktop/a2k-desktop.js";
+  import "a2k-desktop/a2k-desktop-icon.js";
 </script>
 
-<a2k-desktop></a2k-window>
+<a2k-desktop>
+  <a2k-desktop-icon icon="help-icon" text="help"></a2k-desktop-icon>
+</a2k-desktop>
 ```
 
 ## API
+
+### A2kDesktop
+
+The component where all of your desktop content will live
+
+### A2kDesktopIcon
+
+| Name   | Type     | Default Value | Description                                                            |
+| ------ | -------- | ------------- | ---------------------------------------------------------------------- |
+| text   | string   | ""            | The text content associated with the icon                              |
+| icon   | string   | ""            | The icon that will be displayed. Can be any valid A2kIcon icon name    |
+| onOpen | function | ""            | The callback that will be fired after double-clicking the desktop icon |

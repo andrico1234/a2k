@@ -8,6 +8,10 @@
   "module": "lib/src/index.js",
   "exports": {
     ".": "./lib/src/index.js",
-    "./a2k-desktop.js": "./lib/src/a2k-desktop.js"
+    "./a2k-desktop.js": "./lib/src/a2k-desktop.js",
+    "./a2k-desktop-icon.js": "./lib/src/a2k-desktop-icon.js"
+  },
+  "dependencies": {
+    "@a2000/icons": "0.0.8"
   }
 }

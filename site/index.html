@@ -13,12 +13,14 @@
     />
   </head>
   <body>
-    <a2k-desktop></a2k-desktop>
+    <a2k-desktop>
+      <a2k-desktop-icon icon="twitter-icon" text="twitter"></a2k-desktop-icon>
+    </a2k-desktop>
 
     <div class="taskbar">
       <a2k-taskbar />
     </div>
-    <a2k-window heading="Please wait..." draggable closeable>
+    <!-- <a2k-window heading="Please wait..." draggable closeable>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
         porttitor nisl vitae libero iaculis, vestibulum molestie odio mollis.
@@ -28,7 +30,7 @@
       <p>Andricos2000 is starting up...</p>
       <a2k-button>OK</a2k-button>
       <a2k-progress />
-    </a2k-window>
+    </a2k-window> -->
 
     <script type="module">
       import "@a2000/window/a2k-window.js";
@@ -36,6 +38,7 @@
       import "@a2000/progress/a2k-progress.js";
       import "@a2000/button/a2k-button.js";
       import "@a2000/desktop/a2k-desktop.js";
+      import "@a2000/desktop/a2k-desktop-icon.js";
     </script>
 
     <script type="module" src="./src/script.js"></script>
