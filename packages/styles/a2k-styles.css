@@ -13,9 +13,25 @@ Variable names should follow the format
   --button-color-background-error-hover
 */
 
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("./fonts/ms-sans-serif/ms-sans-serif.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pixelated MS Sans Serif";
+  src: url("./fonts/ms-sans-serif-bold/ms-sans-serif-bold.otf")
+    format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
 :root {
   /* Base styles */
-  --font-primary: Tahoma;
+  --font-primary: "Pixelated MS Sans Serif", Verdana;
+  --font-primary-letter-spacing: 0.05em;
 
   --font-size-100: 1rem;
   --font-size-200: calc((21px / 16px) * 1rem);

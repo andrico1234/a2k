@@ -18,6 +18,7 @@ export class StartMenu extends LitElement {
       font-size: inherit;
       text-align: left;
       font-family: var(--font-primary);
+      letter-spacing: var(--font-primary-letter-spacing);
     }
 
     #start-menu-item:hover {

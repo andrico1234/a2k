@@ -9,6 +9,7 @@ export class A2kTaskbar extends LitElement {
       --inset-shadow-padding: 2px;
 
       font-family: var(--font-primary);
+      letter-spacing: var(--font-primary-letter-spacing);
       box-sizing: border-box;
       border: var(--taskbar-border);
       border-top: 0;

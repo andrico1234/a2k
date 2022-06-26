@@ -15,6 +15,7 @@ export class A2kWindow extends LitElement {
   static styles = css`
     #window {
       font-family: var(--font-primary);
+      letter-spacing: var(--font-primary-letter-spacing);
       position: absolute;
       width: var(--window-width);
       max-width: 100%;

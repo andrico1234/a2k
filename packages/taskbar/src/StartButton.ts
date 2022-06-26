@@ -16,6 +16,7 @@ export class StartButton extends LitElement {
       align-items: center;
       gap: var(--taskbar-content-gap);
       font-family: var(--font-primary);
+      letter-spacing: var(--font-primary-letter-spacing);
       height: 100%;
       font-weight: var(--font-weight-heavy);
       font-size: var(--font-size-100);
