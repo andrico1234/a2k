@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.16
+
+### Patch Changes
+
+- 795ef9d: add custom font
+
 ## 0.0.15
 
 ### Patch Changes

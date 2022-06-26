@@ -1,5 +1,16 @@
 # site
 
+## 1.0.19
+
+### Patch Changes
+
+- Updated dependencies [795ef9d]
+- Updated dependencies [90ae35c]
+  - @a2000/styles@0.0.16
+  - @a2000/desktop@0.0.3
+  - @a2000/taskbar@0.0.14
+  - @a2000/window@0.0.14
+
 ## 1.0.18
 
 ### Patch Changes
