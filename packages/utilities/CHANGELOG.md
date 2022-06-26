@@ -1,5 +1,11 @@
 # @a2000/utilities
 
+## 0.0.4
+
+### Patch Changes
+
+- 05e8330: DragController works better on smaller devices
+
 ## 0.0.3
 
 ### Patch Changes
