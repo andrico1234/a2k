@@ -2550,5 +2550,5 @@ const I = document.querySelector("a2k-window[heading='Please wait...']"),
   }, 100),
   Ye = document.querySelector('a2k-desktop-icon[icon="twitter-icon"]');
 Ye.onOpen = () => {
-  window.location.href = "https://twitter.com/andrico1234";
+  window.location.href = "https://twitter.com/andricokaroulla";
 };
