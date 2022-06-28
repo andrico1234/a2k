@@ -1,5 +1,13 @@
 # @a2000/desktop
 
+## 0.0.4
+
+### Patch Changes
+
+- 3efbeeb: add internet explorer icon,
+- Updated dependencies [3efbeeb]
+  - @a2000/icons@0.0.9
+
 ## 0.0.3
 
 ### Patch Changes
