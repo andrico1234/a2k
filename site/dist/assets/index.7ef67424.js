@@ -1767,7 +1767,9 @@ class N extends p {
       (this.heading = ""),
       (this.draggable = !1),
       (this.closeable = !1),
-      (this.drag = new Ee(this)),
+      (this.drag = new Ee(this, {
+        initialPosition: { left: "32px", top: "32px" },
+      })),
       this.addEventListener("close", () => this.remove());
   }
   render() {
@@ -1955,7 +1957,11 @@ let Y = class extends p {
     super(...arguments), (this.open = !1);
   }
   handleAboutClick() {
-    const t = v` <a2k-window closeable heading="About Andricos2000">
+    const t = v` <a2k-window
+      draggable
+      closeable
+      heading="About Andricos2000"
+    >
       <p>Deets coming soon...</p>
     </a2k-window>`;
     qt(t, document.body);
@@ -1965,7 +1971,7 @@ let Y = class extends p {
     return v`
       <div id="start-menu" class="${t ? "open" : ""}">
         <a2k-panel>
-          <div id="content">
+        <div id="content">
             <div id="side-strip">
               <p>
                 Andricos2000
