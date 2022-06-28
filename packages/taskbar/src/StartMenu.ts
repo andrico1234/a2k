@@ -65,7 +65,11 @@ export class StartMenu extends LitElement {
   open = false;
 
   handleAboutClick() {
-    const window = html` <a2k-window closeable heading="About Andricos2000">
+    const window = html` <a2k-window
+      draggable
+      closeable
+      heading="About Andricos2000"
+    >
       <p>Deets coming soon...</p>
     </a2k-window>`;
 
@@ -78,7 +82,7 @@ export class StartMenu extends LitElement {
     return html`
       <div id="start-menu" class="${isOpen ? "open" : ""}">
         <a2k-panel>
-          <div id="content">
+        <div id="content">
             <div id="side-strip">
               <p>
                 Andricos2000

@@ -52,7 +52,12 @@ export class A2kWindow extends LitElement {
   @property({ type: Boolean })
   closeable = false;
 
-  private drag = new DragController(this);
+  private drag = new DragController(this, {
+    initialPosition: {
+      left: "32px",
+      top: "32px",
+    },
+  });
 
   constructor() {
     super();
