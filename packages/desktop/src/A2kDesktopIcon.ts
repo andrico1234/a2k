@@ -16,6 +16,10 @@ export class A2kDesktopIcon extends LitElement {
       padding: var(--desktop-icon-padding);
       cursor: var(--cursor-pointer);
       gap: var(--desktop-icon-flex-gap);
+      text-align: center;
+      width: var(--desktop-icon-width);
+      font-size: var(--desktop-icon-text-size);
+      user-select: none;
     }
 
     #icon-wrapper p {

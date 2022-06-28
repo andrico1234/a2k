@@ -34,11 +34,11 @@ Variable names should follow the format
   --font-primary-letter-spacing: 0.05em;
 
   --font-size-100: 1rem;
-  --font-size-200: calc((21px / 16px) * 1rem);
-  --font-size-300: calc((24px / 16px) * 1rem);
-  --font-size-400: calc((36px / 16px) * 1rem);
-  --font-size-500: calc((48px / 16px) * 1rem);
-  --font-size-600: calc((64px / 16px) * 1rem);
+  --font-size-200: calc((21 / 16) * 1rem);
+  --font-size-300: calc((24 / 16) * 1rem);
+  --font-size-400: calc((36 / 16) * 1rem);
+  --font-size-500: calc((48 / 16) * 1rem);
+  --font-size-600: calc((64 / 16) * 1rem);
 
   --cursor-default: url("./cursors/default.svg") 0 0, default;
   --cursor-grab: url("./cursors/grab.svg") 0 0, grab;
@@ -60,6 +60,7 @@ Variable names should follow the format
   --spacing-600: calc(var(--spacing-unit) * 6);
   --spacing-700: calc(var(--spacing-unit) * 7);
   --spacing-800: calc(var(--spacing-unit) * 8);
+  --spacing-1600: calc(var(--spacing-unit) * 16);
 
   --color-black: hsl(0deg, 0%, 0%);
   --color-gray-300: hsl(0deg, 0%, 46%);
@@ -105,8 +106,11 @@ Variable names should follow the format
 
   /* Element styles */
   --desktop-background: var(--color-blue-300);
+  --desktop-icon-width: var(--spacing-1600);
+
   --desktop-icon-padding: var(--spacing-200);
   --desktop-icon-flex-gap: var(--spacing-100);
+  --desktop-icon-text-size: var(--font-size-200);
   --desktop-icon-text-color: var(--color-white);
   --desktop-icon-text-padding: var(--spacing-50);
   --desktop-icon-text-outline-focus: 1px dotted var(--color-white);
@@ -143,6 +147,7 @@ Variable names should follow the format
   --taskbar-height: var(--spacing-700);
   --taskbar-padding: var(--spacing-50);
   --taskbar-content-gap: var(--spacing-100);
+  --taskbar-utility-bar-shadow: var(--shadow-inset-medium);
 
   --start-menu-strip-background-gradient: linear-gradient(
     var(--color-blue-100) 0%,
@@ -158,8 +163,6 @@ Variable names should follow the format
   --start-menu-background-hover: var(--color-blue-100);
   --start-menu-icon-size: var(--spacing-400);
   --start-menu-item-text-color-hover: var(--color-white);
-
-  --taskbar-utility-bar-shadow: var(--shadow-inset-medium);
 
   --progress-shadow: inset 0 -1px var(--color-white),
     inset 2px 2px var(--color-gray-400);

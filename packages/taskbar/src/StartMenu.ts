@@ -99,13 +99,6 @@ export class StartMenu extends LitElement {
                 </a>
                 <a target="_blank" href="https://twitter.com/andricokaroulla" rel="noreferrer noopener">
                   <a2k-start-menu-item>
-                    <span slot="icon"><a2k-icon icon="twitter-icon" /></span>
-                    Twitter
-                  </a2k-start-menu-item>
-                </a>
-
-                <a target="_blank" href="mailto:karoulla.andrico@gmail.com" rel="noreferrer noopener">
-                  <a2k-start-menu-item>
                     <span slot="icon"><a2k-icon icon="network-icon"/></span>
                     Contact
                   </a2k-start-menu-item>
