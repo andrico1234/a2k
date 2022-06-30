@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.19
+
+### Patch Changes
+
+- 758c865: updatestyles to fix cursors export
+
 ## 0.0.18
 
 ### Patch Changes
