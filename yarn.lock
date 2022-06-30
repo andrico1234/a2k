@@ -73,7 +73,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@a2000/styles@0.0.17, @a2000/styles@workspace:packages/styles":
+"@a2000/styles@0.0.18, @a2000/styles@workspace:packages/styles":
   version: 0.0.0-use.local
   resolution: "@a2000/styles@workspace:packages/styles"
   languageName: unknown
@@ -6636,7 +6636,7 @@ __metadata:
     "@a2000/desktop": 0.0.4
     "@a2000/icons": 0.0.9
     "@a2000/progress": 0.0.4
-    "@a2000/styles": 0.0.17
+    "@a2000/styles": 0.0.18
     "@a2000/taskbar": 0.0.15
     "@a2000/window": 0.0.15
   languageName: unknown
