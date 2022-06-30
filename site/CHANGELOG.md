@@ -1,5 +1,15 @@
 # site
 
+## 1.0.20
+
+### Patch Changes
+
+- Updated dependencies [3efbeeb]
+  - @a2000/desktop@0.0.4
+  - @a2000/icons@0.0.9
+  - @a2000/taskbar@0.0.15
+  - @a2000/window@0.0.15
+
 ## 1.0.19
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @a2000/icons
 
+## 0.0.9
+
+### Patch Changes
+
+- 3efbeeb: add internet explorer icon,
+
 ## 0.0.8
 
 ### Patch Changes
