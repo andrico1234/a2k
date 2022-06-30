@@ -4,14 +4,16 @@
   "license": "MIT",
   "author": "Andrico Karoulla",
   "version": "0.0.16",
-  "main": "a2k-styles.css",
   "style": "a2k-styles.css",
   "files": [
-    "a2k-styles.css"
+    "a2k-styles.css",
+    "fonts/*/*.otf",
+    "cursors/*/svg"
   ],
   "exports": {
-    ".": "./a2k-styles.css",
-    "./a2k-styles.css": "./a2k-styles.css"
+    "./a2k-styles.css": "./a2k-styles.css",
+    "./fonts/*": "./fonts/*",
+    "./cursors/*": "./cursors/*.svg"
   },
   "keywords": []
 }
