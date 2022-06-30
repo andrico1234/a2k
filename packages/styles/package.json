@@ -8,7 +8,7 @@
   "files": [
     "a2k-styles.css",
     "fonts/*/*.otf",
-    "cursors/*/*.svg"
+    "cursors/*.svg"
   ],
   "exports": {
     "./a2k-styles.css": "./a2k-styles.css",
