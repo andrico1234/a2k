@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.17
+
+### Patch Changes
+
+- 19b9a49: export fonts and cursors
+
 ## 0.0.16
 
 ### Patch Changes
