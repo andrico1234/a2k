@@ -59,3 +59,20 @@ Example:
   font-size: 2rem;
 }
 ```
+
+## Troubleshooting
+
+If you're using Vite for your development environment, you may come across the following issue:
+
+`Uncaught TypeError: Failed to construct 'URL': Invalid URL at A2kIcon.js`
+
+This is due to a [known issue with Vite](https://github.com/vitejs/vite/issues/7287). It appears that `import.meta.url` is not made available to dependencies that have been optimised when developing. The behaviour seems to work as normal when building the prod bundle.
+
+To prevent this issue, we need to ask Vite to not optimise this particular package. Add the following to your `vite.config.js` file:
+
+````js
+optimizeDeps: {
+  exclude: ["@a2000/icons"],
+},
+```.
+````

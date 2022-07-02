@@ -195,24 +195,26 @@ export class DragController implements ReactiveController {
           this.updateElPosition(left, top);
         } else {
           if (outOfBoundsTop) {
-            const left = `${parsedLeft}px`;
+            const left = `${parsedLeft + xDelta}px`;
 
             this.updateElPosition(left, "0px");
           }
           if (outOfBoundsLeft) {
-            const top = `${parsedTop}px`;
+            const top = `${parsedTop + yDelta}px`;
 
             this.updateElPosition("0px", top);
           }
           if (outOfBoundsBottom) {
             const top = `${availableHeight - height}px`;
-            const left = `${parsedLeft}px`;
+            const left = `${parsedLeft + xDelta}px`;
 
             this.updateElPosition(left, top);
           }
           if (outOfBoundsRight) {
-            const top = `${parsedTop}px`;
-            const left = `${availableWidth - width}px`;
+            const top = `${parsedTop + yDelta}px`;
+            // Adding this "2" because otherwise the window locks up on the right
+            // I don't know why it does this and i'm sure there's a logical mathematical reason for it
+            const left = `${Math.floor(availableWidth - width - 2)}px`;
 
             this.updateElPosition(left, top);
           }

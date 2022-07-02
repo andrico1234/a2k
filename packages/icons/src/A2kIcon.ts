@@ -24,7 +24,7 @@ export class A2kIcon extends LitElement {
     }
 
     return svg`
-      <svg id="icon" height="1em" width="1em">
+      <svg height="1em" width="1em">
         <use href="${url}#${this.icon}"></use>
       </svg>
     `;
