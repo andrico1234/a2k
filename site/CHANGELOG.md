@@ -1,5 +1,13 @@
 # site
 
+## 1.0.24
+
+### Patch Changes
+
+- Updated dependencies [82e6137]
+  - @a2000/window@0.0.16
+  - @a2000/taskbar@0.0.16
+
 ## 1.0.23
 
 ### Patch Changes
