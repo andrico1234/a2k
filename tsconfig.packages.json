@@ -2,6 +2,12 @@
   "files": [],
   "references": [
     {
+      "path": "./packages/cover/tsconfig.json"
+    },
+    {
+      "path": "./packages/startup/tsconfig.json"
+    },
+    {
       "path": "./packages/desktop/tsconfig.json"
     },
     {
