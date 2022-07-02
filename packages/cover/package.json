@@ -8,6 +8,6 @@
   "module": "lib/src/index.js",
   "exports": {
     ".": "./lib/src/index.js",
-    "./a2k-stack.js": "./lib/src/a2k-cover.js"
+    "./a2k-cover.js": "./lib/src/a2k-cover.js"
   }
 }

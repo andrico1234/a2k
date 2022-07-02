@@ -184,3 +184,17 @@ Variable names should follow the format
   --window-topbar-background: var(--blue-gradient);
   --window-topbar-height: 28px;
 }
+
+/* Utilities */
+
+.fixed-container {
+  background: black;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

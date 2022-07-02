@@ -9,5 +9,8 @@
   "exports": {
     ".": "./lib/src/index.js",
     "./a2k-startup.js": "./lib/src/a2k-startup.js"
+  },
+  "dependencies": {
+    "@a2000/cover": "0.0.1"
   }
 }

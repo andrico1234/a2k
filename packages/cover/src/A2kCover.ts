@@ -3,6 +3,7 @@ import { html, css, LitElement } from "lit";
 export class A2kCover extends LitElement {
   static styles = css`
     #cover {
+      box-sizing: border-box;
       display: flex;
       flex-direction: column;
       min-block-size: 100vh;

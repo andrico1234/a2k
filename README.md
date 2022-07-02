@@ -11,11 +11,13 @@ To view the components in action, why not check out the [demo](https://a2000.net
 ## Components
 
 - [a2k-button](https://github.com/andrico1234/a2k/tree/main/packages/button)
+- [a2k-cover](https://github.com/andrico1234/a2k/tree/main/packages/cover)
 - [a2k-desktop](https://github.com/andrico1234/a2k/tree/main/packages/desktop)
 - [a2k-icons](https://github.com/andrico1234/a2k/tree/main/packages/icons)
 - [a2k-panel](https://github.com/andrico1234/a2k/tree/main/packages/panel)
 - [a2k-progress](https://github.com/andrico1234/a2k/tree/main/packages/progress)
 - [a2k-stack](https://github.com/andrico1234/a2k/tree/main/packages/stack)
+- [a2k-startup](https://github.com/andrico1234/a2k/tree/main/packages/startup)
 - [a2k-styles](https://github.com/andrico1234/a2k/tree/main/packages/styles)
 - [a2k-taskbar](https://github.com/andrico1234/a2k/tree/main/packages/taskbar)
 - [a2k-utilities](https://github.com/andrico1234/a2k/tree/main/packages/utilities)
