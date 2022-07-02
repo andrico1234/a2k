@@ -1,0 +1,13 @@
+{
+  "name": "@a2000/cover",
+  "description": "A2K Cover",
+  "license": "MIT",
+  "author": "Andrico Karoulla",
+  "version": "0.0.1",
+  "main": "lib/src/index.js",
+  "module": "lib/src/index.js",
+  "exports": {
+    ".": "./lib/src/index.js",
+    "./a2k-stack.js": "./lib/src/a2k-cover.js"
+  }
+}
