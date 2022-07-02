@@ -23,6 +23,7 @@ export class A2kWindow extends LitElement {
 
     #draggable {
       width: 100%;
+      position: relative;
     }
 
     #draggable[data-dragging="idle"] {

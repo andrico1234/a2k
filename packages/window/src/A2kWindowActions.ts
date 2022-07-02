@@ -6,6 +6,11 @@ import "@a2000/icons/a2k-icon";
 
 export class A2kWindowActions extends LitElement {
   static styles = css`
+    :host {
+      position: absolute;
+      right: 2px;
+    }
+
     #icon-wrapper {
       font-size: 8px;
     }
