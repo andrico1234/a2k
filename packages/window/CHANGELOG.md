@@ -1,5 +1,13 @@
 # @a2000/window
 
+## 0.0.16
+
+### Patch Changes
+
+- 82e6137: ensure window doesn't drag offscreen
+- Updated dependencies [5084a13]
+  - @a2000/utilities@0.0.5
+
 ## 0.0.15
 
 ### Patch Changes

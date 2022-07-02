@@ -1,5 +1,11 @@
 # @a2000/utilities
 
+## 0.0.5
+
+### Patch Changes
+
+- 5084a13: fix locking of window when dragging offscreen
+
 ## 0.0.4
 
 ### Patch Changes
