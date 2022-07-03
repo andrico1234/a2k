@@ -27,13 +27,14 @@ export class A2kProgress extends LitElement {
 
   width = 0;
 
-  protected async firstUpdated() {
-    this.generateProgressUnits();
-  }
-
   protected async updated(
     _changedProperties: Map<string | number | symbol, unknown>
   ) {
+    if (!this.width) {
+      // In here and not firstUpdated as element doesn't have width if parent has `hidden` attribute
+      this.generateProgressUnits();
+    }
+
     if (_changedProperties.has("progress")) {
       this.updateProgressUnits();
     }
@@ -41,6 +42,7 @@ export class A2kProgress extends LitElement {
 
   private async generateProgressUnits() {
     const component = this.renderRoot.querySelector("#progress");
+
     if (!component) return;
 
     await this.updateComplete;

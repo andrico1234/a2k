@@ -5,6 +5,10 @@ import "@a2000/icons/a2k-icon";
 
 export class A2kDesktopIcon extends LitElement {
   static styles = css`
+    :host([hidden]) {
+      display: none;
+    }
+
     #icon-wrapper {
       all: unset;
       box-sizing: border-box;

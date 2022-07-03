@@ -8,6 +8,18 @@ import generateSteps from "./generateSteps";
 
 const messages = ["Booting Up..."];
 
+interface ProgressEventDetail {
+  progress: number;
+  isComplete: boolean;
+}
+
+const createProgressEvent = (detail: ProgressEventDetail) =>
+  new CustomEvent("startup-progress", {
+    bubbles: true,
+    composed: true,
+    detail,
+  });
+
 export class A2kStartup extends LitElement {
   static styles = css`
     :host {
@@ -38,7 +50,7 @@ export class A2kStartup extends LitElement {
   image = "";
 
   @property({ type: String })
-  footerText = "Copyright Ⓒ 1999-2000. andricos2000";
+  footerText = "Copyright Ⓒ 1999-2000. Andricos2000";
 
   @property()
   messages = messages;
@@ -55,20 +67,16 @@ export class A2kStartup extends LitElement {
     this.intervalRef = setInterval(() => {
       const currentVal = steps[this.currentStep] ?? 0;
       const newProgress = roundNumber(this.progress + currentVal);
+
+      const event = createProgressEvent({
+        progress: newProgress,
+        isComplete: newProgress >= 100,
+      });
+      this.dispatchEvent(event);
+
       if (newProgress >= 100) {
         clearInterval(this.intervalRef!);
         this.progress = 100;
-
-        // dispatch an event every time we have an interval
-        // startup-update
-        setTimeout(() => {
-          const event = new Event("startup-complete", {
-            bubbles: true,
-            composed: true,
-          });
-
-          this.dispatchEvent(event);
-        }, 200);
       } else {
         this.progress = newProgress;
         this.currentStep++;
@@ -86,7 +94,7 @@ export class A2kStartup extends LitElement {
     return html`
       <a2k-cover>
         <div slot="principal">
-          <h1>Hey there</h1>
+          <h1>Welcome. Andricos2000 is starting up...</h1>
         </div>
         <div slot="footer">
           <a2k-stack>

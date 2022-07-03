@@ -13,6 +13,10 @@ import "./a2k-window-actions";
 
 export class A2kWindow extends LitElement {
   static styles = css`
+    :host([hidden]) {
+      display: none;
+    }
+
     #window {
       font-family: var(--font-primary);
       letter-spacing: var(--font-primary-letter-spacing);

@@ -49,4 +49,4 @@ Startup window that can be used to simulate a Windows 2000 startup screen. It ca
 
 | Name             | Details                                                       |
 | ---------------- | ------------------------------------------------------------- |
-| startup-complete | Fires when the progress the specified loading time is elapsed |
+| startup-progress | Fires when the progress the specified loading time is elapsed |

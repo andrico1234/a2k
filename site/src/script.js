@@ -1,3 +1,5 @@
+const audioUrl = new URL("./andricos-2000-startup.mp3", import.meta.url);
+
 const portfolioIcon = document.querySelector(
   'a2k-desktop-icon[icon="documents-icon"]'
 );
@@ -56,38 +58,76 @@ internetIcon.onOpen = () => {
   document.body.appendChild(aboutWindow);
 };
 
-window.addEventListener("startup-complete", () => {
-  const startupEl = document.querySelector(".fixed-container");
+let hasStartupSoundPlayed = false;
 
-  startupEl.remove();
+window.addEventListener("startup-progress", (e) => {
+  if (e.detail.progress < 50) return;
 
+  if (hasStartupSoundPlayed) return;
+
+  hasStartupSoundPlayed = true;
+  playStartupSound();
+});
+
+window.addEventListener("startup-progress", (e) => {
+  if (!e.detail.isComplete) return;
+
+  setTimeout(() => {
+    const startupEl = document.querySelector(".fixed-container");
+    startupEl.remove();
+
+    loadWindow();
+    loadDesktopIcons();
+  }, 300);
+});
+
+function playStartupSound() {
+  const audio = new Audio(audioUrl);
+  audio.volume = 0.1;
+  audio.play();
+}
+
+function loadWindow() {
   let progress = 0;
-  const loadingWindow = document.querySelector(
-    "a2k-window[heading='Please wait...']"
-  );
 
-  const intervalId = setInterval(() => {
+  setTimeout(() => {
+    const loadingWindow = document.querySelector(
+      "a2k-window[heading='Please wait...']"
+    );
+    loadingWindow.removeAttribute("hidden");
     const el = document.querySelector("a2k-progress");
 
-    if (!el) return;
+    const intervalId = setInterval(() => {
+      if (!el) return;
 
-    progress = progress + 1.2;
+      progress = progress + 1.2;
 
-    el.setAttribute("progress", progress);
-    if (progress > 70) {
-      while (loadingWindow.firstChild) {
-        loadingWindow.removeChild(loadingWindow.lastChild);
+      el.setAttribute("progress", progress);
+      if (progress > 40) {
+        while (loadingWindow.firstChild) {
+          loadingWindow.removeChild(loadingWindow.lastChild);
+        }
+
+        loadingWindow.innerHTML = `
+          <p>There was an error loading Andricos2000</p>
+          <p>Andricos2000 is still a work in progress, keeping checking back for updates or follow progress on Twitter</p>
+        `;
+
+        // change the content to say that there was an error loading the page
+        // make the windows noise
+        // enable dragging effect
+        clearInterval(intervalId);
       }
+    }, 100);
+  }, 700);
+}
 
-      loadingWindow.innerHTML = `
-        <p>There was an error loading Andricos2000</p>
-        <p>Andricos2000 is still a work in progress, keeping checking back for updates or follow progress on Twitter</p>
-      `;
+function loadDesktopIcons() {
+  const desktopIcons = document.querySelectorAll("a2k-desktop-icon");
 
-      // change the content to say that there was an error loading the page
-      // make the windows noise
-      // enable dragging effect
-      clearInterval(intervalId);
-    }
-  }, 100);
-});
+  setTimeout(() => {
+    desktopIcons.forEach((icon) => {
+      icon.removeAttribute("hidden");
+    });
+  }, 1200);
+}
