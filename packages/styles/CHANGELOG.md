@@ -1,5 +1,12 @@
 # @a2000/styles
 
+## 0.0.20
+
+### Patch Changes
+
+- fa1fbff: create start up element
+- fa1fbff: create fixed utility class
+
 ## 0.0.19
 
 ### Patch Changes

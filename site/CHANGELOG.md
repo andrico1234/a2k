@@ -1,5 +1,15 @@
 # site
 
+## 1.0.25
+
+### Patch Changes
+
+- fa1fbff: create start up element
+- Updated dependencies [fa1fbff]
+- Updated dependencies [fa1fbff]
+  - @a2000/startup@0.0.2
+  - @a2000/styles@0.0.20
+
 ## 1.0.24
 
 ### Patch Changes
