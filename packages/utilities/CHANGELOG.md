@@ -1,5 +1,11 @@
 # @a2000/utilities
 
+## 0.0.6
+
+### Patch Changes
+
+- 3a45788: add round number utility function
+
 ## 0.0.5
 
 ### Patch Changes
