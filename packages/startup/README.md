@@ -36,9 +36,17 @@ Startup window that can be used to simulate a Windows 2000 startup screen. It ca
 
 ## API
 
+### Properties
+
 | Name        | Type     | Default Value                        | Details                                                                     |
 | ----------- | -------- | ------------------------------------ | --------------------------------------------------------------------------- |
 | startupTime | number   | 5000                                 |                                                                             |
 | image       | string   | undefined                            | Image placed in the center of the screen, pass a relative path to the image |
 | footerText  | string   | Copyright Ⓒ 1999 - 2000 Andricos2000 |                                                                             |
 | messages    | string[] | ...                                  |                                                                             |
+
+### Events
+
+| Name             | Details                                                       |
+| ---------------- | ------------------------------------------------------------- |
+| startup-complete | Fires when the progress the specified loading time is elapsed |

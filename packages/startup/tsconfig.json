@@ -6,5 +6,10 @@
   },
   "include": ["src/**/*.ts", "index.ts", "typings"],
   "files": [],
-  "references": [{ "path": "../cover" }]
+  "references": [
+    { "path": "../cover" },
+    { "path": "../progress" },
+    { "path": "../stack" },
+    { "path": "../utilities" }
+  ]
 }

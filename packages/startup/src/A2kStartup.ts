@@ -1,27 +1,86 @@
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
+import { roundNumber } from "@a2000/utilities";
 import "@a2000/cover/a2k-cover.js";
+import "@a2000/stack/a2k-stack.js";
+import "@a2000/progress/a2k-progress.js";
+import generateSteps from "./generateSteps";
 
 const messages = ["Booting Up..."];
 
 export class A2kStartup extends LitElement {
   static styles = css`
     :host {
-      color: white;
+      --progress-unit-background: var(--color-white);
+
+      color: var(--color-white);
       text-align: center;
+      font-family: var(--font-primary);
+      width: 100%;
+    }
+
+    #progress-wrapper {
+      max-width: min(600px, 90%);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    a2k-stack {
+      width: 600px;
     }
   `;
 
-  startupTime = 5000;
+  private startupTime = 3000;
+  private intervalRef: number | null = null;
+  private currentStep = 0;
 
   @property({ type: String })
   image = "";
 
   @property({ type: String })
-  footerText = "Copyright Ⓒ 1999 - 2000. andricos2000";
+  footerText = "Copyright Ⓒ 1999-2000. andricos2000";
 
   @property()
   messages = messages;
+
+  @property()
+  private progress = 0;
+
+  connectedCallback() {
+    super.connectedCallback();
+
+    const interval = 50;
+    const steps = generateSteps(this.startupTime, interval);
+
+    this.intervalRef = setInterval(() => {
+      const currentVal = steps[this.currentStep] ?? 0;
+      const newProgress = roundNumber(this.progress + currentVal);
+      if (newProgress >= 100) {
+        clearInterval(this.intervalRef!);
+        this.progress = 100;
+
+        // dispatch an event every time we have an interval
+        // startup-update
+        setTimeout(() => {
+          const event = new Event("startup-complete", {
+            bubbles: true,
+            composed: true,
+          });
+
+          this.dispatchEvent(event);
+        }, 200);
+      } else {
+        this.progress = newProgress;
+        this.currentStep++;
+      }
+    }, interval);
+  }
+
+  disconnectedCallback() {
+    if (this.intervalRef) {
+      clearInterval(this.intervalRef);
+    }
+  }
 
   render() {
     return html`
@@ -29,7 +88,16 @@ export class A2kStartup extends LitElement {
         <div slot="principal">
           <h1>Hey there</h1>
         </div>
-        <div slot="footer">${this.footerText}</div>
+        <div slot="footer">
+          <a2k-stack>
+            <div id="progress-wrapper">
+              <a2k-progress progress=${this.progress}></a2k-progress>
+            </div>
+            <p>${Math.floor(this.progress)}%</p>
+
+            ${this.footerText}
+          </a2k-stack>
+        </div>
       </a2k-cover>
     `;
   }
