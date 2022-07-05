@@ -1,3 +1,6 @@
+import "./templates/ie5";
+import "./templates/about";
+
 const audioUrl = new URL("./andricos-2000-startup.mp3", import.meta.url);
 
 const portfolioIcon = document.querySelector(
@@ -27,17 +30,8 @@ githubIcon.onOpen = () => {
 const aboutIcon = document.querySelector('a2k-desktop-icon[icon="help-icon"]');
 
 aboutIcon.onOpen = () => {
-  const aboutWindow = document.createElement("a2k-window");
-
-  aboutWindow.setAttribute("draggable", "");
-  aboutWindow.setAttribute("closeable", "");
-  aboutWindow.setAttribute("heading", "About Andricos2000");
-
-  const childElement = document.createElement("p");
-  childElement.textContent = "Deets coming soon...";
-  aboutWindow.appendChild(childElement);
-
-  document.body.appendChild(aboutWindow);
+  const aboutEl = document.createElement("a2k-about");
+  document.body.append(aboutEl);
 };
 
 const internetIcon = document.querySelector(
@@ -45,17 +39,8 @@ const internetIcon = document.querySelector(
 );
 
 internetIcon.onOpen = () => {
-  const aboutWindow = document.createElement("a2k-window");
-
-  aboutWindow.setAttribute("draggable", "");
-  aboutWindow.setAttribute("closeable", "");
-  aboutWindow.setAttribute("heading", "Internet Explorer 11");
-
-  const childElement = document.createElement("p");
-  childElement.textContent = "Deets coming soon...";
-  aboutWindow.appendChild(childElement);
-
-  document.body.appendChild(aboutWindow);
+  const ie5El = document.createElement("a2k-ie5");
+  document.body.append(ie5El);
 };
 
 let hasStartupSoundPlayed = false;
@@ -83,7 +68,7 @@ window.addEventListener("startup-progress", (e) => {
 
 function playStartupSound() {
   const audio = new Audio(audioUrl);
-  audio.volume = 0.1;
+  audio.volume = 0.3;
   audio.play();
 }
 
