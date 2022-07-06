@@ -1,7 +1,7 @@
 {
   "name": "site",
   "private": true,
-  "version": "1.0.26",
+  "version": "1.0.27",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -14,12 +14,12 @@
   "license": "ISC",
   "dependencies": {
     "@a2000/button": "0.0.6",
-    "@a2000/desktop": "0.0.4",
-    "@a2000/icons": "0.0.9",
+    "@a2000/desktop": "0.0.5",
+    "@a2000/icons": "0.0.10",
     "@a2000/progress": "0.0.4",
-    "@a2000/startup": "0.0.3",
+    "@a2000/startup": "0.0.4",
     "@a2000/styles": "0.0.20",
-    "@a2000/taskbar": "0.0.17",
-    "@a2000/window": "0.0.17"
+    "@a2000/taskbar": "0.0.18",
+    "@a2000/window": "0.0.18"
   }
 }

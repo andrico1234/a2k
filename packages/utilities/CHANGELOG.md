@@ -1,5 +1,11 @@
 # @a2000/utilities
 
+## 0.0.7
+
+### Patch Changes
+
+- ecd70be: dispatch drag event
+
 ## 0.0.6
 
 ### Patch Changes
