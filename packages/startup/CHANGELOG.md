@@ -1,5 +1,12 @@
 # @a2000/startup
 
+## 0.0.4
+
+### Patch Changes
+
+- Updated dependencies [ecd70be]
+  - @a2000/utilities@0.0.7
+
 ## 0.0.3
 
 ### Patch Changes

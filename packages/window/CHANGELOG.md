@@ -1,5 +1,14 @@
 # @a2000/window
 
+## 0.0.18
+
+### Patch Changes
+
+- Updated dependencies [ecd70be]
+- Updated dependencies [b598efc]
+  - @a2000/utilities@0.0.7
+  - @a2000/icons@0.0.10
+
 ## 0.0.17
 
 ### Patch Changes

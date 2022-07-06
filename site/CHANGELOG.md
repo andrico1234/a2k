@@ -1,5 +1,16 @@
 # site
 
+## 1.0.27
+
+### Patch Changes
+
+- Updated dependencies [b598efc]
+  - @a2000/icons@0.0.10
+  - @a2000/startup@0.0.4
+  - @a2000/taskbar@0.0.18
+  - @a2000/window@0.0.18
+  - @a2000/desktop@0.0.5
+
 ## 1.0.26
 
 ### Patch Changes

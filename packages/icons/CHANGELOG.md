@@ -1,5 +1,11 @@
 # @a2000/icons
 
+## 0.0.10
+
+### Patch Changes
+
+- b598efc: improve cross icon and add info-icon
+
 ## 0.0.9
 
 ### Patch Changes

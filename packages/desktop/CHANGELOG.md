@@ -1,5 +1,12 @@
 # @a2000/desktop
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [b598efc]
+  - @a2000/icons@0.0.10
+
 ## 0.0.4
 
 ### Patch Changes
