@@ -12,3 +12,19 @@ body {
   grid-template: 1fr auto / 1fr;
   image-rendering: pixelated;
 }
+
+a {
+  color: var(--link-font-color);
+  background: none;
+}
+
+.heading {
+  text-align: center;
+  background: white;
+  font-size: var(--font-size-500);
+  font-weight: var(--font-weight-heavy);
+}
+
+.heading > span {
+  font-weight: var(--font-weight-regular);
+}

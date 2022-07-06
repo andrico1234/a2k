@@ -1,7 +1,9 @@
 import "./templates/ie5";
 import "./templates/about";
+import "./templates/brokenWindow";
 
 const audioUrl = new URL("./andricos-2000-startup.mp3", import.meta.url);
+const windowsContainer = document.querySelector("#windows-container");
 
 const portfolioIcon = document.querySelector(
   'a2k-desktop-icon[icon="documents-icon"]'
@@ -31,7 +33,7 @@ const aboutIcon = document.querySelector('a2k-desktop-icon[icon="help-icon"]');
 
 aboutIcon.onOpen = () => {
   const aboutEl = document.createElement("a2k-about");
-  document.body.append(aboutEl);
+  windowsContainer.append(aboutEl);
 };
 
 const internetIcon = document.querySelector(
@@ -40,10 +42,33 @@ const internetIcon = document.querySelector(
 
 internetIcon.onOpen = () => {
   const ie5El = document.createElement("a2k-ie5");
-  document.body.append(ie5El);
+  windowsContainer.append(ie5El);
 };
 
 let hasStartupSoundPlayed = false;
+
+const onWindowDrag = (e) => {
+  const { path } = e.detail.pointer.nativePointer;
+  const loadingWindow = document.querySelector(
+    "a2k-window[heading='Please wait...']"
+  );
+
+  const windowEl = path.find((el) => {
+    if (!el || !el.getAttribute) return false;
+
+    return el.getAttribute("id") === "window";
+  });
+
+  const { width, top, left, height } = getComputedStyle(windowEl);
+
+  const newEl = document.createElement("a2k-broken-window");
+  windowsContainer.insertBefore(newEl, loadingWindow);
+
+  newEl.setAttribute("height", height);
+  newEl.setAttribute("width", width);
+  newEl.setAttribute("top", top);
+  newEl.setAttribute("left", left);
+};
 
 window.addEventListener("startup-progress", (e) => {
   if (e.detail.progress < 50) return;
@@ -93,14 +118,13 @@ function loadWindow() {
           loadingWindow.removeChild(loadingWindow.lastChild);
         }
 
+        window.addEventListener("window-drag", onWindowDrag);
+
         loadingWindow.innerHTML = `
           <p>There was an error loading Andricos2000</p>
-          <p>Andricos2000 is still a work in progress, keeping checking back for updates or follow progress on Twitter</p>
+          <p>Andricos2000 is still a work in progress, keeping checking back for updates or follow progress on <a href="https://twitter.com/andricokaroulla" target="_blank">Twitter</a></p>
         `;
 
-        // change the content to say that there was an error loading the page
-        // make the windows noise
-        // enable dragging effect
         clearInterval(intervalId);
       }
     }, 100);

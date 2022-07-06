@@ -17,6 +17,10 @@ export class A2kWindow extends LitElement {
       display: none;
     }
 
+    ::slotted(*) {
+      padding: 0 var(--window-spacing-horizontal);
+    }
+
     #window {
       font-family: var(--font-primary);
       letter-spacing: var(--font-primary-letter-spacing);
@@ -41,10 +45,6 @@ export class A2kWindow extends LitElement {
     #topbar-wrapper {
       display: flex;
       justify-content: space-between;
-    }
-
-    .content {
-      padding: 0 var(--window-spacing-horizontal);
     }
   `;
 
@@ -84,11 +84,9 @@ export class A2kWindow extends LitElement {
               ?closeable="${this.closeable}"
             ></a2k-window-actions>
           </div>
-          <div class="content">
-            <a2k-stack>
-              <slot></slot>
-            </a2k-stack>
-          </div>
+          <a2k-stack>
+            <slot></slot>
+          </a2k-stack>
         </a2k-panel>
       </div>
     `;

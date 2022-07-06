@@ -1,5 +1,4 @@
 import { html, css, LitElement } from "lit";
-import { property } from "lit/decorators.js";
 
 export class A2kWindowTopbar extends LitElement {
   static styles = css`
@@ -18,9 +17,6 @@ export class A2kWindowTopbar extends LitElement {
       padding: 0 var(--window-spacing-horizontal);
     }
   `;
-
-  @property({ type: Boolean })
-  closeable = false;
 
   render() {
     return html`

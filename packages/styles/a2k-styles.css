@@ -104,6 +104,8 @@ Variable names should follow the format
 
   --font-color: var(--color-black);
 
+  --link-font-color: var(--color-blue-100);
+
   /* Element styles */
   --desktop-background: var(--color-blue-300);
   --desktop-icon-width: var(--spacing-1600);

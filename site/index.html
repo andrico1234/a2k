@@ -40,16 +40,14 @@
     <div class="taskbar">
       <a2k-taskbar></a2k-taskbar>
     </div>
-    <a2k-window hidden heading="Please wait..." draggable closeable>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
-        porttitor nisl vitae libero iaculis, vestibulum molestie odio mollis.
-        Sed porta metus consectetur luctus placerat. Suspendisse nec nulla quis
-        sem consequat tempus.
-      </p>
-      <p>Andricos2000 is starting up...</p>
-      <a2k-progress></a2k-progress>
-    </a2k-window>
+
+    <div id="windows-container">
+      <a2k-window hidden heading="Please wait..." draggable closeable>
+        <p class="heading">Andricos<span>2000</span></p>
+        <p>Andricos2000 is starting up...</p>
+        <a2k-progress></a2k-progress>
+      </a2k-window>
+    </div>
 
     <div class="fixed-container">
       <a2k-startup></a2k-startup>

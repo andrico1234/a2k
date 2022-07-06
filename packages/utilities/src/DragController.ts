@@ -237,8 +237,18 @@ export class DragController implements ReactiveController {
 
   #onDrag = (_previousPointers: Pointer[], pointers: Pointer[]) => {
     const [pointer] = pointers;
+    const event = new CustomEvent("window-drag", {
+      bubbles: true,
+      composed: true,
+      detail: {
+        pointer,
+      },
+    });
 
-    window.requestAnimationFrame(() => this.handleWindowMove(pointer));
+    window.requestAnimationFrame(() => {
+      this.host.dispatchEvent(event);
+      return this.handleWindowMove(pointer);
+    });
   };
 
   #onDragEnd = (_pointer: Pointer, ev: PtInputEvent) => {
