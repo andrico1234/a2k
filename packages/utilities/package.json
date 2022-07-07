@@ -3,7 +3,7 @@
   "description": "A2K Utilities",
   "license": "MIT",
   "author": "Andrico Karoulla",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "lib/src/index.js",
   "module": "lib/src/index.js",
   "exports": {
