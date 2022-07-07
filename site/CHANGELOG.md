@@ -1,5 +1,13 @@
 # site
 
+## 1.0.28
+
+### Patch Changes
+
+- @a2000/startup@0.0.5
+- @a2000/taskbar@0.0.19
+- @a2000/window@0.0.19
+
 ## 1.0.27
 
 ### Patch Changes
