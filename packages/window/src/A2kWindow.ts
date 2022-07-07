@@ -11,6 +11,7 @@ import "./a2k-window-actions";
 
 // TODO: add a window context that tracks the active states of the windows and adjust their position in the stacks accordingly
 
+// TODO: if the window is outside the bounds of the screen, then place it in the screen
 export class A2kWindow extends LitElement {
   static styles = css`
     :host([hidden]) {
@@ -62,6 +63,7 @@ export class A2kWindow extends LitElement {
       left: "32px",
       top: "32px",
     },
+    containerId: "#window",
   });
 
   constructor() {

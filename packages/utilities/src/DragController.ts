@@ -41,6 +41,7 @@ type DragControllerHost = HTMLElement & ReactiveControllerHost;
 
 interface DragControllerOptions {
   initialPosition: InitialPosition;
+  containerId?: string;
 }
 
 const defaultOptions = {
@@ -103,6 +104,8 @@ export class DragController implements ReactiveController {
   cursorPositionY: number | null = null;
   pointerTracker: PointerTracker | null = null;
   draggableElement: HTMLElement | null = null;
+  containerElement: HTMLElement | null = null;
+  containerId = "";
 
   styles: StyleInfo = {
     touchAction: "none",
@@ -117,12 +120,14 @@ export class DragController implements ReactiveController {
     this.host = host;
     this.host.addController(this);
 
-    const { initialPosition = {} } = options;
+    const { initialPosition = {}, containerId = "" } = options;
 
     this.styles = {
       ...this.styles,
       ...initialPosition,
     };
+
+    this.containerId = containerId;
   }
 
   hostDisconnected(): void {
@@ -151,77 +156,71 @@ export class DragController implements ReactiveController {
 
   handleWindowMove(pointer: Pointer) {
     const el = this.draggableElement;
+    const containerEl = this.host.shadowRoot?.querySelector(this.containerId);
 
-    if (!el) return;
+    if (!el || !containerEl) return;
     const { top, left } = this.styles;
+
     const parsedTop = Number(top?.replace("px", ""));
     const parsedLeft = Number(left?.replace("px", ""));
     const pageX = Math.floor(pointer.pageX);
     const pageY = Math.floor(pointer.pageY);
 
     // This is because 'onDrag' fires onmouseup and sets the cursor position to 0 0. if this happens it causes bad things
-    if (pageX !== 0 && pageY !== 0) {
-      // prevents computation if value hasn't changed
-      if (pageX !== this.cursorPositionX || pageY !== this.cursorPositionY) {
-        const { bottom, right, width, height } = el.getBoundingClientRect();
 
-        // window.inner* and screen.avail* had problems depending on where they're used
-        // doing this check ensures that the draggable box never extends beyond the screen
-        const availableWidth = getSmallestValue(screen.availWidth, innerWidth);
-        const availableHeight = getSmallestValue(
-          screen.availHeight,
-          innerHeight
-        );
+    if (pageX !== this.cursorPositionX || pageY !== this.cursorPositionY) {
+      const { bottom, height } = el.getBoundingClientRect();
+      const { right, width } = containerEl.getBoundingClientRect();
 
-        const xDelta = pageX - this.cursorPositionX!;
-        const yDelta = pageY - this.cursorPositionY!;
-        const outOfBoundsTop = parsedTop + yDelta < 0;
-        const outOfBoundsLeft = parsedLeft + xDelta < 0;
-        const outOfBoundsBottom = bottom + yDelta > availableHeight;
-        const outOfBoundsRight = right + xDelta > availableWidth;
-        const isOutOfBounds =
-          outOfBoundsBottom ||
-          outOfBoundsLeft ||
-          outOfBoundsRight ||
-          outOfBoundsTop;
+      // window.inner* and screen.avail* had problems depending on where they're used
+      // doing this check ensures that the draggable box never extends beyond the screen
+      const availableWidth = getSmallestValue(screen.availWidth, innerWidth);
+      const availableHeight = getSmallestValue(screen.availHeight, innerHeight);
 
-        this.cursorPositionX = pageX;
-        this.cursorPositionY = pageY;
+      const xDelta = pageX - this.cursorPositionX!;
+      const yDelta = pageY - this.cursorPositionY!;
+      const outOfBoundsTop = parsedTop + yDelta < 0;
+      const outOfBoundsLeft = parsedLeft + xDelta < 0;
+      const outOfBoundsBottom = bottom + yDelta > availableHeight;
+      const outOfBoundsRight = right + xDelta >= availableWidth;
+      const isOutOfBounds =
+        outOfBoundsBottom ||
+        outOfBoundsLeft ||
+        outOfBoundsRight ||
+        outOfBoundsTop;
 
-        if (!isOutOfBounds) {
+      this.cursorPositionX = pageX;
+      this.cursorPositionY = pageY;
+
+      if (!isOutOfBounds) {
+        const top = `${parsedTop + yDelta}px`;
+        const left = `${parsedLeft + xDelta}px`;
+
+        this.updateElPosition(left, top);
+      } else {
+        // This logic is flawed, as a window can be out of bounds top + bottom at the same time
+        if (outOfBoundsTop) {
+          const left = `${parsedLeft + xDelta}px`;
+
+          this.updateElPosition(left, "0px");
+        } else if (outOfBoundsLeft) {
           const top = `${parsedTop + yDelta}px`;
+
+          this.updateElPosition("0px", top);
+        } else if (outOfBoundsBottom) {
+          const top = `${availableHeight - height}px`;
           const left = `${parsedLeft + xDelta}px`;
 
           this.updateElPosition(left, top);
-        } else {
-          if (outOfBoundsTop) {
-            const left = `${parsedLeft + xDelta}px`;
+        } else if (outOfBoundsRight) {
+          const top = `${parsedTop + yDelta}px`;
+          const left = `${Math.floor(availableWidth - width)}px`;
 
-            this.updateElPosition(left, "0px");
-          }
-          if (outOfBoundsLeft) {
-            const top = `${parsedTop + yDelta}px`;
-
-            this.updateElPosition("0px", top);
-          }
-          if (outOfBoundsBottom) {
-            const top = `${availableHeight - height}px`;
-            const left = `${parsedLeft + xDelta}px`;
-
-            this.updateElPosition(left, top);
-          }
-          if (outOfBoundsRight) {
-            const top = `${parsedTop + yDelta}px`;
-            // Adding this "2" because otherwise the window locks up on the right
-            // I don't know why it does this and i'm sure there's a logical mathematical reason for it
-            const left = `${Math.floor(availableWidth - width - 2)}px`;
-
-            this.updateElPosition(left, top);
-          }
+          this.updateElPosition(left, top);
         }
-
-        this.host.requestUpdate();
       }
+
+      this.host.requestUpdate();
     }
   }
 
