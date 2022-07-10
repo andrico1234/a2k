@@ -1,5 +1,11 @@
 # @a2000/utilities
 
+## 0.0.8
+
+### Patch Changes
+
+- 53c2ebe: Improve right position calculation
+
 ## 0.0.7
 
 ### Patch Changes
