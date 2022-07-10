@@ -1,5 +1,14 @@
 # @a2000/window
 
+## 0.0.20
+
+### Patch Changes
+
+- b4b6fea: export smallestValue from utilities
+  ensure window doesn't overflow if widht is too large
+- Updated dependencies [b4b6fea]
+  - @a2000/utilities@0.0.9
+
 ## 0.0.19
 
 ### Patch Changes
