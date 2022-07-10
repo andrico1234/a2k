@@ -1,7 +1,7 @@
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
-import { DragController } from "@a2000/utilities";
+import { DragController, getSmallestValue } from "@a2000/utilities";
 
 import "@a2000/stack/a2k-stack.js";
 import "@a2000/panel/a2k-panel.js";
@@ -72,6 +72,26 @@ export class A2kWindow extends LitElement {
     this.addEventListener("close", () => {
       return this.remove();
     });
+  }
+
+  protected firstUpdated(): void {
+    const { left } = this.drag.styles;
+    const { offsetWidth } = this.renderRoot.querySelector(
+      "#window"
+    ) as HTMLDivElement;
+
+    const availableWidth = getSmallestValue(screen.availWidth, innerWidth);
+
+    const parsedLeft = Number(left?.replace("px", ""));
+
+    if (parsedLeft + offsetWidth > availableWidth) {
+      this.drag.styles = {
+        ...this.drag.styles,
+        left: "0px",
+      };
+
+      this.requestUpdate();
+    }
   }
 
   render() {

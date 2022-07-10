@@ -1,3 +1,5 @@
+import { render } from "lit";
+import startUpWindow from "./templates/startUpWindow";
 import "./templates/ie5";
 import "./templates/about";
 import "./templates/brokenWindow";
@@ -48,10 +50,13 @@ internetIcon.onOpen = () => {
 let hasStartupSoundPlayed = false;
 
 const onWindowDrag = (e) => {
-  const { path } = e.detail.pointer.nativePointer;
+  const { target, detail } = e;
+  const { path } = detail.pointer.nativePointer;
   const loadingWindow = document.querySelector(
     "a2k-window[heading='Please wait...']"
   );
+
+  if (target.nodeName !== "A2K-WINDOW") return;
 
   const windowEl = path.find((el) => {
     if (!el || !el.getAttribute) return false;
@@ -76,7 +81,10 @@ window.addEventListener("startup-progress", (e) => {
   if (hasStartupSoundPlayed) return;
 
   hasStartupSoundPlayed = true;
-  playStartupSound();
+
+  try {
+    playStartupSound();
+  } catch (err) {}
 });
 
 window.addEventListener("startup-progress", (e) => {
@@ -94,18 +102,20 @@ window.addEventListener("startup-progress", (e) => {
 function playStartupSound() {
   const audio = new Audio(audioUrl);
   audio.volume = 0.3;
-  audio.play();
+  // audio.play();
 }
 
 function loadWindow() {
   let progress = 0;
 
   setTimeout(() => {
+    render(startUpWindow, windowsContainer);
+
+    const el = document.querySelector("a2k-progress");
+
     const loadingWindow = document.querySelector(
       "a2k-window[heading='Please wait...']"
     );
-    loadingWindow.removeAttribute("hidden");
-    const el = document.querySelector("a2k-progress");
 
     const intervalId = setInterval(() => {
       if (!el) return;
