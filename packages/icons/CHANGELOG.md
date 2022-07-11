@@ -1,5 +1,11 @@
 # @a2000/icons
 
+## 0.0.11
+
+### Patch Changes
+
+- fa650a6: add restart button
+
 ## 0.0.10
 
 ### Patch Changes

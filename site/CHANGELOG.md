@@ -1,5 +1,17 @@
 # site
 
+## 1.0.30
+
+### Patch Changes
+
+- Updated dependencies [fa650a6]
+- Updated dependencies [fa650a6]
+  - @a2000/icons@0.0.11
+  - @a2000/taskbar@0.0.21
+  - @a2000/styles@0.0.21
+  - @a2000/desktop@0.0.6
+  - @a2000/window@0.0.21
+
 ## 1.0.29
 
 ### Patch Changes
