@@ -44,6 +44,7 @@ Variable names should follow the format
   --cursor-grab: url("./cursors/grab.svg") 0 0, grab;
   --cursor-grabbing: url("./cursors/grabbing.svg") 0 0, grabbing;
   --cursor-pointer: url("./cursors/pointer.svg") 0 0, pointer;
+  --cursor-wait: url("./cursors/wait.svg") 0 0, wait;
 
   --font-weight-regular: 400;
   --font-weight-heavy: 600;
@@ -142,6 +143,8 @@ Variable names should follow the format
     var(--shadow-heavy);
   --button-shadow-active: 1px 0 var(--color-white), 0px 1px 0 var(--color-white),
     var(--shadow-inset-heavy);
+
+  --startup-progress-bar-width: min(600px, 90%);
 
   --taskbar-border: var(--border-medium);
   --taskbar-shadow: var(--shadow-inset-light), var(--shadow-heavy);

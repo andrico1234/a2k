@@ -166,8 +166,6 @@ export class DragController implements ReactiveController {
     const pageX = Math.floor(pointer.pageX);
     const pageY = Math.floor(pointer.pageY);
 
-    // This is because 'onDrag' fires onmouseup and sets the cursor position to 0 0. if this happens it causes bad things
-
     if (pageX !== this.cursorPositionX || pageY !== this.cursorPositionY) {
       const { bottom, height } = el.getBoundingClientRect();
       const { right, width } = containerEl.getBoundingClientRect();

@@ -9,3 +9,11 @@ const startUpWindow = html`
 `;
 
 export default startUpWindow;
+
+// andricos2000 is starting up
+// loading UI components
+// waking up Clippy
+// reading from install disk
+// installing service pack 69
+// patching code red vulnerability
+// andricos2000 is completing start up

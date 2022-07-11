@@ -32,13 +32,9 @@ export class A2kStartup extends LitElement {
     }
 
     #progress-wrapper {
-      max-width: min(600px, 90%);
+      max-width: var(--startup-progress-bar-width);
       margin: 0 auto;
       width: 100%;
-    }
-
-    a2k-stack {
-      width: 600px;
     }
   `;
 
@@ -102,8 +98,7 @@ export class A2kStartup extends LitElement {
               <a2k-progress progress=${this.progress}></a2k-progress>
             </div>
             <p>${Math.floor(this.progress)}%</p>
-
-            ${this.footerText}
+            <p>${this.footerText}</p>
           </a2k-stack>
         </div>
       </a2k-cover>

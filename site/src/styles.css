@@ -13,6 +13,10 @@ body {
   image-rendering: pixelated;
 }
 
+body[data-state="waiting"] {
+  cursor: var(--cursor-wait);
+}
+
 a {
   color: var(--link-font-color);
   background: none;

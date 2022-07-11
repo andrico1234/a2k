@@ -4,8 +4,11 @@ import "./templates/ie5";
 import "./templates/about";
 import "./templates/brokenWindow";
 
+const body = document.querySelector("body");
 const audioUrl = new URL("./andricos-2000-startup.mp3", import.meta.url);
 const windowsContainer = document.querySelector("#windows-container");
+
+body.setAttribute("data-state", "waiting");
 
 const portfolioIcon = document.querySelector(
   'a2k-desktop-icon[icon="documents-icon"]'
@@ -97,12 +100,16 @@ window.addEventListener("startup-progress", (e) => {
     loadWindow();
     loadDesktopIcons();
   }, 300);
+
+  setTimeout(() => {
+    body.removeAttribute("data-state");
+  }, 500);
 });
 
 function playStartupSound() {
   const audio = new Audio(audioUrl);
   audio.volume = 0.3;
-  // audio.play();
+  audio.play();
 }
 
 function loadWindow() {
@@ -132,7 +139,8 @@ function loadWindow() {
 
         loadingWindow.innerHTML = `
           <p>There was an error loading Andricos2000</p>
-          <p>Andricos2000 is still a work in progress, keeping checking back for updates or follow progress on <a href="https://twitter.com/andricokaroulla" target="_blank">Twitter</a></p>
+          <p>Andricos2000 is still a work in progress, so keep checking back for updates or follow us on <a href="https://twitter.com/andricokaroulla" target="_blank">Twitter</a></p>
+          <p>Giving A2k a <a href="https://github.com/andrico1234/a2k" target="_blank">GitHub</a> ⭐️ is an easy to help the project grow</p>
         `;
 
         clearInterval(intervalId);

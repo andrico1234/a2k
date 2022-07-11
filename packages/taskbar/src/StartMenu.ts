@@ -76,6 +76,10 @@ export class StartMenu extends LitElement {
     render(window, document.body);
   }
 
+  handleShutdownClick() {
+    location.reload();
+  }
+
   render() {
     const isOpen = String(this.open) === "true";
 
@@ -100,7 +104,7 @@ export class StartMenu extends LitElement {
                 <a target="_blank" href="https://twitter.com/andricokaroulla" rel="noreferrer noopener">
                   <a2k-start-menu-item>
                     <span slot="icon"><a2k-icon icon="network-icon"/></span>
-                    Contact
+                    Send Feedback
                   </a2k-start-menu-item>
                 </a>
                 <button @click="${this.handleAboutClick}">
@@ -109,6 +113,14 @@ export class StartMenu extends LitElement {
                       <a2k-icon slot="icon" icon="help-icon" />
                     </span>
                     About
+                  </a2k-start-menu-item>
+                </button>
+                <button @click="${this.handleShutdownClick}">
+                  <a2k-start-menu-item>
+                    <span slot="icon">
+                      <a2k-icon slot="icon" icon="shut-down-icon" />
+                    </span>
+                    Restart
                   </a2k-start-menu-item>
                 </button>
               </a2k-stack>
