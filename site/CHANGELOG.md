@@ -1,5 +1,12 @@
 # site
 
+## 1.0.31
+
+### Patch Changes
+
+- Updated dependencies [087c841]
+  - @a2000/marquee@0.0.2
+
 ## 1.0.30
 
 ### Patch Changes
