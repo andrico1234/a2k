@@ -1,5 +1,14 @@
 # @a2000/taskbar
 
+## 0.0.21
+
+### Patch Changes
+
+- fa650a6: add restart button
+- Updated dependencies [fa650a6]
+  - @a2000/icons@0.0.11
+  - @a2000/window@0.0.21
+
 ## 0.0.20
 
 ### Patch Changes

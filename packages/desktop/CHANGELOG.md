@@ -1,5 +1,12 @@
 # @a2000/desktop
 
+## 0.0.6
+
+### Patch Changes
+
+- Updated dependencies [fa650a6]
+  - @a2000/icons@0.0.11
+
 ## 0.0.5
 
 ### Patch Changes

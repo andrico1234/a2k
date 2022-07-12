@@ -3,7 +3,7 @@
   "description": "A2K Window",
   "license": "MIT",
   "author": "Andrico Karoulla",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "main": "lib/src/index.js",
   "module": "lib/src/index.js",
   "exports": {
@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@a2000/button": "0.0.6",
-    "@a2000/icons": "0.0.10",
+    "@a2000/icons": "0.0.11",
     "@a2000/panel": "0.0.3",
     "@a2000/stack": "0.0.3",
     "@a2000/utilities": "0.0.9"
