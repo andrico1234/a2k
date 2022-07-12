@@ -31,7 +31,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@a2000/marquee@0.0.1, @a2000/marquee@workspace:packages/marquee":
+"@a2000/marquee@0.0.2, @a2000/marquee@workspace:packages/marquee":
   version: 0.0.0-use.local
   resolution: "@a2000/marquee@workspace:packages/marquee"
   languageName: unknown
@@ -6695,7 +6695,7 @@ __metadata:
     "@a2000/button": 0.0.6
     "@a2000/desktop": 0.0.6
     "@a2000/icons": 0.0.11
-    "@a2000/marquee": 0.0.1
+    "@a2000/marquee": 0.0.2
     "@a2000/progress": 0.0.4
     "@a2000/startup": 0.0.6
     "@a2000/styles": 0.0.21
