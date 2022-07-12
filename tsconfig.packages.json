@@ -8,6 +8,9 @@
       "path": "./packages/startup/tsconfig.json"
     },
     {
+      "path": "./packages/marquee/tsconfig.json"
+    },
+    {
       "path": "./packages/desktop/tsconfig.json"
     },
     {

@@ -5,10 +5,17 @@ class IE5 extends LitElement {
     :host {
       --window-color-background: white;
     }
+
+    a2k-window > a2k-marquee {
+      padding: 0;
+    }
   `;
 
   render() {
     return html` <a2k-window draggable closeable heading="Internet Explorer 5">
+      <a2k-marquee>
+        <p slot="text">Hey there</p>
+      </a2k-marquee>
       <div>
         <a2k-icon icon="info-icon"></a2k-icon>
         <p>Coming soon</p>

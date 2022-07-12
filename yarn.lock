@@ -31,6 +31,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@a2000/marquee@0.0.1, @a2000/marquee@workspace:packages/marquee":
+  version: 0.0.0-use.local
+  resolution: "@a2000/marquee@workspace:packages/marquee"
+  languageName: unknown
+  linkType: soft
+
 "@a2000/panel@0.0.3, @a2000/panel@workspace:packages/panel":
   version: 0.0.0-use.local
   resolution: "@a2000/panel@workspace:packages/panel"
@@ -65,7 +71,7 @@ __metadata:
     glob: ^7.2.0
     husky: ^7.0.4
     lint-staged: ^12.1.5
-    lit: ^2.0.2
+    lit: ^2.2.7
     prettier: ^2.5.1
     typescript: ^4.5.4
     vite: ^2.9.12
@@ -740,6 +746,13 @@ __metadata:
   version: 1.0.2
   resolution: "@lit/reactive-element@npm:1.0.2"
   checksum: 105fd68b5fb23dec75ea0e273ebbe94272639db4f8a41a4764eef7c9c172ac498c6c4a658d8e9b20006dc543f86a7d0061267f84096dbf980c300b79bd5adcf2
+  languageName: node
+  linkType: hard
+
+"@lit/reactive-element@npm:^1.3.0":
+  version: 1.3.3
+  resolution: "@lit/reactive-element@npm:1.3.3"
+  checksum: 99dd52fe71972601aba504ebbcc77de7e9acdf3387891de980f1df3558593d6acf3b497f160ae20b420ee943effdb3e88598fa93e043d126e34a25a30125051e
   languageName: node
   linkType: hard
 
@@ -5009,6 +5022,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lit-element@npm:^3.2.0":
+  version: 3.2.1
+  resolution: "lit-element@npm:3.2.1"
+  dependencies:
+    "@lit/reactive-element": ^1.3.0
+    lit-html: ^2.2.0
+  checksum: ab7db147b0679651d546399d0ae0173b3f48c319d98bb9df5bbc4ac8afc57d2894eeb1aceee7c280659483b3ad1e3f16bb00b71c2f354f132e88cb00bdf80609
+  languageName: node
+  linkType: hard
+
 "lit-html@npm:^2.0.0":
   version: 2.0.2
   resolution: "lit-html@npm:2.0.2"
@@ -5018,7 +5041,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lit@npm:^2.0.0, lit@npm:^2.0.2":
+"lit-html@npm:^2.2.0":
+  version: 2.2.6
+  resolution: "lit-html@npm:2.2.6"
+  dependencies:
+    "@types/trusted-types": ^2.0.2
+  checksum: be0dacad92f21d1b3702616beecd73cf2dc0f73fed0c5985841a374615d2a185c62960438555620a0cfd089d99bfa2c350d8054b8d8790b2b3173c8dc93993bc
+  languageName: node
+  linkType: hard
+
+"lit@npm:^2.0.0":
   version: 2.0.2
   resolution: "lit@npm:2.0.2"
   dependencies:
@@ -5026,6 +5058,17 @@ __metadata:
     lit-element: ^3.0.0
     lit-html: ^2.0.0
   checksum: 52a04b25164da1683c7295b305087794f175165cd1561e03f0c50ae998823f0e26101c82add05dea773e35472fbe3ed84486a4685294897f588d126fe8419e05
+  languageName: node
+  linkType: hard
+
+"lit@npm:^2.2.7":
+  version: 2.2.7
+  resolution: "lit@npm:2.2.7"
+  dependencies:
+    "@lit/reactive-element": ^1.3.0
+    lit-element: ^3.2.0
+    lit-html: ^2.2.0
+  checksum: fcaa7f69135b250ccdd3216842928c9e5811b146943cb612830c4d06243090b6ea028e2822d0c894063555dc3af55ba8600bce5e182011bef6194a9222fd4fba
   languageName: node
   linkType: hard
 
@@ -6652,6 +6695,7 @@ __metadata:
     "@a2000/button": 0.0.6
     "@a2000/desktop": 0.0.5
     "@a2000/icons": 0.0.10
+    "@a2000/marquee": 0.0.1
     "@a2000/progress": 0.0.4
     "@a2000/startup": 0.0.6
     "@a2000/styles": 0.0.20

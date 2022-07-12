@@ -22,6 +22,7 @@
       "@a2000/cover": ["packages/cover/src"],
       "@a2000/startup": ["packages/startup/src"],
       "@a2000/stack": ["packages/stack/src"],
+      "@a2000/marquee": ["packages/marquee/src"],
       "@a2000/desktop": ["packages/desktop/src"],
       "@a2000/taskbar": ["packages/taskbar/src"],
       "@a2000/progress": ["packages/progress/src"],

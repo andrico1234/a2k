@@ -38,6 +38,10 @@
 | Twitter   | twitter-icon   |
 | Windows   | windows-icon   |
 | GitHub    | github-icon    |
+| Cross     | cross-icon     |
+| Internet  | internet-icon  |
+| Info      | info-icon      |
+| Shut Down | shut-down-icon |
 
 ## Notes
 
