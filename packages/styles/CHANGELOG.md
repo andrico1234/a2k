@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.21
+
+### Patch Changes
+
+- fa650a6: add wait icon
+
 ## 0.0.20
 
 ### Patch Changes
