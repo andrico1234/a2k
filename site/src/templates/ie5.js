@@ -14,7 +14,9 @@ class IE5 extends LitElement {
   render() {
     return html` <a2k-window draggable closeable heading="Internet Explorer 5">
       <a2k-marquee>
-        <p slot="text">Hey there</p>
+        <p slot="text">
+          Internet Explorer has now reached end of life. RIP king.
+        </p>
       </a2k-marquee>
       <div>
         <a2k-icon icon="info-icon"></a2k-icon>

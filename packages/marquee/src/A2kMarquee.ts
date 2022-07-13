@@ -3,9 +3,13 @@ import { queryAssignedElements, query } from "lit/decorators.js";
 
 export class A2kMarquee extends LitElement {
   static styles = css`
+    :host {
+      background: var(--marquee-background);
+      padding: var(--spacing-50) 0;
+    }
+
     :host * {
       margin: 0;
-      overflow: hidden;
     }
 
     ::slotted(*) {
@@ -13,22 +17,34 @@ export class A2kMarquee extends LitElement {
     }
 
     #marquee {
+      overflow: hidden;
       width: 100%;
       position: relative;
     }
 
-    #marquee-inner-1 {
-      animation: move 10s both infinite linear;
+    #marquee:hover > * {
+      animation-play-state: paused;
     }
 
     #marquee-inner-2 {
       top: 0;
       position: absolute;
       width: 100%;
-      animation: move 10s both 5s infinite linear;
     }
 
-    @keyframes move {
+    @media (prefers-reduced-motion: no-preference) {
+      #marquee-inner-1 {
+        animation: marquee-move var(--marquee-animation-duration) both infinite
+          linear;
+      }
+
+      #marquee-inner-2 {
+        animation: marquee-move var(--marquee-animation-duration) both
+          calc(var(--marquee-animation-duration) / 2) infinite linear;
+      }
+    }
+
+    @keyframes marquee-move {
       from {
         transform: translateX(100%);
       }

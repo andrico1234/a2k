@@ -79,6 +79,12 @@ Variable names should follow the format
   --color-red-700: hsl(22deg, 95%, 56%);
   --color-red-900: hsl(22deg, 95%, 71%);
 
+  --color-yellow-100: hsl(47, 100%, 31%);
+  --color-yellow-300: hsl(47, 100%, 41%);
+  --color-yellow-500: hsl(47, 100%, 50%);
+  --color-yellow-700: hsl(47, 100%, 65%);
+  --color-yellow-900: hsl(47, 100%, 77%);
+
   --color-blue-100: hsl(212deg, 50%, 27%);
   --color-blue-300: hsl(212deg, 50%, 40%);
   --color-blue-700: hsl(212deg, 100%, 64%);
@@ -145,6 +151,9 @@ Variable names should follow the format
     var(--shadow-inset-heavy);
 
   --startup-progress-bar-width: min(600px, 90%);
+
+  --marquee-background: var(--color-yellow-500);
+  --marquee-animation-duration: 15s;
 
   --taskbar-border: var(--border-medium);
   --taskbar-shadow: var(--shadow-inset-light), var(--shadow-heavy);
