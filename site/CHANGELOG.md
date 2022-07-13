@@ -1,5 +1,13 @@
 # site
 
+## 1.0.32
+
+### Patch Changes
+
+- Updated dependencies [a67cfee]
+  - @a2000/marquee@0.0.3
+  - @a2000/styles@0.0.22
+
 ## 1.0.31
 
 ### Patch Changes
