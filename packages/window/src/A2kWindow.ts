@@ -22,6 +22,10 @@ export class A2kWindow extends LitElement {
       padding: 0 var(--window-spacing-horizontal);
     }
 
+    ::slotted([slot="toolbar"]) {
+      padding: 0;
+    }
+
     #window {
       font-family: var(--font-primary);
       letter-spacing: var(--font-primary-letter-spacing);
@@ -106,6 +110,7 @@ export class A2kWindow extends LitElement {
               ?closeable="${this.closeable}"
             ></a2k-window-actions>
           </div>
+          <slot name="toolbar"></slot>
           <a2k-stack>
             <slot></slot>
           </a2k-stack>

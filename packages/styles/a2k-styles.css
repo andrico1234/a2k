@@ -96,8 +96,10 @@ Variable names should follow the format
     var(--color-blue-700) 100%
   );
 
-  --border-light: 2px solid var(--color-white);
-  --border-medium: 2px solid var(--color-gray-400);
+  --border-width: 2px;
+
+  --border-light: var(--border-width) solid var(--color-white);
+  --border-medium: var(--border-width) solid var(--color-gray-400);
   --shadow-heavy: 2px 2px var(--color-black);
 
   --shadow-light: -1px -1px var(--color-white);
@@ -197,6 +199,8 @@ Variable names should follow the format
   --window-topbar-heading-color: var(--color-white);
   --window-topbar-background: var(--blue-gradient);
   --window-topbar-height: 28px;
+
+  --window-toolbar-item-color-background: var(--color-gray-550);
 }
 
 /* Utilities */
