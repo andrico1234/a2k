@@ -1,5 +1,11 @@
 # @a2000/window
 
+## 0.0.22
+
+### Patch Changes
+
+- b69ebea: export window toolbar
+
 ## 0.0.21
 
 ### Patch Changes
