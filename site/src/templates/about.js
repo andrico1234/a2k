@@ -10,21 +10,23 @@ class About extends LitElement {
   render() {
     return html` <a2k-window draggable closeable heading="About Andricos2000">
       <p>
-        Andricos2000 is a free-to-use UI library inspired by the
-        turn-of-the-millenium era of computing. It's a work in progress, so you
-        can follow me on
+        Andricos2000 is a free-to-use web component library inspired by the
+        turn-of-the-millenium era of computing. It's a work in progress, so
+        follow us on
         <a href="https://twitter.com/andricokaroulla" target="_blank"
           >Twitter</a
         >
-        for updates.
+        if you'd like updates.
       </p>
-      <p>It's built by Andrico Karoulla (pictured below).</p>
+
       <p>
-        If you'd like to use Andricos2000 in your own projects, then jump on
-        over to our
-        <a href="https://github.com/andrico1234/a2k" target="_blank">GitHub</a>.
+        Head on over to
+        <a href="https://github.com/andrico1234/a2k" target="_blank">GitHub</a>
+        if you'd like to use Andricos2000 in your own projects. Or consider
+        giving us a ⭐️ to help the project grow.
       </p>
       <h2>Credits</h2>
+      <p>Andrico Karoulla - Developer and designer (pictured below).</p>
       <p>
         The startup music is a reimagining of Madgalena Bay's
         <a

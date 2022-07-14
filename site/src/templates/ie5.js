@@ -25,7 +25,7 @@ class IE5 extends LitElement {
         <a2k-window-toolbar-item>
           <div class="toolbar-row">
             <div>Address</div>
-            <input type="text" />
+            <a2k-text-field></a2k-text-field>
           </div>
         </a2k-window-toolbar-item>
       </a2k-window-toolbar>

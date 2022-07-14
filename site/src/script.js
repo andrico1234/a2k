@@ -142,8 +142,6 @@ function loadWindow() {
         loadingWindow.innerHTML = `
         <a2k-stack>
           <p>Oh no! We had a problem loading Andricos2000. Don't worry, you can still play around and find some easter eggs.</p>
-          <p>Andricos2000 is still a work in progress, so keep checking back for updates or follow us on <a href="https://twitter.com/andricokaroulla" target="_blank">Twitter</a></p>
-          <p>If you like Andricos2000, please consider giving it a ⭐️ on <a href="https://github.com/andrico1234/a2k" target="_blank">GitHub</a>. It's an easy way to help the project grow</p>
           </a2k-stack>
         `;
 

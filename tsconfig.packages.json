@@ -5,6 +5,9 @@
       "path": "./packages/cover/tsconfig.json"
     },
     {
+      "path": "./packages/text-field/tsconfig.json"
+    },
+    {
       "path": "./packages/startup/tsconfig.json"
     },
     {

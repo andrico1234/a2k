@@ -114,6 +114,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@a2000/text-field@0.0.1, @a2000/text-field@workspace:packages/text-field":
+  version: 0.0.0-use.local
+  resolution: "@a2000/text-field@workspace:packages/text-field"
+  languageName: unknown
+  linkType: soft
+
 "@a2000/utilities@0.0.9, @a2000/utilities@workspace:packages/utilities":
   version: 0.0.0-use.local
   resolution: "@a2000/utilities@workspace:packages/utilities"
@@ -6700,6 +6706,7 @@ __metadata:
     "@a2000/startup": 0.0.6
     "@a2000/styles": 0.0.22
     "@a2000/taskbar": 0.0.21
+    "@a2000/text-field": 0.0.1
     "@a2000/window": 0.0.21
   languageName: unknown
   linkType: soft
