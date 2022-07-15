@@ -234,11 +234,16 @@ export class DragController implements ReactiveController {
 
   #onDrag = (_previousPointers: Pointer[], pointers: Pointer[]) => {
     const [pointer] = pointers;
+    const el = this.draggableElement;
+    const containerEl = this.host.shadowRoot?.querySelector(this.containerId);
+
     const event = new CustomEvent("window-drag", {
       bubbles: true,
       composed: true,
       detail: {
         pointer,
+        containerEl,
+        draggableEl: el,
       },
     });
 

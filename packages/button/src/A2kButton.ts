@@ -14,6 +14,7 @@ export class A2kButton extends LitElement {
 
     button {
       background-color: var(--button-color-background);
+      color: (--button-font-color);
       font-family: var(--button-font-family);
       padding: var(--button-padding);
       font-weight: var(--button-font-weight);

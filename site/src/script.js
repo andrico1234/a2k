@@ -52,7 +52,7 @@ let hasStartupSoundPlayed = false;
 
 const onWindowDrag = (e) => {
   const { target, detail } = e;
-  const { path } = detail.pointer.nativePointer;
+  const { containerEl } = detail;
   const loadingWindow = document.querySelector(
     "a2k-window[heading='Please wait...']"
   );
@@ -61,13 +61,7 @@ const onWindowDrag = (e) => {
 
   if (!loadingWindow.isSameNode(target)) return;
 
-  const windowEl = path.find((el) => {
-    if (!el || !el.getAttribute) return false;
-
-    return el.getAttribute("id") === "window";
-  });
-
-  const { width, top, left, height } = getComputedStyle(windowEl);
+  const { width, top, left, height } = getComputedStyle(containerEl);
 
   const newEl = document.createElement("a2k-broken-window");
   windowsContainer.insertBefore(newEl, loadingWindow);

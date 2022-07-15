@@ -130,6 +130,7 @@ Variable names should follow the format
   --stack-spacing-top: var(--spacing-100);
 
   --button-color-background: var(--color-gray-550);
+  --button-font-color: var(--color-black);
   --button-padding: var(--spacing-100) var(--spacing-150);
   --button-padding-small: var(--spacing-50);
   --button-padding-large: var(--spacing-200) var(--spacing-300);
