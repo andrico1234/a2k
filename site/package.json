@@ -1,7 +1,7 @@
 {
   "name": "site",
   "private": true,
-  "version": "1.0.34",
+  "version": "1.0.35",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,15 +13,15 @@
   "author": "Andrico Karoulla",
   "license": "ISC",
   "dependencies": {
-    "@a2000/button": "0.0.6",
+    "@a2000/button": "0.0.7",
     "@a2000/desktop": "0.0.7",
     "@a2000/icons": "0.0.11",
     "@a2000/marquee": "0.0.3",
     "@a2000/progress": "0.0.4",
-    "@a2000/startup": "0.0.7",
-    "@a2000/styles": "0.0.23",
-    "@a2000/taskbar": "0.0.22",
+    "@a2000/startup": "0.0.8",
+    "@a2000/styles": "0.0.24",
+    "@a2000/taskbar": "0.0.23",
     "@a2000/text-field": "0.0.1",
-    "@a2000/window": "0.0.22"
+    "@a2000/window": "0.0.23"
   }
 }

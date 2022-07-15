@@ -5,7 +5,7 @@ __metadata:
   version: 6
   cacheKey: 8
 
-"@a2000/button@0.0.6, @a2000/button@workspace:packages/button":
+"@a2000/button@0.0.7, @a2000/button@workspace:packages/button":
   version: 0.0.0-use.local
   resolution: "@a2000/button@workspace:packages/button"
   languageName: unknown
@@ -85,33 +85,33 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@a2000/startup@0.0.7, @a2000/startup@workspace:packages/startup":
+"@a2000/startup@0.0.8, @a2000/startup@workspace:packages/startup":
   version: 0.0.0-use.local
   resolution: "@a2000/startup@workspace:packages/startup"
   dependencies:
-    "@a2000/button": 0.0.6
+    "@a2000/button": 0.0.7
     "@a2000/cover": 0.0.2
     "@a2000/progress": 0.0.4
     "@a2000/stack": 0.0.3
-    "@a2000/utilities": 0.0.9
+    "@a2000/utilities": 0.0.10
   languageName: unknown
   linkType: soft
 
-"@a2000/styles@0.0.23, @a2000/styles@workspace:packages/styles":
+"@a2000/styles@0.0.24, @a2000/styles@workspace:packages/styles":
   version: 0.0.0-use.local
   resolution: "@a2000/styles@workspace:packages/styles"
   languageName: unknown
   linkType: soft
 
-"@a2000/taskbar@0.0.22, @a2000/taskbar@workspace:packages/taskbar":
+"@a2000/taskbar@0.0.23, @a2000/taskbar@workspace:packages/taskbar":
   version: 0.0.0-use.local
   resolution: "@a2000/taskbar@workspace:packages/taskbar"
   dependencies:
     "@a2000/icons": 0.0.11
     "@a2000/panel": 0.0.3
     "@a2000/stack": 0.0.3
-    "@a2000/utilities": 0.0.9
-    "@a2000/window": 0.0.22
+    "@a2000/utilities": 0.0.10
+    "@a2000/window": 0.0.23
   languageName: unknown
   linkType: soft
 
@@ -121,7 +121,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@a2000/utilities@0.0.9, @a2000/utilities@workspace:packages/utilities":
+"@a2000/utilities@0.0.10, @a2000/utilities@workspace:packages/utilities":
   version: 0.0.0-use.local
   resolution: "@a2000/utilities@workspace:packages/utilities"
   dependencies:
@@ -129,15 +129,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@a2000/window@0.0.22, @a2000/window@workspace:packages/window":
+"@a2000/window@0.0.23, @a2000/window@workspace:packages/window":
   version: 0.0.0-use.local
   resolution: "@a2000/window@workspace:packages/window"
   dependencies:
-    "@a2000/button": 0.0.6
+    "@a2000/button": 0.0.7
     "@a2000/icons": 0.0.11
     "@a2000/panel": 0.0.3
     "@a2000/stack": 0.0.3
-    "@a2000/utilities": 0.0.9
+    "@a2000/utilities": 0.0.10
   languageName: unknown
   linkType: soft
 
@@ -6699,16 +6699,16 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "site@workspace:site"
   dependencies:
-    "@a2000/button": 0.0.6
+    "@a2000/button": 0.0.7
     "@a2000/desktop": 0.0.7
     "@a2000/icons": 0.0.11
     "@a2000/marquee": 0.0.3
     "@a2000/progress": 0.0.4
-    "@a2000/startup": 0.0.7
-    "@a2000/styles": 0.0.23
-    "@a2000/taskbar": 0.0.22
+    "@a2000/startup": 0.0.8
+    "@a2000/styles": 0.0.24
+    "@a2000/taskbar": 0.0.23
     "@a2000/text-field": 0.0.1
-    "@a2000/window": 0.0.22
+    "@a2000/window": 0.0.23
   languageName: unknown
   linkType: soft
 
