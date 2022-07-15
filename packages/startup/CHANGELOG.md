@@ -1,5 +1,11 @@
 # @a2000/startup
 
+## 0.0.7
+
+### Patch Changes
+
+- 7615ebf: add desktop standby mode
+
 ## 0.0.6
 
 ### Patch Changes

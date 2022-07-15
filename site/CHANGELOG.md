@@ -1,5 +1,14 @@
 # site
 
+## 1.0.34
+
+### Patch Changes
+
+- Updated dependencies [7615ebf]
+- Updated dependencies [e8a388c]
+  - @a2000/startup@0.0.7
+  - @a2000/desktop@0.0.7
+
 ## 1.0.33
 
 ### Patch Changes

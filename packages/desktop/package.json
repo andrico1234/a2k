@@ -3,7 +3,7 @@
   "description": "A2K Window",
   "license": "MIT",
   "author": "Andrico Karoulla",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "lib/src/index.js",
   "module": "lib/src/index.js",
   "exports": {
