@@ -8,8 +8,6 @@ const body = document.querySelector("body");
 const audioUrl = new URL("./andricos-2000-startup.mp3", import.meta.url);
 const windowsContainer = document.querySelector("#windows-container");
 
-body.setAttribute("data-state", "waiting");
-
 const portfolioIcon = document.querySelector(
   'a2k-desktop-icon[icon="documents-icon"]'
 );

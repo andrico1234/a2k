@@ -30,9 +30,7 @@ class IE5 extends LitElement {
         </a2k-window-toolbar-item>
       </a2k-window-toolbar>
       <a2k-marquee>
-        <p slot="text">
-          Internet Explorer has now reached end of life. RIP king.
-        </p>
+        <p slot="text">Internet Explorer has reached end of life. RIP king.</p>
       </a2k-marquee>
       <div>
         <a2k-icon icon="info-icon"></a2k-icon>

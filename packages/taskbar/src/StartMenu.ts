@@ -120,7 +120,7 @@ export class StartMenu extends LitElement {
                     <span slot="icon">
                       <a2k-icon slot="icon" icon="shut-down-icon" />
                     </span>
-                    Restart
+                    Shut Down
                   </a2k-start-menu-item>
                 </button>
               </a2k-stack>

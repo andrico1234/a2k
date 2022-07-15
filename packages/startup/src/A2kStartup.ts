@@ -1,6 +1,7 @@
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 import { roundNumber } from "@a2000/utilities";
+import "@a2000/button/a2k-button.js";
 import "@a2000/cover/a2k-cover.js";
 import "@a2000/stack/a2k-stack.js";
 import "@a2000/progress/a2k-progress.js";
@@ -36,11 +37,32 @@ export class A2kStartup extends LitElement {
       margin: 0 auto;
       width: 100%;
     }
+
+    #standing-by {
+      animation: flash 1s infinite;
+    }
+
+    @keyframes flash {
+      from {
+        opacity: 0;
+      }
+
+      1% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
   `;
 
   private startupTime = 3000;
   private intervalRef: number | null = null;
   private currentStep = 0;
+
+  @property({ type: String })
+  state = "idle";
 
   @property({ type: String })
   image = "";
@@ -53,12 +75,24 @@ export class A2kStartup extends LitElement {
 
   @property()
   private progress = 0;
+  private interval = 50;
 
-  connectedCallback() {
-    super.connectedCallback();
+  disconnectedCallback() {
+    if (this.intervalRef) {
+      clearInterval(this.intervalRef);
+    }
+  }
 
-    const interval = 50;
-    const steps = generateSteps(this.startupTime, interval);
+  handleStart = () => {
+    this.state = "loading";
+    const body = document.querySelector("body")!;
+    body.setAttribute("data-state", "waiting");
+
+    this.beginLoading();
+  };
+
+  beginLoading = () => {
+    const steps = generateSteps(this.startupTime, this.interval);
 
     this.intervalRef = setInterval(() => {
       const currentVal = steps[this.currentStep] ?? 0;
@@ -77,16 +111,20 @@ export class A2kStartup extends LitElement {
         this.progress = newProgress;
         this.currentStep++;
       }
-    }, interval);
-  }
-
-  disconnectedCallback() {
-    if (this.intervalRef) {
-      clearInterval(this.intervalRef);
-    }
-  }
+    }, this.interval);
+  };
 
   render() {
+    if (this.state === "idle") {
+      return html`<a2k-cover>
+        <div slot="principal">
+          <h1 id="standing-by">Standing by...</h1>
+          <a2k-button size="large" @click=${this.handleStart}>Start</a2k-button>
+        </div>
+        <div slot="footer"></div>
+      </a2k-cover>`;
+    }
+
     return html`
       <a2k-cover>
         <div slot="principal">

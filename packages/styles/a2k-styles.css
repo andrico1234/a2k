@@ -132,6 +132,7 @@ Variable names should follow the format
   --button-color-background: var(--color-gray-550);
   --button-padding: var(--spacing-100) var(--spacing-150);
   --button-padding-small: var(--spacing-50);
+  --button-padding-large: var(--spacing-200) var(--spacing-300);
   --button-font-weight: var(--font-weight-heavy);
   --button-shadow-light: -0.5px -0.5px 0 0.5px var(--color-white);
   --button-shadow-heavy: 0px 0px 0 1px var(--color-black);
@@ -141,6 +142,7 @@ Variable names should follow the format
     0px 0px 0 0.5px var(--color-gray-550);
   --button-outline-offset: 2px;
   --button-font-family: var(--font-primary);
+  --button-font-size-large: var(--font-size-200);
 
   --button-border: var(--border-medium);
   --button-border-width: 1px 0 0 1px;
