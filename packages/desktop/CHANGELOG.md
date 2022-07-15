@@ -1,5 +1,11 @@
 # @a2000/desktop
 
+## 0.0.7
+
+### Patch Changes
+
+- e8a388c: icons wrap based on desktop height on load
+
 ## 0.0.6
 
 ### Patch Changes
