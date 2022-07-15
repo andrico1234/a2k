@@ -1,5 +1,13 @@
 # @a2000/window
 
+## 0.0.23
+
+### Patch Changes
+
+- Updated dependencies [2af8d15]
+  - @a2000/button@0.0.7
+  - @a2000/utilities@0.0.10
+
 ## 0.0.22
 
 ### Patch Changes

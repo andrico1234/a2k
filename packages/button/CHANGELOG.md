@@ -1,5 +1,12 @@
 # @a2000/button
 
+## 0.0.7
+
+### Patch Changes
+
+- 2af8d15: button now explicitly specifies text color
+  drag controller adds the container and draggable element to the detail object
+
 ## 0.0.6
 
 ### Patch Changes
