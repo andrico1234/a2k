@@ -21,6 +21,7 @@ To view the components in action, why not check out the [demo](https://a2000.net
 - [a2k-startup](https://github.com/andrico1234/a2k/tree/main/packages/startup)
 - [a2k-styles](https://github.com/andrico1234/a2k/tree/main/packages/styles)
 - [a2k-taskbar](https://github.com/andrico1234/a2k/tree/main/packages/taskbar)
+- [a2k-text-field](https://github.com/andrico1234/a2k/tree/main/packages/text-field)
 - [a2k-utilities](https://github.com/andrico1234/a2k/tree/main/packages/utilities)
 - [a2k-window](https://github.com/andrico1234/a2k/tree/main/packages/window)
 

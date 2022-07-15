@@ -8,6 +8,8 @@ class IE5 extends LitElement {
 
     .toolbar-row {
       display: flex;
+      align-items: center;
+      gap: var(--spacing-50);
     }
 
     .toolbar-row > *:nth-child(2) {
@@ -25,7 +27,9 @@ class IE5 extends LitElement {
         <a2k-window-toolbar-item>
           <div class="toolbar-row">
             <div>Address</div>
-            <a2k-text-field></a2k-text-field>
+            <a2k-text-field
+              defaultValue="https://www.microsoft.com/internet-explorer"
+            ></a2k-text-field>
           </div>
         </a2k-window-toolbar-item>
       </a2k-window-toolbar>

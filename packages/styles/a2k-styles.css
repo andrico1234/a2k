@@ -192,6 +192,9 @@ Variable names should follow the format
   --progress-unit-width: var(--spacing-150);
   --progress-unit-background: var(--color-blue-100);
 
+  --text-field-padding: var(--spacing-100) var(--spacing-50);
+  --text-input-border: var(--shadow-inset-heavy);
+
   --window-color-background: var(--color-gray-500);
   --window-border: var(--border-medium);
   --window-shadow: var(--shadow-inset-light), var(--shadow-heavy);
