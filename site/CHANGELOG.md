@@ -1,5 +1,13 @@
 # site
 
+## 1.0.36
+
+### Patch Changes
+
+- Updated dependencies [f841643]
+  - @a2000/text-field@0.0.2
+  - @a2000/styles@0.0.25
+
 ## 1.0.35
 
 ### Patch Changes

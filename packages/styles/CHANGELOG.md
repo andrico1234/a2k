@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.25
+
+### Patch Changes
+
+- f841643: add styles to text input
+
 ## 0.0.24
 
 ### Patch Changes
