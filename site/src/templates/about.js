@@ -5,6 +5,11 @@ class About extends LitElement {
     p {
       margin: 0;
     }
+
+    img {
+      max-width: 400px;
+      object-fit: cover;
+    }
   `;
 
   render() {
@@ -27,6 +32,12 @@ class About extends LitElement {
       </p>
       <h2>Credits</h2>
       <p>Andrico Karoulla - Developer and designer (pictured below).</p>
+      <img
+        src="/images/me-at-computer.jpeg"
+        loading="lazy"
+        class="profile-picture"
+        alt="me, playing at the computer, with my pokemon cards scattered around me"
+      />
       <p>
         The startup music is a reimagining of Madgalena Bay's
         <a

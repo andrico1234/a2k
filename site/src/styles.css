@@ -13,6 +13,11 @@ body {
   image-rendering: pixelated;
 }
 
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
 body[data-state="waiting"] {
   cursor: var(--cursor-wait);
 }
