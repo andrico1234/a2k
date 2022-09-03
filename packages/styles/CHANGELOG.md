@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.26
+
+### Patch Changes
+
+- c4cc4a1: Add status bar component
+
 ## 0.0.25
 
 ### Patch Changes
