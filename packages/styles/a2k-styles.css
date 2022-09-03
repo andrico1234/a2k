@@ -98,7 +98,7 @@ Variable names should follow the format
 
   --border-width: 2px;
 
-  --border-light: var(--border-width) solid var(--color-white);
+  --border-light: var(--border-width) solid var(--color-gray-700);
   --border-medium: var(--border-width) solid var(--color-gray-400);
   --shadow-heavy: 2px 2px var(--color-black);
 
@@ -195,9 +195,9 @@ Variable names should follow the format
   --text-field-padding: var(--spacing-100) var(--spacing-50);
   --text-input-border: var(--shadow-inset-heavy);
 
-  --window-color-background: var(--color-gray-500);
-  --window-border: var(--border-medium);
-  --window-shadow: var(--shadow-inset-light), var(--shadow-heavy);
+  --panel-border: var(--border-light);
+  --panel-color-background: var(--color-gray-500);
+
   --window-spacing-horizontal: var(--spacing-200);
   --window-width: 80ch;
 

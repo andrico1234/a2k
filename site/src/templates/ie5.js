@@ -3,7 +3,7 @@ import { css, html, LitElement } from "lit";
 class IE5 extends LitElement {
   static styles = css`
     :host {
-      --window-color-background: white;
+      --panel-color-background: white;
     }
 
     .toolbar-row {
@@ -20,6 +20,32 @@ class IE5 extends LitElement {
       padding: 0;
     }
   `;
+
+  connection = "";
+
+  handleOnline = () => {
+    connection = "Online";
+  };
+
+  handleOffline = () => {
+    connection = "Offline";
+  };
+
+  connectedCallback() {
+    super.connectedCallback();
+
+    this.addEventListener("online", this.handleOnline);
+    this.addEventListener("offline", this.handleOffline);
+
+    this.connection = navigator.onLine ? "Online" : "Offline";
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+
+    this.removeEventListener("online", this.handleOnline);
+    this.removeEventListener("offline", this.handleOffline);
+  }
 
   render() {
     return html` <a2k-window draggable closeable heading="Internet Explorer 5">
@@ -40,6 +66,11 @@ class IE5 extends LitElement {
         <a2k-icon icon="info-icon"></a2k-icon>
         <p>Coming soon</p>
       </div>
+      <a2k-window-status-bar
+        statusOne="Loaded"
+        statusTwo="${this.connection}"
+        slot="statusbar"
+      ></a2k-window-status-bar>
     </a2k-window>`;
   }
 }

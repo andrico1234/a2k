@@ -26,6 +26,10 @@ export class A2kWindow extends LitElement {
       padding: 0;
     }
 
+    ::slotted([slot="statusbar"]) {
+      padding: 0;
+    }
+
     #window {
       font-family: var(--font-primary);
       letter-spacing: var(--font-primary-letter-spacing);
@@ -114,6 +118,7 @@ export class A2kWindow extends LitElement {
           <a2k-stack>
             <slot></slot>
           </a2k-stack>
+          <slot name="statusbar"></slot>
         </a2k-panel>
       </div>
     `;

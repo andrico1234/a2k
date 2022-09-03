@@ -10,7 +10,8 @@
     ".": "./lib/src/index.js",
     "./a2k-window.js": "./lib/src/a2k-window.js",
     "./a2k-window-toolbar.js": "./lib/src/a2k-window-toolbar.js",
-    "./a2k-window-toolbar-item.js": "./lib/src/a2k-window-toolbar-item.js"
+    "./a2k-window-toolbar-item.js": "./lib/src/a2k-window-toolbar-item.js",
+    "./a2k-window-status-bar.js": "./lib/src/a2k-window-status-bar.js"
   },
   "dependencies": {
     "@a2000/button": "0.0.7",
