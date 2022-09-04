@@ -197,6 +197,7 @@ Variable names should follow the format
 
   --panel-border: var(--border-light);
   --panel-color-background: var(--color-gray-500);
+  --panel-shadow: var(--shadow-inset-light), var(--shadow-heavy);
 
   --window-spacing-horizontal: var(--spacing-200);
   --window-width: 80ch;

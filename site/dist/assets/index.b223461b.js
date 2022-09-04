@@ -61,6 +61,7 @@ var Pe=Object.defineProperty;var Re=(o,t,e)=>t in o?Pe(o,t,{enumerable:!0,config
     #panel {
       border: var(--panel-border);
       background-color: var(--panel-color-background);
+      box-shadow: var(--panel-shadow);
     }
   `;window.customElements.define("a2k-panel",de);class ce extends h{render(){return p`
       <div id="wrapper">
@@ -789,10 +790,7 @@ var Pe=Object.defineProperty;var Re=(o,t,e)=>t in o?Pe(o,t,{enumerable:!0,config
       <a2k-marquee>
         <p slot="text">Internet Explorer has reached end of life. RIP king.</p>
       </a2k-marquee>
-      <div>
-        <a2k-icon icon="info-icon"></a2k-icon>
-        <p>Coming soon</p>
-      </div>
+      <img src="/images/ie5-splash.png" />
       <a2k-window-status-bar
         statusOne="Loaded"
         statusTwo="${this.connection}"
@@ -814,6 +812,10 @@ var Pe=Object.defineProperty;var Re=(o,t,e)=>t in o?Pe(o,t,{enumerable:!0,config
     }
 
     a2k-window > a2k-marquee {
+      padding: 0;
+    }
+    img {
+      object-fit: cover;
       padding: 0;
     }
   `);window.customElements.define("a2k-ie5",Se);class Te extends h{render(){return p` <a2k-window draggable closeable heading="About Andricos2000">

@@ -19,6 +19,10 @@ class IE5 extends LitElement {
     a2k-window > a2k-marquee {
       padding: 0;
     }
+    img {
+      object-fit: cover;
+      padding: 0;
+    }
   `;
 
   connection = "";
@@ -62,10 +66,7 @@ class IE5 extends LitElement {
       <a2k-marquee>
         <p slot="text">Internet Explorer has reached end of life. RIP king.</p>
       </a2k-marquee>
-      <div>
-        <a2k-icon icon="info-icon"></a2k-icon>
-        <p>Coming soon</p>
-      </div>
+      <img src="/images/ie5-splash.png" />
       <a2k-window-status-bar
         statusOne="Loaded"
         statusTwo="${this.connection}"

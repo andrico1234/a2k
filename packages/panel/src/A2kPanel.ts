@@ -5,6 +5,7 @@ export class A2kPanel extends LitElement {
     #panel {
       border: var(--panel-border);
       background-color: var(--panel-color-background);
+      box-shadow: var(--panel-shadow);
     }
   `;
 
