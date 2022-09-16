@@ -20,6 +20,9 @@
       "path": "./packages/window/tsconfig.json"
     },
     {
+      "path": "./packages/select/tsconfig.json"
+    },
+    {
       "path": "./packages/stack/tsconfig.json"
     },
     {

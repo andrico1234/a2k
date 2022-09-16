@@ -26,6 +26,7 @@
       "@a2000/marquee": ["packages/marquee/src"],
       "@a2000/desktop": ["packages/desktop/src"],
       "@a2000/taskbar": ["packages/taskbar/src"],
+      "@a2000/select": ["packages/select/src"],
       "@a2000/progress": ["packages/progress/src"],
       "@a2000/icons": ["packages/icons/src"],
       "@a2000/utilities": ["packages/utilities/src"],
