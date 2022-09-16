@@ -44,4 +44,4 @@ Renders a full height container with a central principal element, sandwiched bet
 
 ## Notes
 
-- This component is inspired by the cover component described int he [Every Layout](https://every-layout.dev/layouts/cover/) book
+- This component is inspired by the cover component described in the [Every Layout](https://every-layout.dev/layouts/cover/) book

@@ -20,7 +20,7 @@ Renders a loading indicator
 
   <body>
     <!-- Use web components in your HTML like regular built-in elements. -->
-    <a2k-progress />
+    <a2k-progress progress="50" />
 
     <!-- a2k web components use standard JavaScript modules. -->
     <script type="module">
@@ -29,3 +29,7 @@ Renders a loading indicator
   </body>
 </html>
 ```
+
+| Name     | Type   | Default Value | Description                                                             |
+| -------- | ------ | ------------- | ----------------------------------------------------------------------- |
+| progress | number | 0             | The current progress of the component. Must be a number between 0 - 100 |

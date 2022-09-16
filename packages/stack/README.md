@@ -1,6 +1,6 @@
 # Stack
 
-Renders immediate child components as a vertical stack
+Renders immediate child components as a vertical stack. A2k applies some vertical margin between the elements.
 
 ## Quick Start
 
@@ -27,8 +27,12 @@ Renders immediate child components as a vertical stack
 
     <!-- a2k web components use standard JavaScript modules. -->
     <script type="module">
-      import "@a2000/progress/a2k-stack.js";
+      import "@a2000/stack/a2k-stack.js";
     </script>
   </body>
 </html>
 ```
+
+| Slot    | Details                                             |
+| ------- | --------------------------------------------------- |
+| default | The child elements that will be rendered vertically |

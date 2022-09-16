@@ -18,7 +18,9 @@
 
   <body>
     <!-- Use web components in your HTML like regular built-in elements. -->
-    <a2k-marquee></a2k-marquee>
+    <a2k-marquee>
+      <p slot="text">Relive the golden era of the internet with the Marquee</p>
+    </a2k-marquee>
 
     <!-- a2k web components use standard JavaScript modules. -->
     <script type="module">
@@ -27,3 +29,9 @@
   </body>
 </html>
 ```
+
+## API
+
+| Slot | Details                              |
+| ---- | ------------------------------------ |
+| text | The content that the marquee renders |

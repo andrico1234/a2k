@@ -1,6 +1,6 @@
 # Desktop
 
-Where the main content of the page is displayed
+A full height grid container that can be used to render desktop icons.
 
 ## Usage
 
@@ -29,7 +29,7 @@ The component where all of your desktop content will live
 
 ### A2kDesktopIcon
 
-| Name   | Type     | Default Value | Description                                                            |
+| Name   | Type     | Default Value | Details                                                                |
 | ------ | -------- | ------------- | ---------------------------------------------------------------------- |
 | text   | string   | ""            | The text content associated with the icon                              |
 | icon   | string   | ""            | The icon that will be displayed. Can be any valid A2kIcon icon name    |

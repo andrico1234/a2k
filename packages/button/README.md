@@ -30,4 +30,7 @@
 
 ## API
 
-<!-- TODO -->
+| Name     | Type    | Default Value |
+| -------- | ------- | ------------- |
+| size     | string  | medium        |
+| disabled | boolean | false         |

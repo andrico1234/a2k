@@ -47,7 +47,7 @@
 
 ### Changing size of icon
 
-The size of the icon is determined by the font-size it inherits, so to make your icon larger or smaller, adjust the font-size of its containing element.
+The size of the icon is determined by its inherited font-size. To change the font-size, adjust the font-size of its containing element.
 
 Example:
 

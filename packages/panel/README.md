@@ -1,6 +1,6 @@
 # Panel
 
-A container component with styles applied. It's used to create sections with the MS2000 border and background style.
+A container component with styles default applied.
 
 ## Quick Start
 
@@ -32,3 +32,5 @@ A container component with styles applied. It's used to create sections with the
   </body>
 </html>
 ```
+
+## API

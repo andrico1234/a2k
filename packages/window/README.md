@@ -12,7 +12,7 @@ A draggable and closeable window that can be used to display content
 
 ```html
 <script type="module">
-  import "a2k-window/a2k-window.js";
+  import "@a2000/window/a2k-window.js";
 </script>
 
 <a2k-window draggable closeable heading="Window Content">

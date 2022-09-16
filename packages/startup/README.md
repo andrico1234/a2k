@@ -1,6 +1,6 @@
 # Startup
 
-Startup window that can be used to simulate a Windows 2000 startup screen. It can also be used to set up assets and
+Startup window that can be used to simulate a Windows 2000 startup screen. This window can also be used to perform background process, such as loading assets, registering web components, running resource intensive scripts.
 
 ## Quick Start
 
@@ -24,11 +24,7 @@ Startup window that can be used to simulate a Windows 2000 startup screen. It ca
 
     <!-- a2k web components use standard JavaScript modules. -->
     <script type="module">
-      import "@a2000/progress/a2k-startup.js";
-
-      const startupEl = document.querySelector("a2k-startup");
-
-      startupEl.addAttribute("messages", ["Downloading assets", ""]);
+      import "@a2000/startup/a2k-startup.js";
     </script>
   </body>
 </html>
@@ -38,12 +34,10 @@ Startup window that can be used to simulate a Windows 2000 startup screen. It ca
 
 ### Properties
 
-| Name        | Type     | Default Value                        | Details                                                                     |
-| ----------- | -------- | ------------------------------------ | --------------------------------------------------------------------------- |
-| startupTime | number   | 5000                                 |                                                                             |
-| image       | string   | undefined                            | Image placed in the center of the screen, pass a relative path to the image |
-| footerText  | string   | Copyright Ⓒ 1999 - 2000 Andricos2000 |                                                                             |
-| messages    | string[] | ...                                  |                                                                             |
+| Name        | Type   | Default Value                        | Details                                                |
+| ----------- | ------ | ------------------------------------ | ------------------------------------------------------ |
+| startupTime | number | 3000                                 | The length of time the desktop takes to start up       |
+| footerText  | string | Copyright Ⓒ 1999 - 2000 Andricos2000 | The text render at the bottom of the startup component |
 
 ### Events
 

@@ -1,6 +1,6 @@
 # Taskbar
 
-Renders a fully functioning windows-inspired taskbar
+Renders a fully functioning windows-inspired taskbar.
 
 ## Usage
 
@@ -24,7 +24,7 @@ Renders a fully functioning windows-inspired taskbar
 
     <!-- a2k web components use standard JavaScript modules. -->
     <script type="module">
-      import "@a2000/progress/a2k-taskbar.js";
+      import "@a2000/taskbar/a2k-taskbar.js";
     </script>
   </body>
 </html>
@@ -32,4 +32,4 @@ Renders a fully functioning windows-inspired taskbar
 
 ## Notes
 
-Currently the api doesn't allow for any customisation, though this will likely change
+This component doesn't offer any way to customise its content.
