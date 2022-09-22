@@ -61,7 +61,7 @@ const onWindowDrag = (e) => {
 
   if (!loadingWindow.isSameNode(target)) return;
 
-  const { width, top, left, height } = getComputedStyle(containerEl);
+  const { width, top, left, height } = containerEl.getBoundingClientRect();
 
   const newEl = document.createElement("a2k-broken-window");
   windowsContainer.insertBefore(newEl, loadingWindow);

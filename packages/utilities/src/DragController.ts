@@ -1,113 +1,55 @@
-import {
-  ElementPart,
-  noChange,
-  ReactiveController,
-  ReactiveControllerHost,
-} from "lit";
-import { Directive, directive, PartInfo, PartType } from "lit/directive.js";
+import { ReactiveController, ReactiveControllerHost } from "lit";
 import PointerTracker, {
   Pointer,
   InputEvent as PtInputEvent,
 } from "pointer-tracker";
 import { StyleInfo } from "lit/directives/style-map.js";
-import getSmallestValue from "./getSmallestValue";
-
-type StartCallback = (pointer: Pointer, event: PtInputEvent) => boolean;
-
-type MoveCallback = (
-  previousPointers: Pointer[],
-  changedPointers: Pointer[],
-  event?: PtInputEvent
-) => void;
-
-type EndCallback = (
-  pointer: Pointer,
-  event: PtInputEvent,
-  cancelled: boolean
-) => void;
-
-interface PointerTrackerOptions {
-  start: StartCallback;
-  move: MoveCallback;
-  end: EndCallback;
-}
 
 interface InitialPosition {
-  top?: StyleInfo["top"];
-  left?: StyleInfo["left"];
+  x?: number;
+  y?: number;
 }
 
 type DragControllerHost = HTMLElement & ReactiveControllerHost;
 
+type GetElFn = () => Element | null;
+type AsyncGetElFn = () => Promise<Element | null>;
+
 interface DragControllerOptions {
   initialPosition: InitialPosition;
   containerId?: string;
+  getContainerEl: GetElFn;
+  getDraggableEl: AsyncGetElFn;
 }
+
+type State = "dragging" | "idle";
 
 const defaultOptions = {
   initialPosition: {},
+  getContainerEl: () => null,
+  getDraggableEl: () => Promise.resolve(null),
 };
-
-class DragDirective extends Directive {
-  hasInitialised = false;
-
-  constructor(partInfo: PartInfo) {
-    super(partInfo);
-
-    if (partInfo.type !== PartType.ELEMENT) {
-      throw new Error("The `drag` directive must be used on an element");
-    }
-  }
-
-  update(
-    part: ElementPart,
-    renderArgs: [DragController, PointerTrackerOptions]
-  ) {
-    if (this.hasInitialised) return;
-
-    const draggableElement = part.element as HTMLElement;
-    const [dragController, pointerTrackerOptions] = renderArgs;
-
-    draggableElement.setAttribute("data-dragging", "idle");
-    dragController.draggableElement = draggableElement;
-
-    dragController.pointerTracker = new PointerTracker(draggableElement, {
-      start(...args) {
-        pointerTrackerOptions.start(...args);
-        draggableElement.setAttribute("data-dragging", "dragging");
-        return true;
-      },
-      move(...args) {
-        pointerTrackerOptions.move(...args);
-      },
-      end(...args) {
-        pointerTrackerOptions.end(...args);
-        draggableElement.setAttribute("data-dragging", "idle");
-      },
-    });
-
-    this.hasInitialised = true;
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  render(_host: DragController, _pointerTrackerOptions: PointerTrackerOptions) {
-    return noChange;
-  }
-}
-
-const dragDirective = directive(DragDirective);
 
 export class DragController implements ReactiveController {
   private host: DragControllerHost;
 
-  cursorPositionX: number | null = null;
-  cursorPositionY: number | null = null;
+  x;
+  y;
+
+  cursorPositionX = 0;
+  cursorPositionY = 0;
+
+  getContainerEl: GetElFn;
+  draggableEl: HTMLElement = null!;
+
+  state: State = "idle";
+
   pointerTracker: PointerTracker | null = null;
-  draggableElement: HTMLElement | null = null;
-  containerElement: HTMLElement | null = null;
+
   containerId = "";
 
   styles: StyleInfo = {
+    position: "absolute",
     touchAction: "none",
     top: "0px",
     left: "0px",
@@ -120,14 +62,54 @@ export class DragController implements ReactiveController {
     this.host = host;
     this.host.addController(this);
 
-    const { initialPosition = {}, containerId = "" } = options;
+    this.getContainerEl = options.getContainerEl;
+    options.getDraggableEl().then((el) => {
+      if (!el) {
+        console.warn("getDraggableEl() did not return an element HTMLElement");
+        return;
+      }
 
-    this.styles = {
-      ...this.styles,
-      ...initialPosition,
-    };
+      // TODO Add typeguard to check if HTMLElement
+
+      this.draggableEl = el as HTMLElement;
+      this.init();
+    });
+
+    const { initialPosition, containerId = "" } = options;
+    const { x = 0, y = 0 } = initialPosition;
+
+    this.x = x;
+    this.y = y;
+
+    this.updateElPosition();
 
     this.containerId = containerId;
+  }
+
+  init() {
+    const onDrag = this.#onDrag;
+    const onDragStart = this.#onDragStart;
+    const onDragEnd = this.#onDragEnd;
+    const host = this.host;
+
+    const updateState = (state: State) => (this.state = state);
+
+    this.pointerTracker = new PointerTracker(this.draggableEl, {
+      start(pointer) {
+        onDragStart(pointer);
+        updateState("dragging");
+        host.requestUpdate();
+        return true;
+      },
+      move(previousPointers, changedPointers) {
+        onDrag(previousPointers, changedPointers);
+      },
+      end(pointer, ev) {
+        onDragEnd(pointer, ev);
+        updateState("idle");
+        host.requestUpdate();
+      },
+    });
   }
 
   hostDisconnected(): void {
@@ -136,121 +118,92 @@ export class DragController implements ReactiveController {
     }
   }
 
-  applyDrag() {
-    if (!this.host.draggable) return null;
-
-    return dragDirective(this, {
-      start: this.#onDragStart,
-      move: this.#onDrag,
-      end: this.#onDragEnd,
-    });
-  }
-
-  updateElPosition(x: string, y: string) {
-    this.styles = {
-      ...this.styles,
-      left: x,
-      top: y,
-    };
+  updateElPosition() {
+    this.styles.transform = `translate(${this.x}px, ${this.y}px)`;
   }
 
   handleWindowMove(pointer: Pointer) {
-    const el = this.draggableElement;
-    const containerEl = this.host.shadowRoot?.querySelector(this.containerId);
+    const el = this.draggableEl;
+    const containerEl = this.getContainerEl();
 
     if (!el || !containerEl) return;
-    const { top, left } = this.styles;
 
-    const parsedTop = Number(top?.replace("px", ""));
-    const parsedLeft = Number(left?.replace("px", ""));
-    const pageX = Math.floor(pointer.pageX);
-    const pageY = Math.floor(pointer.pageY);
+    const oldX = this.x;
+    const oldY = this.y;
 
-    if (pageX !== this.cursorPositionX || pageY !== this.cursorPositionY) {
+    // JavaScript’s floats can be weird, so we’re flooring these to integers.
+    const cursorPositionX = Math.floor(pointer.pageX);
+    const cursorPositionY = Math.floor(pointer.pageY);
+
+    const hasCursorMoved =
+      cursorPositionX !== this.cursorPositionX ||
+      cursorPositionY !== this.cursorPositionY;
+
+    if (hasCursorMoved) {
       const { bottom, height } = el.getBoundingClientRect();
       const { right, width } = containerEl.getBoundingClientRect();
 
-      // window.inner* and screen.avail* had problems depending on where they're used
-      // doing this check ensures that the draggable box never extends beyond the screen
-      const availableWidth = getSmallestValue(screen.availWidth, innerWidth);
-      const availableHeight = getSmallestValue(screen.availHeight, innerHeight);
+      // The difference between the cursor’s previous position and its current position.
+      const xDelta = cursorPositionX - this.cursorPositionX;
+      const yDelta = cursorPositionY - this.cursorPositionY;
 
-      const xDelta = pageX - this.cursorPositionX!;
-      const yDelta = pageY - this.cursorPositionY!;
-      const outOfBoundsTop = parsedTop + yDelta < 0;
-      const outOfBoundsLeft = parsedLeft + xDelta < 0;
-      const outOfBoundsBottom = bottom + yDelta > availableHeight;
-      const outOfBoundsRight = right + xDelta >= availableWidth;
-      const isOutOfBounds =
-        outOfBoundsBottom ||
-        outOfBoundsLeft ||
-        outOfBoundsRight ||
-        outOfBoundsTop;
+      // The happy path - if the element doesn’t attempt to go beyond the browser’s boundaries.
+      this.x = oldX + xDelta;
+      this.y = oldY + yDelta;
 
-      this.cursorPositionX = pageX;
-      this.cursorPositionY = pageY;
+      const outOfBoundsTop = this.y < 0;
+      const outOfBoundsLeft = this.x < 0;
+      const outOfBoundsBottom = bottom + yDelta > window.innerHeight;
+      const outOfBoundsRight = right + xDelta >= window.innerWidth;
 
-      if (!isOutOfBounds) {
-        const top = `${parsedTop + yDelta}px`;
-        const left = `${parsedLeft + xDelta}px`;
+      this.cursorPositionX = cursorPositionX;
+      this.cursorPositionY = cursorPositionY;
 
-        this.updateElPosition(left, top);
-      } else {
-        // This logic is flawed, as a window can be out of bounds top + bottom at the same time
-        if (outOfBoundsTop) {
-          const left = `${parsedLeft + xDelta}px`;
-
-          this.updateElPosition(left, "0px");
-        } else if (outOfBoundsLeft) {
-          const top = `${parsedTop + yDelta}px`;
-
-          this.updateElPosition("0px", top);
-        } else if (outOfBoundsBottom) {
-          const top = `${availableHeight - height}px`;
-          const left = `${parsedLeft + xDelta}px`;
-
-          this.updateElPosition(left, top);
-        } else if (outOfBoundsRight) {
-          const top = `${parsedTop + yDelta}px`;
-          const left = `${Math.floor(availableWidth - width)}px`;
-
-          this.updateElPosition(left, top);
-        }
+      // Otherwise, we force the window to remain within the browser window.
+      if (outOfBoundsTop) {
+        this.y = 0;
       }
 
+      if (outOfBoundsLeft) {
+        this.x = 0;
+      }
+
+      if (outOfBoundsBottom) {
+        this.y = window.innerHeight - height;
+      }
+
+      if (outOfBoundsRight) {
+        this.x = Math.floor(window.innerWidth - width);
+      }
+
+      this.updateElPosition();
       this.host.requestUpdate();
     }
   }
 
-  #onDragStart = (pointer: Pointer, ev: PtInputEvent) => {
+  #onDragStart = (pointer: Pointer) => {
     this.cursorPositionX = Math.floor(pointer.pageX);
     this.cursorPositionY = Math.floor(pointer.pageY);
-
-    const el = ev.target! as HTMLDivElement;
-    el.setAttribute("data-state", "dragging");
 
     return true;
   };
 
   #onDrag = (_previousPointers: Pointer[], pointers: Pointer[]) => {
     const [pointer] = pointers;
-    const el = this.draggableElement;
-    const containerEl = this.host.shadowRoot?.querySelector(this.containerId);
+    const el = this.draggableEl;
 
     const event = new CustomEvent("window-drag", {
       bubbles: true,
       composed: true,
       detail: {
         pointer,
-        containerEl,
+        containerEl: this.getContainerEl(),
         draggableEl: el,
       },
     });
 
-    window.requestAnimationFrame(() => {
-      this.host.dispatchEvent(event);
-      return this.handleWindowMove(pointer);
-    });
+    this.host.dispatchEvent(event);
+    this.handleWindowMove(pointer);
   };
 
   #onDragEnd = (_pointer: Pointer, ev: PtInputEvent) => {

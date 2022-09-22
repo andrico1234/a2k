@@ -11,7 +11,6 @@ import "./a2k-window-actions";
 
 // TODO: add a window context that tracks the active states of the windows and adjust their position in the stacks accordingly
 
-// TODO: if the window is outside the bounds of the screen, then place it in the screen
 export class A2kWindow extends LitElement {
   static styles = css`
     :host([hidden]) {
@@ -68,11 +67,17 @@ export class A2kWindow extends LitElement {
 
   private drag = new DragController(this, {
     initialPosition: {
-      left: "32px",
-      top: "32px",
+      x: 32,
+      y: 32,
     },
-    containerId: "#window",
+    getContainerEl: () => this.shadowRoot!.querySelector("#window"),
+    getDraggableEl: () => this.getDraggableEl(),
   });
+
+  async getDraggableEl() {
+    await this.updateComplete;
+    return this.shadowRoot!.querySelector("#draggable");
+  }
 
   constructor() {
     super();
@@ -107,7 +112,7 @@ export class A2kWindow extends LitElement {
       <div id="window" style=${styleMap(this.drag.styles)}>
         <a2k-panel>
           <div id="topbar-wrapper">
-            <div id="draggable" ${this.drag.applyDrag()}>
+            <div id="draggable" data-dragging=${this.drag.state}>
               <a2k-window-topbar>${this.heading}</a2k-window-topbar>
             </div>
             <a2k-window-actions

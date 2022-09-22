@@ -7,6 +7,7 @@ export class BrokenWindow extends LitElement {
     #outer-wrapper {
       position: absolute;
       display: flex;
+      top: 0;
     }
 
     a2k-panel {
@@ -19,26 +20,25 @@ export class BrokenWindow extends LitElement {
   `;
 
   @property()
-  height = "";
+  height = 0;
 
   @property()
-  width = "";
+  width = 0;
 
   @property()
-  top = "";
+  top = 0;
 
   @property()
-  left = "";
+  left = 0;
 
   render() {
     const parentStyles = styleMap({
-      width: this.width,
-      top: this.top,
-      left: this.left,
+      width: `${this.width}px`,
+      transform: `translate(${this.left}px, ${this.top}px)`,
     });
 
     const childStyles = styleMap({
-      height: this.height,
+      height: `${this.height}px`,
     });
 
     return html`
