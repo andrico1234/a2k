@@ -1,5 +1,13 @@
 # @a2000/window
 
+## 0.0.25
+
+### Patch Changes
+
+- 0ae13a6: update dragcontroller to remove use of directive and improve implementation
+- Updated dependencies [0ae13a6]
+  - @a2000/utilities@0.0.11
+
 ## 0.0.24
 
 ### Patch Changes
