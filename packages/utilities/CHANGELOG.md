@@ -1,5 +1,11 @@
 # @a2000/utilities
 
+## 0.0.11
+
+### Patch Changes
+
+- 0ae13a6: update dragcontroller to remove use of directive and improve implementation
+
 ## 0.0.10
 
 ### Patch Changes

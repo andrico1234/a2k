@@ -1,5 +1,12 @@
 # @a2000/startup
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies [0ae13a6]
+  - @a2000/utilities@0.0.11
+
 ## 0.0.8
 
 ### Patch Changes
