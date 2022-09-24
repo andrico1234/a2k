@@ -1,5 +1,17 @@
 # site
 
+## 1.0.39
+
+### Patch Changes
+
+- Updated dependencies [104d429]
+- Updated dependencies [8d22170]
+  - @a2000/icons@0.0.12
+  - @a2000/select@0.0.2
+  - @a2000/desktop@0.0.8
+  - @a2000/taskbar@0.0.26
+  - @a2000/window@0.0.26
+
 ## 1.0.38
 
 ### Patch Changes
