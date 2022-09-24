@@ -3,7 +3,7 @@
   "description": "A2K Icons",
   "license": "MIT",
   "author": "Andrico Karoulla",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "main": "lib/src/index.js",
   "module": "lib/src/index.js",
   "exports": {
