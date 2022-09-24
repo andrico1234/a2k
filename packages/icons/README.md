@@ -42,6 +42,7 @@
 | Internet  | internet-icon  |
 | Info      | info-icon      |
 | Shut Down | shut-down-icon |
+| Chevron   | chevron-icon   |
 
 ## Notes
 
