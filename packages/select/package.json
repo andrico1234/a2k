@@ -9,5 +9,9 @@
   "exports": {
     ".": "./lib/src/index.js",
     "./a2k-select.js": "./lib/src/a2k-select.js"
+  },
+  "dependencies": {
+    "@a2000/button": "0.0.7",
+    "@a2000/icons": "0.0.11"
   }
 }
