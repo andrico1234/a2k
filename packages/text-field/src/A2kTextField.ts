@@ -1,7 +1,8 @@
 import { css, html, LitElement } from "lit";
-import { property } from "lit/decorators.js";
+import { property, state } from "lit/decorators.js";
+import { FormControlMixin } from "@open-wc/form-control";
 
-export class A2kTextField extends LitElement {
+export class A2kTextField extends FormControlMixin(LitElement) {
   static styles = css`
     * {
       box-sizing: border-box;
@@ -24,10 +25,38 @@ export class A2kTextField extends LitElement {
     }
   `;
 
+  static get formAssociated() {
+    return true;
+  }
+
   @property()
   defaultValue = "";
 
+  @property()
+  name = "";
+
+  @state()
+  value = "";
+
+  handleInputChange(e: InputEvent) {
+    const target = e.target as HTMLInputElement;
+
+    this.value = target.value;
+    this.setValue(this.value);
+  }
+
+  constructor() {
+    super();
+    this.value = this.defaultValue;
+  }
+
   render() {
-    return html`<input value="${this.defaultValue}" type="text" />`;
+    return html`<input
+      name=${this.name}
+      defaultValue=${this.defaultValue}
+      type="text"
+      @input=${this.handleInputChange}
+      @change=${this.handleInputChange}
+    />`;
   }
 }
