@@ -1,9 +1,10 @@
 import { css, html, LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
+import { FormControlMixin } from "@open-wc/form-control";
 import "@a2000/button/a2k-button.js";
 import "@a2000/icons/a2k-icon";
 
-export class A2kSelect extends LitElement {
+export class A2kSelect extends FormControlMixin(LitElement) {
   static styles = css`
     :host {
       --select-input-height: 32px;
@@ -49,7 +50,7 @@ export class A2kSelect extends LitElement {
       width: fit-content;
     }
 
-    option {
+    slot:not([name])::slotted(*) {
       height: var(--select-input-height);
       padding-inline: var(--select-input-padding-inline);
       display: flex;
@@ -57,8 +58,8 @@ export class A2kSelect extends LitElement {
       cursor: var(--cursor-pointer);
     }
 
-    option:hover,
-    option:focus {
+    slot:not([name])::slotted(*:hover),
+    slot:not([name])::slotted(*:focus) {
       background: var(--select-input-option-color-hover);
       color: white;
       outline: 1px dotted white;
@@ -77,10 +78,15 @@ export class A2kSelect extends LitElement {
   @property({ type: String })
   selectedItem: { value: string; label: string } | null = null;
 
+  @property({ type: String })
+  name = "";
+
   @state()
   expanded = false;
 
   placeholder = "Choose an option";
+
+  private _options: Element[] = [];
 
   private _openListbox = () => {
     if (this.expanded) return;
@@ -115,8 +121,8 @@ export class A2kSelect extends LitElement {
   }
 
   moveFocusToOption(index: number) {
-    const options = this.renderRoot.querySelectorAll("option");
-    const option = options[index];
+    const options = this._options;
+    const option = options[index] as HTMLElement;
 
     option.focus();
   }
@@ -137,6 +143,7 @@ export class A2kSelect extends LitElement {
 
     this.selectedItem = item;
 
+    this.setValue(item.value);
     this._closeListbox();
   }
 
@@ -168,16 +175,21 @@ export class A2kSelect extends LitElement {
     }
   }
 
-  options() {
-    return html` <option tabindex="0" value="one">uno</option>
-      <option tabindex="0" value="two">dos</option>
-      <option tabindex="0" value="three">trois</option>`;
-  }
-
   toggleButton() {
     return html`<a2k-button tabindex="-1" size="small">
       <a2k-icon icon="chevron-icon"></a2k-icon>
     </a2k-button> `;
+  }
+
+  handleSlotchange(e: Event) {
+    const target = e.target as HTMLSlotElement;
+    const childNodes = target.assignedElements();
+
+    childNodes.forEach((node) => {
+      node.setAttribute("tabindex", "0");
+    });
+
+    this._options = childNodes;
   }
 
   constructor() {
@@ -199,7 +211,7 @@ export class A2kSelect extends LitElement {
         <div class="select">
           <div>
             <div
-              aria-controls="listbox1"
+              aria-controls="listbox"
               ?aria-expanded=${this.expanded}
               aria-haspopup="listbox"
               aria-labelledby="label"
@@ -209,6 +221,8 @@ export class A2kSelect extends LitElement {
               @keydown=${this.handleSelectKeyDown}
               @click=${this.handleSelectClick}
               tabindex="0"
+              name=${this.name}
+              value=${this.selectedItem?.value}
             >
               <p>
                 ${this.selectedItem
@@ -224,13 +238,13 @@ export class A2kSelect extends LitElement {
                 <div
                   class="listbox"
                   role="listbox"
-                  id="listbox1"
+                  id="listbox"
                   aria-labelledby="label"
                   tabindex="-1"
                   @click=${this.handleOptionSelect}
                   @keydown=${this.handleOptionKeyDown}
                 >
-                  ${this.options()}
+                  <slot @slotchange=${this.handleSlotchange}></slot>
                 </div>
               `
             : null}

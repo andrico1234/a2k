@@ -20,7 +20,9 @@ Renders a text field with a windows 2000 flavour
 
   <body>
     <!-- Use web components in your HTML like regular built-in elements. -->
-    <a2k-text-field></a2k-text-field>
+    <form>
+      <a2k-text-field name="demo"></a2k-text-field>
+    </form>
 
     <!-- a2k web components use standard JavaScript modules. -->
     <script type="module">
@@ -29,3 +31,11 @@ Renders a text field with a windows 2000 flavour
   </body>
 </html>
 ```
+
+## API
+
+### Properties
+
+| Name | Type   | Default Value | Details                                                                                                  |
+| ---- | ------ | ------------- | -------------------------------------------------------------------------------------------------------- |
+| name | string | -             | The name for the input control. It's submitted along with the control's value when the data is submitted |
