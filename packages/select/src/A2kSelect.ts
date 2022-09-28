@@ -4,6 +4,8 @@ import { FormControlMixin } from "@open-wc/form-control";
 import "@a2000/button/a2k-button.js";
 import "@a2000/icons/a2k-icon";
 
+type Item = { value: string; label: string } | null;
+
 export class A2kSelect extends FormControlMixin(LitElement) {
   static styles = css`
     :host {
@@ -13,18 +15,35 @@ export class A2kSelect extends FormControlMixin(LitElement) {
 
       --select-input-background-color: white;
       --select-input-option-color-hover: var(--color-blue-100);
+
+      --select-input-label-width: var(--spacing-1200);
+      --select-input-label-min-width: fit-content;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    #select-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    label {
+      min-width: var(--select-input-label-min-width);
+      width: var(--select-input-label-width);
+    }
+
+    #select {
+      flex: 1;
+    }
+
     .combo-input {
       height: var(--select-input-height);
       display: flex;
+      flex: 1;
       align-items: center;
-      min-width: var(--select-input-min-width);
-      width: fit-content;
+      justify-content: space-between;
       background: var(--select-input-background-color);
       border: 2px solid black;
       border-right: 2px solid white;
@@ -39,7 +58,6 @@ export class A2kSelect extends FormControlMixin(LitElement) {
 
     .combo-input p {
       padding-inline: var(--select-input-padding-inline);
-      width: 100%;
     }
 
     .listbox {
@@ -76,7 +94,7 @@ export class A2kSelect extends FormControlMixin(LitElement) {
   label = "";
 
   @property({ type: String })
-  selectedItem: { value: string; label: string } | null = null;
+  selectedItem: Item = null;
 
   @property({ type: String })
   name = "";
@@ -84,6 +102,7 @@ export class A2kSelect extends FormControlMixin(LitElement) {
   @state()
   expanded = false;
 
+  @property({ type: String })
   placeholder = "Choose an option";
 
   private _options: Element[] = [];
@@ -110,6 +129,14 @@ export class A2kSelect extends FormControlMixin(LitElement) {
     }
   };
 
+  handleKeyDown(e: KeyboardEvent) {
+    if (e.key === "Escape" && this.expanded) {
+      this._closeListbox();
+    } else if (e.key === "Escape" && !this.expanded) {
+      this.handleSetValue(null);
+    }
+  }
+
   handleSelectKeyDown(e: KeyboardEvent) {
     if (e.key === "ArrowDown" || e.key === "Enter" || e.code === "Space") {
       if (!this.expanded) {
@@ -131,6 +158,15 @@ export class A2kSelect extends FormControlMixin(LitElement) {
     this.expanded ? this._closeListbox() : this._openListbox();
   }
 
+  handleSetValue(item: Item) {
+    // create new change event and dispatch it
+
+    const newItem = item ? item : null;
+
+    this.selectedItem = newItem;
+    this.setValue(newItem?.value || "");
+  }
+
   handleOptionSelect(e: Event) {
     const target = e.target as HTMLOptionElement;
 
@@ -141,9 +177,7 @@ export class A2kSelect extends FormControlMixin(LitElement) {
       label: target.innerText,
     };
 
-    this.selectedItem = item;
-
-    this.setValue(item.value);
+    this.handleSetValue(item);
     this._closeListbox();
   }
 
@@ -168,7 +202,7 @@ export class A2kSelect extends FormControlMixin(LitElement) {
         const prevElement = target.previousElementSibling as HTMLOptionElement;
         prevElement.focus();
       } else {
-        const options = this.renderRoot.querySelectorAll("option");
+        const options = this._options;
         const len = options.length;
         this.moveFocusToOption(len - 1);
       }
@@ -195,42 +229,45 @@ export class A2kSelect extends FormControlMixin(LitElement) {
   constructor() {
     super();
 
-    this.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && this.expanded) {
-        this._closeListbox();
-      } else if (e.key === "Escape" && !this.expanded) {
-        this.selectedItem = null;
-      }
-    });
+    if (this.label) {
+      this.label = `${this.label}:`;
+    }
+  }
+
+  connectedCallback(): void {
+    super.connectedCallback();
+
+    this.addEventListener("keydown", this.handleKeyDown);
+  }
+
+  disconnectedCallback(): void {
+    super.disconnectedCallback();
+
+    this.removeEventListener("keydown", this.handleKeyDown);
   }
 
   render() {
     return html`
-      <div>
+      <div id="select-wrapper">
         <label id="label">${this.label}</label>
-        <div class="select">
-          <div>
-            <div
-              aria-controls="listbox"
-              ?aria-expanded=${this.expanded}
-              aria-haspopup="listbox"
-              aria-labelledby="label"
-              id="select"
-              class="combo-input"
-              role="combobox"
-              @keydown=${this.handleSelectKeyDown}
-              @click=${this.handleSelectClick}
-              tabindex="0"
-              name=${this.name}
-              value=${this.selectedItem?.value}
-            >
-              <p>
-                ${this.selectedItem
-                  ? this.selectedItem.label
-                  : this.placeholder}
-              </p>
-              <slot name="icon"> ${this.toggleButton()} </slot>
-            </div>
+        <div id="select">
+          <div
+            aria-controls="listbox"
+            ?aria-expanded=${this.expanded}
+            aria-haspopup="listbox"
+            aria-labelledby="label"
+            class="combo-input"
+            role="combobox"
+            @keydown=${this.handleSelectKeyDown}
+            @click=${this.handleSelectClick}
+            tabindex="0"
+            name=${this.name}
+            value=${this.selectedItem?.value}
+          >
+            <p>
+              ${this.selectedItem ? this.selectedItem.label : this.placeholder}
+            </p>
+            <slot name="icon"> ${this.toggleButton()} </slot>
           </div>
 
           ${this.expanded

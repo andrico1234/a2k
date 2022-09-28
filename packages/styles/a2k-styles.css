@@ -61,6 +61,7 @@ Variable names should follow the format
   --spacing-600: calc(var(--spacing-unit) * 6);
   --spacing-700: calc(var(--spacing-unit) * 7);
   --spacing-800: calc(var(--spacing-unit) * 8);
+  --spacing-1200: calc(var(--spacing-unit) * 12);
   --spacing-1600: calc(var(--spacing-unit) * 16);
 
   --color-black: hsl(0deg, 0%, 0%);

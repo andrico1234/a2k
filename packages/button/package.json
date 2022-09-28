@@ -9,5 +9,8 @@
   "exports": {
     ".": "./lib/src/index.js",
     "./a2k-button.js": "./lib/src/a2k-button.js"
+  },
+  "dependencies": {
+    "@open-wc/form-control": "^0.4.1"
   }
 }

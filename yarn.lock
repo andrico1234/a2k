@@ -8,6 +8,8 @@ __metadata:
 "@a2000/button@0.0.7, @a2000/button@workspace:packages/button":
   version: 0.0.0-use.local
   resolution: "@a2000/button@workspace:packages/button"
+  dependencies:
+    "@open-wc/form-control": ^0.4.1
   languageName: unknown
   linkType: soft
 
@@ -153,6 +155,7 @@ __metadata:
     "@a2000/panel": 0.0.4
     "@a2000/stack": 0.0.3
     "@a2000/utilities": 0.0.11
+    element-internals-polyfill: 1.1.14
   languageName: unknown
   linkType: soft
 

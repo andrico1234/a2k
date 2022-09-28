@@ -1,7 +1,8 @@
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
+import { FormControlMixin } from "@open-wc/form-control";
 
-export class A2kButton extends LitElement {
+export class A2kButton extends FormControlMixin(LitElement) {
   static styles = css`
     :host {
       width: fit-content;
@@ -62,7 +63,38 @@ export class A2kButton extends LitElement {
   disabled = false;
 
   @property({ type: String })
+  type = "";
+
+  @property({ type: String })
   size: "small" | "medium" | "large" = "medium";
+
+  handleSubmit() {
+    this.form.requestSubmit();
+  }
+
+  constructor() {
+    super();
+
+    if (!this.type && this.form) {
+      this.type === "submit";
+    } else {
+      this.type === "button";
+    }
+  }
+
+  connectedCallback(): void {
+    super.connectedCallback();
+
+    // This is due to the Submit event crossing the shadow DOM's boundaries
+    if (this.type === "submit") {
+      this.addEventListener("click", this.handleSubmit);
+    }
+  }
+
+  disconnectedCallback(): void {
+    super.disconnectedCallback();
+    this.removeEventListener("click", this.handleSubmit);
+  }
 
   render() {
     return html` <button data-size="${this.size}" ?disabled=${this.disabled}>

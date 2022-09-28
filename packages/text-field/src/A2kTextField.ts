@@ -35,28 +35,36 @@ export class A2kTextField extends FormControlMixin(LitElement) {
   @property()
   name = "";
 
-  @state()
-  value = "";
+  @property()
+  label = "";
 
   handleInputChange(e: InputEvent) {
     const target = e.target as HTMLInputElement;
 
-    this.value = target.value;
-    this.setValue(this.value);
+    this.setValue(target.value);
   }
 
   constructor() {
     super();
-    this.value = this.defaultValue;
+
+    if (this.label) {
+      this.label = `${this.label}:`;
+    }
   }
 
   render() {
-    return html`<input
-      name=${this.name}
-      defaultValue=${this.defaultValue}
-      type="text"
-      @input=${this.handleInputChange}
-      @change=${this.handleInputChange}
-    />`;
+    return html`
+      <div>
+        <label for="input">${this.label}</label>
+        <input
+          id="input"
+          name=${this.name}
+          defaultValue=${this.defaultValue}
+          type="text"
+          @input=${this.handleInputChange}
+          @change=${this.handleInputChange}
+        />
+      </div>
+    `;
   }
 }
