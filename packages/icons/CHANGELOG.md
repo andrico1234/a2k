@@ -1,5 +1,11 @@
 # @a2000/icons
 
+## 0.0.12
+
+### Patch Changes
+
+- 104d429: add chevron icon
+
 ## 0.0.11
 
 ### Patch Changes
