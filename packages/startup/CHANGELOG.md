@@ -1,5 +1,12 @@
 # @a2000/startup
 
+## 0.0.10
+
+### Patch Changes
+
+- Updated dependencies [00c9ff9]
+  - @a2000/button@0.0.8
+
 ## 0.0.9
 
 ### Patch Changes
