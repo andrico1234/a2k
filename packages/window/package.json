@@ -3,7 +3,7 @@
   "description": "A2K Window",
   "license": "MIT",
   "author": "Andrico Karoulla",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "main": "lib/src/index.js",
   "module": "lib/src/index.js",
   "exports": {
@@ -14,7 +14,7 @@
     "./a2k-window-status-bar.js": "./lib/src/a2k-window-status-bar.js"
   },
   "dependencies": {
-    "@a2000/button": "0.0.7",
+    "@a2000/button": "0.0.8",
     "@a2000/icons": "0.0.12",
     "@a2000/panel": "0.0.4",
     "@a2000/stack": "0.0.3",
