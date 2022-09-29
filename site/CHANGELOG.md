@@ -1,5 +1,19 @@
 # site
 
+## 1.0.40
+
+### Patch Changes
+
+- Updated dependencies [8539a7c]
+- Updated dependencies [2b3f0a8]
+- Updated dependencies [00c9ff9]
+  - @a2000/select@0.0.3
+  - @a2000/text-field@0.0.3
+  - @a2000/button@0.0.8
+  - @a2000/startup@0.0.10
+  - @a2000/window@0.0.27
+  - @a2000/taskbar@0.0.27
+
 ## 1.0.39
 
 ### Patch Changes

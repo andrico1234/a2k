@@ -1,5 +1,11 @@
 # @a2000/button
 
+## 0.0.8
+
+### Patch Changes
+
+- 00c9ff9: button submits form when used as a submit button
+
 ## 0.0.7
 
 ### Patch Changes
