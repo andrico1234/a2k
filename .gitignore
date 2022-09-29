@@ -33,3 +33,7 @@ tsconfig.tsbuildinfo
 # errors
 yarn-error.log
 
+.env
+
+storybook-static
+storybook_preview.zip

@@ -17,6 +17,7 @@ To view the components in action, why not check out the [demo](https://a2000.net
 - [a2k-marquee](https://github.com/andrico1234/a2k/tree/main/packages/marquee)
 - [a2k-panel](https://github.com/andrico1234/a2k/tree/main/packages/panel)
 - [a2k-progress](https://github.com/andrico1234/a2k/tree/main/packages/progress)
+- [a2k-select](https://github.com/andrico1234/a2k/tree/main/packages/select)
 - [a2k-stack](https://github.com/andrico1234/a2k/tree/main/packages/stack)
 - [a2k-startup](https://github.com/andrico1234/a2k/tree/main/packages/startup)
 - [a2k-styles](https://github.com/andrico1234/a2k/tree/main/packages/styles)
