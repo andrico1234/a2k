@@ -147,17 +147,16 @@ export class DragController implements ReactiveController {
       const xDelta = cursorPositionX - this.cursorPositionX;
       const yDelta = cursorPositionY - this.cursorPositionY;
 
-      // The happy path - if the element doesn’t attempt to go beyond the browser’s boundaries.
       this.x = oldX + xDelta;
       this.y = oldY + yDelta;
+      this.cursorPositionX = cursorPositionX;
+      this.cursorPositionY = cursorPositionY;
 
+      // The happy path - if the element doesn’t attempt to go beyond the browser’s boundaries.
       const outOfBoundsTop = this.y < 0;
       const outOfBoundsLeft = this.x < 0;
       const outOfBoundsBottom = bottom + yDelta > window.innerHeight;
       const outOfBoundsRight = right + xDelta >= window.innerWidth;
-
-      this.cursorPositionX = cursorPositionX;
-      this.cursorPositionY = cursorPositionY;
 
       // Otherwise, we force the window to remain within the browser window.
       if (outOfBoundsTop) {

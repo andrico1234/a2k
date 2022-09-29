@@ -88,20 +88,15 @@ export class A2kWindow extends LitElement {
   }
 
   protected firstUpdated(): void {
-    const { left } = this.drag.styles;
+    const { x, y } = this.drag;
     const { offsetWidth } = this.renderRoot.querySelector(
       "#window"
     ) as HTMLDivElement;
 
     const availableWidth = getSmallestValue(screen.availWidth, innerWidth);
 
-    const parsedLeft = Number(left?.replace("px", ""));
-
-    if (parsedLeft + offsetWidth > availableWidth) {
-      this.drag.styles = {
-        ...this.drag.styles,
-        left: "0px",
-      };
+    if (x + offsetWidth > availableWidth) {
+      this.drag.styles.transform = `translate(0px, ${y}px)`;
 
       this.requestUpdate();
     }
