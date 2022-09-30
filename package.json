@@ -44,6 +44,7 @@
     "@storybook/addon-actions": "^6.5.12",
     "@storybook/addon-docs": "^6.5.12",
     "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-knobs": "^6.4.0",
     "@storybook/addon-links": "^6.5.12",
     "@storybook/web-components": "^6.5.12",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
