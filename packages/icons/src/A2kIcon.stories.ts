@@ -1,5 +1,5 @@
 import { Meta, Story } from "@storybook/web-components";
-import { LitElement } from "lit";
+import { css, LitElement } from "lit";
 import { html } from "lit-html";
 import { customElement } from "lit/decorators.js";
 import { map } from "lit/directives/map.js";
@@ -8,6 +8,13 @@ import iconNames from "./iconNames";
 
 @customElement("a2k-icons")
 class Icons extends LitElement {
+  static styles = css`
+    div {
+      display: flex;
+      gap: 8px;
+    }
+  `;
+
   render() {
     return map(iconNames, (name) => {
       return html`
