@@ -1,6 +1,6 @@
 import { css, html, LitElement } from "lit";
 import { customElement, state } from "lit/decorators.js";
-import "@a2000/icons/a2k-icon";
+import "@a2000/icons/a2k-icon.js";
 import "./StartMenu";
 
 @customElement("a2k-start-button")

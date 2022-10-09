@@ -2,7 +2,7 @@ import { css, html, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 
 import "@a2000/button/a2k-button.js";
-import "@a2000/icons/a2k-icon";
+import "@a2000/icons/a2k-icon.js";
 
 export class A2kWindowActions extends LitElement {
   static styles = css`
