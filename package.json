@@ -18,8 +18,8 @@
     "prepare": "husky install",
     "release": "yarn build && changeset publish",
     "version-changes": "changeset version",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "catalog:develop": "start-storybook -p 6006",
+    "catalog:build": "build-storybook"
   },
   "workspaces": [
     "packages/*",
@@ -28,16 +28,14 @@
   "author": "Andrico Karoulla",
   "license": "ISC",
   "dependencies": {
-    "lit": "^2.2.7"
+    "lit": "^2.4.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.19.3",
     "@changesets/cli": "^2.18.1",
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@commitlint/cz-commitlint": "^15.0.0",
     "@commitlint/prompt": "^15.0.0",
-    "@mdx-js/react": "^1.6.22",
     "@open-wc/create": "^0.38.63",
     "@open-wc/form-helpers": "0.1.2",
     "@open-wc/testing": "^3.0.3",
@@ -46,13 +44,15 @@
     "@storybook/addon-essentials": "^6.5.12",
     "@storybook/addon-knobs": "^6.4.0",
     "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack5": "^6.5.12",
+    "@storybook/manager-webpack5": "^6.5.12",
     "@storybook/web-components": "^6.5.12",
+    "@svgr/webpack": "^6.4.0",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "5.38.0",
     "@web/dev-server": "^0.1.29",
     "@web/test-runner": "^0.13.23",
     "@web/test-runner-playwright": "^0.8.8",
-    "babel-loader": "^8.2.5",
     "commitizen": "^4.2.4",
     "eslint": "^8.24.0",
     "eslint-plugin-storybook": "^0.6.4",

@@ -18,6 +18,7 @@
     "skipLibCheck": true,
     "allowJs": true,
     "resolveJsonModule": true,
+    "useDefineForClassFields": false,
     "paths": {
       "@a2000/cover": ["packages/cover/src"],
       "@a2000/text-field": ["packages/text-field/src"],
