@@ -1,15 +1,21 @@
+const glob = require("glob");
+
+const stories = glob.sync("packages/**/*.stories.js").map((x) => {
+  return `../${x}`;
+});
+
+const generateIconNames = require("../scripts/generateIconNames");
+
+generateIconNames();
+
 module.exports = {
-  stories: [
-    "../packages/button/lib/src/*.stories.js",
-    "../packages/cover/lib/src/*.stories.js",
-    "../packages/desktop/lib/src/*.stories.js",
-  ],
+  stories,
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "storybook-anima",
   ],
-  // Webpack 4 didn't recognise package.json exports well
+  // Webpack 4 didn't recognise package.json exports well, so let's use Webpack 5
   core: {
     builder: "webpack5",
   },
