@@ -48,6 +48,8 @@ __metadata:
 "@a2000/progress@0.0.4, @a2000/progress@workspace:packages/progress":
   version: 0.0.0-use.local
   resolution: "@a2000/progress@workspace:packages/progress"
+  dependencies:
+    "@a2000/button": 0.0.8
   languageName: unknown
   linkType: soft
 

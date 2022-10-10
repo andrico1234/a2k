@@ -211,6 +211,10 @@ Variable names should follow the format
   --window-toolbar-item-color-background: var(--color-gray-550);
 }
 
+body {
+  font-family: var(--font-primary);
+}
+
 /* Utilities */
 
 .fixed-container {
