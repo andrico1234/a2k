@@ -17,9 +17,9 @@ type AsyncGetElFn = () => Promise<Element | null>;
 
 interface DragControllerOptions {
   initialPosition: InitialPosition;
-  containerId?: string;
   getContainerEl: GetElFn;
   getDraggableEl: AsyncGetElFn;
+  getIsDraggable?: () => boolean;
 }
 
 type State = "dragging" | "idle";
@@ -28,6 +28,7 @@ const defaultOptions = {
   initialPosition: {},
   getContainerEl: () => null,
   getDraggableEl: () => Promise.resolve(null),
+  getIsDraggable: () => true,
 };
 
 export class DragController implements ReactiveController {
@@ -40,13 +41,12 @@ export class DragController implements ReactiveController {
   cursorPositionY = 0;
 
   getContainerEl: GetElFn;
+  getIsDraggable: () => boolean;
   draggableEl: HTMLElement = null!;
 
   state: State = "idle";
 
   pointerTracker: PointerTracker | null = null;
-
-  containerId = "";
 
   styles: StyleInfo = {
     position: "absolute",
@@ -63,6 +63,9 @@ export class DragController implements ReactiveController {
     this.host.addController(this);
 
     this.getContainerEl = options.getContainerEl;
+    this.getIsDraggable =
+      options.getIsDraggable ?? defaultOptions.getIsDraggable;
+
     options.getDraggableEl().then((el) => {
       if (!el) {
         console.warn("getDraggableEl() did not return an element HTMLElement");
@@ -75,15 +78,13 @@ export class DragController implements ReactiveController {
       this.init();
     });
 
-    const { initialPosition, containerId = "" } = options;
+    const { initialPosition } = options;
     const { x = 0, y = 0 } = initialPosition;
 
     this.x = x;
     this.y = y;
 
     this.updateElPosition();
-
-    this.containerId = containerId;
   }
 
   init() {
@@ -127,6 +128,10 @@ export class DragController implements ReactiveController {
     const containerEl = this.getContainerEl();
 
     if (!el || !containerEl) return;
+
+    const isDraggable = this.getIsDraggable();
+
+    if (!isDraggable) return;
 
     const oldX = this.x;
     const oldY = this.y;

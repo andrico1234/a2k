@@ -3,7 +3,7 @@ import { customElement, property } from "lit/decorators.js";
 
 import "@a2000/stack/a2k-stack.js";
 import "@a2000/panel/a2k-panel.js";
-import "@a2000/icons/a2k-icon";
+import "@a2000/icons/a2k-icon.js";
 import "@a2000/window/a2k-window.js";
 
 import "./StartMenuItem";

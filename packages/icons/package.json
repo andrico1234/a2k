@@ -8,6 +8,7 @@
   "module": "lib/src/index.js",
   "exports": {
     ".": "./lib/src/index.js",
-    "./*": "./lib/src/*.js"
+    "./a2k-icon.js": "./lib/src/a2k-icon.js",
+    "./a2k-icons.svg": "./a2k-icons.svg"
   }
 }

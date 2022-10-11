@@ -2,7 +2,7 @@ import { css, html, LitElement } from "lit";
 import { property, state } from "lit/decorators.js";
 import { FormControlMixin } from "@open-wc/form-control";
 import "@a2000/button/a2k-button.js";
-import "@a2000/icons/a2k-icon";
+import "@a2000/icons/a2k-icon.js";
 
 type Item = { value: string; label: string } | null;
 

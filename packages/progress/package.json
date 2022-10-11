@@ -9,5 +9,8 @@
   "exports": {
     ".": "./lib/src/index.js",
     "./a2k-progress.js": "./lib/src/a2k-progress.js"
+  },
+  "devDependencies": {
+    "@a2000/button": "0.0.8"
   }
 }

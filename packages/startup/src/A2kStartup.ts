@@ -32,6 +32,10 @@ export class A2kStartup extends LitElement {
       width: 100%;
     }
 
+    #background {
+      background: var(--startup-background);
+    }
+
     #progress-wrapper {
       max-width: var(--startup-progress-bar-width);
       margin: 0 auto;
@@ -39,7 +43,7 @@ export class A2kStartup extends LitElement {
     }
 
     #standing-by {
-      animation: flash 1s infinite;
+      animation: flash 0.5s infinite alternate;
     }
 
     @keyframes flash {
@@ -47,18 +51,14 @@ export class A2kStartup extends LitElement {
         opacity: 0;
       }
 
-      1% {
+      to {
         opacity: 1;
-      }
-
-      50% {
-        opacity: 0;
       }
     }
   `;
 
   private startupTime = 3000;
-  private intervalRef: number | null = null;
+  private intervalRef: NodeJS.Timer | null = null;
   private currentStep = 0;
 
   @property({ type: String })
@@ -116,30 +116,38 @@ export class A2kStartup extends LitElement {
 
   render() {
     if (this.state === "idle") {
-      return html`<a2k-cover>
-        <div slot="principal">
-          <h1 id="standing-by">Standing by...</h1>
-          <a2k-button size="large" @click=${this.handleStart}>Start</a2k-button>
+      return html`
+        <div id="background">
+          <a2k-cover>
+            <div slot="principal">
+              <h1 id="standing-by">Standing by...</h1>
+              <a2k-button size="large" @click=${this.handleStart}
+                >Start</a2k-button
+              >
+            </div>
+            <div slot="footer"></div>
+          </a2k-cover>
         </div>
-        <div slot="footer"></div>
-      </a2k-cover>`;
+      `;
     }
 
     return html`
-      <a2k-cover>
-        <div slot="principal">
-          <h1>Welcome. Andricos2000 is starting up...</h1>
-        </div>
-        <div slot="footer">
-          <a2k-stack>
-            <div id="progress-wrapper">
-              <a2k-progress progress=${this.progress}></a2k-progress>
-            </div>
-            <p>${Math.floor(this.progress)}%</p>
-            <p>${this.footerText}</p>
-          </a2k-stack>
-        </div>
-      </a2k-cover>
+      <div id="background">
+        <a2k-cover>
+          <div slot="principal">
+            <h1>Welcome. Andricos2000 is starting up...</h1>
+          </div>
+          <div slot="footer">
+            <a2k-stack>
+              <div id="progress-wrapper">
+                <a2k-progress progress=${this.progress}></a2k-progress>
+              </div>
+              <p>${Math.floor(this.progress)}%</p>
+              <p>${this.footerText}</p>
+            </a2k-stack>
+          </div>
+        </a2k-cover>
+      </div>
     `;
   }
 }

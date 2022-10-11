@@ -1,7 +1,7 @@
 import { html, css, LitElement } from "lit";
 import { property } from "lit/decorators.js";
 
-import "@a2000/icons/a2k-icon";
+import "@a2000/icons/a2k-icon.js";
 
 export class A2kDesktopIcon extends LitElement {
   static styles = css`
