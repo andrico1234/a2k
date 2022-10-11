@@ -19,7 +19,7 @@ interface DragControllerOptions {
   initialPosition: InitialPosition;
   getContainerEl: GetElFn;
   getDraggableEl: AsyncGetElFn;
-  draggable?: boolean;
+  getIsDraggable?: () => boolean;
 }
 
 type State = "dragging" | "idle";
@@ -28,6 +28,7 @@ const defaultOptions = {
   initialPosition: {},
   getContainerEl: () => null,
   getDraggableEl: () => Promise.resolve(null),
+  getIsDraggable: () => true,
 };
 
 export class DragController implements ReactiveController {
@@ -40,8 +41,8 @@ export class DragController implements ReactiveController {
   cursorPositionY = 0;
 
   getContainerEl: GetElFn;
+  getIsDraggable: () => boolean;
   draggableEl: HTMLElement = null!;
-  draggable = true;
 
   state: State = "idle";
 
@@ -62,7 +63,8 @@ export class DragController implements ReactiveController {
     this.host.addController(this);
 
     this.getContainerEl = options.getContainerEl;
-    this.draggable = options.draggable ?? true;
+    this.getIsDraggable =
+      options.getIsDraggable ?? defaultOptions.getIsDraggable;
 
     options.getDraggableEl().then((el) => {
       if (!el) {
@@ -127,7 +129,9 @@ export class DragController implements ReactiveController {
 
     if (!el || !containerEl) return;
 
-    if (!this.draggable) return;
+    const isDraggable = this.getIsDraggable();
+
+    if (!isDraggable) return;
 
     const oldX = this.x;
     const oldY = this.y;

@@ -72,7 +72,7 @@ export class A2kWindow extends LitElement {
     },
     getContainerEl: () => this.shadowRoot!.querySelector("#window"),
     getDraggableEl: () => this.getDraggableEl(),
-    draggable: this.draggable,
+    getIsDraggable: () => this.draggable,
   });
 
   async getDraggableEl() {

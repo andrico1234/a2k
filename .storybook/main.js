@@ -25,7 +25,8 @@ module.exports = {
   },
   // Due to a2k-icons. Static assets are relative to the root, so we need to
   // let Storybook now where are our static assets are.
-  staticDirs: ["../"],
+  // TODO: automatically generate this file
+  staticDirs: ["./static"],
   // To allow webpack to import svgs
   webpackFinal: async (config) => {
     config.module.rules.push({

@@ -35,14 +35,10 @@ class ProgressStory extends LitElement {
   }
 
   toggleSetting(setting: string) {
-    console.log(setting);
-
     if (setting === "auto") {
       this.startAutoProgress();
     } else if (setting === "fixed") {
       this.clearCurrentInterval();
-
-      console.log(this.defaultValue);
       this.value = this.defaultValue;
     }
   }

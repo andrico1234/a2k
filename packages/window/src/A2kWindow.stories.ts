@@ -5,8 +5,6 @@ import "./a2k-window";
 const Template: Story = (args) => {
   const { draggable, closeable, heading } = args;
 
-  console.log(args, closeable);
-
   return html`<a2k-window
     ?draggable="${draggable}"
     ?closeable="${closeable}"
