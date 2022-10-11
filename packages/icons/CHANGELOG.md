@@ -1,5 +1,11 @@
 # @a2000/icons
 
+## 0.0.13
+
+### Patch Changes
+
+- aa770f6: update icons package export
+
 ## 0.0.12
 
 ### Patch Changes
