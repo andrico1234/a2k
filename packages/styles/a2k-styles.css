@@ -157,6 +157,7 @@ Variable names should follow the format
     var(--shadow-inset-heavy);
 
   --startup-progress-bar-width: min(600px, 90%);
+  --startup-background: var(--color-black);
 
   --marquee-background: var(--color-yellow-500);
   --marquee-animation-duration: 15s;

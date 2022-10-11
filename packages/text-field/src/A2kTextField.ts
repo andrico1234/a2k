@@ -1,5 +1,5 @@
 import { css, html, LitElement } from "lit";
-import { property, state } from "lit/decorators.js";
+import { property } from "lit/decorators.js";
 import { FormControlMixin } from "@open-wc/form-control";
 
 export class A2kTextField extends FormControlMixin(LitElement) {
