@@ -19,7 +19,8 @@
     "release": "yarn build && changeset publish",
     "version-changes": "changeset version",
     "catalog:develop": "start-storybook -p 6006",
-    "catalog:build": "build-storybook"
+    "catalog:build": "build-storybook",
+    "catalog:deploy": "yarn catalog:build && netlify deploy --dir=storybook-static --prod"
   },
   "workspaces": [
     "packages/*",
