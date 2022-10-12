@@ -97,7 +97,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@a2000/select@0.0.4, @a2000/select@workspace:packages/select":
+"@a2000/select@0.0.5, @a2000/select@workspace:packages/select":
   version: 0.0.0-use.local
   resolution: "@a2000/select@workspace:packages/select"
   dependencies:
@@ -126,7 +126,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@a2000/styles@0.0.26, @a2000/styles@workspace:packages/styles":
+"@a2000/styles@0.0.27, @a2000/styles@workspace:packages/styles":
   version: 0.0.0-use.local
   resolution: "@a2000/styles@workspace:packages/styles"
   languageName: unknown
@@ -144,7 +144,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@a2000/text-field@0.0.3, @a2000/text-field@workspace:packages/text-field":
+"@a2000/text-field@0.0.4, @a2000/text-field@workspace:packages/text-field":
   version: 0.0.0-use.local
   resolution: "@a2000/text-field@workspace:packages/text-field"
   dependencies:
@@ -17004,11 +17004,11 @@ __metadata:
     "@a2000/icons": 0.0.13
     "@a2000/marquee": 0.0.3
     "@a2000/progress": 0.0.4
-    "@a2000/select": 0.0.4
+    "@a2000/select": 0.0.5
     "@a2000/startup": 0.0.10
-    "@a2000/styles": 0.0.26
+    "@a2000/styles": 0.0.27
     "@a2000/taskbar": 0.0.28
-    "@a2000/text-field": 0.0.3
+    "@a2000/text-field": 0.0.4
     "@a2000/window": 0.0.28
   languageName: unknown
   linkType: soft
