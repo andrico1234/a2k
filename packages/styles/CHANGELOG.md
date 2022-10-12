@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.27
+
+### Patch Changes
+
+- cf0578d: improve styling for select and text-field
+
 ## 0.0.26
 
 ### Patch Changes
