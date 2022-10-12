@@ -1,6 +1,6 @@
 # Utilities
 
-A set of reusable of utilities to help develop rich A2k applications
+A set of reusable of utilities to help develop rich a2k applications
 
 ## Usage
 

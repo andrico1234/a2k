@@ -2,11 +2,11 @@
 
 Welcome to a2000 (or a2k for short).
 
-This UI library is designed to capture the feel of the early web, while employing modern UX and web practices. Think Shovel Knight, but for UI components and not video games.
+This UI library is designed to capture the feel of the early web, while employing modern UX and web practices.
 
 Note: This is a work in progress, you should not use it in production. But if you decide to try it out, any and all feedback is welcome!
 
-To view the components in action, why not check out the [demo](https://a2000.netlify.app)?
+Check out the [demo](https://a2000.netlify.app) site for the full a2k experience. Or check out the Storybook to play with each component
 
 ## Components
 

@@ -1,6 +1,6 @@
 # Stack
 
-Renders immediate child components as a vertical stack. A2k applies some vertical margin between the elements.
+Renders immediate child components as a vertical stack. a2k applies some vertical margin between the elements.
 
 ## Quick Start
 

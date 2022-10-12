@@ -72,18 +72,14 @@ export class A2kButton extends FormControlMixin(LitElement) {
     this.form.requestSubmit();
   }
 
-  constructor() {
-    super();
+  connectedCallback(): void {
+    super.connectedCallback();
 
     if (!this.type && this.form) {
       this.type === "submit";
     } else {
       this.type === "button";
     }
-  }
-
-  connectedCallback(): void {
-    super.connectedCallback();
 
     // This is due to the Submit event crossing the shadow DOM's boundaries
     if (this.type === "submit") {

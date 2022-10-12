@@ -23,7 +23,7 @@ const supportChildren = () => {
     <div>
       <p>
         Thanks! You can show your support by giving
-        <a href="${githubUrl}">A2k</a> a star on GitHub.
+        <a href="${githubUrl}">a2k</a> a star on GitHub.
       </p>
       <p>
         You can also follow me on <a href="${twitterUrl}">Twitter</a> to follow
@@ -53,19 +53,21 @@ class Feedback extends LitElement {
   render() {
     return html` <a2k-window draggable closeable heading="Share your thoughts">
       <form @submit=${this.submit}>
-        <a2k-select
-          label="Reason"
-          name="select"
-          placeholder="I would like to..."
-        >
-          <option value="feature">Suggest a feature</option>
-          <option value="problem">Report a problem</option>
-          <option value="hire">Hire Andrico</option>
-          <option value="support">Show support for A2k</option>
-        </a2k-select>
+        <a2k-stack>
+          <a2k-select
+            label="Reason"
+            name="select"
+            placeholder="I would like to..."
+          >
+            <option value="feature">Suggest a feature</option>
+            <option value="problem">Report a problem</option>
+            <option value="hire">Hire Andrico</option>
+            <option value="support">Show support for a2k</option>
+          </a2k-select>
 
-        <a2k-text-field name="text"></a2k-text-field>
-        <a2k-button type="submit">Submit</a2k-button>
+          <a2k-text-field label="Details" name="details"></a2k-text-field>
+          <a2k-button type="submit">Submit</a2k-button>
+        </a2k-stack>
       </form>
     </a2k-window>`;
   }

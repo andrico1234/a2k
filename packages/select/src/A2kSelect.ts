@@ -9,15 +9,20 @@ type Item = { value: string; label: string } | null;
 export class A2kSelect extends FormControlMixin(LitElement) {
   static styles = css`
     :host {
-      --select-input-height: 32px;
-      --select-input-padding-inline: 12px;
-      --select-input-min-width: 184px;
+      --select-height: 32px;
+      --select-padding-inline: 8px;
+      --select-min-width: 184px;
 
-      --select-input-background-color: white;
-      --select-input-option-color-hover: var(--color-blue-100);
+      --select-background-color: white;
+      --select-option-color-hover: var(--color-blue-100);
 
-      --select-input-label-width: var(--spacing-1200);
-      --select-input-label-min-width: fit-content;
+      --select-label-width: var(--spacing-1200);
+      --select-label-min-width: fit-content;
+
+      --select-border-top: 2px solid black;
+      --select-border-left: 2px solid black;
+      --select-border-bottom: 2px solid var(--color-gray-400);
+      --select-border-right: 2px solid var(--color-gray-400);
     }
 
     * {
@@ -25,52 +30,53 @@ export class A2kSelect extends FormControlMixin(LitElement) {
     }
 
     #select-wrapper {
-      display: flex;
       align-items: center;
     }
 
     label {
-      min-width: var(--select-input-label-min-width);
-      width: var(--select-input-label-width);
+      min-width: var(--select-label-min-width);
+      width: var(--select-label-width);
     }
 
     #select {
       flex: 1;
+      box-shadow: var(--text-field-border);
     }
 
     .combo-input {
-      height: var(--select-input-height);
+      height: var(--select-height);
       display: flex;
       flex: 1;
       align-items: center;
       justify-content: space-between;
-      background: var(--select-input-background-color);
-      border: 2px solid black;
-      border-right: 2px solid white;
-      border-bottom: 2px solid white;
+      background: var(--select-background-color);
+      border-top: var(--select-border-top);
+      border-left: var(--select-border-left);
+      border-bottom: var(--select-border-bottom);
+      border-right: var(--select-border-right);
       cursor: pointer;
     }
 
     .combo-input:focus {
-      background: var(--select-input-option-color-hover);
+      background: var(--select-option-color-hover);
       color: white;
     }
 
     .combo-input p {
-      padding-inline: var(--select-input-padding-inline);
+      padding: var(--select-padding-inline);
     }
 
     .listbox {
       border: 1px solid black;
       background: white;
       position: absolute;
-      min-width: var(--select-input-min-width);
+      min-width: var(--select-min-width);
       width: fit-content;
     }
 
     slot:not([name])::slotted(*) {
-      height: var(--select-input-height);
-      padding-inline: var(--select-input-padding-inline);
+      height: var(--select-height);
+      padding-inline: var(--select-padding-inline);
       display: flex;
       align-items: center;
       cursor: var(--cursor-pointer);
@@ -78,7 +84,7 @@ export class A2kSelect extends FormControlMixin(LitElement) {
 
     slot:not([name])::slotted(*:hover),
     slot:not([name])::slotted(*:focus) {
-      background: var(--select-input-option-color-hover);
+      background: var(--select-option-color-hover);
       color: white;
       outline: 1px dotted white;
       outline-offset: -1px;
@@ -226,16 +232,12 @@ export class A2kSelect extends FormControlMixin(LitElement) {
     this._options = childNodes;
   }
 
-  constructor() {
-    super();
+  connectedCallback(): void {
+    super.connectedCallback();
 
     if (this.label) {
       this.label = `${this.label}:`;
     }
-  }
-
-  connectedCallback(): void {
-    super.connectedCallback();
 
     this.addEventListener("keydown", this.handleKeyDown);
   }

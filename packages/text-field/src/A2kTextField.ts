@@ -15,9 +15,14 @@ export class A2kTextField extends FormControlMixin(LitElement) {
 
     input {
       font-family: var(--font-primary);
-      padding: var(--text-field-padding);
+      font-size: var(--text-field-font-size);
+      padding-inline: var(--text-field-padding-inline);
       width: 100%;
-      box-shadow: var(--text-input-border);
+      height: var(--text-field-height);
+      border-top: var(--text-field-border-top);
+      border-left: var(--text-field-border-left);
+      border-bottom: var(--text-field-border-bottom);
+      border-right: var(--text-field-border-right);
     }
 
     input::placeholder {
@@ -44,8 +49,8 @@ export class A2kTextField extends FormControlMixin(LitElement) {
     this.setValue(target.value);
   }
 
-  constructor() {
-    super();
+  connectedCallback(): void {
+    super.connectedCallback();
 
     if (this.label) {
       this.label = `${this.label}:`;
