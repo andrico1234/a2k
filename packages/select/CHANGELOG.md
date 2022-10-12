@@ -1,5 +1,13 @@
 # @a2000/select
 
+## 0.0.4
+
+### Patch Changes
+
+- aa770f6: update icons package export
+- Updated dependencies [aa770f6]
+  - @a2000/icons@0.0.13
+
 ## 0.0.3
 
 ### Patch Changes

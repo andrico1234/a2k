@@ -1,5 +1,13 @@
 # @a2000/desktop
 
+## 0.0.9
+
+### Patch Changes
+
+- aa770f6: update icons package export
+- Updated dependencies [aa770f6]
+  - @a2000/icons@0.0.13
+
 ## 0.0.8
 
 ### Patch Changes
