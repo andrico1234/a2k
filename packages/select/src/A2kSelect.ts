@@ -171,6 +171,12 @@ export class A2kSelect extends FormControlMixin(LitElement) {
 
     this.selectedItem = newItem;
     this.setValue(newItem?.value || "");
+
+    const customEvent = new Event("change", {
+      composed: true,
+      bubbles: true,
+    });
+    this.dispatchEvent(customEvent);
   }
 
   handleOptionSelect(e: Event) {
