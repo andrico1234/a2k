@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.28
+
+### Patch Changes
+
+- 5138cb2: move select css variables to the styles package
+
 ## 0.0.27
 
 ### Patch Changes
