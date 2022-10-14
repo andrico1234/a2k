@@ -3,6 +3,7 @@ import startUpWindow from "./templates/startUpWindow";
 import "./templates/ie5";
 import "./templates/about";
 import "./templates/brokenWindow";
+import privacyNotice from "./templates/privacyNotice";
 
 const body = document.querySelector("body");
 const audioUrl = new URL("./andricos-2000-startup.mp3", import.meta.url);
@@ -21,7 +22,8 @@ const contactIcon = document.querySelector(
 );
 
 contactIcon.onOpen = () => {
-  window.location.href = "https://twitter.com/andricokaroulla";
+  const contactForm = document.createElement("a2k-feedback");
+  windowsContainer.append(contactForm);
 };
 
 const githubIcon = document.querySelector(
@@ -46,6 +48,17 @@ const internetIcon = document.querySelector(
 internetIcon.onOpen = () => {
   const ie5El = document.createElement("a2k-ie5");
   windowsContainer.append(ie5El);
+};
+
+const privacyIcon = document.querySelector(
+  'a2k-desktop-icon[icon="lock-icon"]'
+);
+
+privacyIcon.onOpen = () => {
+  const privacyNoticeContainer = document.createElement("div");
+  windowsContainer.appendChild(privacyNoticeContainer);
+
+  render(privacyNotice, privacyNoticeContainer);
 };
 
 let hasStartupSoundPlayed = false;

@@ -86,8 +86,15 @@ class Feedback extends LitElement {
 
     const target = e.target as HTMLFormElement;
 
-    const data = parseFormAsObject(target);
-    console.log(data);
+    const { select = "none", details = "" } = parseFormAsObject(target);
+
+    window.insights.track({
+      id: "feedback",
+      parameters: {
+        type: select,
+        details,
+      },
+    });
   }
 
   @query("form")
