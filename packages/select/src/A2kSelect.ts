@@ -8,23 +8,6 @@ type Item = { value: string; label: string } | null;
 
 export class A2kSelect extends FormControlMixin(LitElement) {
   static styles = css`
-    :host {
-      --select-height: 32px;
-      --select-padding-inline: 8px;
-      --select-min-width: 184px;
-
-      --select-background-color: white;
-      --select-option-color-hover: var(--color-blue-100);
-
-      --select-label-width: var(--spacing-1200);
-      --select-label-min-width: fit-content;
-
-      --select-border-top: 2px solid black;
-      --select-border-left: 2px solid black;
-      --select-border-bottom: 2px solid var(--color-gray-400);
-      --select-border-right: 2px solid var(--color-gray-400);
-    }
-
     * {
       box-sizing: border-box;
     }
@@ -40,7 +23,7 @@ export class A2kSelect extends FormControlMixin(LitElement) {
 
     #select {
       flex: 1;
-      box-shadow: var(--text-field-border);
+      box-shadow: var(--select-border);
     }
 
     .combo-input {

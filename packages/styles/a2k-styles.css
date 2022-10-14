@@ -170,6 +170,22 @@ Variable names should follow the format
   --taskbar-content-gap: var(--spacing-100);
   --taskbar-utility-bar-shadow: var(--shadow-inset-medium);
 
+  --select-height: var(--spacing-400);
+  --select-padding-inline: var(--spacing-100);
+  --select-min-width: 184px;
+  --select-border: var(--shadow-inset-heavy);
+
+  --select-background-color: var(--color-white);
+  --select-option-color-hover: var(--color-blue-100);
+
+  --select-label-width: var(--spacing-1200);
+  --select-label-min-width: fit-content;
+
+  --select-border-top: 2px solid var(--color-black);
+  --select-border-left: 2px solid var(--color-black);
+  --select-border-bottom: 2px solid var(--color-gray-400);
+  --select-border-right: 2px solid var(--color-gray-400);
+
   --start-menu-strip-background-gradient: linear-gradient(
     var(--color-blue-100) 0%,
     var(--color-blue-700) 100%
