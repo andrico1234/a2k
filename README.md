@@ -45,12 +45,13 @@ run nvm use, or ensure you're the node version specified in the .nvmrc file.
 
 a2k uses:
 
-- 💪🏾 TypeScript as the primary language to keep things strong(ly typed).
-- 🔥 Lit for crafting quick and easy web components
+- 💪🏾 TypeScript to keep things strong(ly typed).
+- 🔥 Lit for quickly crafting reactive web components
 - 📝 Changesets to manage changelogs, versioning, and publishing.
-- 🛠 Web Test Runner for testing
+- 🛠 Web Test Runner for browser testing
 - 🧼 ESLint + Prettier for keeping code clean like a money machine.
-- 🤖 Commitizen + Commitlint for consistent commits.
+- 🎨 Storybook for cataloging each component
+- ☁️ Netlify for hosting a2k in the cloud
 - 🙋🏽‍♂️ Andrico for keeping things ticking along.
 
 ## Basic Usage

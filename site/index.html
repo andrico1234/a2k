@@ -13,39 +13,45 @@
     />
   </head>
   <body>
-    <a2k-desktop>
-      <a2k-desktop-icon
-        hidden
-        icon="documents-icon"
-        text="Portfolio"
-      ></a2k-desktop-icon>
-      <a2k-desktop-icon
-        hidden
-        icon="network-icon"
-        text="Send Feedback"
-      ></a2k-desktop-icon>
-      <a2k-desktop-icon hidden icon="help-icon" text="About"></a2k-desktop-icon>
-      <a2k-desktop-icon
-        hidden
-        icon="github-icon"
-        text="GitHub"
-      ></a2k-desktop-icon>
-      <a2k-desktop-icon
-        hidden
-        icon="internet-icon"
-        text="Internet Explorer"
-      ></a2k-desktop-icon>
-    </a2k-desktop>
+    <div id="app">
+      <a2k-desktop>
+        <a2k-desktop-icon
+          hidden
+          icon="documents-icon"
+          text="Portfolio"
+        ></a2k-desktop-icon>
+        <a2k-desktop-icon
+          hidden
+          icon="network-icon"
+          text="Send Feedback"
+        ></a2k-desktop-icon>
+        <a2k-desktop-icon
+          hidden
+          icon="help-icon"
+          text="About"
+        ></a2k-desktop-icon>
+        <a2k-desktop-icon
+          hidden
+          icon="github-icon"
+          text="GitHub"
+        ></a2k-desktop-icon>
+        <a2k-desktop-icon
+          hidden
+          icon="internet-icon"
+          text="Internet Explorer"
+        ></a2k-desktop-icon>
+      </a2k-desktop>
 
-    <div class="taskbar">
-      <a2k-taskbar></a2k-taskbar>
+      <div class="taskbar">
+        <a2k-taskbar></a2k-taskbar>
+      </div>
+
+      <div id="windows-container"></div>
+
+      <div class="fixed-container">
+        <a2k-startup></a2k-startup>
+      </div>
     </div>
-
-    <div id="windows-container"></div>
-
-    <!-- <div class="fixed-container">
-      <a2k-startup></a2k-startup>
-    </div> -->
 
     <script type="module">
       import "@a2000/window/a2k-window.js";

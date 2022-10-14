@@ -155,5 +155,3 @@ function loadDesktopIcons() {
     });
   }, 1200);
 }
-
-loadWindow();

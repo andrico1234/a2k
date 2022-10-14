@@ -6,6 +6,7 @@ export class A2kTextField extends FormControlMixin(LitElement) {
   static styles = css`
     * {
       box-sizing: border-box;
+      letter-spacing: var(--letter-spacing);
     }
 
     :host {
@@ -43,10 +44,15 @@ export class A2kTextField extends FormControlMixin(LitElement) {
   @property()
   label = "";
 
+  @property()
+  placeholder = "";
+
   handleInputChange(e: InputEvent) {
     const target = e.target as HTMLInputElement;
-
     this.setValue(target.value);
+
+    const customEvent = new Event("change", { composed: true, bubbles: true });
+    this.dispatchEvent(customEvent);
   }
 
   connectedCallback(): void {
@@ -65,6 +71,7 @@ export class A2kTextField extends FormControlMixin(LitElement) {
           id="input"
           name=${this.name}
           defaultValue=${this.defaultValue}
+          placeholder=${this.placeholder}
           type="text"
           @input=${this.handleInputChange}
           @change=${this.handleInputChange}
