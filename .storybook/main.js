@@ -1,4 +1,10 @@
 const glob = require("glob");
+const fs = require("fs");
+
+fs.cpSync(
+  "./packages/icons/a2k-icons.svg",
+  "./.storybook/static/packages/icons/a2k-icons.svg"
+);
 
 const stories = glob.sync("packages/**/*.stories.js").map((x) => {
   return `../${x}`;
@@ -15,7 +21,6 @@ module.exports = {
     "@storybook/addon-essentials",
     "storybook-anima",
   ],
-  // Webpack 4 didn't recognise package.json exports well, so let's use Webpack 5
   core: {
     builder: "webpack5",
   },
@@ -25,15 +30,5 @@ module.exports = {
   },
   // Due to a2k-icons. Static assets are relative to the root, so we need to
   // let Storybook now where are our static assets are.
-  // TODO: automatically generate this file
   staticDirs: ["./static"],
-  // To allow webpack to import svgs
-  webpackFinal: async (config) => {
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ["@svgr/webpack"],
-    });
-
-    return config;
-  },
 };

@@ -36,6 +36,6 @@ export const Default = Template.bind({});
 Default.args = {};
 
 export default {
-  title: "Icon",
+  title: "Icons",
   argTypes: {},
 } as Meta;

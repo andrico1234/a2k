@@ -10,4 +10,5 @@ export default [
   "info-icon",
   "shut-down-icon",
   "chevron-icon",
+  "lock-icon",
 ];

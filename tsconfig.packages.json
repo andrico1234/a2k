@@ -36,6 +36,9 @@
     },
     {
       "path": "./packages/progress/tsconfig.json"
+    },
+    {
+      "path": "./packages/styles/tsconfig.json"
     }
   ]
 }

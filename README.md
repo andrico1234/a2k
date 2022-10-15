@@ -6,7 +6,7 @@ This UI library is designed to capture the feel of the early web, while employin
 
 Note: This is a work in progress, you should not use it in production. But if you decide to try it out, any and all feedback is welcome!
 
-Check out the [demo](https://a2000.netlify.app) site for the full a2k experience. Or check out the Storybook to play with each component
+Check out the [demo](https://a2000.netlify.app) site for the full a2k experience. Or check out the [Storybook](https://a2000-storybook.netlify.app/) to play with each component
 
 ## Components
 

@@ -37,6 +37,7 @@ yarn-error.log
 
 storybook-static
 storybook_preview.zip
+.storybook/static
 
 # Local Netlify folder
 .netlify
