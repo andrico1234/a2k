@@ -1,5 +1,11 @@
 # @a2000/text-field
 
+## 0.0.5
+
+### Patch Changes
+
+- d6f074f: dispatch composed change events
+
 ## 0.0.4
 
 ### Patch Changes
