@@ -1,5 +1,7 @@
 # A2K (a2000)
 
+![Andricos2000. Build retro user interfaces with modern web technologies](./static/cover%402x.png "Cover")
+
 Welcome to a2000 (or a2k for short).
 
 This UI library is designed to capture the feel of the early web, while employing modern UX and web practices.
