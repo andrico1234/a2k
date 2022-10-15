@@ -1,5 +1,12 @@
 # @a2000/select
 
+## 0.0.6
+
+### Patch Changes
+
+- 5138cb2: move select css variables to the styles package
+- d6f074f: dispatch composed change events
+
 ## 0.0.5
 
 ### Patch Changes
