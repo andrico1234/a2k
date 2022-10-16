@@ -9076,6 +9076,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"docs@workspace:docs":
+  version: 0.0.0-use.local
+  resolution: "docs@workspace:docs"
+  dependencies:
+    "@a2000/button": 0.0.8
+    "@a2000/desktop": 0.0.9
+    "@a2000/icons": 0.0.13
+    "@a2000/marquee": 0.0.3
+    "@a2000/panel": 0.0.4
+    "@a2000/progress": 0.0.4
+    "@a2000/select": 0.0.6
+    "@a2000/styles": 0.0.28
+    "@a2000/taskbar": 0.0.28
+    "@a2000/text-field": 0.0.5
+    "@a2000/window": 0.0.28
+  languageName: unknown
+  linkType: soft
+
 "doctrine@npm:^3.0.0":
   version: 3.0.0
   resolution: "doctrine@npm:3.0.0"

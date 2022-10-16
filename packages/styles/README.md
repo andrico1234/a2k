@@ -2,11 +2,30 @@
 
 The default stylesheet for a2k.
 
-## Usage
+## Quick Start
+
+### Using a package manager
+
+1. Begin by installing with your favourite package manager:
+
+`npm install @a2000/styles`
+
+2. Use within your HTML template as follows:
 
 <html lang="en-GB">
   <head>
     <link rel="stylesheet" href="./node_modules/@a2000/styles/a2k-styles.css" />
+  <body>
+  </body>
+</html>
+
+### Using a CDN
+
+1. Add the following link to your HTML template
+
+<html lang="en-GB">
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/@a2000/styles/a2k-styles.css" />
   <body>
   </body>
 </html>

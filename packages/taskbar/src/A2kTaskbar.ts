@@ -4,6 +4,7 @@ import "./StartButton";
 import "./UtilityBar";
 
 // TODO: Update the popup algorithm so that any popups intelligently open where there's most space
+// TODO: Pull out the a2k-start-menu logic from the startbutton component
 export class A2kTaskbar extends LitElement {
   static styles = css`
     .taskbar {

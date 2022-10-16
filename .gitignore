@@ -26,6 +26,8 @@ packages/**/lib*
 /.tmp/
 
 # build
+docs/dist
+
 /site/_site/
 /out-tsc/
 tsconfig.tsbuildinfo
@@ -41,3 +43,4 @@ storybook_preview.zip
 
 # Local Netlify folder
 .netlify
+

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>a2000</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@a2000/styles/a2k-styles.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <nav>
+        <a href="#title"> a2000 </a>
+        <ul>
+          <li>
+            <a href="#styles">Styles</a>
+          </li>
+          <li>
+            <a href="#components">Components</a>
+            <ul>
+              <li><a href="buttons">Buttons</a></li>
+              <li><a href="icons">Icons</a></li>
+              <li><a href="marquee">Marquee</a></li>
+              <li><a href="panel">Panel</a></li>
+              <li><a href="progress">Progress</a></li>
+              <li><a href="select">Select</a></li>
+              <li><a href="taskbar">Taskbar</a></li>
+              <li><a href="text-field">Text Field</a></li>
+              <li><a href="window">Window</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="learn-more">Learn more</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main>
+        <h1 id="title">a2000 (or a2k)</h1>
+        <img
+          class="cover-image"
+          src="/images/cover.png"
+          srcset="/images/cover.png 1x, /images/cover@2x.png 2x"
+        />
+        <p>Welcome to a2000 (or a2k for short).</p>
+        <p>
+          a2000 is a UI library design to capture the feel of the early web
+          using modern web practices.
+        </p>
+        <p>
+          Note: This is a work in progress and is subjected to change. I welcome
+          any and all feedback!
+        </p>
+        <p>
+          Check out the <a href="https://a2000.netlify.app/">demo</a> site for
+          the full a2000 experience. You can also check out the
+          <a href="https://a2000-storybook.netlify.app/">Storybook</a> to play
+          around with each component. If you want to use a2000 in your own
+          projects, you can follow the in
+        </p>
+
+        <h2 id="styles">Styles</h2>
+        <p>A2k comes with its own default set of styles</p>
+        <p>You can add it to your HTML using the CDN, like so:</p>
+        <code>
+          &lt;link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@a2000/styles/a2k-styles.css" /&gt;
+        </code>
+        <p>
+          Adding this stylesheet applies the default base styles, variables,
+          cursors, and typefaces.
+        </p>
+        <p>a2000 uses the Pixelated MS Sans Serif typeface</p>
+
+        <h2 id="components">Components</h2>
+        <h3 id="buttons">Button</h3>
+        <div class="description">
+          <p>Buttons can be used by your users to trigger actions.</p>
+        </div>
+
+        <a2k-button>Click me</a2k-button>
+        <a2k-button disabled>Click me</a2k-button>
+
+        <div><a href="">Full demo</a> | <a href="">Instructions</a></div>
+
+        <h3 id="icons">Icons</h3>
+        <div class="">
+          <p>Icons can...</p>
+        </div>
+
+        <div class="icons">
+          <a2k-icon icon="documents-icon"></a2k-icon>
+          <a2k-icon icon="help-icon"></a2k-icon>
+          <a2k-icon icon="network-icon"></a2k-icon>
+          <a2k-icon icon="internet-icon"></a2k-icon>
+          <a2k-icon icon="info-icon"></a2k-icon>
+        </div>
+
+        <div class="desktop-icons">
+          <a2k-desktop-icon
+            icon="network-icon"
+            text="network"
+          ></a2k-desktop-icon>
+        </div>
+
+        <div><a href="">Full demo</a> | <a href="">Instructions</a></div>
+
+        <h3 id="marquee">Marquee</h3>
+        <p>Marquees are...</p>
+        <a2k-marquee><p slot="text">This is a marquee</p></a2k-marquee>
+        <div><a href="">Full demo</a> | <a href="">Instructions</a></div>
+
+        <h3 id="panel">Panel</h3>
+        <p>The panel is a ....</p>
+
+        <a2k-panel>
+          <p>I'm for giving things a Windows feeling</p>
+        </a2k-panel>
+        <div><a href="">Full demo</a> | <a href="">Instructions</a></div>
+
+        <h3 id="progress">Progress</h3>
+
+        <a2k-progress progress="69"></a2k-progress>
+        <div><a href="">Full demo</a> | <a href="">Instructions</a></div>
+
+        <h3 id="select">Select</h3>
+        <a2k-select
+          placeholder="e.g. Windows XP"
+          label="Which is your favourite Windows OS?"
+        >
+          <option>Windows ME</option>
+          <option>Windows 2000</option>
+          <option>Windows XP</option>
+        </a2k-select>
+        <div><a href="">Full demo</a> | <a href="">Instructions</a></div>
+        <h3 id="taskbar">Taskbar</h3>
+
+        <a2k-taskbar></a2k-taskbar>
+        <div><a href="">Full demo</a> | <a href="">Instructions</a></div>
+        <h3 id="text-field">Text Field</h3>
+
+        <a2k-text-field
+          label="What's your favourite component?"
+          placeholder="e.g. Select menus are rad"
+        ></a2k-text-field>
+        <div><a href="">Full demo</a> | <a href="">Instructions</a></div>
+        <h3 id="window">Window</h3>
+
+        <div style="position: relative; height: 200px">
+          <a2k-window draggable closeable>
+            <p>These can be used to display warnings to users</p>
+          </a2k-window>
+        </div>
+        <div><a href="">Full demo</a> | <a href="">Instructions</a></div>
+
+        <h2 id="learn-more">Learn more</h2>
+        <p>
+          If you'd like to support the a2000, you can do so by trying out the
+          library and creating issues if you come across any problems. Starring
+          on GitHub also helps the project grow.
+        </p>
+        <p>
+          You can also keep up to date on new updates by following
+          <a href="https://twitter.com/andricokaroulla">Andrico on Twitter</a>
+        </p>
+      </main>
+    </div>
+    <script type="module">
+      import "@a2000/window/a2k-window.js";
+      import "@a2000/taskbar/a2k-taskbar.js";
+      import "@a2000/progress/a2k-progress.js";
+      import "@a2000/icons/a2k-icon.js";
+      import "@a2000/button/a2k-button.js";
+      import "@a2000/desktop/a2k-desktop-icon.js";
+      import "@a2000/text-field/a2k-text-field.js";
+      import "@a2000/select/a2k-select.js";
+      import "@a2000/panel/a2k-panel.js";
+      import "@a2000/marquee/a2k-marquee.js";
+    </script>
+  </body>
+</html>

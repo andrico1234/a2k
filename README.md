@@ -60,7 +60,7 @@ a2k uses:
 
 ## CSS
 
-To utilise the default CSS stylesheets for a2k, you'll need to install and download the corresponding styles package.
+To utilise the default CSS stylesheets for a2k, you'll need to install or download the styles.
 
 View the [@a2000/styles](https://github.com/andrico1234/a2k/tree/main/packages/styles) for installation instructions.
 
@@ -72,7 +72,10 @@ E.g. Overriding the default font-family from `Tahoma` to `Verdana` can be done i
 <!DOCTYPE html>
 <html lang="en-GB">
   <head>
-    <link rel="stylesheet" href="./node_modules/@a2000/styles/a2k-styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@a2000/styles/a2k-styles.css"
+    />
     <link rel="stylesheet" href="./custom-styles.css" />
   </head>
   <body>

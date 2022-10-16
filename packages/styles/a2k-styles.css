@@ -40,11 +40,11 @@ Variable names should follow the format
   --font-size-500: calc((48 / 16) * 1rem);
   --font-size-600: calc((64 / 16) * 1rem);
 
-  --cursor-default: url("./cursors/default.svg") 0 0, default;
-  --cursor-grab: url("./cursors/grab.svg") 0 0, grab;
-  --cursor-grabbing: url("./cursors/grabbing.svg") 0 0, grabbing;
-  --cursor-pointer: url("./cursors/pointer.svg") 0 0, pointer;
-  --cursor-wait: url("./cursors/wait.svg") 0 0, wait;
+  --cursor-default: url("cursors/default.svg") 0 0, default;
+  --cursor-grab: url("cursors/grab.svg") 0 0, grab;
+  --cursor-grabbing: url("cursors/grabbing.svg") 0 0, grabbing;
+  --cursor-pointer: url("cursors/pointer.svg") 0 0, pointer;
+  --cursor-wait: url("cursors/wait.svg") 0 0, wait;
 
   --font-weight-regular: 400;
   --font-weight-heavy: 600;

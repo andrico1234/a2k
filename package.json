@@ -12,6 +12,9 @@
     "site:build": "yarn workspace site build",
     "site:develop": "yarn workspace site develop",
     "site:preview": "yarn workspace site preview",
+    "docs:build": "yarn workspace docs build",
+    "docs:develop": "yarn workspace docs develop",
+    "docs:preview": "yarn workspace docs preview",
     "lint": "yarn eslint .",
     "test": "yarn build && wtr",
     "test:watch": "yarn build && concurrently -k -r \"tsc --watch --preserveWatchOutput\" \"wtr --watch\"",
@@ -24,6 +27,7 @@
   },
   "workspaces": [
     "packages/*",
+    "docs",
     "site"
   ],
   "author": "Andrico Karoulla",
