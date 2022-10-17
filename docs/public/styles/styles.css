@@ -1,0 +1,112 @@
+:root {
+  --content-padding: 16px;
+}
+
+body {
+  padding: 16px;
+  background: var(--desktop-background);
+}
+
+#app {
+  padding-bottom: 16px;
+}
+
+#app > a2k-panel {
+  display: flex;
+}
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+}
+
+main > a2k-panel {
+  --panel-color-background: white;
+}
+
+main > a2k-panel * {
+  --panel-color-background: var(--color-gray-500);
+}
+
+nav {
+  padding: 8px;
+  min-width: 180px;
+}
+
+code {
+  word-break: break-all;
+}
+
+.content {
+  padding: var(--content-padding);
+}
+
+details[open] summary > .icon {
+  transform: rotate(90deg);
+}
+
+summary {
+  list-style-type: none;
+  cursor: var(--cursor-pointer);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+summary > .icon {
+  display: inline-block;
+  width: fit-content;
+  font-size: 8px;
+}
+
+.cover-image {
+  width: calc(100% + var(--content-padding) * 2);
+  margin-left: calc(-1 * var(--content-padding));
+}
+
+.stack-spacing-100 > * {
+  --stack-spacing: 8px;
+}
+
+.stack-spacing-200 > * {
+  --stack-spacing: 16px;
+}
+
+.stack-spacing-300 > * {
+  --stack-spacing: 32px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack > * {
+  margin-block: 0;
+}
+
+.stack > * + * {
+  margin-block-start: var(--stack-spacing);
+}
+
+.with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.with-sidebar > :first-child > {
+  flex-grow: 1;
+}
+
+.width-sidebar > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: 20%;
+}
+
+.links {
+  padding-inline: 8px;
+}

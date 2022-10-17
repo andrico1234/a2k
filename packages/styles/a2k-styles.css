@@ -1,5 +1,4 @@
 /*
-
 Variable names should follow the format
 
   - element
@@ -235,11 +234,27 @@ Variable names should follow the format
 }
 
 body {
+  color: var(--font-color);
+  background: var(--color-white);
+  font-size: 1rem;
   font-family: var(--font-primary);
+  line-height: 1.4;
+  letter-spacing: (--font-primary-letter-spacing);
+}
+
+a {
+  color: --color-blue-300;
+}
+
+a:hover {
+  cursor: var(--cursor-pointer);
+}
+
+a:visited {
+  color: purple;
 }
 
 /* Utilities */
-
 .fixed-container {
   background: black;
   top: 0;

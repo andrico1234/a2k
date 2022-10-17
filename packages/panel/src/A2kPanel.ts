@@ -2,6 +2,10 @@ import { html, css, LitElement } from "lit";
 
 export class A2kPanel extends LitElement {
   static styles = css`
+    :host {
+      box-sizing: border-box;
+    }
+
     #panel {
       border: var(--panel-border);
       background-color: var(--panel-color-background);
