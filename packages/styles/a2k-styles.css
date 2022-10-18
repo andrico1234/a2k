@@ -243,6 +243,26 @@ body {
   letter-spacing: (--font-primary-letter-spacing);
 }
 
+::-webkit-scrollbar {
+  width: var(--spacing-300);
+  height: var(--spacing-300);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gray-550);
+  border: var(--border-medium);
+
+  border-bottom: 2px solid var(--color-gray-300);
+  border-right: 2px solid var(--color-gray-300);
+  border-top: 2px solid var(--color-gray-550);
+  border-left: 2px solid var(--color-gray-550);
+  box-shadow: var(--shadow-inset-light);
+}
+
+::-webkit-scrollbar-track {
+  background: url(patterns/scroll-track.svg);
+}
+
 a {
   color: --color-blue-300;
 }

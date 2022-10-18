@@ -10,6 +10,8 @@ import "./a2k-window-topbar";
 import "./a2k-window-actions";
 
 // TODO: add a window context that tracks the active states of the windows and adjust their position in the stacks accordingly
+// TODO: this works incorrectly if the window is inside a relatively positioned element
+//    Idea: Play around with setting the x/y position before setting the top:0,left:0 position in the DragController
 
 export class A2kWindow extends LitElement {
   static styles = css`
@@ -98,7 +100,6 @@ export class A2kWindow extends LitElement {
 
     if (x + offsetWidth > availableWidth) {
       this.drag.styles.transform = `translate(0px, ${y}px)`;
-
       this.requestUpdate();
     }
   }
