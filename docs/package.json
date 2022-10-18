@@ -1,7 +1,7 @@
 {
   "name": "docs",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "scripts": {
     "develop": "vite",
@@ -19,7 +19,7 @@
     "@a2000/panel": "0.0.4",
     "@a2000/progress": "0.0.4",
     "@a2000/select": "0.0.6",
-    "@a2000/styles": "0.0.28",
+    "@a2000/styles": "0.0.29",
     "@a2000/taskbar": "0.0.28",
     "@a2000/text-field": "0.0.5",
     "@a2000/window": "0.0.28"

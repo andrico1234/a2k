@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.29
+
+### Patch Changes
+
+- 9aa6f29: update with sensible defaults
+
 ## 0.0.28
 
 ### Patch Changes
