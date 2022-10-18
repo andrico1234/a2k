@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.31
+
+### Patch Changes
+
+- 3df8875: export patterns
+
 ## 0.0.30
 
 ### Patch Changes
