@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.30
+
+### Patch Changes
+
+- 610b190: add scrollbars
+
 ## 0.0.29
 
 ### Patch Changes
