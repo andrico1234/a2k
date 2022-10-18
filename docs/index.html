@@ -51,18 +51,18 @@
         </nav>
       </a2k-panel>
 
-      <main>
+      <main class="stack stack-spacing-300">
+        <img
+          class="cover-image"
+          src="/images/cover.png"
+          srcset="/images/cover.png 1x, /images/cover@2x.png 2x"
+        />
         <a2k-panel>
           <a2k-window-topbar>a2000</a2k-window-topbar>
           <div class="content stack stack-spacing-300">
             <section>
               <h1 id="title">a2000 (or a2k)</h1>
               <div class="stack stack-spacing-200">
-                <img
-                  class="cover-image"
-                  src="/images/cover.png"
-                  srcset="/images/cover.png 1x, /images/cover@2x.png 2x"
-                />
                 <p>Welcome to a2000 (or a2k for short).</p>
                 <p>
                   a2000 is a UI library design to capture the feel of the early
@@ -130,8 +130,9 @@
                   <h3 id="icons">Icons</h3>
                   <div class="stack stack-spacing-200">
                     <p>
-                      Icons can help a user recognise the meaning quickly. They
-                      can also help improve the visual design of a website.
+                      Icons can help a user recognise the meaning of an
+                      action/feature quickly. They can also help improve the
+                      visual design of a website.
                     </p>
 
                     <div class="icons">
@@ -142,10 +143,24 @@
                       <a2k-icon icon="info-icon"></a2k-icon>
                     </div>
 
+                    <p>
+                      You can combine icons with buttons and text to improve the
+                      visual association with an action. This also increases the
+                      click area, which is great people using touch devices.
+                    </p>
+
                     <div class="desktop-icons">
                       <a2k-desktop-icon
-                        icon="network-icon"
-                        text="network"
+                        icon="help-icon"
+                        text="help"
+                      ></a2k-desktop-icon>
+                      <a2k-desktop-icon
+                        icon="internet-icon"
+                        text="internet"
+                      ></a2k-desktop-icon>
+                      <a2k-desktop-icon
+                        icon="info-icon"
+                        text="info"
                       ></a2k-desktop-icon>
                     </div>
 
@@ -167,7 +182,8 @@
                       page. They are also used to increase the retro feel of
                       your site by 1000%.
                     </p>
-                    <a2k-marquee
+
+                    <a2k-marquee class="input-wrapper"
                       ><p slot="text">This is a marquee</p></a2k-marquee
                     >
                     <div>
@@ -189,7 +205,7 @@
                       Window both build from the Panel.
                     </p>
 
-                    <a2k-panel>
+                    <a2k-panel class="input-wrapper">
                       <p style="padding-left: 8px">
                         Use me to give things that Windows 2000 vibe
                       </p>
@@ -208,7 +224,10 @@
                       for a given task.
                     </p>
 
-                    <a2k-progress progress="69"></a2k-progress>
+                    <a2k-progress
+                      class="input-wrapper"
+                      progress="69"
+                    ></a2k-progress>
                     <div>
                       <a
                         href="https://a2000-storybook.netlify.app/?path=/story/panel--default"
@@ -227,6 +246,7 @@
                       value from a manu of many choices.
                     </p>
                     <a2k-select
+                      class="input-wrapper"
                       placeholder="e.g. Windows XP"
                       label="Which is your favourite Windows OS?"
                     >
@@ -254,7 +274,7 @@
                       expand and minimise windows, and more.
                     </p>
 
-                    <a2k-taskbar></a2k-taskbar>
+                    <a2k-taskbar class="input-wrapper"></a2k-taskbar>
                     <div>
                       <a
                         href="https://a2000-storybook.netlify.app/?path=/story/taskbar--default"
@@ -272,6 +292,7 @@
                       Text fields are used to take information from your users.
                     </p>
                     <a2k-text-field
+                      class="input-wrapper"
                       label="What's your favourite component?"
                       placeholder="e.g. Select menus are rad"
                     ></a2k-text-field>
@@ -289,7 +310,10 @@
                   <h3 id="window">Window</h3>
 
                   <div class="stack stack-spacing-200">
-                    <div style="position: relative; height: 160px">
+                    <div
+                      style="position: relative; height: 160px"
+                      class="input-wrapper"
+                    >
                       <a2k-window draggable closeable>
                         <p>
                           The Window component can be used to add floating

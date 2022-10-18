@@ -123,6 +123,7 @@ Variable names should follow the format
   --desktop-icon-flex-gap: var(--spacing-100);
   --desktop-icon-text-size: var(--font-size-200);
   --desktop-icon-text-color: var(--color-white);
+  --desktop-icon-text-color-focus: var(--color-white);
   --desktop-icon-text-padding: var(--spacing-50);
   --desktop-icon-text-outline-focus: 1px dotted var(--color-white);
   --desktop-icon-text-background-color-focus: var(--color-blue-100);

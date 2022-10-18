@@ -34,6 +34,7 @@ export class A2kDesktopIcon extends LitElement {
     #icon-wrapper:focus p {
       outline: var(--desktop-icon-text-outline-focus);
       background: var(--desktop-icon-text-background-color-focus);
+      color: var(--desktop-icon-text-color-focus);
     }
   `;
 
