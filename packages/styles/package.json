@@ -8,12 +8,14 @@
   "files": [
     "a2k-styles.css",
     "fonts/*/*.otf",
+    "patterns/*.svg",
     "cursors/*.svg"
   ],
   "exports": {
     "./a2k-styles.css": "./a2k-styles.css",
     "./fonts/*": "./fonts/*",
-    "./cursors/*": "./cursors/*.svg"
+    "./cursors/*": "./cursors/*.svg",
+    "./patterns/*": "./patterns/*.svg"
   },
   "keywords": []
 }
