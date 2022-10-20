@@ -1,7 +1,7 @@
 {
   "name": "site",
   "private": true,
-  "version": "1.0.46",
+  "version": "1.0.47",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -21,8 +21,8 @@
     "@a2000/select": "0.0.6",
     "@a2000/startup": "0.0.10",
     "@a2000/styles": "0.0.31",
-    "@a2000/taskbar": "0.0.28",
+    "@a2000/taskbar": "0.0.29",
     "@a2000/text-field": "0.0.5",
-    "@a2000/window": "0.0.28"
+    "@a2000/window": "0.0.29"
   }
 }
