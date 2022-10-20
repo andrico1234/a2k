@@ -4,12 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>a2000</title>
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@a2000/styles/a2k-styles.css"
-    />
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="src/reset.css" />
+    <link rel="stylesheet" href="./node_modules/@a2000/styles/a2k-styles.css" />
+    <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
     <div class="with-sidebar" id="app">
@@ -61,12 +58,12 @@
           <a2k-window-topbar>a2000</a2k-window-topbar>
           <div class="content stack stack-spacing-300">
             <section>
-              <h1 id="title">a2000 (or a2k)</h1>
+              <h1 id="title">a2000 (a2k)</h1>
               <div class="stack stack-spacing-200">
                 <p>Welcome to a2000 (or a2k for short).</p>
                 <p>
                   a2000 is a UI library design to capture the feel of the early
-                  web using modern web practices.
+                  web using modern web tools and practices.
                 </p>
                 <p>
                   Note: This is a work in progress and is subjected to change. I
@@ -78,7 +75,10 @@
                   full a2000 experience. You can also check out the
                   <a href="https://a2000-storybook.netlify.app/">Storybook</a>
                   to play around with each component. If you want to use a2000
-                  in your own projects, you can follow the in
+                  in your own projects, you can follow these
+                  <a href="https://github.com/andrico1234/a2k"
+                    >details instructions</a
+                  >.
                 </p>
               </div>
             </section>
@@ -87,7 +87,7 @@
               <h2 id="styles">Styles</h2>
               <div class="stack stack-spacing-200">
                 <p>a2000 comes with its own default set of styles</p>
-                <p>You can add it to your HTML using the CDN, like so:</p>
+                <p>You can add it to your HTML using a CDN, like so:</p>
                 <code>
                   &lt;link rel="stylesheet"
                   href="https://cdn.jsdelivr.net/npm/@a2000/styles/a2k-styles.css"
@@ -95,15 +95,26 @@
                 </code>
                 <p>
                   Adding this stylesheet applies the default base styles,
-                  variables, cursors, and typefaces.
-                </p>
-                <p>a2000 uses the Pixelated MS Sans Serif typeface</p>
+                  variables, and typefaces.
+                </p>z
+                <p>a2000 uses the Pixelated MS Sans Serif typeface.</p>
               </div>
             </section>
 
             <section>
               <h2 id="components">Components</h2>
               <div class="stack stack-spacing-300">
+                <div class="stack stack-spacing-200">
+                  <p>
+                    To use the a2000 components in your applications, you'll
+                    need to install the a2000 packages using a package manager
+                    like npm or yarn.
+                  </p>
+                  <p>
+                    Each component has a link to the full installation
+                    instructions.
+                  </p>
+                </div>
                 <section>
                   <h3 id="buttons">Button</h3>
                   <div class="stack stack-spacing-200">
@@ -314,8 +325,8 @@
                       style="position: relative; height: 160px"
                       class="input-wrapper"
                     >
-                      <a2k-window draggable closeable>
-                        <p>
+                      <a2k-window x="0" y="0" heading="a2000" closeable>
+                        <p style="padding-inline: 16px">
                           The Window component can be used to add floating
                           content to your site. It's a good option for alerts,
                           programs,
@@ -344,7 +355,7 @@
                   Starring on GitHub also helps the project grow.
                 </p>
                 <p>
-                  You can also keep up to date on new updates by following
+                  You can also keep up to date on updates by following
                   <a href="https://twitter.com/andricokaroulla"
                     >Andrico on Twitter</a
                   >

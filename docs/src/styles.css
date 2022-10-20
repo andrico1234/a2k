@@ -22,6 +22,9 @@ main {
 
 main > a2k-panel {
   --panel-color-background: white;
+
+  max-width: 90ch;
+  margin: 0 auto;
 }
 
 main > a2k-panel * {

@@ -67,11 +67,14 @@ export class A2kWindow extends LitElement {
   @property({ type: Boolean })
   closeable = false;
 
+  @property({ type: Number })
+  x = 32;
+
+  @property({ type: Number })
+  y = 32;
+
   private drag = new DragController(this, {
-    initialPosition: {
-      x: 32,
-      y: 32,
-    },
+    initialPosition: {},
     getContainerEl: () => this.shadowRoot!.querySelector("#window"),
     getDraggableEl: () => this.getDraggableEl(),
     getIsDraggable: () => this.draggable,
@@ -98,10 +101,15 @@ export class A2kWindow extends LitElement {
 
     const availableWidth = getSmallestValue(screen.availWidth, innerWidth);
 
+    this.drag.x = this.x;
+    this.drag.y = this.y;
+    this.drag.updateElPosition();
+
     if (x + offsetWidth > availableWidth) {
       this.drag.styles.transform = `translate(0px, ${y}px)`;
-      this.requestUpdate();
     }
+
+    this.requestUpdate();
   }
 
   render() {

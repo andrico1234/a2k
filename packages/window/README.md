@@ -22,8 +22,10 @@ A draggable and closeable window that can be used to display content
 
 ## API
 
-| Name      | Type    | Default Value |
-| --------- | ------- | ------------- |
-| heading   | string  | ""            |
-| draggable | boolean | false         |
-| closeable | boolean | false         |
+| Name      | Type    | Default Value | Description                          |
+| --------- | ------- | ------------- | ------------------------------------ |
+| heading   | string  | ""            | -                                    |
+| draggable | boolean | false         | -                                    |
+| closeable | boolean | false         | -                                    |
+| x         | string  | 32            | The initial x position of the window |
+| y         | string  | 32            | The initial y position of the window |
