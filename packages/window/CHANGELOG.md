@@ -1,5 +1,11 @@
 # @a2000/window
 
+## 0.0.29
+
+### Patch Changes
+
+- c428575: expose initial x and y props on window
+
 ## 0.0.28
 
 ### Patch Changes

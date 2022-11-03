@@ -1,5 +1,12 @@
 # @a2000/taskbar
 
+## 0.0.29
+
+### Patch Changes
+
+- Updated dependencies [c428575]
+  - @a2000/window@0.0.29
+
 ## 0.0.28
 
 ### Patch Changes
