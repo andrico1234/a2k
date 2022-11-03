@@ -98,10 +98,6 @@ a2k-panel > p {
   gap: 16px;
 }
 
-.with-sidebar > :first-child > {
-  flex-grow: 1;
-}
-
 .width-sidebar > :last-child {
   flex-basis: 0;
   flex-grow: 999;
