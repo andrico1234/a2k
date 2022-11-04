@@ -6,7 +6,8 @@
   "scripts": {
     "develop": "vite",
     "build": "vite build",
-    "preview": "yarn build && vite preview"
+    "preview": "yarn build && vite preview",
+    "deploy": "yarn docs:build && netlify deploy --dir=dist --prod"
   },
   "keywords": [],
   "author": "Andrico Karoulla",

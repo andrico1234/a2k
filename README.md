@@ -8,7 +8,11 @@ This UI library is designed to capture the feel of the early web, while employin
 
 Note: This is a work in progress, you should not use it in production. But if you decide to try it out, any and all feedback is welcome!
 
-Check out the [demo](https://a2000.netlify.app) site for the full a2k experience. Or check out the [Storybook](https://a2000-storybook.netlify.app/) to play with each component
+Check out:
+
+- The [docs](https://a2000-docs.netlify.app/) for an overview of a2k
+- The [demo](https://a2000.netlify.app) site for the full a2k experience.
+- The [storybook](https://a2000-storybook.netlify.app/) to play with each component.
 
 ## Components
 
@@ -40,8 +44,8 @@ run nvm use, or ensure you're the node version specified in the .nvmrc file.
 - ensure the tests are passing by running yarn test.
 - kick off the dev server by running yarn develop.
 - run the docs site locally using yarn docs:start.
-- jump into whichever you package you want to change
-- view your changes in your locally running docs
+- jump into whichever you package you want to change.
+- view your changes in your locally running docs.
 
 ## Tech stack
 
@@ -50,10 +54,10 @@ a2k uses:
 - 💪🏾 TypeScript to keep things strong(ly typed).
 - 🔥 Lit for quickly crafting reactive web components
 - 📝 Changesets to manage changelogs, versioning, and publishing.
-- 🛠 Web Test Runner for browser testing
+- 🛠 Web Test Runner for browser testing.
 - 🧼 ESLint + Prettier for keeping code clean like a money machine.
-- 🎨 Storybook for cataloging each component
-- ☁️ Netlify for hosting a2k in the cloud
+- 🎨 Storybook for cataloging each component.
+- ☁️ Netlify for hosting a2k in the cloud.
 - 🙋🏽‍♂️ Andrico for keeping things ticking along.
 
 ## Basic Usage
