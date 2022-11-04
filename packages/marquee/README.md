@@ -35,3 +35,7 @@
 | Slot | Details                              |
 | ---- | ------------------------------------ |
 | text | The content that the marquee renders |
+
+## Notes
+
+Since there are usability considerations when using a marquee component, the animation doesn't run if the user `prefers-reduced-motion`.

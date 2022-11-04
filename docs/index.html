@@ -75,10 +75,8 @@
                   full a2000 experience. You can also check out the
                   <a href="https://a2000-storybook.netlify.app/">Storybook</a>
                   to play around with each component. If you want to use a2000
-                  in your own projects, you can follow these
-                  <a href="https://github.com/andrico1234/a2k"
-                    >details instructions</a
-                  >.
+                  in your own projects, you can follow the
+                  <a href="https://github.com/andrico1234/a2k">instructions</a>.
                 </p>
               </div>
             </section>
@@ -96,7 +94,7 @@
                 <p>
                   Adding this stylesheet applies the default base styles,
                   variables, and typefaces.
-                </p>z
+                </p>
                 <p>a2000 uses the Pixelated MS Sans Serif typeface.</p>
               </div>
             </section>
@@ -120,7 +118,10 @@
                   <div class="stack stack-spacing-200">
                     <div class="description">
                       <p>
-                        Buttons can be used by your users to trigger actions.
+                        Buttons are components that allow your users to perform
+                        actions. These actions can include opening a modal,
+                        confirming an action, confirming a delete request, or
+                        submitting a form.
                       </p>
                     </div>
 
@@ -141,9 +142,9 @@
                   <h3 id="icons">Icons</h3>
                   <div class="stack stack-spacing-200">
                     <p>
-                      Icons can help a user recognise the meaning of an
-                      action/feature quickly. They can also help improve the
-                      visual design of a website.
+                      Icons are pictures that can help a user recognise the
+                      meaning of an action/feature quickly. They can also be
+                      used to improve the visual design of a website.
                     </p>
 
                     <div class="icons">
@@ -155,9 +156,14 @@
                     </div>
 
                     <p>
-                      You can combine icons with buttons and text to improve the
-                      visual association with an action. This also increases the
-                      click area, which is great people using touch devices.
+                      You can combine icons with buttons and text to add a
+                      visual association to an action. This also increases the
+                      click area, which
+                      <a
+                        href="https://www.w3.org/WAI/WCAG21/Understanding/target-size.html"
+                        target="_blank"
+                        >improves the accessibility of the component</a
+                      >.
                     </p>
 
                     <div class="desktop-icons">
@@ -211,14 +217,15 @@
                   <h3 id="panel">Panel</h3>
                   <div class="stack stack-spacing-200">
                     <p>
-                      The Panel is a pre-styled container that can be used to
-                      build more complicated retro components. The Taskbar and
-                      Window both build from the Panel.
+                      The Panel is a div container that has retro styling
+                      pre-applied. Panels can be used to build more complex
+                      components. For instance, the taskbar and window
+                      components are both built from the panel.
                     </p>
 
                     <a2k-panel class="input-wrapper">
                       <p style="padding-left: 8px">
-                        Use me to give things that Windows 2000 vibe
+                        Use me to give your site that Windows2000 feel
                       </p>
                     </a2k-panel>
                     <div>
@@ -250,11 +257,12 @@
                 </section>
 
                 <section>
-                  <h3 id="select">Select</h3>
+                  <h3 id="select">Select Menu</h3>
                   <div class="stack stack-spacing-200">
                     <p>
-                      Select menus are used to provide users a way of choosing a
-                      value from a manu of many choices.
+                      Select menus provide the user a way of choosing a value
+                      from pre-defined set of options. Select menus are great
+                      for presenting the user with a small number of options.
                     </p>
                     <a2k-select
                       class="input-wrapper"
@@ -279,10 +287,10 @@
                   <h3 id="taskbar">Taskbar</h3>
                   <div class="stack stack-spacing-200">
                     <p>
-                      The Taskbar is an a2000 component you can use to add a
-                      Start Menu, which can be used to display the features of
-                      your site. In the future, that Taskbar may be used to
-                      expand and minimise windows, and more.
+                      The Taskbar is an a2k component that renders a start menu.
+                      The start menu can be used to display the features of your
+                      site. In the future, the Taskbar may be used to expand and
+                      minimise windows, and more.
                     </p>
 
                     <a2k-taskbar class="input-wrapper"></a2k-taskbar>
@@ -300,7 +308,9 @@
                   <h3 id="text-field">Text Field</h3>
                   <div class="stack stack-spacing-200">
                     <p>
-                      Text fields are used to take information from your users.
+                      Text fields allow a user to input free text. These can be
+                      used within form elements to capture and submit text
+                      inputted by the user
                     </p>
                     <a2k-text-field
                       class="input-wrapper"
@@ -320,6 +330,14 @@
                 <section>
                   <h3 id="window">Window</h3>
 
+                  <p>
+                    The Window is an a2k component that renders
+                    absolute-postioned content to your site. Windows can be
+                    draggable and closable, and can render any type of valid
+                    HTML markup. Windows are a good option for alerts and
+                    programs.
+                  </p>
+
                   <div class="stack stack-spacing-200">
                     <div
                       style="position: relative; height: 160px"
@@ -327,9 +345,7 @@
                     >
                       <a2k-window x="0" y="0" heading="a2000" closeable>
                         <p style="padding-inline: 16px">
-                          The Window component can be used to add floating
-                          content to your site. It's a good option for alerts,
-                          programs,
+                          Use me to give your site that Windows2000 feel.
                         </p>
                       </a2k-window>
                     </div>
@@ -349,8 +365,8 @@
               <h2 id="learn-more">Learn more</h2>
               <div class="stack stack-spacing-200">
                 <p>
-                  a2000 is an independent project, created by me, Andrico. If
-                  you'd like to support a2000, you can do so by trying out the
+                  a2k is an independent project, created by me, Andrico. If
+                  you'd like to support a2k, you can do so by trying out the
                   library and creating issues if you come across any problems.
                   Starring on GitHub also helps the project grow.
                 </p>
