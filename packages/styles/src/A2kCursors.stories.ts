@@ -8,6 +8,7 @@ import { customElement } from "lit/decorators.js";
 const cursors = ["default", "pointer", "grab", "grabbing", "wait"];
 
 @customElement("a2k-cursor")
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 class Cursor extends LitElement {
   static styles = css`
     * {

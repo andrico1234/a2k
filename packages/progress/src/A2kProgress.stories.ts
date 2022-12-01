@@ -6,6 +6,7 @@ import "@a2000/button/a2k-button.js";
 import "./a2k-progress";
 
 @customElement("a2k-progress-story")
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 class ProgressStory extends LitElement {
   @property()
   defaultValue = 0;

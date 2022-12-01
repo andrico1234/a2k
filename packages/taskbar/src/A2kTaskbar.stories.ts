@@ -2,7 +2,7 @@ import { Meta, Story } from "@storybook/web-components";
 import { html } from "lit-html";
 import "./a2k-taskbar";
 
-const Template: Story = (props) => {
+const Template: Story = () => {
   return html`
     <div style="height:300px;display:grid">
       <div style="margin-top:auto;">

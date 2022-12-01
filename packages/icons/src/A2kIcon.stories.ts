@@ -7,6 +7,7 @@ import "./a2k-icon";
 import iconNames from "./iconNames";
 
 @customElement("a2k-icons")
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 class Icons extends LitElement {
   static styles = css`
     div {
