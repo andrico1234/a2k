@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.32
+
+### Patch Changes
+
+- 31d07b6: fix broken variable
+
 ## 0.0.31
 
 ### Patch Changes
