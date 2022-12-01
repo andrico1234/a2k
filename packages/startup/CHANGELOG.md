@@ -1,5 +1,13 @@
 # @a2000/startup
 
+## 0.0.11
+
+### Patch Changes
+
+- Updated dependencies [c4f315f]
+  - @a2000/button@0.0.9
+  - @a2000/progress@0.0.5
+
 ## 0.0.10
 
 ### Patch Changes

@@ -3,7 +3,7 @@
   "description": "A2K Startup",
   "license": "MIT",
   "author": "Andrico Karoulla",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "main": "lib/src/index.js",
   "module": "lib/src/index.js",
   "exports": {
@@ -11,9 +11,9 @@
     "./a2k-startup.js": "./lib/src/a2k-startup.js"
   },
   "dependencies": {
-    "@a2000/button": "0.0.8",
+    "@a2000/button": "0.0.9",
     "@a2000/cover": "0.0.2",
-    "@a2000/progress": "0.0.4",
+    "@a2000/progress": "0.0.5",
     "@a2000/stack": "0.0.3",
     "@a2000/utilities": "0.0.11"
   }

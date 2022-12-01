@@ -1,5 +1,13 @@
 # @a2000/window
 
+## 0.0.30
+
+### Patch Changes
+
+- c4f315f: improvefix accessibility issues
+- Updated dependencies [c4f315f]
+  - @a2000/button@0.0.9
+
 ## 0.0.29
 
 ### Patch Changes
