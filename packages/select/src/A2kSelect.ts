@@ -205,7 +205,7 @@ export class A2kSelect extends FormControlMixin(LitElement) {
   }
 
   toggleButton() {
-    return html`<a2k-button tabindex="-1" size="small">
+    return html`<a2k-button tabindex="-1" aria-label="Open Select" size="small">
       <a2k-icon icon="chevron-icon"></a2k-icon>
     </a2k-button> `;
   }
@@ -244,7 +244,7 @@ export class A2kSelect extends FormControlMixin(LitElement) {
         <div id="select">
           <div
             aria-controls="listbox"
-            ?aria-expanded=${this.expanded}
+            aria-expanded="${this.expanded}"
             aria-haspopup="listbox"
             aria-labelledby="label"
             class="combo-input"

@@ -1,4 +1,4 @@
-import { html, css, LitElement } from "lit";
+import { html, css, LitElement, nothing } from "lit";
 import { property } from "lit/decorators.js";
 import { FormControlMixin } from "@open-wc/form-control";
 
@@ -93,7 +93,11 @@ export class A2kButton extends FormControlMixin(LitElement) {
   }
 
   render() {
-    return html` <button data-size="${this.size}" ?disabled=${this.disabled}>
+    return html` <button
+      data-size="${this.size}"
+      aria-label="${this.ariaLabel || nothing}"
+      ?disabled=${this.disabled}
+    >
       <slot></slot>
     </button>`;
   }

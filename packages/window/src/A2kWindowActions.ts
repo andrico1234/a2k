@@ -30,6 +30,7 @@ export class A2kWindowActions extends LitElement {
       ?disabled="${!this.closeable}"
       @click="${this.handleClose}"
       size="small"
+      aria-label="Close Window"
     >
       <div id="icon-wrapper">
         <a2k-icon icon="cross-icon"></a2k-icon>

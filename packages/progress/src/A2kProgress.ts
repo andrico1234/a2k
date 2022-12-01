@@ -91,7 +91,9 @@ export class A2kProgress extends LitElement {
   }
 
   render() {
-    return html`<div id="progress" role="progress"></div>`;
+    return html`
+      <div aria-label="Loading progress" id="progress" role="progressbar"></div>
+    `;
   }
 }
 

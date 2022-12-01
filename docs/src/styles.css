@@ -16,6 +16,7 @@ body {
 }
 
 main {
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -125,4 +126,9 @@ a2k-panel > p {
 
 .input-wrapper {
   max-width: 360px;
+}
+
+.cover-image {
+  width: 100%;
+  aspect-ratio: 2 / 1;
 }
