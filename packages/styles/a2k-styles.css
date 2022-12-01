@@ -240,7 +240,7 @@ body {
   font-size: 1rem;
   font-family: var(--font-primary);
   line-height: 1.4;
-  letter-spacing: (--font-primary-letter-spacing);
+  letter-spacing: var(--font-primary-letter-spacing);
 }
 
 ::-webkit-scrollbar {
