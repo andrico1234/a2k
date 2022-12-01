@@ -1,0 +1,19 @@
+{
+  "name": "vanilla",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "wds --node-resolve --open --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@a2000/button": "^0.0.8",
+    "@a2000/styles": "^0.0.31",
+    "@web/dev-server": "^0.1.35",
+    "lit": "^2.4.1"
+  }
+}
