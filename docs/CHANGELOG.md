@@ -1,5 +1,12 @@
 # docs
 
+## 1.0.5
+
+### Patch Changes
+
+- Updated dependencies [31d07b6]
+  - @a2000/styles@0.0.32
+
 ## 1.0.4
 
 ### Patch Changes
