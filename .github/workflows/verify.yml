@@ -35,8 +35,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
       - run: yarn --immutable
+      - run: yarn build
+      - run: yarn site:build
+      - run: yarn lint
       - run: npx playwright@1.27 install --with-deps
-      # - run: yarn build
-      # - run: yarn site:build
-      # - run: yarn lint
       - run: yarn test
