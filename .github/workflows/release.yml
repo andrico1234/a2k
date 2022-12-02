@@ -26,7 +26,7 @@ jobs:
 
       - run: yarn build
 
-      - run: npx playwright install-deps
+      - run: yarn playwright install-deps
 
       - name: Publish to npm
         id: changesets

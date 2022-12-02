@@ -94,6 +94,7 @@ __metadata:
     husky: ^7.0.4
     lint-staged: ^12.1.5
     lit: ^2.4.0
+    playwright: ^1.28.1
     prettier: ^2.5.1
     storybook-anima: ^1.40.0
     svg-parser: ^2.0.4
@@ -15325,7 +15326,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"playwright@npm:^1.22.2":
+"playwright@npm:^1.22.2, playwright@npm:^1.28.1":
   version: 1.28.1
   resolution: "playwright@npm:1.28.1"
   dependencies:

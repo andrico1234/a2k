@@ -38,5 +38,5 @@ jobs:
       - run: yarn build
       - run: yarn site:build
       - run: yarn lint
-      - run: npx playwright@1.27 install --with-deps
+      - run: yarn playwright install --with-deps
       - run: yarn test
