@@ -3,21 +3,21 @@ import { html } from "lit";
 const privacyNoticeWindow = html`
   <a2k-window heading="Privacy Notice" draggable closeable>
     <a2k-stack>
+      <img class="cookie" src="/images/cookie.png" alt="a cookie" />
       <p>
-        Andricos2000 uses privacy-focused analytics to help improve the site. We
-        don't track any personal information and we don't use tracking cookies,
-        so you don't need to accept another pesky cookie banner.
+        Do you remember cookie banners back in the year 2000? Neither do we.
       </p>
       <p>
-        If you'd like to learn a little more about what data we use, check out
-        our provider's
+        We uses privacy-focused analytics to improve the site, but we don't
+        track any personal information or use tracking cookies. You won't find
+        any annoying cookie banners in Andricos2000.
+      </p>
+      <p>
+        For more info about the data we collect, check out our provider's
         <a href="https://getinsights.io/what-data-we-collect" target="_blank"
           >privacy statement</a
         >.
       </p>
-
-      <!-- TODO: Add a cookie tray gif -->
-      <p>Don't worry, you can still have a cookie 🍪</p>
     </a2k-stack>
   </a2k-window>
 `;

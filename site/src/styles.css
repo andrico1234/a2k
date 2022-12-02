@@ -42,3 +42,18 @@ a {
 .heading > span {
   font-weight: var(--font-weight-regular);
 }
+
+.cookie {
+  width: calc(32px * 3);
+  animation: spin 2s infinite steps(11) alternate;
+  margin: var(--spacing-100) auto;
+}
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(180deg);
+  }
+}
