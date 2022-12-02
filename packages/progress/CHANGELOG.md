@@ -1,5 +1,11 @@
 # @a2000/progress
 
+## 0.0.5
+
+### Patch Changes
+
+- c4f315f: improvefix accessibility issues
+
 ## 0.0.4
 
 ### Patch Changes
