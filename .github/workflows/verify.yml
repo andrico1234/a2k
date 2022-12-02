@@ -38,7 +38,4 @@ jobs:
       - run: yarn build
       - run: yarn site:build
       - run: yarn lint
-
-      - run: npx playwright install-deps
-
       - run: yarn test
