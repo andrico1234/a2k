@@ -5,6 +5,12 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@a2000/blue-screen@workspace:packages/blue-screen":
+  version: 0.0.0-use.local
+  resolution: "@a2000/blue-screen@workspace:packages/blue-screen"
+  languageName: unknown
+  linkType: soft
+
 "@a2000/button@0.0.9, @a2000/button@workspace:packages/button":
   version: 0.0.0-use.local
   resolution: "@a2000/button@workspace:packages/button"

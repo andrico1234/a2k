@@ -1,0 +1,13 @@
+{
+  "name": "@a2000/blue-screen",
+  "description": "A2K Blue Screen",
+  "license": "MIT",
+  "author": "Andrico Karoulla",
+  "version": "0.0.1s",
+  "main": "lib/src/index.js",
+  "module": "lib/src/index.js",
+  "exports": {
+    ".": "./lib/src/index.js",
+    "./a2k-button.js": "./lib/src/a2k-blue-screen.js"
+  }
+}
