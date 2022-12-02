@@ -1,5 +1,16 @@
 # docs
 
+## 1.0.6
+
+### Patch Changes
+
+- Updated dependencies [c4f315f]
+  - @a2000/button@0.0.9
+  - @a2000/progress@0.0.5
+  - @a2000/select@0.0.7
+  - @a2000/window@0.0.30
+  - @a2000/taskbar@0.0.30
+
 ## 1.0.5
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @a2000/select
 
+## 0.0.7
+
+### Patch Changes
+
+- c4f315f: improvefix accessibility issues
+- Updated dependencies [c4f315f]
+  - @a2000/button@0.0.9
+
 ## 0.0.6
 
 ### Patch Changes

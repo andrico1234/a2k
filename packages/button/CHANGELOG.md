@@ -1,5 +1,11 @@
 # @a2000/button
 
+## 0.0.9
+
+### Patch Changes
+
+- c4f315f: improvefix accessibility issues
+
 ## 0.0.8
 
 ### Patch Changes
