@@ -232,6 +232,11 @@ Variable names should follow the format
   --window-topbar-height: 28px;
 
   --window-toolbar-item-color-background: var(--color-gray-550);
+
+  --blue-screen-color-background: hsl(240deg, 100%, 24%);
+  --blue-screen-font-weight: var(--font-weight-regular);
+  --blue-screen-font-color: var(--color-white);
+  --blue-screen-font-size: var(--font-size-100);
 }
 
 body {
