@@ -135,7 +135,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@a2000/styles@0.0.32, @a2000/styles@workspace:packages/styles":
+"@a2000/styles@0.0.33, @a2000/styles@workspace:packages/styles":
   version: 0.0.0-use.local
   resolution: "@a2000/styles@workspace:packages/styles"
   languageName: unknown
@@ -9234,7 +9234,7 @@ __metadata:
     "@a2000/panel": 0.0.4
     "@a2000/progress": 0.0.5
     "@a2000/select": 0.0.7
-    "@a2000/styles": 0.0.32
+    "@a2000/styles": 0.0.33
     "@a2000/taskbar": 0.0.30
     "@a2000/text-field": 0.0.5
     "@a2000/window": 0.0.30
@@ -17161,7 +17161,7 @@ __metadata:
     "@a2000/progress": 0.0.5
     "@a2000/select": 0.0.7
     "@a2000/startup": 0.0.11
-    "@a2000/styles": 0.0.32
+    "@a2000/styles": 0.0.33
     "@a2000/taskbar": 0.0.30
     "@a2000/text-field": 0.0.5
     "@a2000/window": 0.0.30

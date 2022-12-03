@@ -1,5 +1,12 @@
 # site
 
+## 1.0.50
+
+### Patch Changes
+
+- Updated dependencies [f43971c]
+  - @a2000/styles@0.0.33
+
 ## 1.0.49
 
 ### Patch Changes
