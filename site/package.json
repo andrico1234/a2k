@@ -13,6 +13,7 @@
   "author": "Andrico Karoulla",
   "license": "ISC",
   "dependencies": {
+    "@a2000/blue-screen": "0.0.3",
     "@a2000/button": "0.0.9",
     "@a2000/desktop": "0.0.9",
     "@a2000/icons": "0.0.13",

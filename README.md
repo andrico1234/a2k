@@ -16,6 +16,7 @@ Check out:
 
 ## Components
 
+- [a2k-blue-screen](https://github.com/andrico1234/a2k/tree/main/packages/blue-screen)
 - [a2k-button](https://github.com/andrico1234/a2k/tree/main/packages/button)
 - [a2k-cover](https://github.com/andrico1234/a2k/tree/main/packages/cover)
 - [a2k-desktop](https://github.com/andrico1234/a2k/tree/main/packages/desktop)

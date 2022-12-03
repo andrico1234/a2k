@@ -1,5 +1,6 @@
 import { render } from "lit";
 import startUpWindow from "./templates/startUpWindow";
+import blueScreen from "./templates/blueScreen";
 import "./templates/ie5";
 import "./templates/about";
 import "./templates/brokenWindow";
@@ -84,6 +85,17 @@ const onWindowDrag = (e) => {
   newEl.setAttribute("top", top);
   newEl.setAttribute("left", left);
 };
+
+window.addEventListener("keypress", handleKeyPress);
+
+function handleKeyPress() {
+  // Update this to trigger on click with a 1/1000 chance
+  if (false) {
+    window.removeEventListener("keypress", handleKeyPress);
+    body.textContent = "";
+    render(blueScreen, body);
+  }
+}
 
 window.addEventListener("startup-progress", (e) => {
   if (e.detail.progress < 50) return;
