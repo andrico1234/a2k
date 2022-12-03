@@ -3,7 +3,7 @@
   "description": "A2K Blue Screen",
   "license": "MIT",
   "author": "Andrico Karoulla",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "lib/src/index.js",
   "module": "lib/src/index.js",
   "exports": {

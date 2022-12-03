@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.33
+
+### Patch Changes
+
+- f43971c: create basic UI for blue screen
+
 ## 0.0.32
 
 ### Patch Changes
