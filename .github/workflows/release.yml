@@ -15,18 +15,17 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Node.js 16.x
+      - name: Setup Node.js
         uses: actions/setup-node@master
         with:
           registry-url: "https://registry.npmjs.org"
-          node-version: 16.x
+          node-version: 18.x
 
       - name: Install Dependencies
         run: yarn --immutable
 
       - run: yarn build
-
-      - run: yarn playwright install-deps
+      - run: yarn playwright install --with-deps
 
       - name: Publish to npm
         id: changesets
