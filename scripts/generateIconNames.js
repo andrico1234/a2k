@@ -1,5 +1,6 @@
 const { readFileSync, writeFileSync } = require("fs");
 const { parse } = require("svg-parser");
+const prettier = require("prettier");
 
 function generateIconNames() {
   const icons = readFileSync("packages/icons/a2k-icons.svg", {
@@ -20,7 +21,7 @@ function generateIconNames() {
 
   const namesArr = JSON.stringify([...names]);
 
-  const file = `export default ${namesArr}`;
+  const file = prettier.format(`export default ${namesArr}`);
 
   writeFileSync("packages/icons/src/iconNames.ts", file);
 }
