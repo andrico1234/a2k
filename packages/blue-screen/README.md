@@ -1,5 +1,7 @@
 # Blue Screen of Death
 
+Scare your users by adding a blue screen of death to your web applications
+
 ## Quick Start
 
 1. Begin by installing with your favourite package manager:
