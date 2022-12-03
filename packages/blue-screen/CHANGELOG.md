@@ -1,5 +1,11 @@
 # @a2000/blue-screen
 
+## 0.0.4
+
+### Patch Changes
+
+- 2e98aaf: fix blue screen export
+
 ## 0.0.3
 
 ### Patch Changes
