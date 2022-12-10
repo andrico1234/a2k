@@ -1,5 +1,13 @@
 # @a2000/desktop
 
+## 0.0.10
+
+### Patch Changes
+
+- 178ba3e: move over desktop icon into its own icon-button package
+- Updated dependencies [178ba3e]
+  - @a2000/icon-button@0.0.2
+
 ## 0.0.9
 
 ### Patch Changes

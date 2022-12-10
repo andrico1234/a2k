@@ -1,5 +1,13 @@
 # site
 
+## 1.0.51
+
+### Patch Changes
+
+- Updated dependencies [178ba3e]
+  - @a2000/desktop@0.0.10
+  - @a2000/icon-button@0.0.2
+
 ## 1.0.50
 
 ### Patch Changes
