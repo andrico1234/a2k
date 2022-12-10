@@ -5,7 +5,7 @@ import "@a2000/icons/a2k-icon.js";
 
 // TODO: move this over to an IconButton package
 
-export class A2kDesktopIcon extends LitElement {
+export class A2kIconButton extends LitElement {
   static styles = css`
     :host([hidden]) {
       display: none;

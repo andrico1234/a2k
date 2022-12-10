@@ -35,6 +35,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@a2000/icon-button@workspace:packages/icon-button":
+  version: 0.0.0-use.local
+  resolution: "@a2000/icon-button@workspace:packages/icon-button"
+  dependencies:
+    "@a2000/icons": 0.0.13
+  languageName: unknown
+  linkType: soft
+
 "@a2000/icons@0.0.13, @a2000/icons@workspace:packages/icons":
   version: 0.0.0-use.local
   resolution: "@a2000/icons@workspace:packages/icons"

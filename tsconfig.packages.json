@@ -5,6 +5,9 @@
       "path": "./packages/cover/tsconfig.json"
     },
     {
+      "path": "./packages/icon-button/tsconfig.json"
+    },
+    {
       "path": "./packages/blue-screen/tsconfig.json"
     },
     {

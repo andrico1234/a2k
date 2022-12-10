@@ -1,0 +1,16 @@
+{
+  "name": "@a2000/icon-button",
+  "description": "A2K Icon Button",
+  "license": "MIT",
+  "author": "Andrico Karoulla",
+  "version": "0.0.1",
+  "main": "lib/src/index.js",
+  "module": "lib/src/index.js",
+  "exports": {
+    ".": "./lib/src/index.js",
+    "./a2k-icon-button.js": "./lib/src/a2k-icon-button.js"
+  },
+  "dependencies": {
+    "@a2000/icons": "0.0.13"
+  }
+}

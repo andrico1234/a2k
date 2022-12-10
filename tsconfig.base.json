@@ -21,6 +21,7 @@
     "useDefineForClassFields": false,
     "paths": {
       "@a2000/cover": ["packages/cover/src"],
+      "@a2000/icon-button": ["packages/icon-button/src"],
       "@a2000/text-field": ["packages/text-field/src"],
       "@a2000/startup": ["packages/startup/src"],
       "@a2000/stack": ["packages/stack/src"],
