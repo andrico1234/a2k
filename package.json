@@ -34,7 +34,7 @@
   "author": "Andrico Karoulla",
   "license": "ISC",
   "dependencies": {
-    "lit": "^2.4.1"
+    "lit": "^2.5.0"
   },
   "devDependencies": {
     "@changesets/cli": "^2.18.1",
@@ -53,7 +53,6 @@
     "@storybook/builder-webpack5": "^6.5.12",
     "@storybook/manager-webpack5": "^6.5.12",
     "@storybook/web-components": "^6.5.12",
-    "@svgr/webpack": "^6.4.0",
     "@types/svg-parser": "^2.0.3",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "5.38.0",
@@ -71,8 +70,8 @@
     "prettier": "^2.5.1",
     "storybook-anima": "^1.43.0",
     "svg-parser": "^2.0.4",
-    "typescript": "^4.9.3",
-    "vite": "^3.2.4",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.0",
     "wsrun": "^5.2.4"
   },
   "description": "",

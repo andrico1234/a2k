@@ -1,7 +1,9 @@
 import { html, css, LitElement } from "lit";
+import { consume } from "@lit-labs/context";
 import { property } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { DragController, getSmallestValue } from "@a2000/utilities";
+import { WindowContext, windowContext } from "./windowContext";
 
 import "@a2000/stack/a2k-stack.js";
 import "@a2000/panel/a2k-panel.js";
@@ -58,6 +60,10 @@ export class A2kWindow extends LitElement {
     }
   `;
 
+  @consume({ context: windowContext, subscribe: true })
+  @property({ type: String })
+  public windows?: WindowContext;
+
   @property({ type: String })
   heading = "";
 
@@ -68,6 +74,7 @@ export class A2kWindow extends LitElement {
   closeable = false;
 
   @property({ type: Number })
+  // default is 32
   x = 32;
 
   @property({ type: Number })

@@ -9,6 +9,7 @@
   "exports": {
     ".": "./lib/src/index.js",
     "./a2k-window.js": "./lib/src/a2k-window.js",
+    "./a2k-window-context.js": "./lib/src/a2k-window-context.js",
     "./a2k-window-toolbar.js": "./lib/src/a2k-window-toolbar.js",
     "./a2k-window-toolbar-item.js": "./lib/src/a2k-window-toolbar-item.js",
     "./a2k-window-status-bar.js": "./lib/src/a2k-window-status-bar.js"
@@ -18,9 +19,10 @@
     "@a2000/icons": "0.0.13",
     "@a2000/panel": "0.0.4",
     "@a2000/stack": "0.0.3",
-    "@a2000/utilities": "0.0.11"
+    "@a2000/utilities": "0.0.11",
+    "@lit-labs/context": "0.2.0"
   },
   "devDependencies": {
-    "element-internals-polyfill": "1.1.16"
+    "element-internals-polyfill": "1.1.17"
   }
 }

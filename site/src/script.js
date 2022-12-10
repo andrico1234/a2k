@@ -5,6 +5,7 @@ import "./templates/ie5";
 import "./templates/about";
 import "./templates/brokenWindow";
 import privacyNotice from "./templates/privacyNotice";
+import Queue from "./scripts/queue";
 
 const body = document.querySelector("body");
 const audioUrl = new URL("./andricos-2000-startup.mp3", import.meta.url);
@@ -46,9 +47,27 @@ const internetIcon = document.querySelector(
   'a2k-icon-button[icon="internet-icon"]'
 );
 
+const ieLoadQueue = new Queue();
+
+let isQueueing = true;
+
+setTimeout(() => {
+  isQueueing = false;
+
+  while (!ieLoadQueue.isEmpty()) {
+    ieLoadQueue.dequeue();
+    const ie5El = document.createElement("a2k-ie5");
+    windowsContainer.append(ie5El);
+  }
+}, 10000);
+
 internetIcon.onOpen = () => {
-  const ie5El = document.createElement("a2k-ie5");
-  windowsContainer.append(ie5El);
+  if (isQueueing) {
+    ieLoadQueue.enqueue();
+  } else {
+    const ie5El = document.createElement("a2k-ie5");
+    windowsContainer.append(ie5El);
+  }
 };
 
 const privacyIcon = document.querySelector('a2k-icon-button[icon="lock-icon"]');
