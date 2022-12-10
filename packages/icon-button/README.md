@@ -25,7 +25,7 @@
       import "@a2000/button/a2k-icon-button.js";
 
       const aboutIcon = document.querySelector(
-        'a2k-desktop-icon[icon="help-icon"]'
+        'a2k-icon-button[icon="help-icon"]'
       );
 
       aboutIcon.onOpen = () => {

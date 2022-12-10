@@ -12,12 +12,12 @@ A full height grid container that can be used to render desktop icons.
 
 ```html
 <script type="module">
-  import "a2k-desktop/a2k-desktop.js";
-  import "a2k-desktop/a2k-desktop-icon.js";
+  import "@a2000/desktop/a2k-desktop.js";
+  import "@a2000/icon-button/a2k-icon-button.js";
 </script>
 
 <a2k-desktop>
-  <a2k-desktop-icon icon="help-icon" text="help"></a2k-desktop-icon>
+  <a2k-icon-button icon="help-icon" text="help"></a2k-icon-button>
 </a2k-desktop>
 ```
 

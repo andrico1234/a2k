@@ -11,7 +11,7 @@ const audioUrl = new URL("./andricos-2000-startup.mp3", import.meta.url);
 const windowsContainer = document.querySelector("#windows-container");
 
 const portfolioIcon = document.querySelector(
-  'a2k-desktop-icon[icon="documents-icon"]'
+  'a2k-icon-button[icon="documents-icon"]'
 );
 
 portfolioIcon.onOpen = () => {
@@ -19,7 +19,7 @@ portfolioIcon.onOpen = () => {
 };
 
 const contactIcon = document.querySelector(
-  'a2k-desktop-icon[icon="network-icon"]'
+  'a2k-icon-button[icon="network-icon"]'
 );
 
 contactIcon.onOpen = () => {
@@ -28,14 +28,14 @@ contactIcon.onOpen = () => {
 };
 
 const githubIcon = document.querySelector(
-  'a2k-desktop-icon[icon="github-icon"]'
+  'a2k-icon-button[icon="github-icon"]'
 );
 
 githubIcon.onOpen = () => {
   window.location.href = "https://github.com/andrico1234/a2k";
 };
 
-const aboutIcon = document.querySelector('a2k-desktop-icon[icon="help-icon"]');
+const aboutIcon = document.querySelector('a2k-icon-button[icon="help-icon"]');
 
 aboutIcon.onOpen = () => {
   const aboutEl = document.createElement("a2k-about");
@@ -43,7 +43,7 @@ aboutIcon.onOpen = () => {
 };
 
 const internetIcon = document.querySelector(
-  'a2k-desktop-icon[icon="internet-icon"]'
+  'a2k-icon-button[icon="internet-icon"]'
 );
 
 internetIcon.onOpen = () => {
@@ -51,9 +51,7 @@ internetIcon.onOpen = () => {
   windowsContainer.append(ie5El);
 };
 
-const privacyIcon = document.querySelector(
-  'a2k-desktop-icon[icon="lock-icon"]'
-);
+const privacyIcon = document.querySelector('a2k-icon-button[icon="lock-icon"]');
 
 privacyIcon.onOpen = () => {
   const privacyNoticeContainer = document.createElement("div");
@@ -172,7 +170,7 @@ function loadWindow() {
 }
 
 function loadDesktopIcons() {
-  const desktopIcons = document.querySelectorAll("a2k-desktop-icon");
+  const desktopIcons = document.querySelectorAll("a2k-icon-button");
 
   setTimeout(() => {
     desktopIcons.forEach((icon) => {

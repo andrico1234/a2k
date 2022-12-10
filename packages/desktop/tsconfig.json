@@ -6,7 +6,7 @@
   },
   "references": [
     {
-      "path": "../icons"
+      "path": "../icon-button"
     }
   ],
   "include": ["src/**/*.ts", "index.ts", "typings"],
