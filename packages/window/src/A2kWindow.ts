@@ -4,6 +4,7 @@ import { property } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { DragController, getSmallestValue } from "@a2000/utilities";
 import { WindowContext, windowContext } from "./windowContext";
+import { v4 as uuid } from "uuid";
 
 import "@a2000/stack/a2k-stack.js";
 import "@a2000/panel/a2k-panel.js";
@@ -60,6 +61,8 @@ export class A2kWindow extends LitElement {
     }
   `;
 
+  id = uuid();
+
   @consume({ context: windowContext, subscribe: true })
   @property({ type: String })
   public windows?: WindowContext;
@@ -74,7 +77,6 @@ export class A2kWindow extends LitElement {
   closeable = false;
 
   @property({ type: Number })
-  // default is 32
   x = 32;
 
   @property({ type: Number })
@@ -98,6 +100,28 @@ export class A2kWindow extends LitElement {
     this.addEventListener("close", () => {
       return this.remove();
     });
+  }
+
+  connectedCallback(): void {
+    super.connectedCallback();
+
+    if (this.windows) {
+      this.windows.registerWindow(this.id);
+
+      const windowCount = this.windows.count;
+      // generate id for element
+
+      console.log(windowCount);
+      //
+    }
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+
+    if (this.windows) {
+      this.windows.unregisterWindow(this.id);
+    }
   }
 
   protected firstUpdated(): void {
