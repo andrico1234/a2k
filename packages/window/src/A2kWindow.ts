@@ -1,7 +1,10 @@
 import { html, css, LitElement } from "lit";
+import { consume } from "@lit-labs/context";
 import { property } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
 import { DragController, getSmallestValue } from "@a2000/utilities";
+import { WindowContext, windowContext } from "./windowContext";
+import { v4 as uuid } from "uuid";
 
 import "@a2000/stack/a2k-stack.js";
 import "@a2000/panel/a2k-panel.js";
@@ -58,6 +61,12 @@ export class A2kWindow extends LitElement {
     }
   `;
 
+  id = uuid();
+
+  @consume({ context: windowContext, subscribe: true })
+  @property({ type: String })
+  public windows?: WindowContext;
+
   @property({ type: String })
   heading = "";
 
@@ -91,6 +100,26 @@ export class A2kWindow extends LitElement {
     this.addEventListener("close", () => {
       return this.remove();
     });
+  }
+
+  connectedCallback(): void {
+    super.connectedCallback();
+
+    if (this.windows) {
+      this.windows.registerWindow(this.id);
+
+      const windowCount = this.windows.count;
+      this.x = windowCount * 32;
+      this.y = windowCount * 32;
+    }
+  }
+
+  disconnectedCallback() {
+    super.disconnectedCallback();
+
+    if (this.windows) {
+      this.windows.unregisterWindow(this.id);
+    }
   }
 
   protected firstUpdated(): void {

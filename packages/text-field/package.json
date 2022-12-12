@@ -12,6 +12,6 @@
   },
   "dependencies": {
     "@open-wc/form-control": "0.4.1",
-    "element-internals-polyfill": "1.1.16"
+    "element-internals-polyfill": "1.1.17"
   }
 }

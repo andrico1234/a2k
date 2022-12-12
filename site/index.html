@@ -38,11 +38,7 @@
           icon="network-icon"
           text="Send Feedback"
         ></a2k-icon-button>
-        <a2k-icon-button
-          hidden
-          icon="help-icon"
-          text="About"
-        ></a2k-icon-button>
+        <a2k-icon-button hidden icon="help-icon" text="About"></a2k-icon-button>
         <a2k-icon-button
           hidden
           icon="github-icon"
@@ -64,7 +60,9 @@
         <a2k-taskbar></a2k-taskbar>
       </div>
 
-      <div id="windows-container"></div>
+      <a2k-window-context>
+        <div id="windows-container"></div>
+      </a2k-window-context>
 
       <div class="fixed-container">
         <a2k-startup></a2k-startup>
@@ -73,6 +71,7 @@
 
     <script type="module">
       import "@a2000/window/a2k-window.js";
+      import "@a2000/window/a2k-window-context.js";
       import "@a2000/window/a2k-window-toolbar.js";
       import "@a2000/window/a2k-window-toolbar-item.js";
       import "@a2000/window/a2k-window-status-bar.js";
