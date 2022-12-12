@@ -49,11 +49,11 @@ const internetIcon = document.querySelector(
 
 const ieLoadQueue = new Queue();
 
-let isQueueing = true;
+let queueState = "idle";
 
 function initInternetQueue() {
   setTimeout(() => {
-    isQueueing = false;
+    queueState = "off";
 
     const dequeueItem = () => {
       setTimeout(() => {
@@ -74,7 +74,11 @@ function initInternetQueue() {
 }
 
 internetIcon.onOpen = () => {
-  if (isQueueing) {
+  if (queueState === "idle") {
+    queueState = "queueing";
+    ieLoadQueue.enqueue();
+    initInternetQueue();
+  } else if (queueState === "queueing") {
     ieLoadQueue.enqueue();
   } else {
     const ie5El = document.createElement("a2k-ie5");
@@ -204,7 +208,6 @@ function loadDesktopIcons() {
   const desktopIcons = document.querySelectorAll("a2k-icon-button");
 
   setTimeout(() => {
-    initInternetQueue();
     desktopIcons.forEach((icon) => {
       icon.removeAttribute("hidden");
     });
