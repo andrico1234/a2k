@@ -1,5 +1,11 @@
 # @a2000/window
 
+## 0.0.31
+
+### Patch Changes
+
+- 07302c8: if window is a child of a window context, then offset its position when created
+
 ## 0.0.30
 
 ### Patch Changes
