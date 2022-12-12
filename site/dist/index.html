@@ -21,49 +21,47 @@
     />
     <script src="https://getinsights.io/js/insights.js"></script>
     
-    <script type="module" crossorigin src="/assets/index.20d1d11d.js"></script>
-    <link rel="stylesheet" href="/assets/index.c02e7117.css">
+    <script type="module" crossorigin src="/assets/index-c2dc0010.js"></script>
+    <link rel="stylesheet" href="/assets/index-bfe9e457.css">
   </head>
   <body>
     <div id="app">
       <a2k-desktop>
-        <a2k-desktop-icon
+        <a2k-icon-button
           hidden
           icon="documents-icon"
           text="Portfolio"
-        ></a2k-desktop-icon>
-        <a2k-desktop-icon
+        ></a2k-icon-button>
+        <a2k-icon-button
           hidden
           icon="network-icon"
           text="Send Feedback"
-        ></a2k-desktop-icon>
-        <a2k-desktop-icon
-          hidden
-          icon="help-icon"
-          text="About"
-        ></a2k-desktop-icon>
-        <a2k-desktop-icon
+        ></a2k-icon-button>
+        <a2k-icon-button hidden icon="help-icon" text="About"></a2k-icon-button>
+        <a2k-icon-button
           hidden
           icon="github-icon"
           text="GitHub"
-        ></a2k-desktop-icon>
-        <a2k-desktop-icon
+        ></a2k-icon-button>
+        <a2k-icon-button
           hidden
           icon="internet-icon"
           text="Internet Explorer"
-        ></a2k-desktop-icon>
-        <a2k-desktop-icon
+        ></a2k-icon-button>
+        <a2k-icon-button
           hidden
           icon="lock-icon"
           text="Privacy Notice"
-        ></a2k-desktop-icon>
+        ></a2k-icon-button>
       </a2k-desktop>
 
       <div class="taskbar">
         <a2k-taskbar></a2k-taskbar>
       </div>
 
-      <div id="windows-container"></div>
+      <a2k-window-context>
+        <div id="windows-container"></div>
+      </a2k-window-context>
 
       <div class="fixed-container">
         <a2k-startup></a2k-startup>
