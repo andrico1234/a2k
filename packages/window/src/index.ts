@@ -4,3 +4,4 @@ export { A2kWindowToolbar } from "./A2kWindowToolbar";
 export { A2kWindowToolbarItem } from "./A2kWindowToolbarItem";
 export { A2kWindowStatusBar } from "./A2kWindowStatusBar";
 export { A2kWindowContext } from "./A2kWindowContext";
+export { windowContext, WindowContext } from "./windowContext";

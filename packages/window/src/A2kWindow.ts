@@ -109,10 +109,8 @@ export class A2kWindow extends LitElement {
       this.windows.registerWindow(this.id);
 
       const windowCount = this.windows.count;
-      // generate id for element
-
-      console.log(windowCount);
-      //
+      this.x = windowCount * 32;
+      this.y = windowCount * 32;
     }
   }
 

@@ -51,15 +51,27 @@ const ieLoadQueue = new Queue();
 
 let isQueueing = true;
 
-setTimeout(() => {
-  isQueueing = false;
+function initInternetQueue() {
+  setTimeout(() => {
+    isQueueing = false;
 
-  while (!ieLoadQueue.isEmpty()) {
-    ieLoadQueue.dequeue();
-    const ie5El = document.createElement("a2k-ie5");
-    windowsContainer.append(ie5El);
-  }
-}, 10000);
+    const dequeueItem = () => {
+      setTimeout(() => {
+        ieLoadQueue.dequeue();
+        const ie5El = document.createElement("a2k-ie5");
+        windowsContainer.append(ie5El);
+
+        if (!ieLoadQueue.isEmpty()) {
+          dequeueItem();
+        }
+      }, 100);
+    };
+
+    if (!ieLoadQueue.isEmpty()) {
+      dequeueItem();
+    }
+  }, 4000);
+}
 
 internetIcon.onOpen = () => {
   if (isQueueing) {
@@ -192,6 +204,7 @@ function loadDesktopIcons() {
   const desktopIcons = document.querySelectorAll("a2k-icon-button");
 
   setTimeout(() => {
+    initInternetQueue();
     desktopIcons.forEach((icon) => {
       icon.removeAttribute("hidden");
     });

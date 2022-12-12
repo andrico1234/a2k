@@ -1,8 +1,10 @@
 # Window
 
-A draggable and closeable window that can be used to display content
+## a2k-window
 
-## Usage
+A draggable and closeable window that can be used to display content.
+
+### Usage
 
 1. Begin by installing with your favourite package manager:
 
@@ -20,7 +22,7 @@ A draggable and closeable window that can be used to display content
 </a2k-window>
 ```
 
-## API
+### API
 
 | Name      | Type    | Default Value | Description                          |
 | --------- | ------- | ------------- | ------------------------------------ |
@@ -29,3 +31,9 @@ A draggable and closeable window that can be used to display content
 | closeable | boolean | false         | -                                    |
 | x         | string  | 32            | The initial x position of the window |
 | y         | string  | 32            | The initial y position of the window |
+
+## a2k-window-context
+
+TODO: Add example for a2k-window-context
+
+Display number of active windows in the toolbar
