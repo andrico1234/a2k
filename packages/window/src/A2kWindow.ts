@@ -63,7 +63,7 @@ export class A2kWindow extends LitElement {
 
   id = uuid();
 
-  @consume({ context: windowContext, subscribe: true })
+  @consume({ context: windowContext })
   @property({ type: String })
   public windows?: WindowContext;
 
@@ -77,10 +77,10 @@ export class A2kWindow extends LitElement {
   closeable = false;
 
   @property({ type: Number })
-  x = 32;
+  x = -1;
 
   @property({ type: Number })
-  y = 32;
+  y = -1;
 
   private drag = new DragController(this, {
     initialPosition: {},
@@ -105,12 +105,20 @@ export class A2kWindow extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
 
-    if (this.windows) {
+    if (this.windows && (this.x === -1 || this.y === -1)) {
       this.windows.registerWindow(this.id);
 
       const windowCount = this.windows.count;
       this.x = windowCount * 32;
       this.y = windowCount * 32;
+    }
+
+    if (this.x === -1) {
+      this.x = 0;
+    }
+
+    if (this.y === -1) {
+      this.y = 0;
     }
   }
 
