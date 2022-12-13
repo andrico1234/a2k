@@ -1,5 +1,11 @@
 # @a2000/window
 
+## 0.0.32
+
+### Patch Changes
+
+- dd769a2: prevent automatically setting position if user has provided their own x or y position
+
 ## 0.0.31
 
 ### Patch Changes
