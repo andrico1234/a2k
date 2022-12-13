@@ -148,7 +148,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@a2000/taskbar@0.0.31, @a2000/taskbar@workspace:packages/taskbar":
+"@a2000/taskbar@0.0.32, @a2000/taskbar@workspace:packages/taskbar":
   version: 0.0.0-use.local
   resolution: "@a2000/taskbar@workspace:packages/taskbar"
   dependencies:
@@ -156,7 +156,7 @@ __metadata:
     "@a2000/panel": 0.0.4
     "@a2000/stack": 0.0.3
     "@a2000/utilities": 0.0.11
-    "@a2000/window": 0.0.31
+    "@a2000/window": 0.0.32
   languageName: unknown
   linkType: soft
 
@@ -177,7 +177,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@a2000/window@0.0.31, @a2000/window@workspace:packages/window":
+"@a2000/window@0.0.32, @a2000/window@workspace:packages/window":
   version: 0.0.0-use.local
   resolution: "@a2000/window@workspace:packages/window"
   dependencies:
@@ -9204,9 +9204,9 @@ __metadata:
     "@a2000/progress": 0.0.5
     "@a2000/select": 0.0.7
     "@a2000/styles": 0.0.33
-    "@a2000/taskbar": 0.0.31
+    "@a2000/taskbar": 0.0.32
     "@a2000/text-field": 0.0.5
-    "@a2000/window": 0.0.31
+    "@a2000/window": 0.0.32
   languageName: unknown
   linkType: soft
 
@@ -16982,9 +16982,9 @@ __metadata:
     "@a2000/select": 0.0.7
     "@a2000/startup": 0.0.11
     "@a2000/styles": 0.0.33
-    "@a2000/taskbar": 0.0.31
+    "@a2000/taskbar": 0.0.32
     "@a2000/text-field": 0.0.5
-    "@a2000/window": 0.0.31
+    "@a2000/window": 0.0.32
   languageName: unknown
   linkType: soft
 
