@@ -19,16 +19,16 @@ export class BrokenWindow extends LitElement {
     }
   `;
 
-  @property()
+  @property({ type: Number })
   height = 0;
 
-  @property()
+  @property({ type: Number })
   width = 0;
 
-  @property()
+  @property({ type: Number })
   top = 0;
 
-  @property()
+  @property({ type: Number })
   left = 0;
 
   render() {
