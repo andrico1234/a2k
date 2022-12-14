@@ -1,5 +1,13 @@
 # docs
 
+## 1.0.10
+
+### Patch Changes
+
+- Updated dependencies [dd769a2]
+  - @a2000/window@0.0.32
+  - @a2000/taskbar@0.0.32
+
 ## 1.0.9
 
 ### Patch Changes
