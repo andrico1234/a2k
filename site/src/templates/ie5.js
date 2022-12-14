@@ -1,4 +1,10 @@
 import { css, html, LitElement } from "lit";
+import "./advert";
+
+const advert1 = new URL("../images/cookie-2.png", import.meta.url).href;
+const advert2 = new URL("../images/cookie-2.png", import.meta.url).href;
+const advert3 = new URL("../images/cookie-2.png", import.meta.url).href;
+const advert4 = new URL("../images/cookie-2.png", import.meta.url).href;
 
 class IE5 extends LitElement {
   static styles = css`
@@ -16,9 +22,19 @@ class IE5 extends LitElement {
       flex: 1;
     }
 
+    #content {
+      position: relative;
+      padding: 0;
+    }
+
+    a2k-stack {
+      position: relative;
+    }
+
     a2k-window > a2k-marquee {
       padding: 0;
     }
+
     img {
       object-fit: cover;
       padding: 0;
@@ -63,15 +79,20 @@ class IE5 extends LitElement {
           </div>
         </a2k-window-toolbar-item>
       </a2k-window-toolbar>
-      <a2k-marquee>
-        <p slot="text">Internet Explorer has reached end of life. RIP king.</p>
-      </a2k-marquee>
-      <img src="/images/ie5-splash.png" />
-      <a2k-window-status-bar
-        statusOne="Loaded"
-        statusTwo="${this.connection}"
-        slot="statusbar"
-      ></a2k-window-status-bar>
+      <a2k-stack>
+        <a2k-marquee>
+          <p slot="text">
+            Internet Explorer has reached end of life. RIP king.
+          </p>
+        </a2k-marquee>
+        <img src="/images/ie5-splash.png" />
+        <a2k-advert></a2k-advert>
+        <a2k-window-status-bar
+          statusOne="Loaded"
+          statusTwo="${this.connection}"
+          slot="statusbar"
+        ></a2k-window-status-bar>
+      </a2k-stack>
     </a2k-window>`;
   }
 }
