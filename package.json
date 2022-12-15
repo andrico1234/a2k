@@ -68,7 +68,6 @@
     "lint-staged": "^12.1.5",
     "playwright": "^1.28.1",
     "prettier": "^2.5.1",
-    "storybook-anima": "^1.43.0",
     "svg-parser": "^2.0.4",
     "typescript": "^4.9.4",
     "vite": "^4.0.0",
