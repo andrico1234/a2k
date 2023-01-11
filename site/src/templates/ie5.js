@@ -1,7 +1,8 @@
 import { css, html, LitElement } from "lit";
 import "./advert";
+import "./static-advert";
 
-const advert1 = new URL("../images/image-1.jpg", import.meta.url).href;
+const advert1 = new URL("../images/cali-skills-ad.gif", import.meta.url).href;
 const advert2 = new URL("../images/image-1.jpg", import.meta.url).href;
 const advert3 = new URL("../images/image-1.jpg", import.meta.url).href;
 const advert4 = new URL("../images/image-1.jpg", import.meta.url).href;
@@ -9,6 +10,7 @@ class IE5 extends LitElement {
   static styles = css`
     :host {
       --panel-color-background: white;
+      --window-width: 800px;
     }
 
     .toolbar-row {
@@ -23,6 +25,21 @@ class IE5 extends LitElement {
 
     #content {
       position: relative;
+    }
+
+    #with-sidebar {
+      display: flex;
+    }
+
+    #sidebar {
+      flex-basis: 10rem;
+      flex-grow: 1;
+      position: relative;
+    }
+
+    #not-sidebar {
+      flex-basis: 0;
+      flex-grow: 999;
     }
 
     a2k-stack {
@@ -68,34 +85,35 @@ class IE5 extends LitElement {
 
   render() {
     return html`<a2k-window draggable closeable heading="Internet Explorer 5">
-      <a2k-window-toolbar slot="toolbar">
-        <a2k-window-toolbar-item>
-          <div class="toolbar-row">
-            <div>Address</div>
-            <a2k-text-field
-              defaultValue="https://www.microsoft.com/internet-explorer"
-            ></a2k-text-field>
-          </div>
-        </a2k-window-toolbar-item>
-      </a2k-window-toolbar>
-
-      <a2k-marquee>
-        <p slot="text">Internet Explorer has reached end of life. RIP king.</p>
-      </a2k-marquee>
-      <div id="content">
-        <img src="/images/ie5-splash.png" />
-        <a2k-advert alt="hey" imgSrc=${advert1}></a2k-advert>
-        <a2k-advert alt="hey" imgSrc=${advert2}></a2k-advert>
-        <a2k-advert alt="hey" imgSrc=${advert3}></a2k-advert>
-        <a2k-advert alt="hey" imgSrc=${advert4}></a2k-advert>
+  <a2k-window-toolbar slot="toolbar">
+    <a2k-window-toolbar-item>
+      <div class="toolbar-row">
+        <div>Address</div>
+        <a2k-text-field defaultValue="https://www.microsoft.com/internet-explorer"></a2k-text-field>
       </div>
+    </a2k-window-toolbar-item>
+  </a2k-window-toolbar>
 
-      <a2k-window-status-bar
-        statusOne="Loaded"
-        statusTwo="${this.connection}"
-        slot="statusbar"
-      ></a2k-window-status-bar>
-    </a2k-window>`;
+  <a2k-marquee>
+    <p slot="text">Internet Explorer has reached end of life. RIP king.</p>
+  </a2k-marquee>
+  <div id="content">
+    <div id="with-sidebar">
+      <div id="sidebar">
+        <a2k-static-advert alt="cali skills advert" imgSrc=${advert1}>
+          </a2k-advert>
+      </div>
+      <div id="not-sidebar">
+        <img src="/images/ie5-splash.png" />
+      </div>
+    </div>
+    <a2k-advert alt="hey" width="300px" height="300px" imgSrc=${advert2}></a2k-advert>
+    <a2k-advert alt="hey" width="300px" height="300px" imgSrc=${advert3}></a2k-advert>
+    <a2k-advert alt="hey" width="300px" height="300px" imgSrc=${advert4}></a2k-advert>
+  </div>
+
+  <a2k-window-status-bar statusOne="Loaded" statusTwo="${this.connection}" slot="statusbar"></a2k-window-status-bar>
+</a2k-window>`;
   }
 }
 

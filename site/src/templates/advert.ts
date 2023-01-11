@@ -1,9 +1,11 @@
-import { html, css, LitElement } from "lit";
+import { html, css, LitElement, PropertyValues } from "lit";
 import { property, customElement, query } from "lit/decorators.js";
 import { styleMap } from "lit/directives/style-map.js";
 
-function getRandomNumber(max: number) {
-  return Math.ceil(Math.random() * max);
+function getRandomNumber(max = 1, min = 0) {
+  const diff = max - min;
+
+  return Math.random() * diff + min;
 }
 
 @customElement("a2k-advert")
@@ -11,13 +13,28 @@ export class Advert extends LitElement {
   static styles = css`
     #wrapper {
       position: absolute;
-      width: 200px;
-      height: 200px;
     }
   `;
 
   @property()
-  styles = { top: "0", left: "0" };
+  width = "0";
+
+  @property()
+  height = "0";
+
+  @property()
+  styles = {
+    top: "0",
+    left: "0",
+    zIndex: "0",
+    width: this.width,
+    height: this.height,
+  };
+
+  @property()
+  imgStyles = {
+    width: this.width,
+  };
 
   @property()
   imgSrc = "";
@@ -35,8 +52,22 @@ export class Advert extends LitElement {
   constructor() {
     super();
 
-    this.displayDelay = getRandomNumber(5) * 1000;
+    this.displayDelay = getRandomNumber(6, 2) * 1000;
+    this.styles.zIndex = `${Math.ceil(this.displayDelay)}`;
     this.setupAppearance();
+  }
+
+  willUpdate(changedProperties: PropertyValues) {
+    if (changedProperties.has("width")) {
+      this.styles.width = this.width;
+      this.imgStyles.width = this.width;
+      this.requestUpdate();
+    }
+
+    if (changedProperties.has("height")) {
+      this.styles.height = this.height;
+      this.requestUpdate();
+    }
   }
 
   private setupAppearance() {
@@ -56,10 +87,9 @@ export class Advert extends LitElement {
     const xPos = getRandomNumber(maxX);
     const yPos = getRandomNumber(maxY);
 
-    this.styles = {
-      left: `${xPos}px`,
-      top: `${yPos}px`,
-    };
+    this.styles.left = `${xPos}px`;
+    this.styles.top = `${yPos}px`;
+    this.requestUpdate();
   }
 
   private calculateValidPositionRange(): [number, number] {
@@ -84,7 +114,11 @@ export class Advert extends LitElement {
 
   render() {
     return html`<div style=${styleMap(this.styles)} hidden id="wrapper">
-      <img src=${this.imgSrc} alt=${this.alt} />
+      <img
+        src=${this.imgSrc}
+        style=${styleMap(this.imgStyles)}
+        alt=${this.alt}
+      />
     </div>`;
   }
 }

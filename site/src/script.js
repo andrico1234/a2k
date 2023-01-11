@@ -121,9 +121,9 @@ const onWindowDrag = (e) => {
 
 window.addEventListener("keypress", handleKeyPress);
 
-function handleKeyPress() {
+function handleKeyPress(e) {
   // Update this to trigger on click with a 1/1000 chance
-  if (false) {
+  if (e.key === "e" && e.ctrlKey) {
     window.removeEventListener("keypress", handleKeyPress);
     body.textContent = "";
     render(blueScreen, body);
