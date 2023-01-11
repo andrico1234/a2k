@@ -25,6 +25,9 @@ export class Advert extends LitElement {
   @property()
   alt = "";
 
+  @property()
+  href = "";
+
   @query("#wrapper")
   wrapperEl!: HTMLDivElement;
 
@@ -51,7 +54,9 @@ export class Advert extends LitElement {
 
   render() {
     return html`<div hidden id="wrapper">
-      <img src=${this.imgSrc} alt=${this.alt} />
+      <a href=${this.href} target="_blank">
+        <img src=${this.imgSrc} alt=${this.alt} />
+      </a>
     </div>`;
   }
 }
