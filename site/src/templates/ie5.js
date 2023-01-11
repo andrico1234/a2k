@@ -35,6 +35,7 @@ class IE5 extends LitElement {
       flex-basis: 10rem;
       flex-grow: 1;
       position: relative;
+      display: none;
     }
 
     #not-sidebar {
@@ -54,6 +55,12 @@ class IE5 extends LitElement {
       object-fit: cover;
       padding: 0;
       max-width: 100%;
+    }
+
+    @media (min-width: 700px) {
+      #sidebar {
+        display: block;
+      }
     }
   `;
 
