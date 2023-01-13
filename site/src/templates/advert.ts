@@ -23,6 +23,9 @@ export class Advert extends LitElement {
   height = "0";
 
   @property()
+  href = "";
+
+  @property()
   styles = {
     top: "0",
     left: "0",
@@ -114,11 +117,13 @@ export class Advert extends LitElement {
 
   render() {
     return html`<div style=${styleMap(this.styles)} hidden id="wrapper">
-      <img
-        src=${this.imgSrc}
-        style=${styleMap(this.imgStyles)}
-        alt=${this.alt}
-      />
+      <a href=${this.href} target="_blank">
+        <img
+          src=${this.imgSrc}
+          style=${styleMap(this.imgStyles)}
+          alt=${this.alt}
+        />
+      </a>
     </div>`;
   }
 }

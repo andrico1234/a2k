@@ -3,8 +3,9 @@ import "./advert";
 import "./static-advert";
 
 const advert1 = new URL("../images/cali-skills-ad.gif", import.meta.url).href;
-const advert2 = new URL("../images/image-1.jpg", import.meta.url).href;
-const advert3 = new URL("../images/image-1.jpg", import.meta.url).href;
+const advert2 = new URL("../images/coding-tips-and-tricks.gif", import.meta.url)
+  .href;
+const advert3 = new URL("../images/stream-songs.gif", import.meta.url).href;
 const advert4 = new URL("../images/image-1.jpg", import.meta.url).href;
 class IE5 extends LitElement {
   static styles = css`
@@ -114,8 +115,8 @@ class IE5 extends LitElement {
         <img src="/images/ie5-splash.png" />
       </div>
     </div>
-    <a2k-advert alt="hey" width="300px" height="300px" imgSrc=${advert2}></a2k-advert>
-    <a2k-advert alt="hey" width="300px" height="300px" imgSrc=${advert3}></a2k-advert>
+    <a2k-advert href="https://blog.andri.co" alt="get the latest coding tips and tricks" width="300px" height="300px" imgSrc=${advert2}></a2k-advert>
+    <a2k-advert href="https://open.spotify.com/playlist/5IHKvXfvwW94sXOMOZomBy?si=ac5e376cb8ef44a4" alt="stream millions of songs for free" width="125px" height="175px" imgSrc=${advert3}></a2k-advert>
     <a2k-advert alt="hey" width="300px" height="300px" imgSrc=${advert4}></a2k-advert>
   </div>
 
