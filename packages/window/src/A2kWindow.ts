@@ -16,6 +16,18 @@ import "./a2k-window-actions";
 // TODO: this works incorrectly if the window is inside a relatively positioned element
 //    Idea: Play around with setting the x/y position before setting the top:0,left:0 position in the DragController
 
+/* Focus Behaviour
+
+To do
+
+- windows subscribe to context
+
+- whenever the last active element changes, each window checks to see if it is
+- if it is, then apply conditional styles
+- otherwise don't
+
+*/
+
 export class A2kWindow extends LitElement {
   static styles = css`
     :host([hidden]) {
@@ -63,8 +75,8 @@ export class A2kWindow extends LitElement {
 
   id = uuid();
 
-  @consume({ context: windowContext })
-  @property({ type: String })
+  @consume({ context: windowContext, subscribe: true })
+  @property({ type: String, attribute: false })
   public windows?: WindowContext;
 
   @property({ type: String })
@@ -105,12 +117,24 @@ export class A2kWindow extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
 
-    if (this.windows && (this.x === -1 || this.y === -1)) {
-      this.windows.registerWindow(this.id);
+    if (this.windows) {
+      const hasAutoPosition = this.x === -1 || this.y === -1;
+      const options = {
+        hasAutoPosition,
+      };
 
-      const windowCount = this.windows.count;
-      this.x = windowCount * 32;
-      this.y = windowCount * 32;
+      this.windows.registerWindow(this.id, options);
+      this.addEventListener("click", this.handleClick);
+
+      if (hasAutoPosition) {
+        const windowsList = this.windows.windowsList;
+        const autoPositionedWindowCount = windowsList.filter(
+          (x) => x.hasAutoPosition
+        ).length;
+
+        this.x = autoPositionedWindowCount * 32;
+        this.y = autoPositionedWindowCount * 32;
+      }
     }
 
     if (this.x === -1) {
@@ -127,6 +151,7 @@ export class A2kWindow extends LitElement {
 
     if (this.windows) {
       this.windows.unregisterWindow(this.id);
+      this.removeEventListener("click", this.handleClick);
     }
   }
 
@@ -146,6 +171,27 @@ export class A2kWindow extends LitElement {
     }
 
     this.requestUpdate();
+  }
+
+  handleClick() {
+    this.windows?.handleInteraction(this.id);
+
+    // does the element re-render every time we make a change to the context?
+  }
+
+  getIsMostRecentlyUpdatedWindow() {
+    if (!this.windows) return;
+
+    // this function (or at least part of it) sounds like a helper that the context should be responsible for
+
+    const windowsList = this.windows.windowsList;
+    const windowsSortedByInteractionTime = windowsList.sort(
+      (a, b) => b.lastInteractionTime - a.lastInteractionTime
+    );
+
+    const mostRecentlyUpdatedWindow = windowsSortedByInteractionTime[0].id;
+
+    return mostRecentlyUpdatedWindow === this.id;
   }
 
   render() {
