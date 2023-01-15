@@ -131,7 +131,6 @@ export class A2kWindow extends LitElement {
   }
 
   protected firstUpdated(): void {
-    const { x, y } = this.drag;
     const { offsetWidth } = this.renderRoot.querySelector(
       "#window"
     ) as HTMLDivElement;
@@ -142,8 +141,8 @@ export class A2kWindow extends LitElement {
     this.drag.y = this.y;
     this.drag.updateElPosition();
 
-    if (x + offsetWidth > availableWidth) {
-      this.drag.styles.transform = `translate(0px, ${y}px)`;
+    if (this.x + offsetWidth > availableWidth) {
+      this.drag.styles.transform = `translate(0px, ${this.y}px)`;
     }
 
     this.requestUpdate();
