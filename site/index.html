@@ -22,7 +22,10 @@
     <script src="https://getinsights.io/js/insights.js"></script>
     <script type="module">
       insights.init(import.meta.env.VITE_INSIGHTS_TOKEN);
-      insights.trackPages();
+
+      if (import.meta.env.PROD) {
+        insights.trackPages();
+      }
     </script>
   </head>
   <body>

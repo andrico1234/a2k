@@ -95,6 +95,8 @@ class Feedback extends LitElement {
         details,
       },
     });
+
+    this.hasSubmitted = true;
   }
 
   @query("form")
@@ -102,6 +104,9 @@ class Feedback extends LitElement {
 
   @state()
   activeContent = "";
+
+  @state()
+  hasSubmitted = false;
 
   updateActiveContent() {
     const { select } = parseFormAsObject(this.formEl!);
@@ -138,6 +143,10 @@ class Feedback extends LitElement {
 
               ${elementToRender ? elementToRender() : feedbackChildren()}
               <a2k-button type="submit">Submit</a2k-button>
+
+              ${this.hasSubmitted
+                ? html`<p>Thanks! We've received your feedback.</p>`
+                : null}
             </a2k-stack>
           </form>
         </a2k-window>
