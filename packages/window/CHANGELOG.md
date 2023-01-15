@@ -1,5 +1,11 @@
 # @a2000/window
 
+## 0.0.33
+
+### Patch Changes
+
+- 2477b07: fix inital position for small screens
+
 ## 0.0.32
 
 ### Patch Changes
