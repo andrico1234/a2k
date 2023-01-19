@@ -70,7 +70,7 @@ function initInternetQueue() {
     if (!ieLoadQueue.isEmpty()) {
       dequeueItem();
     }
-  }, 100);
+  }, 4000);
 }
 
 internetIcon.onOpen = () => {
@@ -213,5 +213,3 @@ function loadDesktopIcons() {
     });
   }, 1200);
 }
-
-loadDesktopIcons();

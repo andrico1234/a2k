@@ -16,18 +16,6 @@ import "./a2k-window-actions";
 // TODO: this works incorrectly if the window is inside a relatively positioned element
 //    Idea: Play around with setting the x/y position before setting the top:0,left:0 position in the DragController
 
-/* Focus Behaviour
-
-To do
-
-- windows subscribe to context
-
-- whenever the last active element changes, each window checks to see if it is
-- if it is, then apply conditional styles
-- otherwise don't
-
-*/
-
 export class A2kWindow extends LitElement {
   static styles = css`
     :host([hidden]) {
@@ -175,8 +163,6 @@ export class A2kWindow extends LitElement {
 
   handleClick() {
     this.windows?.handleInteraction(this.id);
-
-    // does the element re-render every time we make a change to the context?
   }
 
   getIsMostRecentlyUpdatedWindow() {
