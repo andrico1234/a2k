@@ -195,12 +195,17 @@ export class A2kWindow extends LitElement {
   }
 
   render() {
+    const isMostRecentlyUpdatedWindow = this.getIsMostRecentlyUpdatedWindow();
+    const activeState = isMostRecentlyUpdatedWindow ? "active" : "inactive";
+
     return html`
       <div id="window" style=${styleMap(this.drag.styles)}>
         <a2k-panel>
           <div id="topbar-wrapper">
             <div id="draggable" data-dragging=${this.drag.state}>
-              <a2k-window-topbar>${this.heading}</a2k-window-topbar>
+              <a2k-window-topbar data-state=${activeState}
+                >${this.heading}</a2k-window-topbar
+              >
             </div>
             <a2k-window-actions
               ?closeable="${this.closeable}"

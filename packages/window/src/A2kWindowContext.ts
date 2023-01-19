@@ -3,17 +3,10 @@ import { provide } from "@lit-labs/context";
 import { property } from "lit/decorators.js";
 import { windowContext, WindowContext } from "./windowContext";
 
-// how do I store windows?
-// currently we store by id.
-
-// we need to create a new window object
-// id last interacted with. date.now()
-
 export class A2kWindowContext extends LitElement {
   @provide({ context: windowContext })
   @property({ attribute: false })
   public windowContext: WindowContext = {
-    version: 0,
     windows: {},
     get windowsList() {
       return Object.values(this.windows);
@@ -27,22 +20,24 @@ export class A2kWindowContext extends LitElement {
       const lastInteractionTime = Date.now();
       const newWindow = { id, lastInteractionTime, hasAutoPosition };
       this.windowContext.windows[id] = newWindow;
-      this.windowContext.version += 1;
+      this.windowContext.triggerUpdate();
     },
     unregisterWindow: (id) => {
       delete this.windowContext.windows[id];
-      this.windowContext.version += 1;
+      this.windowContext.triggerUpdate();
     },
     handleInteraction: (id) => {
-      console.log("hey there");
       const window = this.windowContext.windows[id];
 
       if (!window) return;
       const lastInteractionTime = Date.now();
 
       this.windowContext.windows[id].lastInteractionTime = lastInteractionTime;
-      this.windowContext.version += 1;
-      this.requestUpdate();
+      this.windowContext.triggerUpdate();
+    },
+    triggerUpdate: () => {
+      const clone3 = shallowClone(this.windowContext);
+      this.windowContext = clone3;
     },
   };
 
@@ -51,4 +46,11 @@ export class A2kWindowContext extends LitElement {
       <slot></slot>
     </div>`;
   }
+}
+
+function shallowClone<T>(obj: T): T {
+  return Object.create(
+    Object.getPrototypeOf(obj),
+    Object.getOwnPropertyDescriptors(obj)
+  );
 }

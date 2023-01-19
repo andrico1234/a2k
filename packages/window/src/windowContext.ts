@@ -11,13 +11,13 @@ export interface WindowOptions {
 }
 
 export interface WindowContext {
-  version: number;
   count: number;
   windows: Record<string, RegisteredWindow>;
   windowsList: RegisteredWindow[];
   registerWindow: (id: string, options: WindowOptions) => void;
   unregisterWindow: (id: string) => void;
   handleInteraction: (id: string) => void;
+  triggerUpdate: () => void;
 }
 
 export const windowContext = createContext<WindowContext>("window-context");

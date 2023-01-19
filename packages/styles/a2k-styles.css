@@ -228,7 +228,9 @@ Variable names should follow the format
 
   --window-topbar-heading-font-size: var(--font-size-100);
   --window-topbar-heading-color: var(--color-white);
+  --window-topbar-heading-color-inactive: var(--color-gray-700);
   --window-topbar-background: var(--blue-gradient);
+  --window-topbar-background-inactive: var(--color-gray-300);
   --window-topbar-height: 28px;
 
   --window-toolbar-item-color-background: var(--color-gray-550);
