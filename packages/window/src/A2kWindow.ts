@@ -63,8 +63,8 @@ export class A2kWindow extends LitElement {
 
   id = uuid();
 
-  @consume({ context: windowContext })
-  @property({ type: String })
+  @consume({ context: windowContext, subscribe: true })
+  @property({ type: String, attribute: false })
   public windows?: WindowContext;
 
   @property({ type: String })
@@ -105,12 +105,24 @@ export class A2kWindow extends LitElement {
   connectedCallback(): void {
     super.connectedCallback();
 
-    if (this.windows && (this.x === -1 || this.y === -1)) {
-      this.windows.registerWindow(this.id);
+    if (this.windows) {
+      const hasAutoPosition = this.x === -1 || this.y === -1;
+      const options = {
+        hasAutoPosition,
+      };
 
-      const windowCount = this.windows.count;
-      this.x = windowCount * 32;
-      this.y = windowCount * 32;
+      this.windows.registerWindow(this.id, options);
+      this.addEventListener("pointerdown", this.handleClick);
+
+      if (hasAutoPosition) {
+        const windowsList = this.windows.windowsList;
+        const autoPositionedWindowCount = windowsList.filter(
+          (x) => x.hasAutoPosition
+        ).length;
+
+        this.x = autoPositionedWindowCount * 32;
+        this.y = autoPositionedWindowCount * 32;
+      }
     }
 
     if (this.x === -1) {
@@ -127,6 +139,7 @@ export class A2kWindow extends LitElement {
 
     if (this.windows) {
       this.windows.unregisterWindow(this.id);
+      this.removeEventListener("pointerdown", this.handleClick);
     }
   }
 
@@ -148,13 +161,44 @@ export class A2kWindow extends LitElement {
     this.requestUpdate();
   }
 
+  handleClick() {
+    this.windows?.handleInteraction(this.id);
+  }
+
+  getWindowPosition() {
+    if (!this.windows) return;
+
+    return this.windows.windowOrder.indexOf(this.id);
+  }
+
+  getIsMostRecentlyUpdatedWindow() {
+    if (!this.windows) return;
+
+    const { windowOrder } = this.windows;
+
+    return windowOrder[windowOrder.length - 1] === this.id;
+  }
+
   render() {
+    const windowPosition = this.getWindowPosition();
+    const activeState = this.getIsMostRecentlyUpdatedWindow()
+      ? "active"
+      : "inactive";
+
     return html`
-      <div id="window" style=${styleMap(this.drag.styles)}>
+      <div
+        id="window"
+        style=${styleMap({
+          ...this.drag.styles,
+          zIndex: `${windowPosition}`,
+        })}
+      >
         <a2k-panel>
           <div id="topbar-wrapper">
             <div id="draggable" data-dragging=${this.drag.state}>
-              <a2k-window-topbar>${this.heading}</a2k-window-topbar>
+              <a2k-window-topbar data-state=${activeState}
+                >${this.heading}</a2k-window-topbar
+              >
             </div>
             <a2k-window-actions
               ?closeable="${this.closeable}"

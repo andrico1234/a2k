@@ -7,20 +7,45 @@ export class A2kWindowContext extends LitElement {
   @provide({ context: windowContext })
   @property({ attribute: false })
   public windowContext: WindowContext = {
-    windows: [],
-    get count() {
-      return this.windows.length;
+    windows: {},
+    get windowsList() {
+      return Object.values(this.windows);
     },
-    registerWindow: (id) => {
-      this.windowContext.windows.push({ id });
+    get windowOrder() {
+      const sortedList = this.windowsList.sort(
+        (a, b) => a.lastInteractionTime - b.lastInteractionTime
+      );
+      const windowIds = sortedList.map(({ id }) => id);
+
+      return windowIds;
+    },
+    get count() {
+      return Object.keys(this.windows).length;
+    },
+    registerWindow: (id, options) => {
+      const { hasAutoPosition = true } = options;
+
+      const lastInteractionTime = Date.now();
+      const newWindow = { id, lastInteractionTime, hasAutoPosition, el: null };
+      this.windowContext.windows[id] = newWindow;
+      this.windowContext.triggerUpdate();
     },
     unregisterWindow: (id) => {
-      const ids = this.windowContext.windows.map(({ id }) => id);
-      const indexOfId = ids.indexOf(id);
+      delete this.windowContext.windows[id];
+      this.windowContext.triggerUpdate();
+    },
+    handleInteraction: (id) => {
+      const window = this.windowContext.windows[id];
 
-      if (indexOfId === -1) return;
+      if (!window) return;
+      const lastInteractionTime = Date.now();
 
-      this.windowContext.windows.splice(indexOfId, 1);
+      this.windowContext.windows[id].lastInteractionTime = lastInteractionTime;
+      this.windowContext.triggerUpdate();
+    },
+    triggerUpdate: () => {
+      const clone3 = shallowClone(this.windowContext);
+      this.windowContext = clone3;
     },
   };
 
@@ -29,4 +54,11 @@ export class A2kWindowContext extends LitElement {
       <slot></slot>
     </div>`;
   }
+}
+
+function shallowClone<T>(obj: T): T {
+  return Object.create(
+    Object.getPrototypeOf(obj),
+    Object.getOwnPropertyDescriptors(obj)
+  );
 }
