@@ -11,6 +11,14 @@ export class A2kWindowContext extends LitElement {
     get windowsList() {
       return Object.values(this.windows);
     },
+    get windowOrder() {
+      const sortedList = this.windowsList.sort(
+        (a, b) => a.lastInteractionTime - b.lastInteractionTime
+      );
+      const windowIds = sortedList.map(({ id }) => id);
+
+      return windowIds;
+    },
     get count() {
       return Object.keys(this.windows).length;
     },
@@ -18,7 +26,7 @@ export class A2kWindowContext extends LitElement {
       const { hasAutoPosition = true } = options;
 
       const lastInteractionTime = Date.now();
-      const newWindow = { id, lastInteractionTime, hasAutoPosition };
+      const newWindow = { id, lastInteractionTime, hasAutoPosition, el: null };
       this.windowContext.windows[id] = newWindow;
       this.windowContext.triggerUpdate();
     },

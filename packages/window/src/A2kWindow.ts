@@ -112,7 +112,7 @@ export class A2kWindow extends LitElement {
       };
 
       this.windows.registerWindow(this.id, options);
-      this.addEventListener("click", this.handleClick);
+      this.addEventListener("pointerdown", this.handleClick);
 
       if (hasAutoPosition) {
         const windowsList = this.windows.windowsList;
@@ -139,7 +139,7 @@ export class A2kWindow extends LitElement {
 
     if (this.windows) {
       this.windows.unregisterWindow(this.id);
-      this.removeEventListener("click", this.handleClick);
+      this.removeEventListener("pointerdown", this.handleClick);
     }
   }
 
@@ -165,27 +165,34 @@ export class A2kWindow extends LitElement {
     this.windows?.handleInteraction(this.id);
   }
 
+  getWindowPosition() {
+    if (!this.windows) return;
+
+    return this.windows.windowOrder.indexOf(this.id);
+  }
+
   getIsMostRecentlyUpdatedWindow() {
     if (!this.windows) return;
 
-    // this function (or at least part of it) sounds like a helper that the context should be responsible for
+    const { windowOrder } = this.windows;
 
-    const windowsList = this.windows.windowsList;
-    const windowsSortedByInteractionTime = windowsList.sort(
-      (a, b) => b.lastInteractionTime - a.lastInteractionTime
-    );
-
-    const mostRecentlyUpdatedWindow = windowsSortedByInteractionTime[0].id;
-
-    return mostRecentlyUpdatedWindow === this.id;
+    return windowOrder[windowOrder.length - 1] === this.id;
   }
 
   render() {
-    const isMostRecentlyUpdatedWindow = this.getIsMostRecentlyUpdatedWindow();
-    const activeState = isMostRecentlyUpdatedWindow ? "active" : "inactive";
+    const windowPosition = this.getWindowPosition();
+    const activeState = this.getIsMostRecentlyUpdatedWindow()
+      ? "active"
+      : "inactive";
 
     return html`
-      <div id="window" style=${styleMap(this.drag.styles)}>
+      <div
+        id="window"
+        style=${styleMap({
+          ...this.drag.styles,
+          zIndex: `${windowPosition}`,
+        })}
+      >
         <a2k-panel>
           <div id="topbar-wrapper">
             <div id="draggable" data-dragging=${this.drag.state}>

@@ -108,7 +108,8 @@ class IE5 extends LitElement {
   <div id="content">
     <div id="with-sidebar">
       <div id="sidebar">
-        <a2k-static-advert href="https://play.google.com/store/apps/details?id=com.caliskillsapp" alt="cali skills advert" imgSrc=${advert1}>
+        <a2k-static-advert href="https://play.google.com/store/apps/details?id=com.caliskillsapp"
+          alt="cali skills advert" imgSrc=${advert1}>
           </a2k-advert>
       </div>
       <div id="not-sidebar">
