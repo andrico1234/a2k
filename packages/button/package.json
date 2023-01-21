@@ -11,6 +11,6 @@
     "./a2k-button.js": "./lib/src/a2k-button.js"
   },
   "dependencies": {
-    "@open-wc/form-control": "^0.4.1"
+    "@open-wc/form-control": "0.5.0"
   }
 }

@@ -25,6 +25,6 @@
   },
   "devDependencies": {
     "@types/uuid": "^9.0.0",
-    "element-internals-polyfill": "1.1.17"
+    "element-internals-polyfill": "1.1.20"
   }
 }

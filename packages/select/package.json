@@ -13,7 +13,7 @@
   "dependencies": {
     "@a2000/button": "0.0.9",
     "@a2000/icons": "0.0.13",
-    "@open-wc/form-control": "^0.4.1",
-    "element-internals-polyfill": "1.1.17"
+    "@open-wc/form-control": "0.5.0",
+    "element-internals-polyfill": "1.1.20"
   }
 }

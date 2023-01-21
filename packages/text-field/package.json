@@ -11,7 +11,7 @@
     "./a2k-text-field.js": "./lib/src/a2k-text-field.js"
   },
   "dependencies": {
-    "@open-wc/form-control": "0.4.1",
-    "element-internals-polyfill": "1.1.17"
+    "@open-wc/form-control": "0.5.0",
+    "element-internals-polyfill": "1.1.20"
   }
 }
