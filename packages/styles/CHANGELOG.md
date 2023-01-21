@@ -1,5 +1,11 @@
 # @a2000/styles
 
+## 0.0.34
+
+### Patch Changes
+
+- 5bb56fc: add inactive styles for window
+
 ## 0.0.33
 
 ### Patch Changes
