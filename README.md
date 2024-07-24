@@ -14,6 +14,16 @@ Check out:
 - The [demo](https://a2000.netlify.app) site for the full a2k experience.
 - The [storybook](https://a2000-storybook.netlify.app/) to play with each component.
 
+---
+## Sponsor
+Learn to build a component library using minimal tech with [Component Odyssey](https://component-odyssey.com/). As a result, you'll:
+
+- Become a more future-proof web developer
+- Build components that your users will love
+- Boost your career opportunities
+- Learn to do more with less
+---
+
 ## Components
 
 - [a2k-blue-screen](https://github.com/andrico1234/a2k/tree/main/packages/blue-screen)
