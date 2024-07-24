@@ -63,6 +63,10 @@ summary > .icon {
   font-size: 8px;
 }
 
+#app > a2k-panel {
+  z-index: 1;
+}
+
 a2k-panel > p {
   margin-block: 16px;
 }
@@ -131,4 +135,13 @@ a2k-panel > p {
 .cover-image {
   width: 100%;
   aspect-ratio: 2 / 1;
+}
+
+main > a2k-marquee {
+  --marquee-animation-duration: 30s;
+
+  position: absolute;
+  top: 16px;
+  left: 0;
+  width: 100%;
 }
