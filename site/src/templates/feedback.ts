@@ -88,13 +88,15 @@ class Feedback extends LitElement {
 
     const { select = "none", details = "" } = parseFormAsObject(target);
 
-    window.insights.track({
-      id: "feedback",
-      parameters: {
-        type: select,
-        details,
-      },
-    });
+    if ("track" in window.insights) {
+      window.insights.track({
+        id: "feedback",
+        parameters: {
+          type: select,
+          details,
+        },
+      });
+    }
 
     this.hasSubmitted = true;
   }

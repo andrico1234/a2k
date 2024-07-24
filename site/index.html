@@ -1,96 +1,79 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <meta property="og:title" content="Andricos 2000" />
-    <meta
-      property="og:description"
-      content="Re-live the magic of the early-2000s era of computing with Andricos 2000"
-    />
-    <meta property="og:type" content="website" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./src/reset.css" />
-    <link rel="stylesheet" href="./node_modules/@a2000/styles/a2k-styles.css" />
-    <link rel="stylesheet" href="./src/styles.css" />
-    <title>Andricos 2000</title>
-    <meta
-      name="description"
-      content="Re-live the magic of the early-2000s era of computing with Andricos 2000"
-    />
-    <script src="https://getinsights.io/js/insights.js"></script>
-    <script type="module">
-      insights.init(import.meta.env.VITE_INSIGHTS_TOKEN);
+  <meta property="og:title" content="Andricos 2000" />
+  <meta property="og:description" content="Re-live the magic of the early-2000s era of computing with Andricos 2000" />
+  <meta property="og:type" content="website" />
 
-      if (import.meta.env.PROD) {
-        insights.trackPages();
-      }
-    </script>
-  </head>
-  <body>
-    <div id="app">
-      <a2k-desktop>
-        <a2k-icon-button
-          hidden
-          icon="documents-icon"
-          text="Portfolio"
-        ></a2k-icon-button>
-        <a2k-icon-button
-          hidden
-          icon="network-icon"
-          text="Send Feedback"
-        ></a2k-icon-button>
-        <a2k-icon-button hidden icon="help-icon" text="About"></a2k-icon-button>
-        <a2k-icon-button
-          hidden
-          icon="github-icon"
-          text="GitHub"
-        ></a2k-icon-button>
-        <a2k-icon-button
-          hidden
-          icon="internet-icon"
-          text="Internet Explorer"
-        ></a2k-icon-button>
-        <a2k-icon-button
-          hidden
-          icon="lock-icon"
-          text="Privacy Notice"
-        ></a2k-icon-button>
-      </a2k-desktop>
+  <link rel="stylesheet" href="./src/reset.css" />
+  <link rel="stylesheet" href="./node_modules/@a2000/styles/a2k-styles.css" />
+  <link rel="stylesheet" href="./src/styles.css" />
+  <title>Andricos 2000</title>
+  <meta name="description" content="Re-live the magic of the early-2000s era of computing with Andricos 2000" />
 
-      <div class="taskbar">
-        <a2k-taskbar></a2k-taskbar>
-      </div>
+  <script type="module">
+    // if (import.meta.env.PROD) {
 
-      <a2k-window-context>
-        <div id="windows-container"></div>
-      </a2k-window-context>
+    //   const script = document.createElement('script');
+    //   script.src = 'https://getinsights.io/js/insights.js'
+    //   document.head.appendChild(script);
 
-      <div class="fixed-container">
-        <a2k-startup></a2k-startup>
-      </div>
+    //   script.onload = () => {
+    //     insights.init(import.meta.env.VITE_INSIGHTS_TOKEN);
+    //     insights.trackPages();
+    //   }
+    // }
+  </script>
+</head>
+
+<body>
+  <div id="app">
+    <a2k-desktop>
+      <a2k-icon-button hidden icon="documents-icon" text="Portfolio"></a2k-icon-button>
+      <a2k-icon-button hidden icon="network-icon" text="Send Feedback"></a2k-icon-button>
+      <a2k-icon-button hidden icon="help-icon" text="About"></a2k-icon-button>
+      <a2k-icon-button hidden icon="github-icon" text="GitHub"></a2k-icon-button>
+      <a2k-icon-button hidden icon="internet-icon" text="Internet Explorer"></a2k-icon-button>
+      <a2k-icon-button hidden icon="lock-icon" text="Privacy Notice"></a2k-icon-button>
+    </a2k-desktop>
+
+    <div class="taskbar">
+      <a2k-taskbar></a2k-taskbar>
     </div>
 
-    <script type="module">
-      import "@a2000/window/a2k-window.js";
-      import "@a2000/window/a2k-window-context.js";
-      import "@a2000/window/a2k-window-toolbar.js";
-      import "@a2000/window/a2k-window-toolbar-item.js";
-      import "@a2000/window/a2k-window-status-bar.js";
-      import "@a2000/blue-screen/a2k-blue-screen.js";
-      import "@a2000/taskbar/a2k-taskbar.js";
-      import "@a2000/progress/a2k-progress.js";
-      import "@a2000/button/a2k-button.js";
-      import "@a2000/text-field/a2k-text-field.js";
-      import "@a2000/select/a2k-select.js";
-      import "@a2000/desktop/a2k-desktop.js";
-      import "@a2000/icon-button/a2k-icon-button.js";
-      import "@a2000/startup/a2k-startup.js";
-      import "@a2000/marquee/a2k-marquee.js";
-      import "./src/templates/feedback.ts";
-    </script>
+    <a2k-window-context>
+      <div id="windows-container"></div>
+    </a2k-window-context>
 
-    <script type="module" src="./src/script.js"></script>
-  </body>
+    <div class="fixed-container">
+      <a2k-startup></a2k-startup>
+    </div>
+  </div>
+
+  <script type="module">
+    import "@a2000/window/a2k-window.js";
+    import "@a2000/window/a2k-window-context.js";
+    import "@a2000/window/a2k-window-toolbar.js";
+    import "@a2000/window/a2k-window-toolbar-item.js";
+    import "@a2000/window/a2k-window-status-bar.js";
+    import "@a2000/blue-screen/a2k-blue-screen.js";
+    import "@a2000/taskbar/a2k-taskbar.js";
+    import "@a2000/progress/a2k-progress.js";
+    import "@a2000/button/a2k-button.js";
+    import "@a2000/text-field/a2k-text-field.js";
+    import "@a2000/select/a2k-select.js";
+    import "@a2000/desktop/a2k-desktop.js";
+    import "@a2000/icon-button/a2k-icon-button.js";
+    import "@a2000/startup/a2k-startup.js";
+    import "@a2000/marquee/a2k-marquee.js";
+    import "./src/templates/feedback.ts";
+  </script>
+
+  <script type="module" src="./src/script.js"></script>
+</body>
+
 </html>
